@@ -1,0 +1,103 @@
+                     |  HISTORIQUE DE MOD MASTER   ?
+                     |        (18/10/2020)         ?
+
+
+
+    Vous pouvez trouver la derniŠre version de Mod Master sur le serveur:
+                               ftp.cdrom.com
+
+ Legende: + fonction ajoutee
+          - fonction retiree
+          > fonction modifiee
+          ! bug corrige
+          ? bug connu mais pas encore corrige  :-(
+
+
+ -- Version XT b22 (18/10/2020) Oui, 25 ans plus tard :-)
+ + Support des PC XT (8088)
+ + Utilisation de multiples buffer et optimisation du mixage.
+ + Support des .XM (Beta)
+ + Support des .RAD, .IMF, .DRO, .VGM (OPL3/Tandy)
+ + Compression des partitions
+ + Ajout du support des SB16 et BlasteBoard et amelioration de la detection des cartes son
+ + Ajout du support du DAC Tandy
+ ! Correction du support des samples 16 Bit
+ ! Correction des Vibrato, Arpeggio, 
+ ! Correction du bouclage des samples
+ - Suppression de l'interpolation
+ - Suppression des .SAT
+ - Suppression du mode d'affichage Graphique
+ - Suppression du support de la carte Adlib (Pour les .MOD)
+
+
+ -- Version 2.2  (Sortie le 28/11/1995)
+
+ + Nouveaux formats reconnus: FAR, ULT, SAT et PTM.
+ ! Correction des commandes Tremolo, Note Delay, Pattern Break et Sample Offset.
+ ! Correction d'erreurs dans la gestion des FineTune.
+ + Auto-d‚tection de la compatibilit‚ Adlib (OPL2).
+ + Utilise les instruments Adlib des fichiers S3M ;-)
+ + Support de la sortie Adlib (Mono, 6 bit, 21kHz maxi).
+ > Les ‚chantillons ne sont plus limit‚s … 64 Ko pour la GUS.
+ + Mod Master ne charge plus que les instruments utilises dans la partition.
+ ! Detection de TOUS les lecteurs physiques et logiques (y compris les lecteurs
+   de CD-Rom, d‚sol‚ pour ce bug gˆnant !!).
+
+
+ -- Version 2.1  (Sortie le 28/06/1995)
+
+ Au niveau musique:
+
+ + Shell Dos.
+ + Utilise l'EMS et les UMB.
+ + 4 nouveaux formats de fichiers reconnus (S3M, 669, MTM et DTM).
+ + Nombreuses commandes ProTracker et quelques commandes suppl‚mentaires
+    pour les modules S3M et 669.
+ + Gestion de la balance sur Sound Blaster Pro (128 positions !!).
+ + Vitesse de calcul doubl‚e par rapport … la version 2.0.
+ + Utilisation d'instructions 80386.
+ + Utilise le mode DMA continu des cartes Sound Blaster.
+ > Le nombre maximal de voies passe de 8 … 32.
+ > Le nombre maximal d'instruments passe de 31 … 99.
+ + Gestion des "pattern" avec taille variable.
+ ! Bug du vibrato corrig‚...
+ + Support de la Gravis UltraSound (taux d'UltraClick acceptable,
+    gestion du timer de la Gravis et chargement des samples sans le DMA).
+ + D‚tection automatique des ports parallŠles.
+
+ Au niveau de l'interface:
+
+ + Mode texte 28 lignes avec curseur de souris, fonte et palette red‚finis.
+ + R‚glage du volume pour chaque module (volume variable+volume par d‚faut).
+ + Menu Options pour la gestion avanc‚e des modules (compatibilit‚ ProTracker).
+ + Economiseur d'‚cran :-)
+ + Possibilit‚ d'effacer un module du disque.
+ > Meilleure gestion du r‚pertoire (relecture automatique minimale).
+ + D‚tection de tous les lecteurs physiques et logiques.
+
+
+ - Version 2.0  (Sortie le 01/06/1994)
+  (SHAREWARE)
+
+ + ReconnaŒt les formats WOW, STM et MOD 6 et 8 voies.
+ + Vitesse de calcul doubl‚e par rapport … la version 1.0.
+ > Le nombre maximal de voies passe de 4 … 8.
+ + Auto-d‚tection du port de la Sound Blaster (220h, 230h, ...).
+ + Sorties sonores plus nombreuses (dont la Sound Blaster Pro :-) ).
+ + Utilise le DMA en Mono ou St‚r‚o jusqu'… 44kHz.
+ ! Correction des effets Arpeggio et Tone Portamento + Volume Slide.
+ + Calcul de la dur‚e exacte du module.
+ + Mode interactif avec s‚lecteur de fichiers, fenˆtres de r‚glages, ...
+ + Support de la souris (2 boutons).
+ + Fonctions Shuffle et IntroScan.
+ + Possibilit‚ de programmer une s‚quence de modules, de la sauvegarder et
+    de la recharger.
+ + Affichage de l'oscilloscope en mode graphique.
+
+
+ - Version 1.0  (Sortie le 17/12/1993)
+  (premiŠre sortie de Mod Master - FREEWARE)
+
+ . Joue les fichiers MOD 4 voies sur Sound Blaster et haut-parleur interne.
+ . S'utilise uniquement avec la ligne de commande.
+

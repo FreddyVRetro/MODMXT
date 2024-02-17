@@ -1,0 +1,717 @@
+      |                                                                |
+      |                      -   MOD MASTER -                          |
+      |                      - VERSION XT 1.0 -                        |
+      |                                                                |
+      |        (c) 1993, 2022 Freddy VETELE & Fabrice COUTEAU          |
+
+                           ___  __   _   ____ ___  _   ____  ___
+                          /    /  ) /| /  /  /__  /| /  /   (_
+                         (__  (__/ / |/  /  /__  / |/  /   ___)
+             ___________________________________________________________
+            /                                                           )\
+           /     I. Introduction                                       / /
+          /    II. Main features                                      / /
+         /   III. Program's description (interactive mode)           / /
+        /    IV. Running with a command line                        / /
+       /     V. Compatibility and tests                            / /
+      /    VI. Problems, causes and solutions (FAQ)               / /
+     /   VII. Information and miscellaneous                      / /
+    (___________________________________________________________/ /
+     \__________________________________________________________\/
+
+
+ I. Introduction
+
+   Mod Master XT is the Mod Master 2.2 Revival, now for XT Computers.
+    In 2018, I started to collect retro computers and I purchased an Amstrad PC1640.
+   
+   The first PC I got was an Amstrad PC1512. I started to learn the Assembly language.
+    In 1992, I coded the first version of Mod Master on the PC1512.
+	
+	
+   Mod Master XT can play various Tracker files format as well as multiple OPL2/OPL3, 
+    Tandy and other music.
+
+   
+   There are 3 different executable build for machines with more or less memory.
+   
+   MODM.EXE  : Mod Master XT "Light"
+     - Play MOD, S3M, XM and .MMM files.
+	 - Play all the OPL/OPL3... File format (SAT, VGM...)
+	 - Recommended for XT machines with 640Kb of Memory
+	 
+   MODMT.EXE : Mod Master XT "Tiny"
+     - Play only .MMM files and all the not sample based music.
+	 - Play all the OPL/OPL3... File format (SAT, VGM...)	 
+     - Recommended for XT machines with <= 512Kb of Memory
+	 
+   MODMF.EXE : Mod Master XT "Full"
+     - All the supported file format are present.  
+	 - For machines with EMS Memory.
+	  	   
+
+   Minimal configuration:
+   ~~~~~~~~~~~~~~~~~~~~~~
+      - 8088 processor
+      - 300KB of conventional memory
+      - MDA/CGA
+      - PC Speaker
+
+   Recommended configuration:
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      - 286 processor
+      - 550KB of conventional memory + 2MB EMS
+      - Two-button mouse
+      - Sound card (Sound Blaster, Gravis UltraSound, ...)
+
+
+ II. Main features
+ -----------------
+
+   Music formats supported:
+
+      - With the 2.1 release, Mod Master has become a Multi Player.
+        Now it supports numerous music formats originating from the Amiga and PC.
+      - In MOD Master XT, I added the support for .XM Files (With no instrument volume and panning)
+	  - With Mod Master XT you can also 
+
+ For example: - the Stereo Control table (Panning) of S3M v1.2 files
+              - the Tempo table of 669 files
+              - the length-variable patterns of DTM files...
+
+
+Here is the whole list of music formats supported in Mod Master v2.2 :
+
+Extension  Type  Voices  Tracker                      Remarks
+---------  ----  -----   -------------------------    ------------------------
+  *.NST    M.K.   4      Tetra Composer
+  *.SD0    M.K.   4      ???                          like NoiseTracker
+  *.MOD    ---    4      NoiseTracker
+    ''     M.K.   4      ProTracker, SoundTracker...
+    ''     M!K!   4              ''
+    ''     M&K&   4              ''
+    ''     3CHN   "      ??
+    ''     6CHN   6      Fast Tracker 1.x
+    ''     8CHN   8      Fast Tracker 1.x
+    ''     10CH   10     TakeTracker, Fast Tracker 2.x
+    ''     12CH   12             ''
+    ''     .                     ''
+    ''     .                     ''
+    ''     32CH   32             ''
+    ''     FLT4   4      Startrekker
+    ''     RASP   4      Startrekker
+    ''     FLT8   8      Startrekker
+    ''     OCTA   8      Octalyzer
+    ''     CD81   8      Octalyser                    Atari STe and Falcon
+    ''     FA04   4      Digital Tracker F030
+    ''     FA08   8      Digital Tracker F030
+  *.WOW           8      Mod's Grave
+  *.669    'if'   8      Composer 669
+    ''     'JN'   8      UNIS669                      extended 669 (No Extended effect yet)
+  *.STM           4      Scream Tracker 2.x
+  *.S3M           2..16  Scream Tracker 3.x           16 digit voices+9 FM
+  *.MTM           4..32  MultiTracker 1.x
+  *.DTM           4..32  Digital Tracker F030
+  *.FAR           16     Farandole Tracker
+  *.ULT           1..32  Ultra Tracker
+  *.PTM           1..32  Poly Tracker                (Support REMOVED)
+  
+  *.SAT           9      Surprise Adlib Tracker
+  *.XM            1..32  Fast Tracker 2              (No Full support)
+  *.RAD           9      Reality Adlib Tracker
+  *.IMF           9      Apogee Adlib Music          (OPL2)
+  *.RAW           9..18                              (OPL2)  
+  *.DRO           9..18  Dosbox Adlib export
+  *.VGM           4..18  Video Games Music (OPL2 / OPL3 / Tandy / CMS)
+
+     * Remark:
+        The DTM format created by MC JEE/KAMIKAZES is very commonly used with the Falcon 
+
+        Note that the DTM extension is also used by Digital Trekker (PC);
+        Mod Master detects these files but doesn't play them by now.
+
+        Some music formats like OKT, AMF or OctaMed are not implemented
+        because they still are not very common.
+
+
+   Effects (or commands)
+   +++++++++++++++++++++
+
+       > Almost all those formats use the standard Amiga Protracker effects 
+	      (except the 669 files that have very few effects).
+       > These effects have all been implemented (except Set Filter and FunkIt
+           using material parts of the Amiga !).
+       > The other formats have brought in some new effects like
+          Set Global Volume, Extra Fine Portamento (S3M) or Set Panning...
+
+    > Remark:
+        The Set Panning command is quite special because it has been added to
+        the MOD format by Otto Chrons for Dual Module Player (it's the #8
+        command that was not used in the original format).
+        Some people have done the same but they modified the command, so you
+        might find a Set Panning with a 0-128 range and an other with a 0-16
+        one (well for the Gravis UltraSound in this case).
+        In S3M files, the panning range is 0-16.
+        Mod Master supports a 0-128 range, this include the two special cases
+        noted above (but what about a real standard ?). ;)
+
+
+
+ III. Program's description (interactive mode)
+ ---------------------------------------------
+
+     The user-interface of Mod Master is composed of two screens:
+
+       - the main screen for setting options and selecting files
+       - the screen while playing
+
+
+   Settings and selecting the modules
+   ----------------------------------
+
+      This interface is very intuitive and also easy to use:
+
+        On the left, the file selector permits you to choose one module (with 
+        the Enter key or left button of the mouse) or to select a list of modules 
+        to make a play list (Space key or right button of the mouse). You can 
+        scroll the file selector either with the Up/Down, Page Up/Down, Home, End, 
+        Ctrl+Page Up/Down keys or with the mouse.
+
+        Special Keys
+        ~~~~~~~~~~~~
+        - F1           : Display an help window
+        - Right/Left   : Increase / Decrease the mix frequency for the selectes file.
+		                 If a program is active, Search for the previous/next module of the program
+        - Shift+<A..Z> : Search for a module by it's first letter
+        - - +          : Decrease/Increase the selected module volume
+        - Back         : Set up the default volume/Frequency to the selected module
+        - Ctrl+Enter   : Set up the default volume to all the modules
+        - Tab          : Swap the module information display (Name/Volume/Frequency)
+        - Del          : Delete the selected module from the disk
+        - Alt+<A..Z>   : Change drive
+
+
+      On the right, some buttons...
+       
+      < Output > : Output Device Config.
+
+           In this window, you can select the sound output that you want from:
+
+                  - Internal speaker (ouch!)
+                  - Digital/Analog Converter on LPT1 or LPT2 port
+				  - Custom DAC
+				  - Tandy DAC
+                  - Sound Blaster
+                  - Sound Blaster Pro
+                  - Gravis UltraSound
+
+           If you press Tab, you can configure the "Synth" outputs:
+                  - Adlib / OPL2 / OPL3 / OPL3LPT
+		          - Tandy TDYLPT
+                  - CMS / CMSLPT
+
+          ! Warning, only one OPL device should be active at a time.
+            For example, if you want to use OPL3LPT, disable the internal OPL3
+
+           A sub-window appears on the right for each output selected, and there
+           you can set up more specific parameters:
+
+             Frequency  (all outputs except Gravis UltraSound)
+             ~~~~~~~~~
+               5000 Hz to 45400 Hz. Adjust it depending on the output selected,
+               (21700 Hz maximum for SB Pro stereo), the speed of your PC and
+               the number of channels in the module (up to 32).
+
+                         / If you choose internal speaker, don't set up the
+                Warning <  frequency above 20 kHz... But who still listens
+                         \ to music with this old stuff ?! |D
+
+             DMA channel, IRQ material interrupt (SB, SB Pro)
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                You can select the DMA channel number 0,1 or 3.
+                The available IRQ numbers are 2,5,7 (and 10 for SB Pro).
+
+                    / These values are auto-detected by Mod Master 
+              NOTE <  if the BLASTER environment variable is found.
+                    \ (set in the AUTOEXEC.BAT file)
+
+             Continuous DMA mode -DC-  (SB, SB Pro)
+             ~~~~~~~~~~~~~~~~~~~~~~~~
+                This data transfer mode provides a sound of a much higher
+                quality than that of the normal transfer mode, and requires
+                less CPU overhead. It works on most 100% Sound Blaster
+                compatible sound cards but you might have to disable it with
+                some clones. 
+				(Edit : No More supported)
+
+             Mono/Stereo, Mixing  (SB Pro) (Not Supported in Mod Master XT)
+             ~~~~~~~~~~~~~~~~~~~
+                The mixing option is only available in stereo mode and provides
+                you a good listening if you listen to the music through a
+                headphones or on an external amplifier (better sharing between
+                the left and right sound channels).
+
+                -  Without mixing, the voices of a 4-voice module (for example)
+                  are divided as follow:
+                  2 voices through the left channel and 2 voices through the
+                  right channel, with the same global volume assigned for each.
+
+                -  With mixing, the 2 voices that are sent through the left
+                  channel are also sent through the right one, but at a lower
+                  volume. The same for the right channel.  (Support removed)
+
+             Filter, Left/Right volume  (SB Pro)
+             ~~~~~~~~~~~~~~~~~~~~~~~~~
+                The low-pass filter reduces the high frequencies level.
+                You can also adjust separately the volume of each sound
+                channel (up to the maximum by default).
+
+             DRAM size, Mixing, InterWave  (Gravis UltraSound)
+             ~~~~~~~~~~~~~~~~~
+                It displays the size of the memory installed on your GUS card.
+                You can also adjust the mixing from mono to stereo (linear scale,
+                centered by default).
+				Select InterWave for GUS PnP card to enable the 4KHz when using >14
+				Channels.
+
+
+        < Options >
+		
+		In the Options menu, you can control the player behaviour and Mixing Parameters.
+
+             Default volume  (1 to 100%)
+             ~~~~~~~~~~~~~~
+                You can use this feature to increase the global volume.
+                This can be used to increase the playback level on soft modules.
+                Since each sample is digitized at 8 bits (values from 0 to 255),
+                the technique used to return simultaneously 4 samples consists
+                in dividing the amplitude of each instrument by 4 (with 4 voices
+                you obtain values from 0 to 1023, therefore coded on 10 bit).
+                In fact, this volume is the coefficient put on each sample,
+                then you can adjust at best the amplitude of each instrument to
+                keep the maximum of precision in the calculations.
+                This coefficient is above 1/4th, because it is unusual to find
+                modules that have a volume close to the maximum allowed on 8 bit.
+
+                 > Remark: in stereo mode, the volume is automatically doubled
+                          so that the sound quality is higher (the calculations
+                          is at least on 9 bit).
+
+                        / If the default volume is too high, you will hear some
+               Warning <  very unpleasant 'crackling' in the sound, due to 
+                        \ DAC overflows.
+
+                The default volume is assigned to all new modules detected in
+                the current directory.
+
+             IntroScan length  (2 to 30 seconds)
+             ~~~~~~~~~~~~~~~~
+                Affects the listening duration of the first seconds of a module
+                with the IntroScan function.
+
+             EMS, UMB memory
+             ~~~~~~~~~~~~~~~
+                If you have installed any extended/expanded memory manager like
+                EMM386, QEMM or equivalent, you can tell Mod Master to force
+                loading the modules first in these memory areas. You should
+                always enable both of these options to load big modules and
+                still have plenty of memory in a Dos Shell.
+
+                     / When Mod Master can't load all the samples of a module,
+               NOTE <  the number of samples succesfully loaded blinks in the
+                     \ text-screen...
+                
+                > Press "E" or "U" or use the Mouse
+				
+             FineTune
+             ~~~~~~~~
+                Enables or disables the note-period fine setting commands.
+                (for MOD files only).
+
+                > Press "F" or use the Mouse
+
+             Panning
+             ~~~~~~~
+                By default, Mod Master does a panning effect if it finds a #8
+                command in the partition but this command is not standard, so
+                its effect may be different from that used by the module's
+                composer. If a mod doesn't "sound right", disable this option.
+
+                > Press "P" or use the Mouse
+				
+				This is working for the Gravis UltraSound Only
+
+             BPM  "Beats Per Minute"
+             ~~~
+                It's a tempo fine setting command that appeared in the
+                ProTracker modules. Disable this option for old MOD files...
+
+                > Press "N" or use the Mouse
+
+             Octaves MOD  (3, 5 or 7)
+             ~~~~~~~~~~~
+                Select the number of octaves in the MOD and MOD-like modules
+                (MOD, OCT, WOW, NST and SD0). You should always set up this
+                option on 7 to hear all the notes in these modules.
+				
+                > Press "O" or use the Mouse
+
+             Interpolation  (Not Supported in Mod Master XT)
+             ~~~~~~~~~~~~~
+                
+             Mix             
+             ~~~
+				
+                16Bit : Enable/Disable the 16Bit Mixing (Press "1")
+		                The 16Bit mixing is working only in MONO (Choice to save memory)
+						
+                Ch Limit : You can fix the maximum number of channels mixed by the player.
+				           When more channels are needed, Mod Master will stop some of the
+						   channels based on some criteria (Volume, looped samples...)
+						   You can set this to Off/Auto/Fixed
+						   
+						   Auto: When the mixing is not able to compute a mixing buffer on time, 
+						         the limit is fixed to the number of channels mixed - 2
+                           Fixed: You defind the maximum manually in the "Max Channels " parameter
+                                  below.
+                > This parameter allow you to play even 16 Channels music on a 8MHz 8086 
+                  in good conditions.				        
+				
+      <IntroScan>
+
+         - Well known to the audiophiles, this function allows you to hear 
+           the first seconds of several modules played in succession.
+         - If there is no play list, all of the modules are selected, otherwise
+           the function works on the play list only.
+         - While playing a module, you can disable this function by hitting
+           'I', then you will hear the whole module.
+
+                                                                 _________
+      <Shuffle>
+
+         - This is also a classic function found on most CD-players: it allows
+           you to play a program or the whole of the modules in a random order.
+         - If there is no play list, all of the modules are selected, otherwise
+           the function works on the play list only.
+
+
+      <Play>
+
+         - Starts playing the selected modules in the program order.
+
+      <All >
+
+         - Selects all the modules of the directory and make them a play
+           list (cancels the previous program if there was one).
+
+      <Clear >
+
+         - Cancels the current play list (unselects the modules).
+
+      <Load >
+
+         - Loads a play list from the current directory  
+           (cancels the previous play list if there was one).
+
+      <Save >
+
+         - Saves the current play list in the current directory.
+
+
+      <Help >
+
+         - Displays a short summary of the main screen functions.
+       
+      <Exit >
+         - You can use (in moderation) this button to exit Mod Master !  :(
+
+
+   The text-screen while playing
+   -----------------------------
+
+    - At the top, first line:
+         - name of the module (and its order in a play list, if there is one)
+         - total duration (MM:SS)
+         - playing time (chronometer or count-down)
+
+    - At the top, in the middle:
+         - title of the module
+         - number of samples
+         - number of voices
+         - current position / number of positions
+         - note number in the current pattern
+         - tempo and BPM value
+         - global volume (partition command)
+         - output volume (adjust with + and - keys)
+
+    - At the top, on the left:
+         - pitch bars for each voice (4 voices simultaneously).
+
+    - At the top, on the right:
+         - note-height dots for each voice (4 voices simultaneously).
+
+    - Bottom half:
+       You have the choice between displaying the samples list or the partition
+       for 4 voices simultaneously.
+
+        The partition displays the pattern number corresponding to the current
+        position, and for each voice:
+         - the note number in the pattern
+         - the sample number
+         - the note (English: A B C...)
+         - the effect and its parameter
+
+        If the module has more than 4 voices, you can scroll the partition to
+        the left (Ctrl) and to the right (Alt).
+
+    - You can display a help window by hitting F1 and swap between text and
+      graphic screens by hitting TAB.
+
+    NOTE in case of a crash (while listening to music):
+     * Try to hit ESC twice to force and return to the main interface.
+     * If this is unsuccessful then the crash is serious and all you have to do
+       is to press the RESET button...  :(
+
+ IV. Running with a command line
+
+    The different syntaxes are:
+
+       MODM [options]                      Interactive mode with menu
+       MODM module_name.ext [options]      Plays the specified module(s)
+       MODM program_name[.PRG] [options]   Plays the specified program(s)
+
+    where:
+     <module_name>, <program_name> may include a full path and wildcards.
+     <ext> is the module extension (MOD by default, S3M, MTM, 669, DTM, ...)
+
+     [options] are:
+
+     /C      Always display the cursor
+     /R      Enables the Repeat function
+     /I      Enables the IntroScan function
+     /S      Enables the Shuffle function
+     /D:xxx  Defines the Custom DAC I/O
+     /V:xxx  Defines the volume = xxx % (1 to 100)
+
+    If you have any doubt, type: MODM ?
+
+ V. Compatibility and tests 
+
+   - Supported Output devices:
+    - PC Speaker (PWM Trick)
+	- "Covox" (DAC On Parallel Port)
+	- Custom DAC (You can define any Port for a Direct DAC Output)
+	- Sound Blaster and compatible (Version 1.5 or more) 
+	  > SB 1.0 NOT Supported
+	- BlasterBoard special commands and Speed (60KHz)
+	- Tandy DAC (Tandy 1000 TX, Tandy 1000 TL...)
+	  > You can check on my Youtube Channel how to improve the Sound.
+	- Gravis UltraSound (Even on PC XT)
+	- AMD InterWave (Gravis PnP) (Require a 16Bit ISA BUS))
+
+    - Adlib (FM Sound Only)
+    - Game Blaster / CMS and reproduction boards.
+    - Tandy 3 Channel audio (Autodetect Tandy/PC Junior)
+	
+	- OPL2LPT
+	- OPL3LPT (Even with its sound mute function)
+	- TNDLPT
+	- CMSLPT
+	  > These devices allow you to play Adlib/Tandy/CMS music using a parallel port.
+	    https://www.serdashop.com/
+	
+	
+	Trick for the PC XT:
+
+    You can use any Sound Blaster Board, excepto AWE32/64 on a PC XT Thanks to the UniSound software.
+    UniSound is a Universal "Driver" who can initialize any PnP sound Card, even on PC XT.
+	
+
+   - Mod Master XT has been tested on the following machines:
+
+    - 8086 4.77MHz       16000 Hz on Sound Blaster 2.0, 4-Voices Modules
+	- 8086 8MHz          26000 Hz on Sound Blaster 2.0, 4-Voices Modules
+	- 8086 8MHz          16000 Hz on Sound Blaster 2.0, 8-Voices Modules
+    - 8088 8MHz
+	- 80286 8MHz         44000 Hz on Sound Blaster 2.0, 4-Voices Modules
+	- 80386
+	- 80486
+	- DosBox / PCEM
+
+   - Sound outputs tested:
+
+        - Internal speaker (not too long...)
+        - D/A converter on parallel port / Covox
+        - Sound Blaster 2.1
+        - Sound Blaster Pro 2.1
+        - Sound Blaster 16 ASP
+        - Sound Galaxy NX
+        - Sound Galaxy NX Pro
+        - Sound Master
+        - Audio Sound 16
+        - Plenty of Sound Blaster compatible cards.
+        - Tandy 1000 TL/2 DAC
+        - Gravis UltraSound
+        - Gravis UltraSound Max
+        - CMSLPT, TNDLPT, OPL3LPT
+
+
+ VI. Problems, causes and solutions
+
+     Q> When playing a module and my PC slows down or freezes.
+
+     A> 1) (all outputs except GUS)
+           The output frequency is too high for your PC.
+           -> Decrease the frequency of a few kHz.
+
+        2) Verify the soundcard I/O, DMA and IRQ
+
+     +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Q> My Sound Card / Device is not detected:
+
+        1) (SB, SB Pro)
+           Mod Master uses the BLASTER variable to detect the IRQ number and
+           DMA channel.
+           -> Check up if the BLASTER environment variable is well there and
+              if the IRQ number and DMA channel are valid.
+              Example: BLASTER = A220 I7 D1 T4
+                                       | |> # DMA channel (0,1 or 3)
+                                       |--> # IRQ (2,5,7 or 10)
+                                                         
+        2) (SB v1.0) SB 1.0 is no more supported for the moment.
+
+        3) (GUS)
+           Mod Master uses the ULTRASND variable to detect the Base Port.
+           -> Check up if the ULTRASND environment variable is well and
+              its Base Port is valid.
+              Example: ULTRASND=220,1,1,7,7
+                                 ?     ÀÄ # IRQ
+                                 ÀÄ Base Port
+
+        4) (OPLLPT/TNDLPT/CMSLPT)
+
+          Press Tab in the Output menu and configure the device.
+
+     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Q> I hear some 'crackling' while playing a module.
+
+     A> The volume assigned to this module is too high.
+        -> Reduce the default volume (?5% is a mean value)
+           or the own volume of the selected module with the "-" key.
+
+     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Q> My Gravis UltraSound card is not detected.
+
+     A> Mod Master uses the ULTRASND environment variable.
+        -> Check to see if this variable exists in the autoexec.bat.
+
+     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Q> Some notes are missing when playing a .MOD File.
+	 
+     A> Chech the Maximum Octaves number in the Option Menu.
+
+     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Q> My .XM file is not playing correctly
+
+     A> Mod Master XT Does not support some .XM effect and Volume/Panning envelopes
+
+     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Q> Mod Master refuse to play a music : File Format not supported
+
+     A> Try the MODMF.EXE instead
+
+ VII. Information and miscellaneous 
+
+   Greetings 
+
+      Informations - Technical docs.  - Richard Perdriau          infos on DTM
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  - Vincent Grenier
+                                      - Sami Tammilehto (Psi)    infos STM/S3M
+                                      - Tomas Pytel (Tran)          669 format
+                                      - Daniel Goldstein            MTM format
+                                      - Mark Cox
+                                      - Andr‚ Baresel    documentation SB/SB16
+                                      - Craig Jackson             ''
+
+      Beta-testers                    - Romaric Maillard (ROM)
+      ~~~~~~~~~~~~                    - Vincent Piocel (KroMan)
+                                      - Vincent Delpy (Mr D., AntMan, Flamed Fork)
+                                      - Yannick Daniau (Yad)
+                                      - Frederic Le Garrec (P90)
+                                      - Ondar Stasek
+                                      - Sam Eassa
+                                      - Tobias Reckhard (Jester)
+									  - Trixter / Jim Leonard
+
+      Registered users                - Philippe Defouloy   (ModM v2.0)
+      ~~~~~~~~~~~~~~~~                - Philippe Chass      (ModM v2.0)
+                                      - Georges Gache       (ModM v2.0)
+                                      - Daniel Jacob        (ModM v2.0)
+                                      - Bruno Carrez        (ModM v2.0)
+
+      Unregistered users              - Thierry Fribault (Titi)
+      ~~~~~~~~~~~~~~~~~~              - Emmanuel Lebreton
+                                      - Mickael Batarière
+                                      - ...
+
+      Vogons Forum                    - MobyGamers (Jim Leonard)
+      ~~~~~~~~~~~~                    - Root42
+                                      - Keropi
+                                      - Benedikt
+                                      - Zyga64
+                                      - ...
+
+      Messages to musicians           - Purple Motion, Skaven / Future Crew
+      ~~~~~~~~~~~~~~~~~~~~~           - Lizardking, Vogue / Triton
+                                      - Moby / NooN
+                                      - Jester / Sanity
+                                      - Stargazer / Sonic
+                                      - AudioMonster
+                                      - Ruffkut & Jester
+                                      - ...
+                Keep up the good work, guys !
+
+      The persons we forgot           - Sorry, please wait till the next time !
+      ~~~~~~~~~~~~~~~~~~~~~
+
+
+       - If you have remarks about Mod Master (if you find bugs, for example!)
+         or if you have useful information for us to know (modules formats,
+         programming new sound cards -Sound Blaster AWE 32, Pro Audio Spectrum,
+         ...), don't hesitate to contact me !!
+
+        https://www.vogons.org/viewtopic.php?f=62&t=66350
+
+   Files supplied with Mod Master
+
+ ÚÄÄÄ?ileÄÄÄÄÄÂÄÄSizeÄÄÂÄÄÄDateÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄ?escriptionÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ?
+   MODM.EXE      143600   10/18/20   Mod Master XT
+   MODMF.EXE
+   MODM.REV        3728   11/28/95   Mod Master revision history
+   MODM_ENG.DOC   36123   11/28/95   this file!
+   FILE_ID.DIZ     1142   11/28/95   (*) a quick description of the software
+
+   COMIC.SAT      84623   05/10/93   (*) Surprise Adlib Tracker module (by Hydra/Anarchy PC)
+   EINSTEIN.SAT   52943   05/10/93   (*)    "
+   FAIRY.SAT      27023   05/10/93   (*)    "
+   WIZARDRY.SAT   32783   05/10/93   (*)    "
+
+  (*) only with the unregistered version.
+
+
+   Copyright, license and warranty
+
+       - Mod Master is copyright of its authors.
+
+       - We would not be responsible for possible damage caused by any modifi-
+         cations in the executable file nor for possible annoyances caused by
+         any modifications in the documentation files.
+
+       - There is no warranty of any kind on using this software. You must
+         agree with everything written above before using it.
