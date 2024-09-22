@@ -1,11 +1,11 @@
-;            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;            º           --==ğğ Mod Master v2.2 ğğ==--           º
-;            ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
-;            º   Auteurúúúúúúúúúúúúúúúúúúúúúúúú Freddy V‚tel‚    º
-;            º   Avec l'aide deúúúúúúúúúúúúúúúú Fabrice Couteau  º
-;            º                                                   º
-;            º   DerniŠre modificationúúúúúúúúú 24/10/1995       º
-;            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;            ï¿½           --==ï¿½ï¿½ Mod Master v2.2 ï¿½ï¿½==--           ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äº
+;            ï¿½   Auteurï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Freddy Vï¿½telï¿½    ï¿½
+;            ï¿½   Avec l'aide deï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Fabrice Couteau  ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½   Derniï¿½re modificationï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 24/10/1995       ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 ; routines diverses pour l'affichage dans Mod Master
 
 CGAOnly    Equ Yes
@@ -72,13 +72,13 @@ C_Green_M_White DB 2
 C_White_M_White DB 15
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³ Affiche_Fonctions:  Affiche l'‚tat des fonctions          ³
-;³                     IntroScan/Shuffle, Int, Pause, Repeat ³
-;³     Entr‚e                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½ Affiche_Fonctions:  Affiche l'ï¿½tat des fonctions          ï¿½
+;ï¿½                     IntroScan/Shuffle, Int, Pause, Repeat ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 If CGAOnly Eq Yes
 Dy EQU 1
@@ -153,12 +153,12 @@ aff_repeat_end:
 Affiche_Fonctions ENDP
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   MM_ASM_UpdateInterface   Display the Volume / Pitch Lines       ³
-;³     Entr‚e                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   MM_ASM_UpdateInterface   Display the Volume / Pitch Lines       ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ancien_aff_centre DB 0
 
@@ -166,7 +166,7 @@ pas DB +1
 
 MM_ASM_UpdateInterface PROC FAR
       PUSH BP
-	  PUSH DS
+	PUSH DS
       DS_ASM
       ES_ASM
 
@@ -175,17 +175,17 @@ MM_ASM_UpdateInterface PROC FAR
       CALL Gerer_Touches
   
       POP DS
-	  POP BP
+	POP BP
       RET
 MM_ASM_UpdateInterface ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Affiche_ecran_texte  Initialize the Text Mode           ³
-;³   Called by the Turbo Pascal                              ³
-;³     Entr‚e: aucune                                        ³
-;³     Sortie: aucune                                        ³
-;³     Change: AX,CX,SI,DI                                   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Affiche_ecran_texte  Initialize the Text Mode           ï¿½
+;ï¿½   Called by the Turbo Pascal                              ï¿½
+;ï¿½     Entrï¿½e: aucune                                        ï¿½
+;ï¿½     Sortie: aucune                                        ï¿½
+;ï¿½     Change: AX,CX,SI,DI                                   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Str_Smp_Chn DB 'samples   -     voices',0
 
@@ -243,8 +243,8 @@ affiche_textes:
 
            CALL Affiche_Fonctions
 
-           CMP MUS_OPLStream,1 ; Skip module infos Display if Module
-	       JE @@AET_No_MusInfos
+           CMP MUS_OPLStream,1 ; Skip module infos Display if Streamed Music
+	     JE @@AET_No_MusInfos
 
            MOV AH,7             ;blanc/noir
 
@@ -272,10 +272,10 @@ aff_instr_msg:
 
            MOV BL,7                     ;blanc/noir
            MOV AL,Nb_Samples_Loaded     ;nombre d'instruments
-           MOV AH,Nb_samples            ;nombre d'instruments charg‚s
+           MOV AH,Nb_samples            ;nombre d'instruments chargï¿½s
            CMP AH,AL
            JE samples_tous_charges      ;Nb_samples=Nb_Samples_Loaded
-           ADD BL,128                   ;pas tout charg‚ -> clignote
+           ADD BL,128                   ;pas tout chargï¿½ -> clignote
 samples_tous_charges:
            MOV DI,2*(27-1)+160*(6-1-Dy)
            MOV BH,0                     ;n'affiche pas dizaines nulles
@@ -311,7 +311,7 @@ Display_Volume_Bar Proc
       XOR CX,CX
       MOV CL,BL
       INC CL
-      MOV AX,11*256+'Ü'
+      MOV AX,11*256+'ï¿½'
 	  REP STOSW
       MOV CL,15
       SUB CL,BL
@@ -324,9 +324,9 @@ V_Fin_Boucle_barre_e:
       RET
 Display_Volume_Bar Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Affichage_texte:  Gere l'affichage en mode texte        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Affichage_texte:  Gere l'affichage en mode texte        ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Affichage_texte PROC NEAR
       MOV AX,Seg_Video  ;Segment_texte
@@ -416,13 +416,13 @@ No_Display_Limit:
 	  
       MOV DI,2*(36-1)+160*(7-1-Dy)
       MOV AX,256*3+' '
-      STOSW                     ;efface centaines nøposition
+      STOSW                     ;efface centaines nï¿½position
       MOV BL,3                  ;cyan/noir
       MOV AL,C_Sequence
-      CALL BIA8                 ;affiche nøposition
+      CALL BIA8                 ;affiche nï¿½position
       MOV AL,C_Row
       MOV DI,2*(50-1)+160*(7-1-Dy)
-      CALL BIA8                 ;affiche nønote
+      CALL BIA8                 ;affiche nï¿½note
 
 ; * Tempo / BPM
       MOV DI,2*(32-1)+160*(8-1-Dy)
@@ -537,7 +537,7 @@ Display_SampleCenter2:
 Fin_Aff_Samp:
 
 ; Display the vertical line	  
-      MOV AX,7*256+'³'
+      MOV AX,7*256+'ï¿½'
       MOV DI,2*(40-1)+160*(10-1)
       MOV CX,25-12+1	  
 ligne_vert:
@@ -652,11 +652,11 @@ Display_Sample_End:
       RET
 Display_SMP_Instr_Name24 ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   DisplayCenter_Debug   Affiche les Infos de Debug              ³
-;³     Entr‚e: aucune                                        ³
-;³     Sortie: aucune                                        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   DisplayCenter_Debug   Affiche les Infos de Debug              ï¿½
+;ï¿½     Entrï¿½e: aucune                                        ï¿½
+;ï¿½     Sortie: aucune                                        ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Debug_msg DB 'DEBUG',0
 Debug_msg2 DB 'F:       RF:       SB_F:     BSize:                 SB Type:   CMD:',0
@@ -1157,11 +1157,11 @@ Fin_Boucle_Aff_Debug_Voies:
       RET
 DisplayCenter_Debug ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   DisplayCenter_Partition4   Affiche la partition         ³
-;³     Entr‚e: aucune                                        ³
-;³     Sortie: aucune                                        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   DisplayCenter_Partition4   Affiche la partition         ï¿½
+;ï¿½     Entrï¿½e: aucune                                        ï¿½
+;ï¿½     Sortie: aucune                                        ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 YPart Equ 10
 YInst Equ 10
@@ -1268,7 +1268,7 @@ Boucle_Lignes_Partition:
 
 pas_changer_couleur:
 ; * Display the Row Number 
-      MOV AX,256*3+'³'
+      MOV AX,256*3+'ï¿½'
       OR AH,CouleurFond
       STOSW
       MOV AL,' '
@@ -1278,12 +1278,12 @@ pas_changer_couleur:
       OR BL,CouleurFond
       MOV AL,Disp_CurrentRow
       MOV BH,1                  ;affiche dizaines nulles
-      CALL BIA8                 ;affiche le nø de la note
+      CALL BIA8                 ;affiche le nï¿½ de la note
 
       MOV AX,256*3+' '
       OR AH,CouleurFond
       STOSW
-      MOV AL,'³'
+      MOV AL,'ï¿½'
       STOSW
 
 ; Read the Partition
@@ -1520,7 +1520,7 @@ Aff_instru:
        MOV BL,7                 ;blanc/noir
        OR BL,CouleurFond
        MOV AL,Disp_Instr
-       CALL BIA8                ;affiche nøinstrument
+       CALL BIA8                ;affiche nï¿½instrument
 Cont_aff_instru:
        MOV AX,0*256+' '
        OR AH,CouleurFond
@@ -1535,7 +1535,7 @@ Cont_aff_instru:
        CALL Display_Command
 	   
 Fin_aff_voie:
-       MOV AX,256*3+'³'
+       MOV AX,256*3+'ï¿½'
        OR AH,CouleurFond
        STOSW
 
@@ -1602,7 +1602,7 @@ Display_Note PROC Near
 	   OR DL,DL
 	   JNE Aff_Note
 Pas_Aff_Periode:
-       MOV AX,0*256+' '         ;Pas de P‚riode
+       MOV AX,0*256+' '         ;Pas de Pï¿½riode
        OR AH,CouleurFond
        STOSW
        STOSW
@@ -1630,15 +1630,15 @@ Aff_Note:                       ;Afficher la Note
 	   MOV CL,Disp_Note
 Periode_trouvee:
 
-       MOV AX,CX                  ;AX=nønote absolue
+       MOV AX,CX                  ;AX=nï¿½note absolue
        MOV CL,12
-       DIV CL                     ;AL=nøoctave, AH=nønote gamme
+       DIV CL                     ;AL=nï¿½octave, AH=nï¿½note gamme
        MOV CL,AH
        MOV SI,CX
-       SHL SI,1                   ;SI=2*(nønote)
+       SHL SI,1                   ;SI=2*(nï¿½note)
 
        ADD SI,OFFSET Table_note_Angl
-       MOV CL,AL                  ;CL=nøoctave
+       MOV CL,AL                  ;CL=nï¿½octave
        MOV AH,7                   ;blanc/noir
        OR AH,CouleurFond
        LODSB
@@ -1676,7 +1676,7 @@ Loop_Clean_Lines:
 	  REP STOSW
 	  POP DI
 	  ; Draw the vertical lines
-      MOV AX,256*3+'³'
+      MOV AX,256*3+'ï¿½'
 	  STOSW
       ADD DI,4*2
 	  STOSW
@@ -1703,7 +1703,7 @@ Eff_centre_ecran PROC NEAR
       MOV DL,23-YPart+1             ;Nb of lines to Clean
 	  
       CMP MUS_OPLStream,1
-	  JNE @@Clean_Screen_Small
+	JNE @@Clean_Screen_Small
 
       MOV DI,2*(2-1)+160*(YPart-1-4)
       MOV DL,27-YPart+1             ;Nb of lines to Clean
@@ -1739,7 +1739,7 @@ boucle:
 ENDM
 
 Affiche_tableau_Partition PROC NEAR
-      MOV AX,256*3+'³'
+      MOV AX,256*3+'ï¿½'
       LigneV  2,12,23
       LigneV  7,12,23
       LigneV 25,12,23
@@ -1763,8 +1763,8 @@ boucle_aff_voie:
       MOV BL,48                  ;noir/cyan
       MOV AL,N_Voie_Aff
       SUB AL,DL                  ;DL=compteur de voie
-      ADD AL,5                   ;AL=nøvoie
-      CALL BIA8                  ;affiche nøvoie
+      ADD AL,5                   ;AL=nï¿½voie
+      CALL BIA8                  ;affiche nï¿½voie
       MOV AX,256*48+' '
       STOSW
       MOV AL,'-'
@@ -1776,22 +1776,22 @@ boucle_aff_voie:
       STOSW
       STOSW
       STOSW
-      MOV AL,'³'
+      MOV AL,'ï¿½'
       STOSW
       DEC DL
       JNZ boucle_aff_voie
  
       MOV DI,2*(2-1)+160*(YPart-1) 
 
-; Coin sup. gauche (nø pattern)
+; Coin sup. gauche (nï¿½ pattern)
       STOSW
       STOSW
       STOSW
       STOSW	  
-      MOV AX,256*53+'İ'
+      MOV AX,256*53+'ï¿½'
       STOSW
   
-      MOV WORD PTR ES:[2*(79-1)+160*(YPart-1)],256*48+'Ş'  ;coin sup. droit  
+      MOV WORD PTR ES:[2*(79-1)+160*(YPart-1)],256*48+'ï¿½'  ;coin sup. droit  
       
       RET
 Affiche_tableau_Partition ENDP
@@ -1879,8 +1879,8 @@ Anc_vol_V1 DB Max_Channels DUP (0)
 
 ; Pitch bar : Volume
 
-; BX <- nø voie
-; DI <- position ‚cran
+; BX <- nï¿½ voie
+; DI <- position ï¿½cran
 
 Barre_Pitch_simple PROC NEAR
       MOV AL,254                ;car_barre_pitch
@@ -1948,18 +1948,18 @@ Barre_Pitch_simple ENDP
 ; Display the 4 Pitch bar Top Left Position
 
 Barre_Pitch_4 PROC NEAR
-      MOV DI,2*(3-1)+160*(6-1-Dy)  ; position premiŠre barre pitch
+      MOV DI,2*(3-1)+160*(6-1-Dy)  ; position premiï¿½re barre pitch
       MOV BL,N_Voie_Aff
-      XOR BH,BH         ; BX=nøpremiŠre voie (en haut)
+      XOR BH,BH         ; BX=nï¿½premiï¿½re voie (en haut)
       MOV CX,4
 
 Boucle_aff_Pitch:
       PUSH CX
       PUSH BX
       MOV AL,BL
-      INC AL                    ; AL=nøvoie
+      INC AL                    ; AL=nï¿½voie
       MOV BL,15                 ; blanc brillant/noir
-      CALL BIA8                 ; affiche nøvoie
+      CALL BIA8                 ; affiche nï¿½voie
       POP BX	  
       CALL Barre_Pitch_simple
 	  MOV AL,' '
@@ -1977,35 +1977,35 @@ PitchBar_Nb DB 14
 
 Barre_Pitch_18 PROC NEAR
 
-	  MOV DI,2*(3-1)+160*(10-Dy)  ; position premiŠre barre pitch
-	  MOV PitchBar_Nb,14
+	MOV DI,2*(3-1)+160*(10-Dy)  ; position premiï¿½re barre pitch
+	MOV PitchBar_Nb,14
 
       CMP MUS_OPLStream,1
-	  JNE @@BPStart_OPLStr
+	JNE @@BPStart_OPLStr
 	  
-	  MOV DI,2*(3-1)+160*(6-Dy)  ; position premiŠre barre pitch 
-	  MOV PitchBar_Nb,18
+	MOV DI,2*(3-1)+160*(6-Dy)  ; position premiï¿½re barre pitch 
+	MOV PitchBar_Nb,18
 @@BPStart_OPLStr:
 
       XOR CH,CH	  
       MOV CL,Ch_Number
-	  CMP CL,PitchBar_Nb
-	  JBE Nb_To_Display_Ok
-	  MOV CL,PitchBar_Nb
+	CMP CL,PitchBar_Nb
+	JBE Nb_To_Display_Ok
+	MOV CL,PitchBar_Nb
 Nb_To_Display_Ok:	  
 
       MOV BL,N_Voie_Aff
       MOV AL,CL
       ADD AL,BL
-	  CMP AL,Ch_Number
-	  JBE Aff_Pos_Ok
+	CMP AL,Ch_Number
+	JBE Aff_Pos_Ok
       MOV BL,Ch_Number          ; Adjust if asked to display too many channels
-	  SUB BL,14
-	  CMP BL,14
-	  JBE Aff_Pos_Ok
-	  MOV BL,0
+	SUB BL,14
+	CMP BL,14
+	JBE Aff_Pos_Ok
+	MOV BL,0
 Aff_Pos_Ok:	  
-      XOR BH,BH                 ; BX=nøpremiŠre voie (en haut)      
+      XOR BH,BH                 ; BX=nï¿½premiï¿½re voie (en haut)      
 
 Display_Channels_Loop:
       PUSH CX
@@ -2014,25 +2014,25 @@ Display_Channels_Loop:
 ; 1) Volume Bar
 
       MOV AL,BL
-      INC AL                    ; AL=nøvoie
+      INC AL                    ; AL=nï¿½voie
       MOV BL,15                 ; blanc brillant/noir
-      CALL BIA8                 ; affiche nøvoie
+      CALL BIA8                 ; affiche nï¿½voie
       POP BX	  
       CALL Barre_Pitch_simple
-	  ADD DI,2
+	ADD DI,2
 
 ; 2) On/Off Button
 
       MOV AX,C_yellow*256+07h
       TEST Ch_Control[BX],CM_FPause ; Forced Pause > Brown
-	  JNZ DCLoop_ChOnOff
+	JNZ DCLoop_ChOnOff
       MOV AH,C_green
       TEST Ch_Control[BX],CM_Stopped
-	  JZ DCLoop_ChOnOff
+	JZ DCLoop_ChOnOff
       MOV AH,C_Red
       TEST Ch_Control[BX],CM_FStop  ; Forced Stop > Red
-	  JNZ DCLoop_ChOnOff
-	  MOV AL,' '
+	JNZ DCLoop_ChOnOff
+	MOV AL,' '
 DCLoop_ChOnOff:
       STOSW
       ADD DI,2	  
@@ -2040,28 +2040,28 @@ DCLoop_ChOnOff:
 ; 3) Volume Value
   
       MOV AL,Ch_Part_Vol[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BL,15                ;Blanc/Noir
       CALL bia8                ;affiche
       POP BX
-	  POP DI
-	  ADD DI,6
+	POP DI
+	ADD DI,6
 	  
 ; 4) Panning Arrow
 
       MOV AL,CH_Panning[BX]  
-	  CMP AL,30h
-	  JB Display_Right_Arrow
-	  CMP AL,50h
-	  JBE Display_Center_Arrow
-	  MOV AL,27 ; Left
-	  JMP Display_Arrow
+	CMP AL,30h
+	JB Display_Right_Arrow
+	CMP AL,50h
+	JBE Display_Center_Arrow
+	MOV AL,27 ; Left
+	JMP Display_Arrow
 Display_Right_Arrow:	  
-	  MOV AL,26 ; Right
-	  JMP Display_Arrow      
+	MOV AL,26 ; Right
+	JMP Display_Arrow      
 Display_Center_Arrow:
-	  MOV AL,29 ; Center
+	MOV AL,29 ; Center
 Display_Arrow:
   
       STOSW
@@ -2070,26 +2070,26 @@ Display_Arrow:
 ; 5) Note + Command 
 
       CMP MUS_OPLStream,1
-	  JE NoDisplayNoteCommand
+	JE NoDisplayNoteCommand
 
       MOV AL,Ch_Note[BX]
       MOV Disp_Note,AL
-	  MOV CouleurFond,0
+	MOV CouleurFond,0
 	  
-	  CALL Display_Note
+	CALL Display_Note
 
       MOV BarLength,44    ; Period Bar Size for Modules
       CMP Display_NoteOrBar,1
       JE  @@DisplayPerBarStr
 	  
       MOV AH,VCurrent_CMD[BX]
-	  MOV AL,VCurrent_PAR[BX]
-	  MOV Disp_Command,AH
-	  MOV Disp_Param,AL
+	MOV AL,VCurrent_PAR[BX]
+	MOV Disp_Command,AH
+	MOV Disp_Param,AL
 	  
-	  PUSH BX
-	  CALL Display_Command  
-	  POP BX
+	PUSH BX
+	CALL Display_Command  
+	POP BX
 
 NoDisplayNoteCommand:
 
@@ -2097,21 +2097,21 @@ NoDisplayNoteCommand:
 
       MOV BarLength,48      ; Period Bar Size for Stream based music
       CMP MUS_OPLStream,1   ; IMF, DRO... Display Period Bar
-	  JE @@DisplayPerBarStr
+	JE @@DisplayPerBarStr
 
       ADD DI,2
 
       MOV AL,Ch_Part_I_Smp[BX]
       CMP AL,0FFh
-	  JNE No_Display_FFh
-	  MOV AH,3          ; cyan/noir
-	  MOV AL,'-'
-	  STOSW
-	  STOSW
-	  ADD DI,25*2
-	  JMP Do_Display_NoteLoop
+	JNE No_Display_FFh
+	MOV AH,3          ; cyan/noir
+	MOV AL,'-'
+	STOSW
+	STOSW
+	ADD DI,25*2
+	JMP Do_Display_NoteLoop
 No_Display_FFh:	  
-	  PUSH BX
+	PUSH BX
       MOV BH,3                  ;cyan/noir
       CALL WriteXY_Hex8         ;affiche
       POP BX
@@ -2122,7 +2122,7 @@ No_Display_FFh:
 
       MOV BarLength,31       ; Period Bar size for DRO
       CMP Type_Module,T_RAD  ; RAD, No Sample name > Display Period Bar
-	  JE @@DisplayPerBarDRO
+	JE @@DisplayPerBarDRO
 
       JMP @@DisplaySmpName  ; Skip the Period Bars Display
 
@@ -2132,48 +2132,48 @@ No_Display_FFh:
 
 @@DisplayPerBarDRO:
 	  
-	  MOV AL,7   ; char to display
-	  CALL DisplayLine_PeriodBar
-	  SUB DI,6+8
+	MOV AL,7   ; char to display
+	CALL DisplayLine_PeriodBar
+	SUB DI,6+8
       JMP Do_Display_NoteLoop
 	   
 @@DisplaySmpName:	  
-	  PUSH BX
-	  MOV BL,Ch_Part_I_Smp[BX]
-	  CALL Display_SMP_Instr_Name24
-	  POP BX
+	PUSH BX
+	MOV BL,Ch_Part_I_Smp[BX]
+	CALL Display_SMP_Instr_Name24
+	POP BX
 
 Do_Display_NoteLoop:
 	  
       POP CX
       INC BX
       ADD DI,2*(80-21)-2-2-2-26*2+2-24-20+4
-	  DEC CX
-	  JZ End_Display_Channels_Loop
+	DEC CX
+	JZ End_Display_Channels_Loop
       JMP Display_Channels_Loop
 
 End_Display_Channels_Loop:
 
-	  DS_ASM
+	DS_ASM
       RET
 Barre_Pitch_18 ENDP
 
 Old_pos DW Max_Channels DUP(0)
 
-; BX <- nø voie
-; DX <- position ‚cran
+; BX <- nï¿½ voie
+; DX <- position ï¿½cran
 
 DisplayCenter_Samples_simple PROC NEAR
-        SHL BX,1
-        MOV DI,Old_pos[BX]      ; Previously displayed channel Nb Offset
-        SHR BX,1
-        MOV AX,14*256+13        ; note de musique jaune/noir
-        STOSW
-        MOV AL,Ch_Part_I_Smp[BX]  ;CH_Smp_Pla[BX]
-        CMP AL,14
-        JB Sample_Below14
-        ADD DX,2*39
-        SUB AL,14
+      SHL BX,1
+      MOV DI,Old_pos[BX]      ; Previously displayed channel Nb Offset
+      SHR BX,1
+      MOV AX,14*256+13        ; note de musique jaune/noir
+      STOSW
+      MOV AL,Ch_Part_I_Smp[BX]  ;CH_Smp_Pla[BX]
+      CMP AL,14
+      JB Sample_Below14
+      ADD DX,2*39
+      SUB AL,14
 
 Sample_Below14:
         MOV CL,160
@@ -2204,36 +2204,36 @@ DisplayCenter_Samples PROC NEAR
         DS_ASM
 Pas_aff_liste:
 If CGAOnly Eq No
-        MOV DX,2*(4-1)+160*(12-1)      ; position de la premiere marque
+      MOV DX,2*(4-1)+160*(12-1)      ; position de la premiere marque
 Else
-        MOV DX,2*(4-1)+160*(10-1)      ; position de la premiere marque
+      MOV DX,2*(4-1)+160*(10-1)      ; position de la premiere marque
 Endif
 
-        XOR BX,BX
-        XOR CH,CH
-        MOV CL,Ch_Number      ; CX=nombre de voies
-        CMP CL,8
-        JBE boucle_aff_marques
-        MOV CL,8                ; n'affiche que 8 notes de musique
-boucle_aff_marques:
-        PUSH CX
-        PUSH DX
-        CMP CH_Smp_Pla[BX],0FFh  ; -1 => Voie pas encore utilisee
-        JE Pas_aff_marques
+      XOR BX,BX
+      XOR CH,CH
+      MOV CL,Ch_Number      ; CX=nombre de voies
+      CMP CL,8
+      JBE boucle_aff_marques
+      MOV CL,8                ; n'affiche que 8 notes de musique
+boucleff_marques:
+      PUSH CX
+      PUSH DX
+      CMP CH_Smp_Pla[BX],0FFh  ; -1 => Voie pas encore utilisee
+      JE Pas_aff_marques
 If ModeXT Eq Yes
-        CMP CH_Smp_Pla[BX],25     ; Pas plus de 26 instruments affiches !!
+      CMP CH_Smp_Pla[BX],25     ; Pas plus de 26 instruments affiches !!
 Else
-        CMP CH_Smp_Pla[BX],30     ; Pas plus de 31 instruments affiches !!
+      CMP CH_Smp_Pla[BX],30     ; Pas plus de 31 instruments affiches !!
 EndIf		
-        JA Pas_aff_marques
-        CALL DisplayCenter_Samples_simple
+      JA Pas_aff_marques
+      CALL DisplayCenter_Samples_simple
 Pas_aff_marques:
-        POP DX
-        ADD DX,2                ; incr‚mente position de la prochaine marque
-        INC BX
-        POP CX
-        LOOP boucle_aff_marques
-        RET
+      POP DX
+      ADD DX,2                ; incrï¿½mente position de la prochaine marque
+      INC BX
+      POP CX
+      LOOP boucle_aff_marques
+      RET
 DisplayCenter_Samples ENDP
 
 affichages_msg_a DB 'DISPLAY',0
@@ -2274,12 +2274,12 @@ DisplayCenter_Help PROC NEAR
 affiche_aide:
       CALL Eff_centre_ecran
 
-      MOV AX,7*256+'Ä'
+      MOV AX,7*256+'ï¿½'
       MOV DI,2*(2-1)+160*(YPart+1-1)
       MOV CX,79-2+1
       REP STOSW                 ; ligne horizontale
 
-      MOV AL,'º'
+      MOV AL,'ï¿½'
       MOV DI,2*(43-1)+160*(YPart-1)
 If CGAOnly Eq Yes
       MOV CL,24-11+1
@@ -2292,9 +2292,9 @@ ligne_verticale_double:
       LOOP ligne_verticale_double
 
 If CGAOnly Eq Yes
-      MOV WORD PTR ES:[2*(43-1)+160*(11-1)],256*7+'×'
+      MOV WORD PTR ES:[2*(43-1)+160*(11-1)],256*7+'ï¿½'
 Else
-      MOV WORD PTR ES:[2*(43-1)+160*(13-1)],256*7+'×'
+      MOV WORD PTR ES:[2*(43-1)+160*(13-1)],256*7+'ï¿½'
 EndIf
       MOV AH,14                 ; jaune/noir
 
@@ -2313,8 +2313,8 @@ debut_affiche_aide:
       MOV DI,2*(58-1)+160*(YPart-1)
       CALL WriteStrXY             ; affiche "COMMANDES"
 
-      MOV AH,7                  ; blanc/noir
-      MOV BH,15                 ; blanc brillant/noir
+      MOV AH,7                    ; blanc/noir
+      MOV BH,15                   ; blanc brillant/noir
                                                     
       MOV DI,2*( 4-1)+160*(YPart+2-1)
       CALL WriteStrXY2           ; affiche aide01_msg

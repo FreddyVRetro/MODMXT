@@ -1,5 +1,5 @@
 UNIT MM_VAR;
-{unit‚ pour Mod Master: types, constantes et variables}
+{unitï¿½ pour Mod Master: types, constantes et variables}
 { Change output names}
 { 19/06/19 Max files reduced to 255 }
 
@@ -15,7 +15,7 @@ USES Texte,Sourisc;
 {$ENDIF}
 
 CONST REGISTERED=True;    {pour le bridage...}
-      LONG_PROG_LIMIT=10; {nombre de modules max. dans un programme brid‚}
+      LONG_PROG_LIMIT=10; {nombre de modules max. dans un programme bridï¿½}
 
       Anglais=0; Francais=1;
 	  
@@ -45,12 +45,12 @@ CONST version_min_PRG: Array[1..3] of Char='2.0';
       version_min_DIR: Array[1..3] of Char='2.1';
 
       {version: Array[1..3] of Char='2.2';}
-      ident_ModM: Array[1..18] of Char='Mod Master XT 1.01';
+      ident_ModM: Array[1..18] of Char='Mod Master XT 1.02';
 
       MODM: Array[1..4] of Char='MODM';
 
-      copyright_String: Array[1..30] of Char= {'- (c) Copyright 1995 Freddy V‚tel‚ & Fabrice Couteau -'}
-       '- (c) Copyright 2022 FreddyV -';
+      copyright_String: Array[1..30] of Char= {'- (c) Copyright 1995 Freddy Vï¿½telï¿½ & Fabrice Couteau -'}
+       '- (c) Copyright 2024 FreddyV -';
 
       ext_MOD=1;  ext_SD0=2; ext_NST=3; ext_WOW=4; ext_OCT=5;
       ext_STM=6;  ext_S3M=7; ext_669=8; ext_DTM=9; ext_MTM=10;
@@ -86,7 +86,7 @@ CONST version_min_PRG: Array[1..3] of Char='2.0';
 {$ENDIF}
                       );
 
-      nbr_fich_max=255; {nombre maximal de fichiers dans un r‚pertoire (Previously 512)}
+      nbr_fich_max=255; {nombre maximal de fichiers dans un rï¿½pertoire (Previously 512)}
       nbr_boutons=11;   {nombre de boutons dans le menu}
 
       bt_Sortie   =1;

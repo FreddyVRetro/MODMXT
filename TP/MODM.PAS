@@ -20,12 +20,12 @@ Const
       CtrlV=22;
 
 {$IFNDEF CGAOnly}
-      hauteur_fenetre=22; {nombre de fichiers affichables simultan‚ment}
-      x_asc=42; y_asc=4;  {coordonn‚es de la flŠche vers le haut}
+      hauteur_fenetre=22; {nombre de fichiers affichables simultanï¿½ment}
+      x_asc=42; y_asc=4;  {coordonnï¿½es de la flï¿½che vers le haut}
       x_CGA=0;
 {$ELSE}
-      hauteur_fenetre=19; {nombre de fichiers affichables simultan‚ment}
-      x_asc=43; y_asc=4;  {coordonn‚es de la flŠche vers le haut}
+      hauteur_fenetre=19; {nombre de fichiers affichables simultanï¿½ment}
+      x_asc=43; y_asc=4;  {coordonnï¿½es de la flï¿½che vers le haut}
       x_CGA=1;
 {$ENDIF}
 
@@ -45,7 +45,7 @@ Var x,y,anc_bouton_souris: Byte;
 {----------------------------------------------------------}
 
 Procedure AttendClavierSouris(attend_bouge,condition: Boolean; Var x,y: Byte);
-{modifi‚e pour l'‚conomiseur...}
+{modifiï¿½e pour l'ï¿½conomiseur...}
 Var x_init,y_init,boutons: Byte;
     compteur_delai_eco,compteur_delai_eco_max: Word;
     top: Longint;
@@ -230,7 +230,7 @@ Begin
  With MMSS_CFG^ do
   Begin
    For hasard:=1 to nbr_fich do module_non_choisi[hasard]:=True;
-   If Not(Programme) Then  {programmer tout dans un ordre al‚atoire}
+   If Not(Programme) Then  {programmer tout dans un ordre alï¿½atoire}
     Begin
      Longueur_prog:=0;
      Repeat
@@ -242,7 +242,7 @@ Begin
        End
      Until Longueur_prog=nbr_modules
     End
-   Else  {r‚arranger les modules d‚j… programm‚s dans un ordre al‚atoire}
+   Else  {rï¿½arranger les modules dï¿½jï¿½ programmï¿½s dans un ordre alï¿½atoire}
     Begin
      nbr_modules_programmes:=0;
      Repeat
@@ -385,7 +385,7 @@ Begin
   Begin
    lettre:=liste_lecteurs[i];
 {$IFNDEF CGAOnly}
-   AffChXY2(0,x_asc+3,y_asc+2*(i-1),'ô^'+lettre+':^õ',
+   AffChXY2(0,x_asc+3,y_asc+2*(i-1),'ï¿½^'+lettre+':^ï¿½',
    couleur[(lettre=lecteur_logique),2],couleur[(lettre=lecteur_logique),1])
 {$Else}
    AffChXY2(0,x_asc+3,y_asc+2*(i-1),lettre+':',
@@ -488,7 +488,7 @@ Begin {GestionInterface}
   choix_fich:=1; premier:=1;
   If nbr_fich>0 Then
    Begin
-    For i:=1 to nbr_fich do If Repertoire(i) Then Insert(#0,Module[i].Nom,1); {pour classer les r‚pertoires avant les fichiers}
+    For i:=1 to nbr_fich do If Repertoire(i) Then Insert(#0,Module[i].Nom,1); {Classer les repertoires avant les fichiers}
     QuickSort(1,nbr_fich);
     For i:=1 to nbr_fich do If (Module[i].Nom[1]=#0) Then Delete(Module[i].Nom,1,1)
    End;
@@ -588,7 +588,7 @@ Begin {GestionInterface}
 		If MMSS_CFG^.MMSS_Error<>0 then AfficheErreur('Replay Error:',Play_Err[MMSS_CFG^.MMSS_Error],4);
 
         Programme:=anc_prog;
-        IntroScan:=(Duree_intro>0); {car il peut etre desactiv‚ dans Play}
+        IntroScan:=(Duree_intro>0); {car il peut etre desactivï¿½ dans Play}
         lecture_module:=lecture_prog and (Touche_fin<>Tfin_Esc);
         Case Touche_fin of
          Tfin_normale: If Numero_module<Longueur_prog Then Inc(Numero_module) Else lecture_module:=False;
@@ -596,7 +596,7 @@ Begin {GestionInterface}
          Tfin_PgDn: Inc(Numero_module)
         End
        End
-      Else  {erreur, le module n'a pas pu ˆtre charg‚}
+      Else  {erreur, le module n'a pas pu ï¿½tre chargï¿½}
        Begin
 {$IFNDEF CGAOnly}
         InitModeTexte;
@@ -644,7 +644,7 @@ Begin {GestionInterface}
       If (i<=nbr_fich) and (i<>choix_fich) Then AfficheChoix(i,normal);
      AfficheChoix(choix_fich,inverse);
 
-     IntroScan:=False; Shuffle:=False; {d‚sactive les deux fonctions}
+     IntroScan:=False; Shuffle:=False; {dï¿½sactive les deux fonctions}
 
      If BoutonSouris=aucun Then
       Begin
@@ -673,7 +673,7 @@ Begin {GestionInterface}
      If KeyPressed Then
       Begin
        touche:=UpCase(ReadKey);
-       If (EtatClavier and (ShiftG or ShiftD))=0 Then  {aucune touche Shift appuy‚e}
+       If (EtatClavier and (ShiftG or ShiftD))=0 Then  {aucune touche Shift appuyï¿½e}
         Begin
 
          Case touche of
@@ -836,10 +836,10 @@ Begin {GestionInterface}
          If boutons[bt_Aide].Appuye(Char(touche))   Then Aide;
          If boutons[bt_Quitte].Appuye(Char(touche)) Then quitte:=True
         End
-       Else  {au moins une touche Shift est appuy‚e}
+       Else  {au moins une touche Shift est appuyï¿½e}
         If (touche>=Key('A')) and (touche<=Key('Z')) and (nbr_modules>0) Then ChercheInitiale(Char(touche))
       End
-     Else  {un bouton de la souris est cliqu‚}
+     Else  {un bouton de la souris est cliquï¿½}
       Begin
        If (x in [3..x_asc-1]) and (y in [y_asc..y_asc+hauteur_fenetre-1]) Then
         If (premier+y-y_asc<=nbr_fich) Then
@@ -899,12 +899,12 @@ End; {GestionInterface}
 BEGIN
 
 {$IFDEF MODMTINY}
- Writeln('Initializing '+Ident_Modm+'(Tiny : MMM Only)'+#13#10);
+ Writeln('Initializing '+Ident_Modm+' (Tiny : MMM Only)'+#13#10);
 {$ELSE}
 {$IFDEF MODMLITE}
- Writeln('Initializing '+Ident_Modm+'(Light : MMM, MOD, S3M, XM Only)'+#13#10);
+ Writeln('Initializing '+Ident_Modm+' (Light : MMM, MOD, S3M, XM Only)'+#13#10);
 {$ELSE}
- Writeln('Initializing '+Ident_Modm+'(Full)'+#13#10);
+ Writeln('Initializing '+Ident_Modm+' (Full)'+#13#10);
 {$ENDIF}
 {$ENDIF}
 

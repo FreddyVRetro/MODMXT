@@ -1,8 +1,8 @@
       |                                                                |
       |                      -   MOD MASTER -                          |
-      |                      - VERSION XT 1.0 -                        |
+      |                      - VERSION XT 1.02 -                       |
       |                                                                |
-      |        (c) 1993, 2022 Freddy VETELE & Fabrice COUTEAU          |
+      |        (c) 1993, 2024 Freddy VETELE & Fabrice COUTEAU          |
 
                            ___  __   _   ____ ___  _   ____  ___
                           /    /  ) /| /  /  /__  /| /  /   (_
@@ -586,8 +586,8 @@ Extension  Type  Voices  Tracker                      Remarks
            -> Check up if the ULTRASND environment variable is well and
               its Base Port is valid.
               Example: ULTRASND=220,1,1,7,7
-                                 ?     ÀÄ # IRQ
-                                 ÀÄ Base Port
+                                 ?     ï¿½ï¿½ # IRQ
+                                 ï¿½ï¿½ Base Port
 
         4) (OPLLPT/TNDLPT/CMSLPT)
 
@@ -636,7 +636,7 @@ Extension  Type  Voices  Tracker                      Remarks
                                       - Tomas Pytel (Tran)          669 format
                                       - Daniel Goldstein            MTM format
                                       - Mark Cox
-                                      - Andr‚ Baresel    documentation SB/SB16
+                                      - Andrï¿½ Baresel    documentation SB/SB16
                                       - Craig Jackson             ''
 
       Beta-testers                    - Romaric Maillard (ROM)
@@ -657,7 +657,7 @@ Extension  Type  Voices  Tracker                      Remarks
 
       Unregistered users              - Thierry Fribault (Titi)
       ~~~~~~~~~~~~~~~~~~              - Emmanuel Lebreton
-                                      - Mickael Batarière
+                                      - Mickael Batariï¿½re
                                       - ...
 
       Vogons Forum                    - MobyGamers (Jim Leonard)
@@ -690,7 +690,7 @@ Extension  Type  Voices  Tracker                      Remarks
 
    Files supplied with Mod Master
 
- ÚÄÄÄ?ileÄÄÄÄÄÂÄÄSizeÄÄÂÄÄÄDateÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄ?escriptionÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ?
+ ï¿½ï¿½ï¿½ï¿½?ileï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Sizeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Dateï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?escriptionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
    MODM.EXE      143600   10/18/20   Mod Master XT
    MODMF.EXE
    MODM.REV        3728   11/28/95   Mod Master revision history

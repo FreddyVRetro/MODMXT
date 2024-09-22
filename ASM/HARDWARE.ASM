@@ -45,8 +45,8 @@ HW_DMA_Buffer_Page    DB 0
 ;-------------------------------------------------------------
 
 ;Sauver_EMS Proc Near
-;        MOV Previous_EMS_Handle,-1    ; Pour ‚viter d'acc‚der 2 fois de suite
-;        MOV DX,Pascal_Handle_EMS      ; au mˆme handle.
+;        MOV Previous_EMS_Handle,-1    ; Pour ï¿½viter d'accï¿½der 2 fois de suite
+;        MOV DX,Pascal_Handle_EMS      ; au mï¿½me handle.
 ;        MOV AH,47h                    ; Save page Map content
 ;        INT 67h
 ;NotSaveEMS:		
@@ -61,7 +61,7 @@ HW_DMA_Buffer_Page    DB 0
 ;Recuperer_EMS EndP
 
 ;-------------------------------------------------------------
-;|  Placer_Pages_EMS: Acceder … un handle EMS                |
+;|  Placer_Pages_EMS: Acceder ï¿½ un handle EMS                |
 ;|                                                           |
 ;|  Input: DX: EMS Handle number, Verify if not -1 Before    |
 ;|         CL: Nb of pages (1..4)                            |
@@ -98,9 +98,9 @@ Placer_Pages_EMS Endp
 ;-------------------------------------------------------------
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³         -= Calculer les adresses des tampons =-           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½         -= Calculer les adresses des tampons =-           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ; Input : DX: DMA Buffer @ Segment
 ;         AX: DMA Buffer @ Offet
@@ -312,11 +312,11 @@ HW_Anc_21 DB 0
 HW_Anc_A1 DB 0
 
 ;-------------------------------------------------------------
-;| Activer l'Irq … l'aide des ports 21h et A1h               |
+;| Activer l'Irq ï¿½ l'aide des ports 21h et A1h               |
 ;| Input : AL : IRQ Number                                   |
 ;-------------------------------------------------------------
 
-Enable_IRQ PROC NEAR      ;Autoriser l'IRQ grace au contr“leur d'IRQ
+Enable_IRQ PROC NEAR      ;Autoriser l'IRQ grace au contrï¿½leur d'IRQ
         CLI
         MOV BL,AL
 		IN AL,21h     ;Activer l'IRQ
@@ -354,7 +354,7 @@ Enable_IRQ ENDP
 ;| Disable the IRQ using Ports 21h and A1h                   |
 ;-------------------------------------------------------------
 
-Disable_IRQ PROC NEAR   ;Rendre au contr“leur d'IRQ son ‚tat originel
+Disable_IRQ PROC NEAR   ;Rendre au contrï¿½leur d'IRQ son ï¿½tat originel
         MOV BL,AL
         CLI
         PUSH AX
@@ -388,17 +388,17 @@ Change_IRQ PROC NEAR       ;Interruption pour le DMA
         CMP AL,7
         JBE Det_7
         ADD AL,60h           ;IRQ au niveau logiciel = IRQ+68h
-Det_7:                       ;( DeuxiŠme contr“leur d'IRQ)
+Det_7:                       ;( Deuxiï¿½me contrï¿½leur d'IRQ)
         ADD AL,8             ;IRQ au niveau logiciel = IRQ+8
         MOV CS:HW_IRQ_Number,AL
 
-        XOR AH,AH            ;( Premier contr“leur d'IRQ)
+        XOR AH,AH            ;( Premier contrï¿½leur d'IRQ)
         SHL AX,1
 		SHL AX,1		
         MOV DI,AX            ;SI=(IRQ+8 ou 68h)*4 (Adresse dans la table
                              ;                     des vecteurs d'IRQ    )
 
-        XOR AX,AX            ;R‚cuperer le vecteur d'interruption
+        XOR AX,AX            ;Rï¿½cuperer le vecteur d'interruption
         MOV ES,AX            ;segment vecteur d'interruption
 		MOV AX,ES:[DI]
 		MOV W CS:HW_Oldvect_IRQ,AX
@@ -426,7 +426,7 @@ Change_IRQ ENDP
 ;-------------------------------------------------------------
 
 Restaurer_IRQ PROC NEAR
-        PUSH AX                 ;IRQ mat‚rielle dans AL
+        PUSH AX                 ;IRQ matï¿½rielle dans AL
 
         CLI
 		
@@ -503,9 +503,9 @@ Set_Timer0_Period Proc Near
         MOV  AL,34h      ;Timer 0, Mode 2, 
         OUT  43h,AL
         POP  AX
-        OUT  40h,AL      ;Partie basse de la fr‚quence
+        OUT  40h,AL      ;Partie basse de la frï¿½quence
         XCHG AH,AL
-        OUT  40h,AL      ;Partie haute de la fr‚quence
+        OUT  40h,AL      ;Partie haute de la frï¿½quence
         STI
         RET
 Set_Timer0_Period Endp

@@ -1,13 +1,13 @@
 {************************************************************************}
 {                                MM_AFF.PAS                              }
 {                                                                        }
-{  unit‚ pour Mod Master: routines d'affichages                          }
+{  unitï¿½ pour Mod Master: routines d'affichages                          }
 {                                                                        }
-{  AUTEURS: Fabrice Couteau et Freddy V‚tel‚.                            }
+{  AUTEURS: Fabrice Couteau et Freddy Vï¿½telï¿½.                            }
 {                                                                        }
 {                                                                        }
-{                               D‚but d'‚criture le --/--/93             }
-{                               DerniŠres modifications le 19/10/95      }
+{                               Dï¿½but d'ï¿½criture le --/--/93             }
+{                               Derniï¿½res modifications le 19/10/95      }
 {************************************************************************}
 UNIT MM_AFF;
 
@@ -49,7 +49,7 @@ USES Crt,Dos,VARUnit,Fichiers,Clavier,Util,UtilC,Texte,
 CONST MonoStereo: Array[0..1] of String[6]
        =('Mono','Stereo');
 
-VAR {variables pour l'‚conomiseur}
+VAR {variables pour l'ï¿½conomiseur}
     teste_touche,touche_appuyee: Boolean;
     anc_INT09h: Pointer;
 
@@ -103,7 +103,7 @@ Const Titre_bouton_txt: Array[1..nbr_boutons] of String[11]
          (x:56;y:22;attr_relache: 71;attr_appuye: 72;attr_lettre: 79),  {Aide}
          (x:68;y:22;attr_relache:192;attr_appuye:200;attr_lettre:207)); {Quitte}
 {$ENDIF}
-         {Reglages_txt: Array[langues] of String[8]=('Settings','R‚glages');}
+         {Reglages_txt: Array[langues] of String[8]=('Settings','Rï¿½glages');}
 
          {Programme_txt: Array[langues] of String[9]=('Program','Programme');}
 
@@ -123,9 +123,9 @@ Begin
    boutons[i].Definit(0,x,y,' '+Titre_bouton_txt[i]+' ',
                          attr_relache,attr_appuye,attr_lettre,128);
  EffaceZone(0,1,1,80,1,31);
- AffChXY(0,30,1,'- MOD MASTER XT v1.0 -',31);
+ AffChXY(0,30,1,'- MOD MASTER XT v1.02 -',31);
  
- {fenˆtre modules}
+ {fenï¿½tre modules}
 {$IFNDEF CGAOnly}
  EffaceZoneCoins(1,3,50,26,49);
  Cadre(0,1,2,3,49,26,49,'',0,'');
@@ -136,43 +136,43 @@ Begin
  {$ENDIF}
 
 {$IFNDEF CGAOnly}
-  {ombre horizontale fenˆtre modules}
+  {ombre horizontale fenï¿½tre modules}
   AffCarXY(0, 2,27,#236,8);
-  AffChXY(0,3,27,RepeteCar('Ü',50-3+1),128);
+  AffChXY(0,3,27,RepeteCar(chr(220),50-3+1),128);
   AffCarXY(0,51,27,#237,8);
-  {ombre verticale fenˆtre modules}
+  {ombre verticale fenï¿½tre modules}
   AffCarXY(0,51, 3,#231,8);
  For i:=4 to 26 do AffCarXY(0,51,i,' ',128); 
 {$ELSE}
- {ombre horizontale fenˆtre modules}
- AffChXY(0,3,24,RepeteCar('Ü',50-3+2),128);
- {ombre verticale fenˆtre modules}
+ {ombre horizontale fenï¿½tre modules}
+ AffChXY(0,3,24,RepeteCar(chr(220),50-3+2),128);
+ {ombre verticale fenï¿½tre modules}
  For i:=4 to 23 do AffCarXY(0,51,i,' ',128); 
  {$ENDIF}
 
  {$IFNDEF CGAOnly}      { VGA 28 Lines}
- {fenˆtre boutons}
+ {fenï¿½tre boutons}
  EffaceZoneCoins(53,3,79,26,154);
  Cadre(0,1,54,3,78,11,154,' Settings ',154,'');
  Cadre(0,1,55,4,77,8,144,'',144,'');
  Cadre(0,1,54,16,78,23,154,' '+Programme_txt[Langue]+' ',154,'');
  AffCarXY(0,79,26,#227,152);
- {ombre horizontale fenˆtre boutons}
+ {ombre horizontale fenï¿½tre boutons}
  AffCarXY(0,54,27,#236,8);
- AffChXY(0,55,27,RepeteCar('Ü',79-55+1),128);
+ AffChXY(0,55,27,RepeteCar(chr(220),79-55+1),128);
  AffCarXY(0,80,27,#237,8);
- {ombre verticale fenˆtre boutons}
+ {ombre verticale fenï¿½tre boutons}
  AffCarXY(0,80, 3,#231,8);
  For i:=4 to 26 do AffCarXY(0,80,i,' ',128);
 {$ELSE}                  { CGA 25 Lines }
- {fenˆtre boutons}
+ {fenï¿½tre boutons}
  EffaceZoneCoins(53,3,79,23,154);
  Cadre(0,1,54,3,78,11,154,' Settings ',154,'');
  Cadre(0,1,55,4,77,8,144,'',144,'');
  Cadre(0,1,54,14,78,21,154,' Program ',154,'');
- {ombre horizontale fenˆtre boutons}
- AffChXY(0,55,24,RepeteCar('Ü',79-55+2),128);
- {ombre verticale fenˆtre boutons}
+ {ombre horizontale fenï¿½tre boutons}
+ AffChXY(0,55,24,RepeteCar(chr(220),79-55+2),128);
+ {ombre verticale fenï¿½tre boutons}
  For i:=4 to 23 do AffCarXY(0,80,i,' ',128); 
  {$ENDIF}
  
@@ -194,7 +194,7 @@ Begin
 {$ENDIF}  
  EffaceZone(0,56,5,76,7,154);
 
- {points s‚parateurs}
+ {points sï¿½parateurs}
  AffCarXY(0,67,6,'-',154);
  AffCarXY(0,64,7,'-',154);
  AffCarXY(0,70,7,'-',154);
@@ -214,7 +214,7 @@ Begin
                          MMSS_Output_Name[Wave_Output],159);
   
 
-   {fr‚quence}
+   {frï¿½quence}
    Case Wave_Output of
     HPint,
     LPT1,
@@ -226,7 +226,7 @@ Begin
     GUS: AffChXY(0,58,6,'44100 Hz',158)
    End;
 
-   {mono/st‚r‚o}
+   {mono/stï¿½rï¿½o}
    Case Wave_Output of
     HPint,
     LPT1,
@@ -287,7 +287,7 @@ Var msg: String25;
 Begin
  msg:=Erreurs[lecteur_txt]+' '+repert[1]+': '+Erreurs[pas_pret_txt];
  If liste_lecteurs='' Then
-  Begin {reste sur le mˆme lecteur}
+  Begin {reste sur le mï¿½me lecteur}
    If repert[1]=LettreCDRom Then code_message:=inserez_CDRom_txt
                             Else code_message:=inserez_disq_txt;
    AfficheErreur(msg,Erreurs[code_message],0)
@@ -299,7 +299,7 @@ Begin
 {$ENDIF}  
    OmbreZoneCoins(26,11,53,15,z,71);
    Cadre(0,1,27,11,52,15,71,' '+msg+' ',78,'');
-   AffChXY2(0,29,13,Erreurs[nouveau_lecteur_txt]+'?  ^ô'+lecteur_courant+':õ^',79,228);
+   AffChXY2(0,29,13,Erreurs[nouveau_lecteur_txt]+'?  ^ï¿½'+lecteur_courant+':ï¿½^',79,228);
 {$IFNDEF NoMOUSE}
  AffCursSouris;
 {$ENDIF}
@@ -386,7 +386,7 @@ Begin
      f_err_media,
      f_err_secteur : AfficheErreur(Erreurs[err_ecriture_txt],Erreurs[changez_disq_txt],0);
      f_err_protect : AfficheErreur(Erreurs[disq_protegee_txt],Erreurs[en_ecriture_txt],0);
-     f_err_pas_pret: AfficheErreurLecteurPasPret('','C',nouveau_lecteur);  {reste sur le mˆme lecteur}
+     f_err_pas_pret: AfficheErreurLecteurPasPret('','C',nouveau_lecteur);  {reste sur le mï¿½me lecteur}
      f_err_acces_ref : AfficheErreur(Erreurs[Fichier_Protege_txt],Erreurs[en_ecriture_txt],0);
     End
    Until Not(f_erreur in [f_err_protect,f_err_pas_pret]);
@@ -427,9 +427,9 @@ Const CouleurSortie: Array[Boolean] of Byte=(24,23);
 	  xd_fen: Array[0..MMSS_Out_Nb_W-1] of Byte    =(73,73,73, 73,73,73,76,73);
       HauteurFen: Array[0..MMSS_Out_Nb_W-1] of Byte=( 3, 3, 3,  3, 3, 5,10, 5);
 {                                                   ^  ^  ^ ^    ^  ^  ^  ^
-                                             HP intÄÙ  ³  ³ TDY  ³  ³  ³  ÀÄGUS
-                                                  CNA1ÄÙ  ³     DCAC³  ÀÄSBPro
-                                                     CNA2ÄÙ         ÀÄSB        }
+                                             HP intï¿½ï¿½  ï¿½  ï¿½ TDY  ï¿½  ï¿½  ï¿½  ï¿½ï¿½GUS
+                                                  CNA1ï¿½ï¿½  ï¿½     DCACï¿½  ï¿½ï¿½SBPro
+                                                     CNA2ï¿½ï¿½         ï¿½ï¿½SB        }
 
       { Synth Output windows size }
       xd_fen_s: Array[0..MMSS_Out_Nb_S-1] of Byte    =(70,70,69,69);
@@ -509,7 +509,7 @@ If anc_num_sortie<=MMSS_Out_Nb_W Then
       AffChXY2(0,xIRQ[Out_Nb_W],Out_Nb_W+10,'^I^RQ',23,31);
      End;
 
-    {trac‚ des lignes}
+    {tracï¿½ des lignes}
     Case Out_Nb_W of
      SB   : Begin
              AffChXY(0,58,Out_Nb_W+10,'DC',23);
@@ -524,8 +524,8 @@ If anc_num_sortie<=MMSS_Out_Nb_W Then
              LigneHorizBouts(Out_Nb_W+7+2*i,39,xd_fen[Out_Nb_W]-1,19);
              LigneVerticBouts(51,Out_Nb_W+ 9,Out_Nb_W+13,19);
              LigneVerticBouts(63,Out_Nb_W+ 9,Out_Nb_W+13,19);
-             AffCarXY(0,51,Out_Nb_W+11,'Å',19);
-             AffCarXY(0,63,Out_Nb_W+11,'Å',19);
+             AffCarXY(0,51,Out_Nb_W+11,chr(197),19);
+             AffCarXY(0,63,Out_Nb_W+11,chr(197),19);
 			 
 			 AffChXY(0,50,Out_Nb_W+7,SBName[SBConfig.Type_],19);
 			 
@@ -1037,7 +1037,7 @@ Begin
  MMSS_CFG^.TDY_Type:=TDY_Type;
  MMSS_CFG^.TDY_LPT_Nb:=TDY_LPT_Nb;
  TDY_Port:=TDY_PortList[TDY_PortNb];
- MMSS_CFG^.TDY_Port:=CMS_Port;
+ MMSS_CFG^.TDY_Port:=TDY_Port;
  
  MMSS_CFG^.CMS_Type:=CMS_Type;
  MMSS_CFG^.CMS_LPT_Nb:=CMS_LPT_Nb;
@@ -1261,10 +1261,10 @@ Const Car: Array[Boolean] of Char=(' ',#11);
           '  by hitting ^Tab^.',
           '* You can also search and select a module with its initial by',
           '  hitting ^Shift^+<initial>.',
-          '* To play the selected module, hit ^<ÄÙ^ or click it with the left',
+          '* To play the selected module, hit ^<ï¿½ï¿½^ or click it with the left',
           '  button of the mouse.',
           '* You can adjust the volume of the selected module with ^-^ and ^+^, or',
-          '  put the default volume on all the modules with ^Ctrl^+^<ÄÙ^.',
+          '  put the default volume on all the modules with ^Ctrl^+^<ï¿½ï¿½^.',
           '* If you want the volume of one module to follow automatically the',
           '  default volume settings, hit ^'#27'Del^ ("d" is displayed).',
 		  '* You can adjust the frequency of the selected module with ^Left/Right^',
@@ -1275,8 +1275,8 @@ Const Car: Array[Boolean] of Char=(' ',#11);
           '  of the lifts are 3-speed with the mouse, depending on you press',
           '  the left button, the right one, or both at the same time.');
 
-      hauteur_fenetre=14; {nombre de lignes affichables simultan‚ment}
-      x_asc=77; y_asc=8;  {coordonn‚es de la flŠche vers le haut}
+      hauteur_fenetre=14; {nombre de lignes affichables simultanï¿½ment}
+      x_asc=77; y_asc=8;  {coordonnï¿½es de la flï¿½che vers le haut}
 
 Var z: Zone;
     boutonOK: Bouton;

@@ -3,7 +3,7 @@
 {                                                                        }
 {  Manage Mod Master during the Replay (Display, Dos Shell...)           }
 {                                                                        }
-{  AUTEUR: Freddy V‚tel‚.                                                }
+{  AUTEUR: Freddy Vï¿½telï¿½.                                                }
 {                                                                        }
 {                                                                        }
 {                               Code Start the 30/08/95                  }
@@ -91,7 +91,7 @@ Begin
 {scanLeft   EQU 75       ;retour rapide }
      End;
 {$ENDIF}
-  { Attente du 50ø de seconde       }
+  { Attente du 50ï¿½ de seconde       }
   Repeat Until (Tick_50Hz=1) OR MMSS_CFG^.Output_Stopped OR KeyPressed;
 
   Tick_50Hz:=0;
@@ -125,7 +125,7 @@ Begin
   MOV AX,SegTexte
   MOV ES,AX
   MOV DI,Pos  
-  MOV AX,256*112+'Ü'
+  MOV AX,256*112+220
   MOV CX,Cmpt
   INC CX
   REP STOSW
@@ -202,7 +202,7 @@ Begin
 
   MOV AH,0
   MOV CX,80*(23-5+1)
-  REP STOSW                    {efface le reste de l'‚cran en noir }
+  REP STOSW                    {efface le reste de l'ï¿½cran en noir }
 
   MOV AH,112
   MOV CX,80
@@ -230,8 +230,10 @@ Begin
           Begin { VGM Stream Music }
            If (MMSS_CFG^.OtherMUS_Out AND M_OPL2)<>0 then AffChXY(0,2,25,'Adlib/OPL2 (YM3812)',31);
            If (MMSS_CFG^.OtherMUS_Out AND M_OPL3)<>0 then AffChXY(0,2,25,'OPL3 (YMF262)',31);
-           If (MMSS_CFG^.OtherMUS_Out AND M_SN76489)<>0 then AffChXY(0,2,25,'Tandy/PC Jr (SN76489)',31);
-		   If (MMSS_CFG^.OtherMUS_Out AND M_SAA1099)<>0 then AffChXY(0,2,25,'Game Blaster/CMS/SAA1099',31);
+           If (MMSS_CFG^.OtherMUS_Out AND M_SN76489)<>0 then
+              AffChXY(0,2,25,'Tandy/PC Jr (SN76489) ['+EntierHexa(MMSS_CFG^.TDY_Port,3)+']',31);
+           If (MMSS_CFG^.OtherMUS_Out AND M_SAA1099)<>0 
+               then AffChXY(0,2,25,'Game Blaster/CMS/SAA1099 ['+EntierHexa(MMSS_CFG^.CMS_Port,3)+']',31);
           End
   Else
    If MMSS_CFG^.Wave_Output=GUS Then AffChXY(0,2,25,'Gravis UltraSound',31)
@@ -262,16 +264,16 @@ Begin
  AffChXY(0,27,7,tempo_msg,2);
  AffChXY(0,27,8,volume_msg,2);
 
- LigneH(2,4,24,'Ü');              {Pitch Bar Rectangle  }
- LigneH(2,9,24,'ß');
- 
- LigneH(26,3,52,'Ü');             {Title / Infos Rectangle }
- LigneH(26,9,52,'ß');             {fenetre infos           }
- 
- LigneH(54,4,79,'Ü');             {fenetre barres periode  }
- LigneH(54,9,79,'ß');
- 
- LigneH(2,10,79,'Ü');             {fenˆtre centrale        }
+ LigneH(2,4,24,chr(220));              {Pitch Bar Rectangle  }
+ LigneH(2,9,24,chr(223));
+
+ LigneH(26,3,52,chr(220));           {Title / Infos Rectangle }
+ LigneH(26,9,52,chr(223));           {fenetre infos           }
+
+ LigneH(54,4,79,chr(220));           {fenetre barres periode  }
+ LigneH(54,9,79,chr(223));
+
+ LigneH(2,10,79,chr(220));           {fenï¿½tre centrale        }
  
  LigneV(25,5,9,' ',112);   {separation fenetres pitch/centrale  }
  LigneV(53,5,9,' ',112);   {separation fenetres centrale/periode}
@@ -283,8 +285,8 @@ Begin
  LigneV(1,4,24,' ',112);   {Left Border  }
  LigneV(80,4,24,' ',112);  {Right Border }
 
- LigneH(26,3,52,'Ü');
- LigneH(26,5,52,'ß'); 
+ LigneH(26,3,52,chr(220));
+ LigneH(26,5,52,chr(223));
 { LigneH(2,4,79,' ');}
  LigneH(2,5,25,' ');
  LigneH(53,5,79,' ');
@@ -307,7 +309,7 @@ Begin
       JNE @Non
       CMP CX,4D50h   { MP }
       JNE @Non
-      MOV AX,1234h   { 1234h => Mod Master pr‚sent !!! }
+      MOV AX,1234h   { 1234h => Mod Master prï¿½sent !!! }
   @Non:
       PUSHF
       CALL OldInt2F
@@ -336,7 +338,7 @@ Var Mem_DOS_Libre: Word;
     anc_prompt,nouv_prompt: String80;
 Begin
  TextMode(LastMode);       { Mode texte DOS                      }
- Mode_Actuel:=Autre_Mode;  { Indique le changement de mode vid‚o }
+ Mode_Actuel:=Autre_Mode;  { Indique le changement de mode vidï¿½o }
  Curseur(plat);
  Mem_DOS_Libre:=MemoireDOSLibre DIV 64;
  ClrScr;
@@ -352,11 +354,11 @@ Begin
  {$IFNDEF CGAOnly}
    FinSourisSmooth;
  {$ENDIF}
-   Int2FOn;      { Active l'IRQ de d‚tection    }
+   Int2FOn;      { Active l'IRQ de dï¿½tection    }
    SwapVectors;
    Exec(Getenv('COMSPEC'),'/K PROMPT '+nouv_prompt);
    SwapVectors;
-   Int2FOff;     { D‚sactive l'IRQ de d‚tection }
+   Int2FOff;     { Dï¿½sactive l'IRQ de dï¿½tection }
  {$IFNDEF CGAOnly}
    InitSourisSmooth(#166,#167,#169,#170);
  {$ENDIF}
@@ -364,13 +366,13 @@ Begin
     Begin
      If DosError=8 Then Writeln('Not enough memory!')
                    Else WriteLn('DOS error #',DosError);
-     Write('Hit ÄÙ...');
+     Write('Hit ï¿½ï¿½...');
     { Repeat Until Readkey=#13}
     End
   End
  Else
   Begin
-   Write('Not enough memory (',MemoireDOSLibre,'ko). Hit ÄÙ...');
+   Write('Not enough memory (',MemoireDOSLibre,'ko). Hit ï¿½ï¿½...');
   { Repeat Until Readkey=#13}
   End;
 
@@ -386,15 +388,15 @@ Begin
  FillChar(TitreCentre27,27,0);
  Pos:=0;
  Len:=27;
- With Musique^ do    { Titre Centr‚ avec 27 caractŠres }
+ With Musique^ do    { Titre Centrï¿½ avec 27 caractï¿½res }
   Begin
-   Repeat            { Chercher le 1ø CaractŠre        }
+   Repeat            { Chercher le 1ï¿½ Caractï¿½re        }
     Inc(Pos);
     Dec(Len);
    Until ((Titre[Pos]<>#0) AND (Titre[Pos]<>#32)) OR (Pos=27);
    Inc(Len);
    If Pos<27 Then
-    Begin          { Chercher le dernier CaractŠre   }
+    Begin          { Chercher le dernier Caractï¿½re   }
      i:=28;
      Repeat
       Dec(i);

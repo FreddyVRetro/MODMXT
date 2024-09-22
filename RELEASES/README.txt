@@ -329,3 +329,11 @@ Warning : Delete MODMXT.CFG as its format changed.
  - Increase the PC Speaker and DAC Speed. (Remove the use of 2 Register in the interrupt)
  - You can toggle the View from Note/Sample to Period "Bar" in the F4 Display Screen.
  - All the program buttons are displayed with a Monochrome monitore.
+
+ v1.01
+ - Corrected the BlasterBoard detection code
+ - Mix speed increased a little
+
+ v1.02
+ - Added Port display for CMS/DAC.
+ - Corrected the Tandy DAC Port change code

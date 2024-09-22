@@ -1,9 +1,9 @@
 {************************************************************************}
 {                                MM_DIV.PAS                              }
 {                                                                        }
-{  Unit‚ pour Mod Master: routines diverses                              }
+{  Unitï¿½ pour Mod Master: routines diverses                              }
 {                                                                        }
-{  AUTEURS: Fabrice Couteau et Freddy V‚tel‚.                            }
+{  AUTEURS: Fabrice Couteau et Freddy Vï¿½telï¿½.                            }
 {                                                                        }
 {                                                                        }
 {                               Debut d'ecriture le --/--/93             }
@@ -118,8 +118,8 @@ End; {EffaceZoneCoins}
 PROCEDURE LigneHorizBouts(y,xg,xd,attr: Byte);
 Begin
  LigneHorizontale(0,1,y,xg+1,xd-1,attr);
- AffCarXY(0,xg,y,'Ã',attr);
- AffCarXY(0,xd,y,'´',attr)
+ AffCarXY(0,xg,y,chr(195),attr);
+ AffCarXY(0,xd,y,chr(180),attr)
  End; {LigneHorizBouts}
 
 {----------------------------------------------------------}
@@ -127,8 +127,8 @@ Begin
 PROCEDURE LigneVerticBouts(x,yh,yb,attr: Byte);
 Begin
  LigneVerticale(0,1,x,yh+1,yb-1,attr);
- AffCarXY(0,x,yh,'Â',attr);
- AffCarXY(0,x,yb,'Á',attr)
+ AffCarXY(0,x,yh,chr(195),attr);
+ AffCarXY(0,x,yb,chr(195),attr)
 End; {LigneVerticBouts}
 
 {----------------------------------------------------------}
@@ -190,7 +190,7 @@ End; {IndiceModule}
 {----------------------------------------------------------}
 
 FUNCTION Indice(n: Word): Word;
-{retourne l'indice dans le tableau Module.Nom dont le module porte le num‚ro 'n'}
+{retourne l'indice dans le tableau Module.Nom dont le module porte le numï¿½ro 'n'}
 Var i: Word;
 Begin
  i:=1;
@@ -429,7 +429,7 @@ Begin
        CMS_PortNb:=buffer[27];
        CMS_LPT_Nb:=buffer[28];       
 	   
-	   MMSS_CFG^.CDAC_Port:=(BYTE(buffer[30]) SHL 8) + buffer[29];
+	     MMSS_CFG^.CDAC_Port:=(BYTE(buffer[30]) SHL 8) + buffer[29];
 	   
        MMSS_CFG^.OPL_Model:=OPL_Model;
        MMSS_CFG^.OPL_LPT_Model:=OPL_LPT_Model;
@@ -681,7 +681,7 @@ Var
    Args: String[80];
 Begin
  TextMode(LastMode);       { Mode texte DOS                      }
- Mode_Actuel:=Autre_Mode;  { Indique le changement de mode vid‚o }
+ Mode_Actuel:=Autre_Mode;  { Indique le changement de mode vidï¿½o }
  Curseur(plat);
  ClrScr;
  Args:='SBVGM.EXE ';
@@ -899,7 +899,7 @@ Begin
  
  If MM_Hercule then MMSS_CFG^.Seg_Video:=$B000;
 
-{Volume_Total:=0; } {Volume r‚glable avec +/- No more shared between ASM and TP}
+{Volume_Total:=0; } {Volume rï¿½glable avec +/- No more shared between ASM and TP}
 
  duree_IntroScan:=10;
  recharge_module:=True;
@@ -915,12 +915,12 @@ End; {Initialisation}
 {$IFNDEF NoDebug}
 PROCEDURE DBG_DisplaySmp(CHU_NSmp:Byte);
 Begin
-Write('Sample Nø',CHU_NSmp);
+Write('Sample Nï¿½',CHU_NSmp);
 
 With MMSS_Table^.PtrSamples[CHU_NSmp]^ Do
 Begin
 Write(' Info: ',Info,' ');
-If (Info And M_Charge)>0 Then Write('Charg‚ ');
+If (Info And M_Charge)>0 Then Write('Chargï¿½ ');
 If (Info And M_Bidi)>0 Then Write('Bidi ');
 If (Info And M_Boucle)>0 Then Write('Boucle ');
 If (Info And M_16Bit)>0 Then Write('16 bit ');
@@ -937,12 +937,12 @@ End;
 
 PROCEDURE DBG_DisplayInsAdl(CHU_NSmp:Byte);
 Begin
-Write('Sample Nø',CHU_NSmp);
+Write('Sample Nï¿½',CHU_NSmp);
 
 With MMSS_Table^.PtrSamples[CHU_NSmp]^ Do
 Begin
 Write(' Info: ',Info,' ');
-If (Info And M_Charge)>0 Then Write('Charg‚ ');
+If (Info And M_Charge)>0 Then Write('Chargï¿½ ');
 Writeln;
 Write('Seg: ',Seg(MMSS_Table^.PtrSamples[CHU_NSmp]^),'Offs: ',Ofs(MMSS_Table^.PtrSamples[CHU_NSmp]^));
 Writeln('AM1: ',AData.AM1,'AP1: ',AData.AP1);    { AM_VIB_EG + Rythm (Batterie) }

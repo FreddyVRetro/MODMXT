@@ -1,18 +1,18 @@
-;ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;º                    MODM.ASM       V1.0           º
-;º                                                  º
-;º                   MOD MASTER                     º
-;º                                                  º
-;º   Auteur:                Freddy V‚tel‚           º
-;º                                                  º
-;º   D‚but d'‚criture:        3/5/1993              º
-;º   DerniŠre Modification:   1/1/1994              º
-;º                                                  º
-;º   Output SB Value before the Mixing              º
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;ï¿½                    MODM.ASM       V1.0           ï¿½
+;ï¿½                                                  ï¿½
+;ï¿½                   MOD MASTER                     ï¿½
+;ï¿½                                                  ï¿½
+;ï¿½   Auteur:                Freddy Vï¿½telï¿½           ï¿½
+;ï¿½                                                  ï¿½
+;ï¿½   Dï¿½but d'ï¿½criture:        3/5/1993              ï¿½
+;ï¿½   Derniï¿½re Modification:   1/1/1994              ï¿½
+;ï¿½                                                  ï¿½
+;ï¿½   Output SB Value before the Mixing              ï¿½
 ;    Changed how the player is stopped              
-;º                                                  º
-;º   A Compiler en fichier .COM (TLINK /t)          º
-;ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;ï¿½                                                  ï¿½
+;ï¿½   A Compiler en fichier .COM (TLINK /t)          ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
 TAB    equ 9
 LF     equ 10
@@ -100,7 +100,7 @@ CODE SEGMENT
 Start:
 
      JMP init      ;Contourne les variables
-                   ;et libŠre la m‚moire inutilis‚e
+                   ;et libï¿½re la mï¿½moire inutilisï¿½e
 				   
 XOR W [SI],AX
 XOR W [SI+1],AX
@@ -134,13 +134,13 @@ mov ah,[bx]
 add [di+12h],ax
 		
 		
-;ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;º                  Variables Principales                       º
-;ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;ï¿½                  Variables Principales                       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
 db 0        ;???????????
 
-debutfich dw 0              ;Segment du d‚but de Fichier
+debutfich dw 0              ;Segment du dï¿½but de Fichier
 titre db '                    ',0
 mk db 0
 Nb_pos dw 1D6h              ;Valeurs Pour fichiers non mk
@@ -158,7 +158,7 @@ Adresse_video dw 0
 Adresse_video_def dw 0
 
 
-Sblastermsg db 'Carte Sound blaster initialis‚e',10,13,'$'
+Sblastermsg db 'Carte Sound blaster initialisï¿½e',10,13,'$'
 Pas_sbmsg db 'Sortie sur le beeper',10,13,'$'
 SB_Pres db 0
 Utilise_sb db 0
@@ -167,7 +167,7 @@ Fin_msg db '  Cette version de Mod Master est FREEWARE',10,13
         db '  Vous pouvez copier et distribuer Mod Master librement, sans le modifier.',10,13
         db '  (Le fichier de documentation doit accompagner MODM.EXE).',10,10,13,'$'
         db '  Pour vos dons ou suggestions, mon Adresse:',10,13
-        db '  La PohuŠre 49530 Bouzill‚ (FRANCE)',10,13,'$'
+        db '  La Pohuï¿½re 49530 Bouzillï¿½ (FRANCE)',10,13,'$'
 		
 		
 Pausemsg DB '-PAUSE-',0
@@ -253,16 +253,16 @@ Intro proc near
       CALL Curseur_off
       MOV ax,1Fh
       CALL Efface_ligne
-      WRITEL debut_msg        ;Message de d‚but
+      WRITEL debut_msg        ;Message de dï¿½but
       RET
 Intro endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Play          Lancer la musique                         ³
-;³     EntrŠe  Rien                                          ³
-;³     Sortie  Rien                                          ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Play          Lancer la musique                         ï¿½
+;ï¿½     Entrï¿½e  Rien                                          ï¿½
+;ï¿½     Sortie  Rien                                          ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Boucler db 0
 nb_de_boucles db 0
@@ -552,12 +552,12 @@ Pas_aff_ecran:
       RET
 Prepare_play Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Affiche_barres     Affiche les barres                   ³
-;³     EntrŠe                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Affiche_barres     Affiche les barres                   ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 aff_droite dw 0
 aff_gauche dw 0
@@ -703,14 +703,14 @@ S_Boucle_deplace_name:
       RET
 Charge_samp_stm Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Init_SB         Initialise la sound blaster             ³
-;³     EntrŠe                                                ³
-;³                                                           ³
-;³     Sortie                                                ³
-;³                                                           ³
-;³     Change      AX,DX,SI                                  ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Init_SB         Initialise la sound blaster             ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½     Change      AX,DX,SI                                  ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 Init_sb proc near
        MOV dx,226h
        MOV al,1
@@ -755,13 +755,13 @@ Lire_ok:
       RET
 Lecture_sb ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Joue_musique                                            ³
-;³     EntrŠe      Variables                                 ³
-;³                                                           ³
-;³     Sortie      Rien                                      ³
-;³     Info:  Le player est r‚sident                         ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Joue_musique                                            ï¿½
+;ï¿½     Entrï¿½e      Variables                                 ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½     Sortie      Rien                                      ï¿½
+;ï¿½     Info:  Le player est rï¿½sident                         ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 n_sample db 0
@@ -872,14 +872,14 @@ Init_beeper_1:
         CLI
         PUSH ax
         MOV al,34h       ;00110110b
-        OUT 43h,al       ;Change la fr‚quence
+        OUT 43h,al       ;Change la frï¿½quence
         POP ax           ;Du timer
         OUT 40h,al
         MOV al,ah
         OUT 40h,al
         STI
 
-        MOV al,90h              ;Pr‚pare le beeper
+        MOV al,90h              ;Prï¿½pare le beeper
         OUT 43h,al
 
         IN AL,61h
@@ -922,7 +922,7 @@ Init_beeper:
         CLI
         PUSH ax
         MOV al,34h  ;00110110b
-        OUT 43h,al       ;Change la fr‚quence
+        OUT 43h,al       ;Change la frï¿½quence
         POP ax           ;Du timer
         OUT 40h,al
         MOV al,ah
@@ -946,8 +946,8 @@ Restore_timer proc near
         MOV al,00110110b
         OUT 43h,al
         MOV al,0
-        OUT 40h,al    ;Fixe la fr‚quence
-        OUT 40h,al    ; … 18,2 Hz
+        OUT 40h,al    ;Fixe la frï¿½quence
+        OUT 40h,al    ; ï¿½ 18,2 Hz
         PUSH cs
         POP ds
         SUB ax,ax
@@ -984,8 +984,8 @@ restore_timer_fin Proc near
         MOV al,34h
         OUT 43h,al
         MOV al,0
-        OUT 40h,al    ;Fixe la fr‚quence
-        OUT 40h,al    ; … 18,2 Hz
+        OUT 40h,al    ;Fixe la frï¿½quence
+        OUT 40h,al    ; ï¿½ 18,2 Hz
 
         MOV al,0B6h
         OUT 43h,al
@@ -1556,7 +1556,7 @@ Pas_stop_V1:
         CMP al,3
         JE Periode_nule1_p
         AND bx,0000111111111111b
-                              ;bx contient la p‚riode
+                              ;bx contient la pï¿½riode
         MOV Nouv_per_v1,0
         MOV dx,bx
         SUB dx,71h
@@ -1816,7 +1816,7 @@ Pas_stop_V2:
         CMP al,3
         JE Periode_nule2_p
         AND bx,0000111111111111b
-                                ;bx contient la p‚riode
+                                ;bx contient la pï¿½riode
         MOV Nouv_per_v2,0
         MOV dx,bx
         SUB dx,71h
@@ -2077,7 +2077,7 @@ Pas_stop_V3:
         CMP al,3
         JE Periode_nule3_p
         AND bx,0000111111111111b
-                                 ;bx contient la p‚riode
+                                 ;bx contient la pï¿½riode
         MOV Nouv_per_v3,0
         MOV dx,bx
         SUB dx,71h
@@ -2338,7 +2338,7 @@ Pas_stop_V4:
         CMP al,3
         JE Periode_nule4_p
         AND bx,0000111111111111b
-                         ;bx contient la p‚riode
+                         ;bx contient la pï¿½riode
         MOV Nouv_per_v4,0
         MOV dx,bx
         SUB dx,71h
@@ -2588,9 +2588,9 @@ Pas_eff_4:
 Fin_eff_4:
         RET
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³                      COMMANDES                            ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½                      COMMANDES                            ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Rien:
         RET
@@ -2931,7 +2931,7 @@ Fin_vs_1:
         XOR bl,bl
 Vs_Garder_vol_1:
         MOV dx,Adresse_table_volume
-        ADD bl,dh       ;Ajoute d‚calage table volume
+        ADD bl,dh       ;Ajoute dï¿½calage table volume
         MOV Voie1_vol,bl
         RET
 
@@ -2966,7 +2966,7 @@ Fin_vs_2:
         XOR bl,bl
 Vs_Garder_vol_2:
 
-        ADD bl,dh       ;Ajoute d‚calage table volume
+        ADD bl,dh       ;Ajoute dï¿½calage table volume
         MOV Voie2_vol,bl
         RET
 
@@ -3001,7 +3001,7 @@ Fin_vs_3:
         XOR bl,bl
 Vs_Garder_vol_3:
 
-        ADD bl,dh       ;Ajoute d‚calage table volume
+        ADD bl,dh       ;Ajoute dï¿½calage table volume
         MOV Voie3_vol,bl
         RET
 
@@ -3036,7 +3036,7 @@ Fin_vs_4:
         XOR bl,bl
 Vs_Garder_vol_4:
 
-        ADD bl,dh       ;Ajoute d‚calage table volume
+        ADD bl,dh       ;Ajoute dï¿½calage table volume
         MOV Voie4_vol,bl
         RET
 
@@ -3380,7 +3380,7 @@ Fin_vib_vs_1:
         XOR bl,bl
 Vib_Vs_Garder_vol_1:
 
-        ADD bl,dh           ;Ajoute d‚calage table volume
+        ADD bl,dh           ;Ajoute dï¿½calage table volume
         MOV Voie1_vol,bl
         JMP vibrato_1       ;Execute vibrato
 
@@ -3415,7 +3415,7 @@ Fin_vib_vs_2:
         XOR bl,bl
 Vib_Vs_Garder_vol_2:
 
-        ADD bl,dh           ;Ajoute d‚calage table volume
+        ADD bl,dh           ;Ajoute dï¿½calage table volume
         MOV Voie2_vol,bl
         JMP vibrato_2       ;Execute vibrato
 
@@ -3451,7 +3451,7 @@ Fin_vib_vs_3:
         XOR bl,bl
 Vib_Vs_Garder_vol_3:
 
-        ADD bl,dh           ;Ajoute d‚calage table volume
+        ADD bl,dh           ;Ajoute dï¿½calage table volume
         MOV Voie3_vol,bl
         JMP vibrato_3       ;Execute vibrato
 
@@ -3486,7 +3486,7 @@ Fin_vib_vs_4:
         XOR bl,bl
 Vib_Vs_Garder_vol_4:
 
-        ADD bl,dh           ;Ajoute d‚calage table volume
+        ADD bl,dh           ;Ajoute dï¿½calage table volume
         MOV Voie4_vol,bl
         JMP vibrato_4       ;Execute vibrato
 
@@ -3651,27 +3651,27 @@ Fin_tvs_4:
         JMP Vol_slide_4
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³                      AFFICHAGE                            ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½                      AFFICHAGE                            ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Affiche_ecran      Initialise l'‚cran                   ³
-;³     EntrŠe                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Affiche_ecran      Initialise l'ï¿½cran                   ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 Tetemsg db 'Mod Master V1.0            Player Amiga-Atari ST'
-        db '          (c) 1993 Freddy v‚tel‚',0
+        db '          (c) 1993 Freddy vï¿½telï¿½',0
 Titre_ec db 'Titre: ',0
 Pomsg db 'Positions: ',0
 Sampmsg db 'Samples: ',0
-Infomsg1 db 'ÚÄPositionÄÂÄÄÄNoteÄÄÄ¿',0
-Infomsg2 db '³          ³          ³',0
-Infomsg3 db 'ÃÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´',0
-Infomsg4 db '³                     ³',0
-Infomsg5 db 'ÃÄÄÄÄÄÄÄÄVolumeÄÄÄÄÄÄÄ´',0
-Infomsga1 db 'ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÙ',0
+Infomsg1 db 'ï¿½ï¿½Positionï¿½ï¿½ï¿½ï¿½ï¿½Noteï¿½ï¿½Ä¿',0
+Infomsg2 db 'ï¿½          ï¿½          ï¿½',0
+Infomsg3 db 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´',0
+Infomsg4 db 'ï¿½                     ï¿½',0
+Infomsg5 db 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Volumeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´',0
+Infomsga1 db 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0
 
 
 Affiche_ecran Proc near
@@ -4379,9 +4379,9 @@ Sample_petit_4:
       RET
 Rien_Centre Endp
 
-Infomsg6 db 'ÚÄÄÂÄÄÄÄÄÄVolumeÄÄÄÄÄÄ¿',0
-Infomsg7 db '³  Æ                  ³',0
-Infomsg8 db 'ÀÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ',0
+Infomsg6 db 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Volumeï¿½ï¿½ï¿½ï¿½ï¿½Ä¿',0
+Infomsg7 db 'ï¿½  ï¿½                  ï¿½',0
+Infomsg8 db 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0
 
 Affiche_tableau_volume Proc near
 
@@ -4407,9 +4407,9 @@ Affiche_tableau_volume Proc near
         RET
 Affiche_tableau_volume ENDP
 
-Infomsg9  db '   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿',0
-Infomsg10 db '   Æ                  ³',0
-Infomsg11 db '   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ',0
+Infomsg9  db '   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿',0
+Infomsg10 db '   ï¿½                  ï¿½',0
+Infomsg11 db '   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0
 
 Affiche_tableau_Pitch Proc near
 
@@ -4435,9 +4435,9 @@ Affiche_tableau_Pitch Proc near
            RET
 Affiche_tableau_Pitch ENDP
 
-Infomsg12 db 'ÚÄÄÄÂÄÄÄÄÄÄÄÄÄP‚riodeÄÄÄÄÄÄÄÄÄ¿',0
-Infomsg13 db '³   Æ                         ³',0
-Infomsg14 db 'ÀÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ',0
+Infomsg12 db 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½riodeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿',0
+Infomsg13 db 'ï¿½   ï¿½                         ï¿½',0
+Infomsg14 db 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0
 
 Affiche_tableau_Periode Proc near
 
@@ -4488,15 +4488,15 @@ Efface_tableau_Periode Proc near
            RET
 Efface_tableau_Periode Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Writelxy      Affiche un message dans la m‚moire vid‚o  ³
-;³     EntrŠe                                                ³
-;³            SI:offset du message                           ³
-;³            DI:Adresse dans la m‚moire vid‚o               ³
-;³            AH:attribut                                    ³
-;³     Sortie Rien                                           ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Writelxy      Affiche un message dans la mï¿½moire vidï¿½o  ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½            SI:offset du message                           ï¿½
+;ï¿½            DI:Adresse dans la mï¿½moire vidï¿½o               ï¿½
+;ï¿½            AH:attribut                                    ï¿½
+;ï¿½     Sortie Rien                                           ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Writelxy Proc near
 
@@ -4509,12 +4509,12 @@ wr_Boucle_aff:
          RET
 Writelxy Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Curseur_off      Efface le curseur                      ³
-;³     EntrŠe                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Curseur_off      Efface le curseur                      ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Curseur_off proc near
       MOV ah,01h
@@ -4522,12 +4522,12 @@ Curseur_off proc near
       INT 10h
       RET
 Curseur_off endp
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Curseur_on      Affiche le curseur                      ³
-;³     EntrŠe                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Curseur_on      Affiche le curseur                      ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Curseur_on proc near
       MOV ah,01h
@@ -4536,46 +4536,46 @@ Curseur_on proc near
       RET
 Curseur_on endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Init_ecran   Efface et initialise mode texte            ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie      Rien                                      ³
-;³     Change      AX,BX,CX,DX,ES,SI,DI                      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Init_ecran   Efface et initialise mode texte            ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie      Rien                                      ï¿½
+;ï¿½     Change      AX,BX,CX,DX,ES,SI,DI                      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 init_ecran proc near
         MOV ax,0003h
         INT 10h
         RET
 init_ecran endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Init_Var     Initialise les variables                   ³
-;³     EntrŠe                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Init_Var     Initialise les variables                   ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Chaine_mk db 'M.K.'
 Tot_samp db 15
 
 Param_err1 db 'Indiquez un nom de module !$'
-Param_err2 db 'ParamŠtre incorrect$'
+Param_err2 db 'Paramï¿½tre incorrect$'
 Param_err3 db 'Type de fichier incorrect$'
 Utilisation_msg db 10,13
-               db 'Utilisation: MODM MODULE[.MOD] [ParamŠtre]',10,10,13
-               db 'Liste des ParamŠtres:',10,13
-               db '    /BO=XX  Boucler X fois (/BO Boucler … l''infini)',10,13
-               db '    /VG=XX  Volume G‚n‚ral (0-768)',10,13
+               db 'Utilisation: MODM MODULE[.MOD] [Paramï¿½tre]',10,10,13
+               db 'Liste des Paramï¿½tres:',10,13
+               db '    /BO=XX  Boucler X fois (/BO Boucler ï¿½ l''infini)',10,13
+               db '    /VG=XX  Volume Gï¿½nï¿½ral (0-768)',10,13
                db '    /EN     Ecran noir (Pas de messages)',10,13
-               db '    /EM     Utiliser l''‚cran Monochrome',10,13
-               db '    /F=XX   Fr‚quence de sortie en Hz (3500-?)',10,13
+               db '    /EM     Utiliser l''ï¿½cran Monochrome',10,13
+               db '    /F=XX   Frï¿½quence de sortie en Hz (3500-?)',10,13
                db '    /SD     Sauve les valeurs de /F et /VG dans MODM.DEF',10,10,13
-               db '   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿',10,13
-               db '   ³  That''s All  ³',10,13
-               db '   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ',10,10,13,'$'
+               db '   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿',10,13
+               db '   ï¿½  That''s All  ï¿½',10,13
+               db '   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',10,10,13,'$'
 Param_err4 db 'Fichier MODM.DEF inexistant',10,10,13
-           db 'Tapez MODM /F=XX [/VG=XX] [/EM] /SD    Pour le cr‚er',10,13,'$'
-Sauve_msg db 'Sauve les ParamŠtres par d‚faut',13,'$'
+           db 'Tapez MODM /F=XX [/VG=XX] [/EM] /SD    Pour le crï¿½er',10,13,'$'
+Sauve_msg db 'Sauve les Paramï¿½tres par dï¿½faut',13,'$'
 Instr_ajoute db 0
 Adresse_table_volume dw 0
 Volume_general dw 0
@@ -4594,13 +4594,13 @@ sample_name db 682 dup (?)
 
 Init_Var  proc near
 
-      MOV ds,debutfich       ;Source sur le d‚but du fichier
+      MOV ds,debutfich       ;Source sur le dï¿½but du fichier
       XOR SI,SI
       Push cs
       POP es
       MOV di,offset titre    ;Vers le titre
       CLD
-      MOV cx,20              ;20 lettres … d‚placer
+      MOV cx,20              ;20 lettres ï¿½ dï¿½placer
       REP MOVSB
 
       MOV DI,offset chaine_mk
@@ -4608,7 +4608,7 @@ Init_Var  proc near
       MOV cx,4
       REPE CMPSB
       MOV instr_ajoute,0
-      PUSH CS                ;DS a ‚t‚ chang‚
+      PUSH CS                ;DS a ï¿½tï¿½ changï¿½
       POP DS
       CMP CX,0
       JNE Pas_mk
@@ -4741,12 +4741,12 @@ Init_Var  endp
 Coef dw 0
 Volume_def dw 400
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Calcul_table_volume      Calculer la table              ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie      Rien                                      ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Calcul_table_volume      Calculer la table              ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie      Rien                                      ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Calcul_table_volume Proc near
 
@@ -4756,7 +4756,7 @@ Calcul_table_volume Proc near
       ADD ax,100h
       AND ax,1111111100000000b
       MOV Adresse_table_volume,ax
-      MOV DI,ax                 ;ax offset de D‚but de la table
+      MOV DI,ax                 ;ax offset de Dï¿½but de la table
       MOV Compt_Volume,0
       MOV ax,Volume_def
       MOV coef,ax          ;400
@@ -4791,12 +4791,12 @@ Calcul_Table_vol:
       RET
 Calcul_table_volume Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Sample_len   Calcule la longueur d'un Sample            ³
-;³     EntrŠe      AL, Num‚ro du sample                      ³
-;³     Sortie      AX, Longueur en Mot                       ³
-;³     Change      AX,BX,ES,DI                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Sample_len   Calcule la longueur d'un Sample            ï¿½
+;ï¿½     Entrï¿½e      AL, Numï¿½ro du sample                      ï¿½
+;ï¿½     Sortie      AX, Longueur en Mot                       ï¿½
+;ï¿½     Change      AX,BX,ES,DI                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Sample_len  proc near
         MOV es,debutfich
@@ -4805,16 +4805,16 @@ Sample_len  proc near
         ADD ax,42
         MOV DI,ax
         MOV ax,ES:[DI]
-        XCHG ah,al          ;L'amiga Place l'octet Fort au d‚but
+        XCHG ah,al          ;L'amiga Place l'octet Fort au dï¿½but
         RET
 Sample_len endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Lire_def      Lire les Valeurs par d‚faut              ³
-;³     EntrŠe                                                ³
-;³     Sortie                                                ³
-;³     Change                                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Lire_def      Lire les Valeurs par dï¿½faut              ï¿½
+;ï¿½     Entrï¿½e                                                ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change                                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 defname db 'MODM.DEF',0
 Valeurs dw 0
@@ -4868,12 +4868,12 @@ def_err:
       RET
 Lire_def Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Traiter_param   Execute la ligne de commande            ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie      Carry:Erreur                              ³
-;³     Change      AX,BX,ES,DI                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Traiter_param   Execute la ligne de commande            ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie      Carry:Erreur                              ï¿½
+;ï¿½     Change      AX,BX,ES,DI                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 Param_cpt db 0
@@ -4992,12 +4992,12 @@ tra_err:
         RET
 Traiter_param Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Execute_param    Analyser le nom de fichier             ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie      Carry:Erreur                              ³
-;³     Change      AX,BX,ES,DI                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Execute_param    Analyser le nom de fichier             ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie      Carry:Erreur                              ï¿½
+;ï¿½     Change      AX,BX,ES,DI                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Execute_param Proc near
         MOV al,Type_de_param
@@ -5069,14 +5069,14 @@ exec_pa_err:
         RET
 Execute_param Endp
 ex_err_msg db 'Valeur incorrecte',10,13,'$'
-Freq_err db 'Utiliser le paramŠtre /F avec /SD$'
+Freq_err db 'Utiliser le paramï¿½tre /F avec /SD$'
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Ecrire_fich   Ecrire le fichier MODM.DEF                ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie      Carry:Erreur                              ³
-;³     Change      AX,BX,ES,DI                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Ecrire_fich   Ecrire le fichier MODM.DEF                ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie      Carry:Erreur                              ï¿½
+;ï¿½     Change      AX,BX,ES,DI                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Ecrire_fich Proc near
         CMP Frequence,0
@@ -5121,12 +5121,12 @@ Ec_f_err:
         RET
 Ecrire_fich Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Charger_nom_fichier   Analyser le nom de fichier        ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie      Carry:Erreur                              ³
-;³     Change      AX,BX,ES,DI                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Charger_nom_fichier   Analyser le nom de fichier        ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie      Carry:Erreur                              ï¿½
+;ï¿½     Change      AX,BX,ES,DI                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 Extentions db 1,'MOD',0,2,'NST',0
@@ -5225,26 +5225,26 @@ Err_charge_n:
         RET
 Charger_nom_fichier Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Charger_module     Charger le module en m‚moire         ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie      Carry:Erreur                              ³
-;³     Change      AX,BX,ES,DI                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Charger_module     Charger le module en mï¿½moire         ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie      Carry:Erreur                              ï¿½
+;ï¿½     Change      AX,BX,ES,DI                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 mem_libre dw 0
 filename db 30 dup (?)
 handle dw 0
-ficherr db 'Le fichier ne peut ˆtre ouvert',10,13,'$'
+ficherr db 'Le fichier ne peut ï¿½tre ouvert',10,13,'$'
 fich_seg dw 0
 cpt_patt db 0
 cpt_samp db 0
 cpt_table dw 0
-err_mem db 'Fichier trop important pour tenir en m‚moire',10,13,'$'
+err_mem db 'Fichier trop important pour tenir en mï¿½moire',10,13,'$'
 err_ch  db 'Erreur en lecture',10,13,'$'
 ch_fichmsg db 'Charge le fichier $'
 
-taille_fichh dw 0             ;Taille r‚elle
+taille_fichh dw 0             ;Taille rï¿½elle
 taille_fichl dw 0             ;du fichier
 
 Charge_module Proc near
@@ -5258,42 +5258,42 @@ Charge_module Proc near
       JMP err_cm                 ;Continuer si fichier ouvert
 detourne1:
 
-      CALL reserve_mem        ;==>R‚serve la m‚moire
+      CALL reserve_mem        ;==>Rï¿½serve la mï¿½moire
       JNC detourne3
       JMP err_cm
 detourne3:
                               ;==>Calcul longueur du fichier
       MOV ah,42h
-      MOV al,2                ;D‚place par rapport … la fin du fichier
+      MOV al,2                ;Dï¿½place par rapport ï¿½ la fin du fichier
       MOV bx,handle           ;handle du fichier
-      XOR cx,cx               ;D‚placement de 0
+      XOR cx,cx               ;Dï¿½placement de 0
       XOR dx,dx               ;donc donne la fin du fichier
       INT 21h
-      ADD ax,500              ;Prendre des pr‚cautions
+      ADD ax,500              ;Prendre des prï¿½cautions
       XOR bx,bx
       ADC dx,bx
       MOV taille_fichh,dx
       MOV taille_fichl,ax
 
       MOV ah,42h
-      MOV al,0                ;D‚place par rapport au d‚but du fichier
+      MOV al,0                ;Dï¿½place par rapport au dï¿½but du fichier
       MOV bx,handle           ;handle du fichier
-      XOR cx,cx               ;D‚placement de 0
+      XOR cx,cx               ;Dï¿½placement de 0
       XOR dx,dx
       INT 21h
                               ;==>Compare la taille du fichier et la
-                              ;==>m‚moire libre
+                              ;==>mï¿½moire libre
       MOV ax,taille_fichh
-      AND ax,0FFF0h           ;Regarde si fichier > … 1Mo
+      AND ax,0FFF0h           ;Regarde si fichier > ï¿½ 1Mo
       OR ax,ax
       JNZ gros_fich
       MOV bx,mem_libre
-      MOV cl,12               ;Compare dernier quartet de la m‚moire
+      MOV cl,12               ;Compare dernier quartet de la mï¿½moire
       SHR bx,cl               ;libre
       MOV ax,taille_fichh
       AND ax,000Fh            ;Avec Premier quartet de taille_fichh
       CMP bx,ax
-      JA petit_fich           ;Plus de m‚moire =>Petit Fichier
+      JA petit_fich           ;Plus de mï¿½moire =>Petit Fichier
       MOV bx,mem_libre
       AND bx,0FFFh
       MOV ax,taille_fichl
@@ -5339,7 +5339,7 @@ Prepare_mod Proc near
       MOV fich_seg,ax
       MOV bx,handle           ;Charge handle
       XOR DX,DX               ;Charge avec 0 dans l'offset
-      MOV CX,43Ch             ;Charge Le d‚but du Fichier
+      MOV CX,43Ch             ;Charge Le dï¿½but du Fichier
       PUSH ax
       POP ds
       MOV ah,3Fh
@@ -5353,16 +5353,16 @@ Mod_Continuer_lire:
 
       CMP mk,1
       JE Charge_mk
-      ADD fich_seg,26h        ;Se Place … un offset nul
+      ADD fich_seg,26h        ;Se Place ï¿½ un offset nul
       MOV ah,42h
-      MOV al,0                ;D‚place par rapport au d‚but du fichier
+      MOV al,0                ;Dï¿½place par rapport au dï¿½but du fichier
       MOV bx,handle           ;handle du fichier
-      XOR cx,cx               ;Se replace au d‚but de la partition
+      XOR cx,cx               ;Se replace au dï¿½but de la partition
       MOV dx,258h
       INT 21h
       JMP Fin_prep_mod
 Charge_mk:
-      ADD fich_seg,44h        ;Se Place … un offset nul
+      ADD fich_seg,44h        ;Se Place ï¿½ un offset nul
 Fin_prep_mod:
       CLC
       RET
@@ -5374,13 +5374,13 @@ err_Prep_mod:
       RET
 Prepare_mod Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Charge_fich Charge le fichier en m‚moire                ³
-;³     EntrŠe      Rien                                      ³
-;³     Sortie                                                ³
-;³     Change      AX,BX,CX,DX,ES,SI,DI                      ³
-;³     Remarque    Utilise afficheb                          ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Charge_fich Charge le fichier en mï¿½moire                ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie                                                ï¿½
+;ï¿½     Change      AX,BX,CX,DX,ES,SI,DI                      ï¿½
+;ï¿½     Remarque    Utilise afficheb                          ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Charge_fich proc near
 
@@ -5410,7 +5410,7 @@ Boucle_pattern:
       JNC Cont_ch_patt
       JMP err_charge
 Cont_ch_patt:
-      ADD Fich_seg,64       ;D‚place le segment
+      ADD Fich_seg,64       ;Dï¿½place le segment
       DEC cpt_patt
       JZ Debut_charge_samp
       ADD cpt_table,2
@@ -5450,7 +5450,7 @@ Boucle_sample:
       SHR AX,1
       SHR AX,1
       INC AX
-      ADD fich_seg,ax      ;D‚place le segment
+      ADD fich_seg,ax      ;Dï¿½place le segment
       INC cpt_samp
       MOV al,cpt_samp
       CMP al,nb_samp
@@ -5464,7 +5464,7 @@ fin_charge:
       INT 21h
 
       DEC nb_samp
-      CLC                  ;Fichier charg‚
+      CLC                  ;Fichier chargï¿½
       RET
                            ;Fin de charge_fich
 err_charge:
@@ -5474,23 +5474,23 @@ fin:
       STC                 ;erreur
       RET
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³ Reserve_mem R‚serve Toute la M‚moire disponible au DOS    ³
-;³                                                           ³
-;³ Remarque: Inclus Dans charge_fich                         ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½ Reserve_mem Rï¿½serve Toute la Mï¿½moire disponible au DOS    ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½ Remarque: Inclus Dans charge_fich                         ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 Reserve_mem proc near
 
       MOV ah,48h
       MOV bx,0FFFFh
       INT 21h
-      MOV mem_libre,bx        ;M‚moire libre en paragraphe
-                              ;R‚server la m‚moire
+      MOV mem_libre,bx        ;Mï¿½moire libre en paragraphe
+                              ;Rï¿½server la mï¿½moire
       MOV ah,58h
       MOV al,1
-      MOV BX,2                ;Cherche bloc … partir du haut de la
+      MOV BX,2                ;Cherche bloc ï¿½ partir du haut de la
       INT 21                  ;memoire
-      MOV ah,48h              ;R‚serve la m‚moire disponible
+      MOV ah,48h              ;Rï¿½serve la mï¿½moire disponible
       MOV bx,mem_libre
       INT 21h
       MOV debutfich,ax
@@ -5505,86 +5505,86 @@ Reserve_mem endp
 Charge_fich endp
 ;------------------------------------ Fin de charge_fich --
 
-;-- PARMTEST : Saisir paramŠtres dans la ligne d'instruction -----------
-;-- Entr‚e   : DS:0000 = Adresse du PSP
-;-- Sortie   : DL = Nombre de paramŠtres identifi‚s
-;-- Registres: AX, CX, DX, SI et FLAGS sont modifi‚s
-;-- Infos    : L'adresse de chaque paramŠtre est stock‚e dans le tableau PARTAB
-;--            comme adresse d'offset par rapport … DS. Un code ASCII 0 est
-;--            en outre stock‚ … la suite de chaque paramŠtre.
+;-- PARMTEST : Saisir paramï¿½tres dans la ligne d'instruction -----------
+;-- Entrï¿½e   : DS:0000 = Adresse du PSP
+;-- Sortie   : DL = Nombre de paramï¿½tres identifiï¿½s
+;-- Registres: AX, CX, DX, SI et FLAGS sont modifiï¿½s
+;-- Infos    : L'adresse de chaque paramï¿½tre est stockï¿½e dans le tableau PARTAB
+;--            comme adresse d'offset par rapport ï¿½ DS. Un code ASCII 0 est
+;--            en outre stockï¿½ ï¿½ la suite de chaque paramï¿½tre.
 
-partab  dw 63 dup (?)           ;Adresses des paramŠtres ligne d'instruction
+partab  dw 63 dup (?)           ;Adresses des paramï¿½tres ligne d'instruction
 
 parmtest  proc near
 
           PUSH CS
           POP ES
-          mov  di,offset partab   ;Adresse de la table de paramŠtres
-          cld                     ;Augmenter comptage pour instr. de chaŒne
-          xor  dx,dx              ;Nombre de paramŠtres identifi‚s
-          mov  si,80h             ;Adresse … laquelle figure le nombre
-                                  ;de caractŠres de la ligne d'instruction
-          mov  cl,byte ptr [si]   ;Lire nombre de caractŠres
-          or   cl,cl              ;Les paramŠtres ont-ils ‚t‚ transmis ?
+          mov  di,offset partab   ;Adresse de la table de paramï¿½tres
+          cld                     ;Augmenter comptage pour instr. de chaï¿½ne
+          xor  dx,dx              ;Nombre de paramï¿½tres identifiï¿½s
+          mov  si,80h             ;Adresse ï¿½ laquelle figure le nombre
+                                  ;de caractï¿½res de la ligne d'instruction
+          mov  cl,byte ptr [si]   ;Lire nombre de caractï¿½res
+          or   cl,cl              ;Les paramï¿½tres ont-ils ï¿½tï¿½ transmis ?
           je   parmtend           ;NON --> Fin
 
-          inc  si                 ;SI d‚signe le d‚but de la ligne d'instruction
-          xor  ch,ch              ;Dans CX figure le nombre de caractŠres
-cherc:    lodsb                   ;Amener caractŠre suivant dans AL
+          inc  si                 ;SI dï¿½signe le dï¿½but de la ligne d'instruction
+          xor  ch,ch              ;Dans CX figure le nombre de caractï¿½res
+cherc:    lodsb                   ;Amener caractï¿½re suivant dans AL
           cmp  al," "             ;Est-ce un espace ?
           je   espac              ;OUI --> ESPAC
-          cmp  al,TAB             ;Est-ce un caractŠre de tabulation ?
+          cmp  al,TAB             ;Est-ce un caractï¿½re de tabulation ?
           je   espac              ;OUI --> ESPAC
 
           ;-- Ni espace ni tabulation ----------------------------------
 
-          or   dh,dh              ;Le dernier caractŠre ‚tait-il un espace ?
-          jne  nextc              ;NON --> Traiter caractŠre suivant
+          or   dh,dh              ;Le dernier caractï¿½re ï¿½tait-il un espace ?
+          jne  nextc              ;NON --> Traiter caractï¿½re suivant
 
-          inc  dl                 ;Incr‚menter nombre de paramŠtres trouv‚s
+          inc  dl                 ;Incrï¿½menter nombre de paramï¿½tres trouvï¿½s
           not  dh                 ;Indique que ni " " ni TAB
-          mov  ax,si              ;Adresse du paramŠtre
+          mov  ax,si              ;Adresse du paramï¿½tre
           dec  ax                 ;calculer
-          stosw                   ;Sauver dans table de paramŠtres
-nextc:    loop cherc              ;Lire caractŠre suivant
-          mov  byte ptr [si],0    ;Fixer caractŠre NUL comme fin de paramŠtres
+          stosw                   ;Sauver dans table de paramï¿½tres
+nextc:    loop cherc              ;Lire caractï¿½re suivant
+          mov  byte ptr [si],0    ;Fixer caractï¿½re NUL comme fin de paramï¿½tres
 
 parmtend: ret                     ;Retour au programme d'appel
 
-espac:    or   dh,dh              ;Le dernier caractŠre ‚tait-il un espace ?
-          je   nextc              ;OUI --> Traiter caractŠre suivant
+espac:    or   dh,dh              ;Le dernier caractï¿½re ï¿½tait-il un espace ?
+          je   nextc              ;OUI --> Traiter caractï¿½re suivant
 
-          ;-- ParamŠtre suivant identifi‚ ------------------------------
+          ;-- Paramï¿½tre suivant identifiï¿½ ------------------------------
 
-          xor  dh,dh              ;Ce caractŠre ‚tait un espace
-          mov  byte ptr [si-1],0  ;Fixer caractŠre NUL comme fin de paramŠtres
-          jmp  short nextc        ;Traiter caractŠre suivant
+          xor  dh,dh              ;Ce caractï¿½re ï¿½tait un espace
+          mov  byte ptr [si-1],0  ;Fixer caractï¿½re NUL comme fin de paramï¿½tres
+          jmp  short nextc        ;Traiter caractï¿½re suivant
 
 parmtest endp
 
 ;-- ASCIIBIN : Convertir nombre ASCII en binaire (16 bits maxi) --------
-;-- Entr‚e   : DS:SI = Adresse du nombre … convertir en format ASCII
+;-- Entrï¿½e   : DS:SI = Adresse du nombre ï¿½ convertir en format ASCII
 ;-- Sortie   : AX = Le nombre converti
 ;--            Flag Carry = 1 : Nombre trop grand
-;-- Registres: AX, BX, CX, SI et FLAGS sont modifi‚s
-;-- Infos    : La chaŒne ASCII doit ˆtre termin‚e par le code 0
+;-- Registres: AX, BX, CX, SI et FLAGS sont modifiï¿½s
+;-- Infos    : La chaï¿½ne ASCII doit ï¿½tre terminï¿½e par le code 0
 
 asciibin  proc near
 
           xor  bh,bh              ;Octet fort de chaque chiffre
-          mov  cx,10              ;Nous travaillons en systŠme d‚cimal
-          xor  ax,ax              ;R‚sultat jusqu'ici
+          mov  cx,10              ;Nous travaillons en systï¿½me dï¿½cimal
+          xor  ax,ax              ;Rï¿½sultat jusqu'ici
 ab_chi:   mov  bl,[si]            ;Lire chiffre suivant
           or   bl,bl              ;Code NUL (Fin) ?
-          je   ab_fin             ;OUI --> Nombre converti sans problŠme
+          je   ab_fin             ;OUI --> Nombre converti sans problï¿½me
           cmp  bl,"0"             ;Tester si chiffre
           jb   ab_ret             ;NON --> erreur
           cmp  bl,"9"             ;Tester si chiffre
           ja   ab_err             ;NON --> erreur
-          mul  cx                 ;Nombre calcul‚ jusqu'ici * 10
+          mul  cx                 ;Nombre calculï¿½ jusqu'ici * 10
           jc   ab_ret             ;Nombre > 65535 --> Erreur
           and  bl,1111b           ;Convertir chiffre en binaire
-          add  ax,bx              ;Ajouter au nombre ant‚rieur
+          add  ax,bx              ;Ajouter au nombre antï¿½rieur
           inc  si                 ;Traiter chiffre suivant
           jmp  short ab_chi
 
@@ -5595,13 +5595,13 @@ ab_err:   stc                     ;Erreur
 ab_ret:   ret                     ;Retour au programme d'appel
 
 asciibin  endp
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Efface_ligne  Efface une ligne                        ³
-;³     EntrŠe      AH:Ligne                                  ³
-;³                 AL:Attribut de la ligne                   ³
-;³     Sortie      Rien                                      ³
-;³     Change      AX,BX,ES,SI                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Efface_ligne  Efface une ligne                        ï¿½
+;ï¿½     Entrï¿½e      AH:Ligne                                  ï¿½
+;ï¿½                 AL:Attribut de la ligne                   ï¿½
+;ï¿½     Sortie      Rien                                      ï¿½
+;ï¿½     Change      AX,BX,ES,SI                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Efface_ligne Proc near
 
@@ -5629,23 +5629,23 @@ Boucle_eff_l:
 Efface_ligne endp
 
 ;-- BIA : Convertir binaire en ASCII et afficher -----------------------
-;-- Entr‚e   : AL = le nombre … convertir
+;-- Entrï¿½e   : AL = le nombre ï¿½ convertir
 ;-- Sortie   : Aucune
-;-- Registres: CX, AX, DL et FLAGS sont modifi‚s
+;-- Registres: CX, AX, DL et FLAGS sont modifiï¿½s
 
 bia       proc near
           CMP al,100
           JAE bia_sup
           MOV WORD PTR ES:[DI-2],0
-          mov  cl,10              ;Nous travaillons en systŠme d‚cimal
-          xor  ah,ah              ;Pr‚parer division 16 bits
+          mov  cl,10              ;Nous travaillons en systï¿½me dï¿½cimal
+          xor  ah,ah              ;Prï¿½parer division 16 bits
           div  cl                 ;Diviser AX par CL
-          or   ax,3030h           ;Convertir r‚sultat en ASCII
+          or   ax,3030h           ;Convertir rï¿½sultat en ASCII
           push ax                 ;Ranger nombre
           MOV ah,0Fh
           STOSW
           pop  ax                 ;Retirer nombre
-          mov  al,ah              ;Amener caractŠre dans AL
+          mov  al,ah              ;Amener caractï¿½re dans AL
           MOV ah,0Fh
           STOSW
           ret                     ;Retour au programme d'appel
@@ -5655,15 +5655,15 @@ bia_sup:
           MOV ES:[DI-2],ax
           POP ax
           sub ax,100
-          mov  cl,10              ;Nous travaillons en systŠme d‚cimal
-          xor  ah,ah              ;Pr‚parer division 16 bits
+          mov  cl,10              ;Nous travaillons en systï¿½me dï¿½cimal
+          xor  ah,ah              ;Prï¿½parer division 16 bits
           div  cl                 ;Diviser AX par CL
-          or   ax,3030h           ;Convertir r‚sultat en ASCII
+          or   ax,3030h           ;Convertir rï¿½sultat en ASCII
           PUSH ax
           MOV ah,0Fh
           STOSW
           POP AX
-          mov  al,ah              ;Amener caractŠre dans AL
+          mov  al,ah              ;Amener caractï¿½re dans AL
           MOV ah,0Fh
           STOSW
 
@@ -5671,21 +5671,21 @@ bia_sup:
 bia       endp
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Affiche_p_xy Affiche la valeur dans AX en HEXA        ³
-;³     EntrŠe      AX                                        ³
-;³                 DI:Position x,y  (2*x+160*y)              ³
-;³     Sortie      Rien                                      ³
-;³     Change      AX,BX,DX,ES                               ³
-;³     Remarque    Utilise afficheb                          ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Affiche_p_xy Affiche la valeur dans AX en HEXA        ï¿½
+;ï¿½     Entrï¿½e      AX                                        ï¿½
+;ï¿½                 DI:Position x,y  (2*x+160*y)              ï¿½
+;ï¿½     Sortie      Rien                                      ï¿½
+;ï¿½     Change      AX,BX,DX,ES                               ï¿½
+;ï¿½     Remarque    Utilise afficheb                          ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 Affiche_p_xy Proc near
       PUSH AX
       MOV al,ah
       AND al,0Fh          ;Reste  de la division par 2^4
       ADD al,90h          ;Remplace
       DAA                 ;al
-      ADC al,40h          ;par carractŠre
+      ADC al,40h          ;par carractï¿½re
       DAA                 ;ASCII
 
       MOV ah,0Fh
@@ -5694,14 +5694,14 @@ Affiche_p_xy Proc near
       CALL affichebxy
       RET
 Affiche_p_xy Endp
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Affichedbxy Affiche la valeur dans AX en HEXA         ³
-;³     EntrŠe      AX                                        ³
-;³                 DI:Position x,y  (2*x+160*y)              ³
-;³     Sortie      Rien                                      ³
-;³     Change      AX,BX,DX,ES                               ³
-;³     Remarque    Utilise afficheb                          ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Affichedbxy Affiche la valeur dans AX en HEXA         ï¿½
+;ï¿½     Entrï¿½e      AX                                        ï¿½
+;ï¿½                 DI:Position x,y  (2*x+160*y)              ï¿½
+;ï¿½     Sortie      Rien                                      ï¿½
+;ï¿½     Change      AX,BX,DX,ES                               ï¿½
+;ï¿½     Remarque    Utilise afficheb                          ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 affichedbxy PROC
         PUSH ax
         MOV al,ah
@@ -5710,13 +5710,13 @@ affichedbxy PROC
         CALL AFFICHEBXY
         RET
 affichedbxy ENDP
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Affichebxy   Affiche la valeur dans AL en HEXA        ³
-;³     EntrŠe     AL                                         ³
-;³                DI:Position x,y  (2*x+160*y)               ³
-;³     Sortie     Rien                                       ³
-;³     Change     AX,BX,DX,ES                                ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Affichebxy   Affiche la valeur dans AL en HEXA        ï¿½
+;ï¿½     Entrï¿½e     AL                                         ï¿½
+;ï¿½                DI:Position x,y  (2*x+160*y)               ï¿½
+;ï¿½     Sortie     Rien                                       ï¿½
+;ï¿½     Change     AX,BX,DX,ES                                ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 affichebxy PROC
 
       PUSH AX
@@ -5730,7 +5730,7 @@ affichebxy PROC
       SHR al,1
       ADD al,90h          ;Remplace
       DAA                 ;al
-      ADC al,40h          ;par carractŠre
+      ADC al,40h          ;par carractï¿½re
       DAA                 ;ASCII
 
       MOV ah,0Fh
@@ -5740,7 +5740,7 @@ affichebxy PROC
       AND al,0Fh          ;Reste  de la division par 2^4
       ADD al,90h          ;Remplace
       DAA                 ;al
-      ADC al,40h          ;par carractŠre
+      ADC al,40h          ;par carractï¿½re
       DAA                 ;ASCII
 
       MOV ah,0Fh
@@ -5754,8 +5754,8 @@ affichebxy ENDP
 
 ;----------------- Variables
 
-Debut_msg db 'Mod Master V1.01',10,13
-          db '(c) 1993-2019 Freddy V‚tel‚',10,10,13,'$'
+Debut_msg db 'Mod Master V1.02',10,13
+          db '(c) 1993-2019 Freddy Vï¿½telï¿½',10,10,13,'$'
 
 init:    MOV ah,4Ah
          MOV bx,offset Pfin

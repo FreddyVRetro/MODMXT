@@ -3,7 +3,7 @@
 {                                                                        }
 {  Interface entre le pascal et les routines sonores de Mod Master.      }
 {                                                                        }
-{  AUTEUR: Freddy Vételé.                                                }
+{  AUTEUR: Freddy Vï¿½telï¿½.                                                }
 {                                                                        }
 {                                                                        }
 {                               Dernieres modifications le 28/01/2020    }
@@ -204,7 +204,7 @@ End; {Start_Output}
 
 PROCEDURE MMSS_Stop_Output;
 Begin
- If Not MMSS_CFG^.Output_Stopped Then { Si musique termin‚e, ne pas l'arrˆter }
+ If Not MMSS_CFG^.Output_Stopped Then { Si musique terminï¿½e, ne pas l'arrï¿½ter }
   Begin
    MMSS_CFG^.Stop_Output:=True;
    Repeat Until MMSS_CFG^.Output_Stopped;
@@ -238,7 +238,7 @@ End; {MMSS_Stop_Musique}
 {---------------------------------------------------------}
 
 (*PROCEDURE ChangerConfigModm;
-{ Changer la fr‚quence et la sortie sonore sans arrˆter la musique }
+{ Changer la frï¿½quence et la sortie sonore sans arrï¿½ter la musique }
 Begin
 If Not (MMSS_CFG^.Musique_Terminee) Then
    Begin
@@ -248,7 +248,7 @@ If Not (MMSS_CFG^.Musique_Terminee) Then
    If Musique^.Ch_Number>14 Then UltraOpen(Ultra_Config,Musique^.Ch_Number)
                               Else UltraReset(14);
    MMSS_CFG^.Stop_Player:=False;
-   Ajuster_Out_Frequency;   { Ajuster la fr‚quence }
+   Ajuster_Out_Frequency;   { Ajuster la frï¿½quence }
    PStart_Output;      { Relancer la sortie   }
    End;
 End; {ChangerConfigModm} *)
@@ -391,11 +391,16 @@ CMS_LPT_Nb:=OPL_LPT_Nb;
    End;
    
 { Check for the Port Nb in the list }
-TDY_PortNb:=0;
-If TDY_Type<>0 then
-   For i:=0 to TDY_PortTotal do
+ TDY_PortNb:=0;
+ If TDY_Type<>0 then
+    For i:=0 to TDY_PortTotal do
        If TDY_Port=TDY_PortList[i] then TDY_PortNb:=i;  
- 
+if TDY_PortNb=0 then 
+   begin
+   TDY_PortNb:=3;  { By default, Port 2C0 }
+   TDY_Port:=TDY_PortList[TDY_PortNb]
+   end;
+
  MMSS_CFG^.TDY_Type:=TDY_Type; 
  MMSS_CFG^.TDY_Port:=TDY_Port;
 

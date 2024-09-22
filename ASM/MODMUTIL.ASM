@@ -1,14 +1,14 @@
-;            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;            º           --==ğğ Mod Master v2.2 ğğ==--           º
-;            ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
-;            º   Auteurúúúúúúúúúúúúúúúúúúúúúúúú Freddy V‚tel‚    º
-;            º   Avec l'aide deúúúúúúúúúúúúúúúú Fabrice Couteau  º
-;            º                                                   º
-;            º   DerniŠre modificationúúúúúúúúú 24/10/1995       º
-;            º    03/04/2019 : Remove Keyboard IRQ               º
-;            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;            ï¿½           --==ï¿½ï¿½ Mod Master v2.2 ï¿½ï¿½==--           ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äº
+;            ï¿½   Auteurï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Freddy Vï¿½telï¿½    ï¿½
+;            ï¿½   Avec l'aide deï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Fabrice Couteau  ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½   Derniï¿½re modificationï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 24/10/1995       ï¿½
+;            ï¿½    03/04/2019 : Remove Keyboard IRQ               ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
-;scan-codes des touches utilis‚es et action associ‚e
+;scan-codes des touches utilisï¿½es et action associï¿½e
 
 scanF1 EQU 59           ;affiche/efface page d'aide
 scanF2 EQU 60           ;liste instruments <-> partition
@@ -18,14 +18,14 @@ scanF5 EQU 63
 scanF6 EQU 64           ;Debug
 scanUp    EQU 72        ;Affichage des voies <-
 scanDown  EQU 80        ;Affichage des voies ->
-scan1 EQU 2             ;active/d‚sactive voie 1
-scan2 EQU 3             ;active/d‚sactive voie 2
-scan3 EQU 4             ;active/d‚sactive voie 3
-scan4 EQU 5             ;active/d‚sactive voie 4
-scan5 EQU 6             ;active/d‚sactive voie 5
-scan6 EQU 7             ;active/d‚sactive voie 6
-scan7 EQU 8             ;active/d‚sactive voie 7
-scan8 EQU 9             ;active/d‚sactive voie 8
+scan1 EQU 2             ;active/dï¿½sactive voie 1
+scan2 EQU 3             ;active/dï¿½sactive voie 2
+scan3 EQU 4             ;active/dï¿½sactive voie 3
+scan4 EQU 5             ;active/dï¿½sactive voie 4
+scan5 EQU 6             ;active/dï¿½sactive voie 5
+scan6 EQU 7             ;active/dï¿½sactive voie 6
+scan7 EQU 8             ;active/dï¿½sactive voie 7
+scan8 EQU 9             ;active/dï¿½sactive voie 8
 scan9 EQU 0Ah
 scan0 Equ 0Bh
 
@@ -36,11 +36,11 @@ scanS EQU 31            ;incremente couleur bout barre pitch
 ScanD EQU 32            ;lance le DOS Shell
 scanW EQU 44            
 scanX EQU 45            
-scanO EQU 24            ;d‚cr‚mente caractere barre periode
-scanP EQU 25            ;incr‚mente caractere barre periode
+scanO EQU 24            ;dï¿½crï¿½mente caractere barre periode
+scanP EQU 25            ;incrï¿½mente caractere barre periode
 scanL EQU 38            ;decremente couleur barre periode
 scanM EQU 39            ;incremente couleur barre periode
-scanR EQU 19            ;active/d‚sactive fonction Repeat
+scanR EQU 19            ;active/dï¿½sactive fonction Repeat
 scanI EQU 23            ;Disable IntroScan
 scanTab    EQU 15       ;mode texte <-> mode graphique
 scanEspace EQU 57       ;active/desactive Pause
@@ -64,17 +64,17 @@ Gerer_Touches PROC NEAR
 ;	   MOV ah,11h
        INT 16h
        JNZ Read_Key
-	   DS_TP
-	   MOV Key_ScanCode,0        ; Save 0 for No Key
-	   DS_ASM
-	   RET ; zero = no key pressed
+       DS_TP
+       MOV Key_ScanCode,0        ; Save 0 for No Key
+       DS_ASM
+       RET ; zero = no key pressed
 Read_Key:	   
        MOV ah,00h ; read the Key Code
        INT 16h	  
        XCHG AL,AH
 
        DS_TP
-	   MOV Key_ScanCode,AL         ; Save the Scan Code for the Pascal
+       MOV Key_ScanCode,AL         ; Save the Scan Code for the Pascal
 
        CMP TP_Fading,1             ; No Key read if fading, except "Escape"
        DS_ASM
@@ -130,10 +130,10 @@ Test_F3:
        CMP MUS_OPLStream,1     ; IMF, RAW, DRO
        JE Test_Monotone_File  
 	   
-	   DS_TP
-	   CMP Center_Display,CD_Part
-	   JNE Change_Display_F3 ; Change the Display /Clean screen only one time
-	   RET
+       DS_TP
+       CMP Center_Display,CD_Part
+       JNE Change_Display_F3 ; Change the Display /Clean screen only one time
+       RET
 Change_Display_F3:	   
        MOV Change_aff_centre,1
        MOV Center_Display,CD_Part ; 1 Partition
@@ -148,7 +148,7 @@ Test_Monotone_File:              ;Monotone file -> No more test Keys
 	   	   
        CMP AL,scanEspace        ;Espace =>Pause
        JNE No_pause
-	   XOR MMSS_Pause,1
+       XOR MMSS_Pause,1
        JZ MMSS_Stop_Pause
        JMP SHORT Enable_Pause
 
@@ -163,7 +163,7 @@ Enable_Pause:
        RET
 
 No_Pause:
-	   CMP MMSS_Pause,1
+       CMP MMSS_Pause,1
        JNE test_Tab
        RET                ;Interdit toutes les touches si PAUSE
 
@@ -173,7 +173,7 @@ If CGAOnly Eq No
        CMP AL,scanTab
        JMP test_PgUp
        DS_TP
-       CMP Changer_affichage,1          ;Mode pas encore chang‚ => ne pas le
+       CMP Changer_affichage,1          ;Mode pas encore changï¿½ => ne pas le
        DS_ASM                           ;changer.
        JE Suite_test_Tab
        DS_TP
@@ -225,13 +225,13 @@ fin_PgDn:
 test_F4:                              ; F4
        CMP AL,scanF4
        JNE test_F5
-	   DS_TP
+	DS_TP
        MOV Change_aff_centre,1
        CMP Center_Display,4
-	   JNE Don_Swap_SubDisplayF4
-	   DS_ASM
-   	   XOR Display_NoteOrBar,1        ; Swap Display
-	   RET
+	JNE Don_Swap_SubDisplayF4
+	DS_ASM
+   	XOR Display_NoteOrBar,1        ; Swap Display
+	RET
 	   
 Don_Swap_SubDisplayF4:	   
        MOV Center_Display,4           ; 4 Multiple Channels
@@ -301,12 +301,12 @@ Suite_Moins:
        RET
 
 Test_1:
-	   MOV AH,AL             
-	   SUB AH,Scan1                   ; Test the '1' to '0' Keys
-	   CMP AH,9
-	   JA test_Right
+	MOV AH,AL             
+	SUB AH,Scan1                   ; Test the '1' to '0' Keys
+	CMP AH,9
+	JA test_Right
        XOR BX,BX
-	   MOV BL,AH
+	MOV BL,AH
        XOR Ch_Control[BX],CM_Disabled ; Reverse the Disabled bit
        JZ Stop_Channel_End            ; If channel enabled, Skip Disable
 
@@ -323,7 +323,7 @@ Stop_Channel_End:
 Test_Right:
        CMP AL,scanRight
        JNE test_Left
-	   ADD Tick_Count,100 ; Test Fast Forward
+	ADD Tick_Count,100 ; Test Fast Forward
        CMP Duree_intro,0
        JNZ Cont_droite
        MOV AL,Sequence_Len
@@ -345,7 +345,7 @@ test_Left:
 
        CMP C_Sequence,1
        JE  Pas_dec_pos
-       DEC C_Sequence        ; D‚cr‚menter la position
+       DEC C_Sequence        ; Dï¿½crï¿½menter la position
 Pas_dec_pos:
        MOV Cmpt_Tempo,1
        MOV Cmd_ModifyPattern,1
@@ -427,7 +427,7 @@ test_R:
        CMP Boucler_MOD,0            ;fonction Repeat active? (Boucler=1 ou 2)
        MOV Boucler_MOD,1            ;active Repeat
        JZ suite_R                   ;non
-       MOV Boucler_MOD,0            ;d‚sactive Repeat
+       MOV Boucler_MOD,0            ;dï¿½sactive Repeat
 suite_R:
        DS_ASM
        CALL Affiche_Fonctions
@@ -436,7 +436,7 @@ suite_R:
 test_I:
        CMP AL,scanI
        JNE test_Esc
-       MOV Duree_intro,0            ;Disable IntroScan (continue … jouer
+       MOV Duree_intro,0            ;Disable IntroScan (continue ï¿½ jouer
                                     ;le module courant dans le programme)
        CALL Affiche_Fonctions
        JMP SHORT Keyboard_End
