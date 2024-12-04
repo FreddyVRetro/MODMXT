@@ -1,12 +1,12 @@
-;            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;            º     ÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷ SBCMD.INC ÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷     º
-;            º                                                   º
-;            º           --==ğğ Mod Master v2.1 ğğ==--           º
-;            ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
-;            º   Auteur                         Freddy Vetele    º
-;            º                                                   º
-;            º   Derniere modification          30/03/2022       º
-;            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;            ï¿½     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SBCMD.INC ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½           --==ï¿½ï¿½ Mod Master v2.1 ï¿½ï¿½==--           ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äº
+;            ï¿½   Auteur                         Freddy Vetele    ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½   Derniere modification          30/03/2022       ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
 
 T_SB1  EQU 1 ;Sound Blaster 1.0
@@ -22,11 +22,11 @@ T_SB16 EQU 8 ;Sound Blaster 16
 Commande_DSP  DB 0
 Frequence_DSP DB 0
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³                                                               ³
-;³              Routines pour la Sound Blaster                   ³
-;³                                                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;-----------------------------------------------------------
+;
+;              Routines pour la Sound Blaster
+;
+;-----------------------------------------------------------
 
 SB_DSP_Init PROC NEAR
 
@@ -52,6 +52,7 @@ SB_DSP_Init PROC NEAR
 		
 SB_DSP_Init ENDP
 
+v
 Fixer_stereo PROC NEAR
 
         MOV AL,0Eh
@@ -60,7 +61,7 @@ Fixer_stereo PROC NEAR
         OUT DX,AL          ; Register 0Eh
         INC DX
         IN AL,DX           ; Lecture registre 0Eh
-        OR AL,2            ; Bit 1 … 1
+        OR AL,2            ; Bit 1 ï¿½ 1
         MOV AH,AL
         MOV AL,0Eh
         DEC DX
@@ -72,6 +73,7 @@ Fixer_stereo PROC NEAR
 
 Fixer_stereo ENDP
 
+; Set the Stereo, for Sound Blaster Pro
 Stop_stereo PROC NEAR
 
         MOV AL,0Eh
@@ -80,7 +82,7 @@ Stop_stereo PROC NEAR
         OUT DX,AL
         INC DX
         IN AL,DX           ; Register 0Eh
-        AND AL,11111101b   ; Bit 1 … 0
+        AND AL,11111101b   ; Bit 1 ï¿½ 0
         MOV AH,AL
         MOV AL,0Eh
         DEC DX
@@ -109,11 +111,11 @@ Fin_bo_att_SB:
 
 Attendre_SB ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    SB_DSP_Write    Sortie d'une commande vers le DSP            ³
-;³                                                               ³
-;³    Entr‚e: AL Commande                                        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;-----------------------------------------------------------
+;    SB_DSP_Write    Sortie d'une commande vers le DSP
+;
+;    Input: AL Command
+;-----------------------------------------------------------
 
 SB_DSP_Write PROC Near
         CMP Erreur_Modm,Err_SB
@@ -175,7 +177,7 @@ SB_Start_Autoinit:
 
 ;Load/Adjust the Output Buffers Size
         MOV CX,Buffer_Byte_Size
-		CMP Out_16Bit,0      ; Output in 16 Bit ?
+	CMP Out_16Bit,0      ; Output in 16 Bit ?
         JE Pas_BuffSB_16
         SHR CX,1             ; 16Bit > Size sent to the SB /2
 Pas_BuffSB_16:
@@ -184,12 +186,12 @@ Pas_BuffSB_16:
 ; ** 1) Send the frequency **
 
         CMP Type_SB,T_SB16 
-		JNE Use_SbFrequency
+	JNE Use_SbFrequency
         CMP Mix_Mono_Use_Left,1  ; 16Bit to 8bit is always unsigned (SB16 command is alyays signed)
-		JE Use_SbFrequency
+	JE Use_SbFrequency
 ; For SB16 Only
         MOV  AL,041h             ; DSP 41h : Set Frequency
-		MOV Frequence_DSP,AL
+	MOV Frequence_DSP,AL
         CALL SB_DSP_Write
         MOV  AX,Real_Frequency
         XCHG AL,AH
@@ -264,7 +266,7 @@ Start_SBSBPro_Autoinit:
 
         MOV  AL,Commande_DSP
         CALL SB_DSP_Write      ; Lancer la commande Sortie DMA
-                               ; Auto Initialis‚e (Sortie continue)
+                               ; Auto Initialisï¿½e (Sortie continue)
 Fin_SB_StartPro:
         RET
 
@@ -287,10 +289,10 @@ Restart_DMA_NC_SB Proc Near
 Restart_DMA_NC_SB Endp
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   SB_ComputeFrequency   Calculs pour sortie DMA                ³
-;³                    sur Sound Blaster                      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;-----------------------------------------------------------------
+;   SB_ComputeFrequency   Calculs pour sortie DMA
+;                    sur Sound Blaster
+;-----------------------------------------------------------------
 
 SB_ComputeFrequency PROC NEAR
                              ;Calculer l'octet a envoyer to la SB
@@ -309,10 +311,10 @@ Pas_Calc_Stereo1:
         POP BX               ;BX=Out_Frequency
         DIV BX
         MOV BX,256           
-        SUB BX,AX            ;BX=256-1000000/fr‚quence
+        SUB BX,AX            ;BX=256-1000000/frï¿½quence
         MOV SB_DMA_Frequency,BL
-                             ;Valeurs pour calculer la fr‚quence
-                             ;des samples (Utilise la fr‚quence r‚elle SB)
+                             ;Valeurs pour calculer la frï¿½quence
+                             ;des samples (Utilise la frï¿½quence rï¿½elle SB)
         XOR BH,BH
         MOV AX,BX
         MOV BX,256           ;AX=Freq_DMA

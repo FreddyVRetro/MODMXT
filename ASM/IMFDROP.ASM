@@ -156,6 +156,7 @@ VGM_NoSetOPL3:
 		
 		MOV BX,300
         CALL Timer_HzToPeriod		
+		MOV Periode_timer,AX		
         CALL Set_Timer0_Period        ; Set Timer IRQ to 300Hz
 
 VGM_Start_End:
@@ -175,6 +176,7 @@ IMF_Start Proc Near
 
 		MOV BX,Out_Frequency
         CALL Timer_HzToPeriod		
+		MOV Periode_timer,AX		
         CALL Set_Timer0_Period        ; Set Timer IRQ to 570KHz
 
         RET

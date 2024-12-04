@@ -311,7 +311,7 @@ Display_Volume_Bar Proc
       XOR CX,CX
       MOV CL,BL
       INC CL
-      MOV AX,11*256+'�'
+      MOV AX,11*256+0DCh ;'�'
 	  REP STOSW
       MOV CL,15
       SUB CL,BL
@@ -537,7 +537,7 @@ Display_SampleCenter2:
 Fin_Aff_Samp:
 
 ; Display the vertical line	  
-      MOV AX,7*256+'�'
+      MOV AX,7*256+0B3h ; '�'
       MOV DI,2*(40-1)+160*(10-1)
       MOV CX,25-12+1	  
 ligne_vert:
@@ -1268,7 +1268,7 @@ Boucle_Lignes_Partition:
 
 pas_changer_couleur:
 ; * Display the Row Number 
-      MOV AX,256*3+'�'
+      MOV AX,256*3+0B3h ; '�'
       OR AH,CouleurFond
       STOSW
       MOV AL,' '
@@ -1283,7 +1283,7 @@ pas_changer_couleur:
       MOV AX,256*3+' '
       OR AH,CouleurFond
       STOSW
-      MOV AL,'�'
+      MOV AL,0B3h ; '�'
       STOSW
 
 ; Read the Partition
@@ -1535,7 +1535,7 @@ Cont_aff_instru:
        CALL Display_Command
 	   
 Fin_aff_voie:
-       MOV AX,256*3+'�'
+       MOV AX,256*3+0B3h ; '�'
        OR AH,CouleurFond
        STOSW
 
@@ -1676,7 +1676,7 @@ Loop_Clean_Lines:
 	  REP STOSW
 	  POP DI
 	  ; Draw the vertical lines
-      MOV AX,256*3+'�'
+      MOV AX,256*3+0B3h ; '�'
 	  STOSW
       ADD DI,4*2
 	  STOSW
@@ -1739,7 +1739,7 @@ boucle:
 ENDM
 
 Affiche_tableau_Partition PROC NEAR
-      MOV AX,256*3+'�'
+      MOV AX,256*3+0B3h
       LigneV  2,12,23
       LigneV  7,12,23
       LigneV 25,12,23
@@ -1763,8 +1763,8 @@ boucle_aff_voie:
       MOV BL,48                  ;noir/cyan
       MOV AL,N_Voie_Aff
       SUB AL,DL                  ;DL=compteur de voie
-      ADD AL,5                   ;AL=n�voie
-      CALL BIA8                  ;affiche n�voie
+      ADD AL,5                   ;AL=n voie
+      CALL BIA8                  ;affiche n voie
       MOV AX,256*48+' '
       STOSW
       MOV AL,'-'
@@ -1776,22 +1776,22 @@ boucle_aff_voie:
       STOSW
       STOSW
       STOSW
-      MOV AL,'�'
+      MOV AL,0B3h ; '�'
       STOSW
       DEC DL
       JNZ boucle_aff_voie
  
       MOV DI,2*(2-1)+160*(YPart-1) 
 
-; Coin sup. gauche (n� pattern)
+; Coin sup. gauche (no pattern)
       STOSW
       STOSW
       STOSW
       STOSW	  
-      MOV AX,256*53+'�'
+      MOV AX,256*53+0DDh ;'�'
       STOSW
   
-      MOV WORD PTR ES:[2*(79-1)+160*(YPart-1)],256*48+'�'  ;coin sup. droit  
+      MOV WORD PTR ES:[2*(79-1)+160*(YPart-1)],256*48+0DEh ;'�'  ;coin sup. droit  
       
       RET
 Affiche_tableau_Partition ENDP
@@ -2215,7 +2215,7 @@ Endif
       CMP CL,8
       JBE boucle_aff_marques
       MOV CL,8                ; n'affiche que 8 notes de musique
-boucleff_marques:
+boucle_aff_marques:
       PUSH CX
       PUSH DX
       CMP CH_Smp_Pla[BX],0FFh  ; -1 => Voie pas encore utilisee
@@ -2274,12 +2274,12 @@ DisplayCenter_Help PROC NEAR
 affiche_aide:
       CALL Eff_centre_ecran
 
-      MOV AX,7*256+'�'
+      MOV AX,7*256+0C4h ;'�'
       MOV DI,2*(2-1)+160*(YPart+1-1)
       MOV CX,79-2+1
       REP STOSW                 ; ligne horizontale
 
-      MOV AL,'�'
+      MOV AL,0BAh ;'�'
       MOV DI,2*(43-1)+160*(YPart-1)
 If CGAOnly Eq Yes
       MOV CL,24-11+1
@@ -2292,9 +2292,9 @@ ligne_verticale_double:
       LOOP ligne_verticale_double
 
 If CGAOnly Eq Yes
-      MOV WORD PTR ES:[2*(43-1)+160*(11-1)],256*7+'�'
+      MOV WORD PTR ES:[2*(43-1)+160*(11-1)],256*7+0D7h ;'�'
 Else
-      MOV WORD PTR ES:[2*(43-1)+160*(13-1)],256*7+'�'
+      MOV WORD PTR ES:[2*(43-1)+160*(13-1)],256*7+0D7h ;'�'
 EndIf
       MOV AH,14                 ; jaune/noir
 
