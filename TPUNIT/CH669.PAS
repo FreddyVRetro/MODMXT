@@ -3,10 +3,10 @@
 {                                                                        }
 {  Loader pour les fichiers 669 (par TRAN de Renaissance) et E669.       }
 {                                                                        }
-{  AUTEUR: Freddy V‚tel‚.                                                }
+{  AUTEUR: Freddy Vetele.                                                }
 {                                                                        }
-{                               D‚but d'‚criture le --/11/94             }
-{                               DerniŠres modifications le 02/11/95      }
+{                               Debut d'ecriture le --/11/94             }
+{                               Dernieres modifications le 02/11/95      }
 {************************************************************************}
 
 {$UNDEF Groupe}
@@ -146,7 +146,7 @@ PROCEDURE Charger_Donnees_Samples(Num:Byte);
 VAR Instr669:T669Instrument;
 
 Begin
-{ R‚serve l'espace DOS pour la d‚finition de samples }
+{ Rï¿½serve l'espace DOS pour la dï¿½finition de samples }
 Allouer_Samples(Num);
 
 For CHU_NSmp:=1 to Num do
@@ -188,7 +188,7 @@ BEGIN
     If Smp.len>0 Then
      Begin
 
-      If Smp.rep_len=65535 Then Smp.rep_len:=0; { Ajustement des donn‚es }
+      If Smp.rep_len=65535 Then Smp.rep_len:=0; { Ajustement des donnï¿½es }
       If Smp.rep_len>Smp.len Then Smp.rep_len:=0;
       If Smp.rep_len+Smp.rep>Smp.len Then Smp.rep:=Smp.len-Smp.rep_len;
       Smp_rep_fin:=Smp.rep+Smp.rep_len;
@@ -241,12 +241,12 @@ Begin  {Charge_669}
   If FICH669^.Ident<>IdentUni669 Then
      Move(FICH669^.Tempos,Musique^.Tempo_Pattern,128);  { Placer les tempos }
 
-  Move(FICH669^.Sequence,Musique^.Sequence,128);     { Copie de la s‚quence }
+  Move(FICH669^.Sequence,Musique^.Sequence,128);     { Copie de la sï¿½quence }
   Musique^.Pos_de_restart:=FICH669^.Repstart+1;
   Musique^.Tempo_Start:=4;
   Musique^.Ch_Number:=8;
   Musique^.Ch_Number_Patt:=8;
-  Musique^.BPM_Start:=80;        { Base 32ø de seconde => 125*32/50=80 }
+  Musique^.BPM_Start:=80;        { Base 32ï¿½ de seconde => 125*32/50=80 }
 
   Erreur_de_chargement:=Ok;
 
@@ -266,7 +266,7 @@ Begin  {Charge_669}
      Charger_Samples669(FICH669^.NSamples);
 
   Init_Panning;
-  FillChar(Musique^.M_CH_Type,Musique^.Ch_Number,1); { Voies num‚riques... }
+  FillChar(Musique^.M_CH_Type,Musique^.Ch_Number,1); { Voies numï¿½riques... }
   Compter_Voies;
 
   Dispose(FICH669);

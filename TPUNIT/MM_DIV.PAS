@@ -1,9 +1,9 @@
 {************************************************************************}
 {                                MM_DIV.PAS                              }
 {                                                                        }
-{  Unit� pour Mod Master: routines diverses                              }
+{  Unite pour Mod Master: routines diverses                             }
 {                                                                        }
-{  AUTEURS: Fabrice Couteau et Freddy V�tel�.                            }
+{  AUTEURS: Fabrice Couteau et Freddy Vetele.                            }
 {                                                                        }
 {                                                                        }
 {                               Debut d'ecriture le --/--/93             }
@@ -67,7 +67,7 @@ VAR  { Public variable }
 IMPLEMENTATION
 
 USES Crt,DOS,BiosEqu,VARUnit,Fichiers,Util,UtilC,Souris,
-     MODMUnit,MM_VAR,MM_Play,CHUtil,MMSS_Var,MMSS_CMD,SBUnit,TDYUnit
+     MODMUnit,MM_VAR,MM_Play,CHUtil,MMSS_Var,MMSS_CMD,SBUnit,TDYUnit,PSGUnit,
 {$IFDEF MONOTONE}
      ,mt_glob,mt_play
 {$ENDIF}
@@ -368,7 +368,7 @@ End; {AnalyseFichierDIR}
 PROCEDURE LitFichierCFG;
 Var i:Byte;
     ident : String[7];
-    buffer: Array[1..30] of Byte;
+    buffer: Array[1..32] of Byte;
     f: Fichier;
 Begin
  With f do
@@ -381,7 +381,7 @@ Begin
 {  Writeln('Taille : ',Taille);}
   If Taille=38 Then { Read the config file if the size is correct }
     Begin
-     LitPos(8,buffer,30);
+     LitPos(8,buffer,32);
      With MMSS_CFG^ do
       Begin
        Wave_Output:=buffer[1];
@@ -419,7 +419,7 @@ Begin
        MMSS_Def_RightPan:=buffer[18];
        Nb_Octaves_MOD:=buffer[19];
 	  End; 
-	   OPL_Model:=buffer[20];
+	     OPL_Model:=buffer[20];
        OPL_LPT_Model:=buffer[21];
        OPL_LPT_Nb:=buffer[22];
        TDY_Type:=buffer[23]; 
@@ -427,10 +427,13 @@ Begin
        TDY_LPT_Nb:=buffer[25];
        CMS_Type:=buffer[26]; 
        CMS_PortNb:=buffer[27];
-       CMS_LPT_Nb:=buffer[28];       
+       CMS_LPT_Nb:=buffer[28]; 
 	   
 	     MMSS_CFG^.CDAC_Port:=(BYTE(buffer[30]) SHL 8) + buffer[29];
-	   
+
+       PSG_Type:=buffer[31];
+       PSG_PortNb:=buffer[32];
+
        MMSS_CFG^.OPL_Model:=OPL_Model;
        MMSS_CFG^.OPL_LPT_Model:=OPL_LPT_Model;
        MMSS_CFG^.OPL_LPT_Nb:=OPL_LPT_Nb;
@@ -442,8 +445,12 @@ Begin
 
        MMSS_CFG^.CMS_Type:=CMS_Type;
        MMSS_CFG^.CMS_LPT_Nb:=CMS_LPT_Nb;
-       If CMS_Type<>0 then CMS_Port:=CMS_PortList[CMS_PortNb];	   
-       MMSS_CFG^.CMS_Port:=CMS_Port
+       If CMS_Type<>0 then CMS_Port:=CMS_PortList[CMS_PortNb];
+
+       MMSS_PSG^.CMS_Port:=PSG_Port
+       MMSS_PSG^.CMS_Type:=PSG_Type;
+       If CMS_Type<>0 then PSG_Port:=PSG_PortList[PSG_PortNb];	   
+       MMSS_CFG^.PSG_Port:=PSG_Port
     End;
    Ferme
   End
@@ -453,7 +460,7 @@ End; {LitFichierCFG}
 
 PROCEDURE EcritFichierCFG;
 Var ident : String[7];
-    buffer: Array[1..30] of Byte;
+    buffer: Array[1..32] of Byte;
     f: Fichier;
 Begin
  With f do
@@ -510,8 +517,10 @@ Begin
    buffer[28]:=CMS_LPT_Nb;
    buffer[29]:=BYTE(MMSS_CFG^.CDAC_Port);
    buffer[30]:=BYTE(MMSS_CFG^.CDAC_Port SHR 8);
+   buffer[31]:=PSG_Type;
+   buffer[32]:=PSG_PortNb;
 
-   Ecrit(buffer,30);
+   Ecrit(buffer,32);
    Ferme
   End
 End; {EcritFichierCFG}
@@ -937,12 +946,12 @@ End;
 
 PROCEDURE DBG_DisplayInsAdl(CHU_NSmp:Byte);
 Begin
-Write('Sample N�',CHU_NSmp);
+Write('Sample Nr',CHU_NSmp);
 
 With MMSS_Table^.PtrSamples[CHU_NSmp]^ Do
 Begin
 Write(' Info: ',Info,' ');
-If (Info And M_Charge)>0 Then Write('Charg� ');
+If (Info And M_Charge)>0 Then Write('Charge ');
 Writeln;
 Write('Seg: ',Seg(MMSS_Table^.PtrSamples[CHU_NSmp]^),'Offs: ',Ofs(MMSS_Table^.PtrSamples[CHU_NSmp]^));
 Writeln('AM1: ',AData.AM1,'AP1: ',AData.AP1);    { AM_VIB_EG + Rythm (Batterie) }

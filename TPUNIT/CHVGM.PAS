@@ -8,7 +8,7 @@
 {************************************************************************}
 
 {$IFNDEF Groupe}
-UNIT ChVGM; {unit‚ pour charger les fichiers MOD }
+UNIT ChVGM; {unitï¿½ pour charger les fichiers MOD }
 {$ELSE}
 UNIT ChVGM_G;
 {$ENDIF}
@@ -55,7 +55,7 @@ TYPE
 				 YM2151Clk  : Longint;
 				 { v1.50 }
 				 DataOffset : Longint;
-                 f1 : Array[1..6] of  Longint;
+             f1 : Array[1..6] of Longint;
 				 YM3812Clk : Longint; { OPL2 v1.51 }
 				 f2 : Longint;
 				 f3 : Longint;
@@ -64,8 +64,12 @@ TYPE
 				 YMF271Clk  : Longint;
 				 YMZ280BClk : Longint;
 				 RC52C164Clk: Longint;
-				 f4: Array[1..22] of Longint;
-				 SAA1099Clk: Longint;
+             PWMClk: Longint;
+             AY8910Clk: Longint;   {PSG AY-3-8910/YM2149}
+             AY8910Type: Byte;
+             AY8910Flags:Array[1..3] of Byte;
+				 f4: Array[1..19] of Longint;
+				 SAA1099Clk: Longint; { CMS }
 				End;
 				
 
@@ -171,6 +175,13 @@ Begin  {Charge_VGM}
               Musique^.Ch_Number :=9;
               Musique^.Ch_Number_Adlib :=9;	
              End;
+          If VGMHeader^.AY8910Clk<>0 then
+             Begin
+              Writeln('PSG',AY8910Clk);
+              MMSS_CFG^.OtherMUS_Out:=MMSS_CFG^.OtherMUS_Out OR M_PSG;
+              Musique^.Ch_Number :=6;
+              {Repeat until Readkey=#13;}
+             End;             
           If (VGMHeader^.SAA1099Clk<>0) and (VGMHeader^.VerL>=$71) then		 
 		     Begin
              {Writeln('SAA1099');
@@ -185,28 +196,10 @@ Begin  {Charge_VGM}
            Erreur:=Err_Unknown_Version;
            EXIT;
           End;
-     
 
 	   {DataOffset}
 	   
  End;  { VGM }
-
-{ Allocate and Clean the Samples names }
-
- {Tmp:=(24*31 DIV 16) +1;
- If Not MMSS_MemAlloc(Ptr_Load,Tmp,True,False) Then
-    Begin
-     Erreur:=Err_Memoire;
-     EXIT;
-    End
-     Else
-    Begin
-     Musique^.PtrInstrNameTable:=Ptr_Load;
-     FillChar(Ptr_Load^,24*31,' ');
-    End;}
-
-{  Writeln('Erreur: ',Erreur);
-  Repeat Until Readkey=#13;}
 
   f_module.Ferme;
   End

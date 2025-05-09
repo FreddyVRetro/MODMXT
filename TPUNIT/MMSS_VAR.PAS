@@ -6,7 +6,7 @@
 {  AUTEUR: Freddy Vetele                                                 }
 {                                                                        }
 {                                                                        }
-{                               DerniŠres modifications le 16/04/20      }
+{                               Derniï¿½res modifications le 16/04/20      }
 {************************************************************************}
 UNIT MMSS_Var;
 {$A+,G-,Q-,R-,S-}
@@ -150,7 +150,7 @@ TYPE Char32=Array[1..32] of Char;
 			  
              Volume_GUS   : Array[0..64] of Word;
              Table_Period : ARRAY[0..12*10] of Word;     { Note to Periods table      }
-             Controle     : Byte; { Contr“le de l'int‚grit‚ du bloc !!! }
+             Controle     : Byte; { Contrï¿½le de l'intï¿½gritï¿½ du bloc !!! }
             End;
 
 { * Music Data Structure, if changed, you need to re convert the .MMM Files * }
@@ -199,6 +199,9 @@ TYPE Char32=Array[1..32] of Char;
             CMS_Type     : Byte;
             CMS_LPT_Nb   : Byte;
             CMS_Port     : Word;            { Base Port for the CMS                  }
+
+            PSG_Type     : Byte;
+            PSG_Port     : Word;            { Base Port for the PSG                  }
 			
 			LPT1_Port    : Word;
             LPT2_Port    : Word;
@@ -388,9 +391,9 @@ CONST
       FunkIt        =32; {E Fx}
 
       SetBPM        =33;        { Fixer les BPM                 }
-      SetGVolume    =34;        { Volume g‚n‚ral (S3M, XM)      }
+      SetGVolume    =34;        { Volume gï¿½nï¿½ral (S3M, XM)      }
       Tremor        =35;        { Tremor (STM,S3M)              }
-      FreqAdj       =36;        { Ajustement de fr‚quence (669) }
+      FreqAdj       =36;        { Ajustement de frï¿½quence (669) }
       ULTSpecial    =37;
       VibrSweep     =38;        { 'Profondeur' du vibrato       }
       Release       =39;        { Key Off (SAT) !!!!! A programmer !!!!! }
@@ -398,20 +401,20 @@ CONST
 
       {Loading Error Codes}
       Ok             =0;
-      Err_memoire    =1;   { Pas assez de m‚moire pour charger le module }
+      Err_memoire    =1;   { Pas assez de mï¿½moire pour charger le module }
       Err_format     =2;
-      Err_lecture    =3;   { Fichier non trouv‚           }
-      Err_samples    =4;   { Fichier non charg‚ en entier }
+      Err_lecture    =3;   { Fichier non trouvï¿½           }
+      Err_samples    =4;   { Fichier non chargï¿½ en entier }
       Err_No_Sample =5;    { Il n'y a pas de sample !!!   }
       Err_Unknown_Version=6;  { Version du fichier non geree ... }
-      Err_Non_Gere   =7;   { Format de fichier non g‚r‚   }
+      Err_Non_Gere   =7;   { Format de fichier non gï¿½rï¿½   }
 	  Err_TooManyPat =8;
 
       {Erreurs non "critiques:": Ok et Err_samples}
 
       {Player Error Codes}
 
-      PErr_Output_NotFound      =1; {La sortie indiqu‚e n'existe pas (Ex:LPT2)}
+      PErr_Output_NotFound      =1; {La sortie indiquï¿½e n'existe pas (Ex:LPT2)}
       PErr_SB                   =2; {SB does not answer          (Disabled)   }	  
       PErr_Invalid_Freq         =3; {Not Correct Frequency                    }
       PErr_Too_Slow             =4; {The computer is too Slow to mix 1 channel}
@@ -428,7 +431,7 @@ CONST
       Tfin_PgUp   =2;
       Tfin_PgDn   =3;
 
-  { Table des p‚riodes Amiga (et PC maintenant ;-) }
+  { Table des pï¿½riodes Amiga (et PC maintenant ;-) }
 {  PeriodSet : Array[0..7] of Array[0..11] of Word = (}
     {  C     C#    D     D#    E     F     F#    G     G#    A     A#    B  }
 {   ($1AC0,$1940,$17D0,$1680,$1530,$1400,$12E0,$11D0,$10D0,$0FE0,$0F00,$0E28),
@@ -518,7 +521,7 @@ VAR {PeriodArray: TPeriodArray ABSOLUTE PeriodSet;}
 
     Boucler_MOD : Boolean;
 
-    Tick_50Hz :Byte;   {le 50Šme de seconde pour l'affichage}
+    Tick_50Hz :Byte;   {le 50ï¿½me de seconde pour l'affichage}
     TP_Fading:Boolean;
 
 

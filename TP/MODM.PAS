@@ -20,12 +20,12 @@ Const
       CtrlV=22;
 
 {$IFNDEF CGAOnly}
-      hauteur_fenetre=22; {nombre de fichiers affichables simultan�ment}
-      x_asc=42; y_asc=4;  {coordonn�es de la fl�che vers le haut}
+      hauteur_fenetre=22; {nombre de fichiers affichables simultanement}
+      x_asc=42; y_asc=4;  {coordonnees de la fleche vers le haut}
       x_CGA=0;
 {$ELSE}
-      hauteur_fenetre=19; {nombre de fichiers affichables simultan�ment}
-      x_asc=43; y_asc=4;  {coordonn�es de la fl�che vers le haut}
+      hauteur_fenetre=19; {nombre de fichiers affichables simultanement}
+      x_asc=43; y_asc=4;  {coordonnees de la fleche vers le haut}
       x_CGA=1;
 {$ENDIF}
 
@@ -45,7 +45,7 @@ Var x,y,anc_bouton_souris: Byte;
 {----------------------------------------------------------}
 
 Procedure AttendClavierSouris(attend_bouge,condition: Boolean; Var x,y: Byte);
-{modifi�e pour l'�conomiseur...}
+{modifiee pour l'economiseur...}
 Var x_init,y_init,boutons: Byte;
     compteur_delai_eco,compteur_delai_eco_max: Word;
     top: Longint;
@@ -588,7 +588,7 @@ Begin {GestionInterface}
 		If MMSS_CFG^.MMSS_Error<>0 then AfficheErreur('Replay Error:',Play_Err[MMSS_CFG^.MMSS_Error],4);
 
         Programme:=anc_prog;
-        IntroScan:=(Duree_intro>0); {car il peut etre desactiv� dans Play}
+        IntroScan:=(Duree_intro>0); {car il peut etre desactive dans Play}
         lecture_module:=lecture_prog and (Touche_fin<>Tfin_Esc);
         Case Touche_fin of
          Tfin_normale: If Numero_module<Longueur_prog Then Inc(Numero_module) Else lecture_module:=False;
@@ -596,7 +596,7 @@ Begin {GestionInterface}
          Tfin_PgDn: Inc(Numero_module)
         End
        End
-      Else  {erreur, le module n'a pas pu �tre charg�}
+      Else  {erreur, le fichier n'a pas pu etre charge}
        Begin
 {$IFNDEF CGAOnly}
         InitModeTexte;

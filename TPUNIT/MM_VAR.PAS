@@ -1,5 +1,5 @@
 UNIT MM_VAR;
-{unit� pour Mod Master: types, constantes et variables}
+{unite pour Mod Master: types, constantes et variables}
 { Change output names}
 { 19/06/19 Max files reduced to 255 }
 
@@ -21,12 +21,12 @@ CONST REGISTERED=True;    {pour le bridage...}
 	  
       M_DefVol  = 1;
       M_DefFreq = 2;
-	  M_NoFreq  = 4;
-	  M_IMF     = 8;
+	M_NoFreq  = 4;
+	M_IMF     = 8;
 	  
-	  D_Name   = 0;
-	  D_Volume = 1;
-	  D_Freq   = 2;
+	D_Name   = 0;
+	D_Volume = 1;
+	D_Freq   = 2;
 
 TYPE langues=Anglais..Francais;
 
@@ -118,19 +118,20 @@ CONST version_min_PRG: Array[1..3] of Char='2.0';
           'Format not supported in',
           'File Protected');
 
-      Play_Err:Array[1..12] of String[17] = (
+      Play_Err:Array[1..13] of String[17] = (
           'Output Not Found',
           'SB Timeout',
           'Invalid Freq',
           'Computer too Slow',
           'Music Not Loaded',
           'Invalid Ch Number',
-		  'Invalid Format',
-		  'Adlib Not Found',
-		  'OPL3 Not Found',
-		  'TDY Not Found',
-		  'Bad VGM Command',
-		  'CMS Not Found');
+	    'Invalid Format',
+	    'Adlib Not Found',
+	    'OPL3 Not Found',
+	    'TDY Not Found',
+	    'Bad VGM Command',
+	    'CMS Not Found',
+          'PSG Not Found');
 
 
       lecteur_txt         =1;

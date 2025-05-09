@@ -49,7 +49,7 @@ USES Crt,Dos,VARUnit,Fichiers,Clavier,Util,UtilC,Texte,
 CONST MonoStereo: Array[0..1] of String[6]
        =('Mono','Stereo');
 
-VAR {variables pour l'�conomiseur}
+VAR {variables pour l'economiseur}
     teste_touche,touche_appuyee: Boolean;
     anc_INT09h: Pointer;
 
@@ -103,9 +103,9 @@ Const Titre_bouton_txt: Array[1..nbr_boutons] of String[11]
          (x:56;y:22;attr_relache: 71;attr_appuye: 72;attr_lettre: 79),  {Aide}
          (x:68;y:22;attr_relache:192;attr_appuye:200;attr_lettre:207)); {Quitte}
 {$ENDIF}
-         {Reglages_txt: Array[langues] of String[8]=('Settings','R�glages');}
+         {Reglages_txt: Array[langues] of String[8]=('Settings','Reglages');}
 
-         {Programme_txt: Array[langues] of String[9]=('Program','Programme');}
+         {Programme_txt: String[7]='Program';}
 
 Var i: Byte;
 
@@ -125,7 +125,7 @@ Begin
  EffaceZone(0,1,1,80,1,31);
  AffChXY(0,30,1,'- MOD MASTER XT v1.02 -',31);
  
- {fen�tre modules}
+ {fenetre modules}
 {$IFNDEF CGAOnly}
  EffaceZoneCoins(1,3,50,26,49);
  Cadre(0,1,2,3,49,26,49,'',0,'');
@@ -136,43 +136,43 @@ Begin
  {$ENDIF}
 
 {$IFNDEF CGAOnly}
-  {ombre horizontale fen�tre modules}
+  {ombre horizontale fenetre modules}
   AffCarXY(0, 2,27,#236,8);
   AffChXY(0,3,27,RepeteCar(chr(220),50-3+1),128);
   AffCarXY(0,51,27,#237,8);
-  {ombre verticale fen�tre modules}
+  {ombre verticale fenetre modules}
   AffCarXY(0,51, 3,#231,8);
  For i:=4 to 26 do AffCarXY(0,51,i,' ',128); 
 {$ELSE}
- {ombre horizontale fen�tre modules}
+ {ombre horizontale fenetre modules}
  AffChXY(0,3,24,RepeteCar(chr(220),50-3+2),128);
- {ombre verticale fen�tre modules}
+ {ombre verticale fenetre modules}
  For i:=4 to 23 do AffCarXY(0,51,i,' ',128); 
  {$ENDIF}
 
  {$IFNDEF CGAOnly}      { VGA 28 Lines}
- {fen�tre boutons}
+ {fenetre boutons}
  EffaceZoneCoins(53,3,79,26,154);
  Cadre(0,1,54,3,78,11,154,' Settings ',154,'');
  Cadre(0,1,55,4,77,8,144,'',144,'');
- Cadre(0,1,54,16,78,23,154,' '+Programme_txt[Langue]+' ',154,'');
+ Cadre(0,1,54,16,78,23,154,' '+Programme_txt+' ',154,'');
  AffCarXY(0,79,26,#227,152);
- {ombre horizontale fen�tre boutons}
+ {ombre horizontale fenetre boutons}
  AffCarXY(0,54,27,#236,8);
  AffChXY(0,55,27,RepeteCar(chr(220),79-55+1),128);
  AffCarXY(0,80,27,#237,8);
- {ombre verticale fen�tre boutons}
+ {ombre verticale fenetre boutons}
  AffCarXY(0,80, 3,#231,8);
  For i:=4 to 26 do AffCarXY(0,80,i,' ',128);
 {$ELSE}                  { CGA 25 Lines }
- {fen�tre boutons}
+ {fenetre boutons}
  EffaceZoneCoins(53,3,79,23,154);
  Cadre(0,1,54,3,78,11,154,' Settings ',154,'');
  Cadre(0,1,55,4,77,8,144,'',144,'');
  Cadre(0,1,54,14,78,21,154,' Program ',154,'');
- {ombre horizontale fen�tre boutons}
+ {ombre horizontale fenetre boutons}
  AffChXY(0,55,24,RepeteCar(chr(220),79-55+2),128);
- {ombre verticale fen�tre boutons}
+ {ombre verticale fenetre boutons}
  For i:=4 to 23 do AffCarXY(0,80,i,' ',128); 
  {$ENDIF}
  
@@ -287,7 +287,7 @@ Var msg: String25;
 Begin
  msg:=Erreurs[lecteur_txt]+' '+repert[1]+': '+Erreurs[pas_pret_txt];
  If liste_lecteurs='' Then
-  Begin {reste sur le m�me lecteur}
+  Begin {reste sur le meme lecteur}
    If repert[1]=LettreCDRom Then code_message:=inserez_CDRom_txt
                             Else code_message:=inserez_disq_txt;
    AfficheErreur(msg,Erreurs[code_message],0)
@@ -438,7 +438,7 @@ Const CouleurSortie: Array[Boolean] of Byte=(24,23);
 	  x_OPL_Model: Array[0..2] of Byte    =(41,50,59);
  	  x_TDY_Type: Array[0..2] of Byte    =(41,50,58); {,66);}
 	  x_CMS_Type: Array[0..2] of Byte    =(41,50,58); {,66);}
-      Lpt_txt: Array[0..4] of String[4]=('None','LPT1','LPT2','LPT3','LPT4');
+    Lpt_txt: Array[0..4] of String[4]=('None','LPT1','LPT2','LPT3','LPT4');
 
       xDMA: Array[SB..SBPro] of Byte=(41,42);
       xIRQ: Array[SB..SBPro] of Byte=(49,54);
@@ -652,6 +652,11 @@ Begin
                   If CMS_Type=2 then AffChXY(0,47,12,Lpt_txt[CMS_LPT_Nb],29)
                       Else AffChXY(0,47,12,EntierHexa(CMS_PortList[CMS_PortNb],3)+'h',29);
               End;			  
+     PSG    : Begin
+              For i:=0 to 1 do {No, Int}
+                  If CMS_Type=i then AfficheCase(x_TDY_Type[i],Out_Nb_S+8,True)  { Same position as Tandy }
+                      Else AfficheCase(x_TDY_Type[i],Out_Nb_S+8,False);
+              End;
     End;
 End;
 
@@ -820,13 +825,15 @@ Begin
                OPLLPT : If (OPL_LPT_Model<2) and (LPT_Nb<>0) then INC(OPL_LPT_Model);
                TDY    : If TDY_Type<2 then INC(TDY_Type); { No Emul for the moment }
                CMS    : If CMS_Type<2 then INC(CMS_Type); { No Emul for the moment }
+               PSG    : If PSG_Type<1 then INC(PSG_Type); { No Emul for the moment }
               End;
 
       Left :  Case Out_Nb_S of 
                OPL    : If OPL_Model>0 then DEC(OPL_Model);
                OPLLPT : If (OPL_LPT_Model>0) and (LPT_Nb<>0) then DEC(OPL_LPT_Model);
                TDY    : If TDY_Type>0 then DEC(TDY_Type);
-			   CMS    : If CMS_Type>0 then DEC(CMS_Type);
+			         CMS    : If CMS_Type>0 then DEC(CMS_Type);
+			         PSG    : If PSG_Type>0 then DEC(PSG_Type);
               End;
 
       Space,112,80 : Case Out_Nb_S of {p, P, Space }
@@ -834,6 +841,10 @@ Begin
 	                            INC(OPL_LPT_Nb);
                                 If OPL_LPT_Nb>LPT_Nb then OPL_LPT_Nb:=1;
                                End;
+                       PSG: Begin
+	                            INC(OPL_PSG_Nb);
+                                If OPL_PSF_Nb>PSG_Nb then OPL_PSG_Nb:=1;
+                               End;                               
                        TDY : Case TDY_Type Of
                                 1 : Begin
                                      INC(TDY_PortNb);
@@ -978,10 +989,15 @@ Begin
              End;
        CMS: If y=11 Then
              Case x of
-               41..48: CMS_Type:=0;
-               51..58: CMS_Type:=1;
-               59..65: CMS_Type:=2;
-             End;			 
+               41..48: CMS_Type:=0; { None }
+               51..58: CMS_Type:=1; { Int  }
+               59..65: CMS_Type:=2; { LPT  }
+             End;
+       PSG: If y=11 Then
+             Case x of
+               41..48: PSG_Type:=0; { None }
+               51..58: PSG_Type:=1; { Int  }
+             End;	             
 	  End;
 
      End; { If Out_Type=2 }

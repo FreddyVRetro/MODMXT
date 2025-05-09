@@ -52,7 +52,7 @@ FUNCTION  MMSS_TestIRQ:Byte;
 IMPLEMENTATION
 
 USES Fichiers,Util,BIOSEQU,MMSS_Var,MMSS_CMD,VarUnit,Memoire,CHUtil,Texte,Clavier,
-     SBUnit,TDYUnit,
+     SBUnit,TDYUnit,PSGUnit,
 {$IFNDEF NoGUS}
      GusUnit,
 {$ENDIF}

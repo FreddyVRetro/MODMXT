@@ -5,7 +5,7 @@
 ;            |   Written By                     Freddy Vetele    |
 ;            |                                                   |
 ;            |   Write Start                    08/05/2020       |
-;            |   Last Update                    21/10/2021       |
+;            |   Last Update                    08/05/2025       |
 ;            -----------------------------------------------------
 INCLUDE TDY.ASM
 INCLUDE CMS.ASM
@@ -133,6 +133,17 @@ VGM_CMS_Present:
         MOV Ch_Number,12           ; CMS > 12 Channels
         CALL Init_CMS
 VGM_NoCMS:		
+
+		TEST OtherMUS_Out,M_PSG
+		JZ VGM_NoPSG
+        CMP CMS_Type,0             ; PSG Present ?
+		JNZ VGM_PSG_Present
+        MOV Erreur_Modm,Err_PSG_NotFound ; PSG Needed and not found
+        JMP VGM_Start_End
+VGM_PSG_Present:
+        MOV Ch_Number,6           ; CMS > 6 Channels (Dual PSG)
+        CALL Init_PSG
+VGM_NoPSG:
 
 
 		TEST OtherMUS_Out,M_OPL2 ; OPL2 Init ?
@@ -308,6 +319,11 @@ Stop_Stream_IRQ:
 		JZ @@IRQEndNoCleanTDY
         CALL TDY_Mute     ; Mute Tandy (Vol=0)
 @@IRQEndNoCleanTDY:
+
+		TEST OtherMUS_Out,M_PSG
+		JZ @@IRQEndNoCleanPSG
+        CALL PSG_Mute     ; Mute PSG (Vol=0)
+@@IRQEndNoCleanPSG:
 
 		TEST OtherMUS_Out,M_SAA1099
 		JZ @@IRQEndNoCleanCMS
@@ -897,7 +913,9 @@ VGMLoop:
 		CMP AL,5Fh
 		JE VGM_OPL3_2 ; OPL3
         CMP AL,0BDh
-        JE VGM_CMS		
+        JE VGM_CMS
+        CMP AL,0A0h
+        JE VGM_PSG
 ; Check for Delay Commands		
 ; 0x61  nn nn  Wait n samples, n can range from 0 to 65535 (approx 1.49 seconds).
 ;              Longer pauses than this are represented by multiple wait commands.
@@ -1017,6 +1035,22 @@ VGM_CMS_FirstChip:
 		INC SI
 		CALL Write_CMSStream      ; Write to the CMS
         JMP @@VGM_Continue
+
+VGM_PSG:
+        MOV AH,ES:[SI]            ; Register Adress
+
+        MOV PSGPortOffset,0
+		TEST AH,80h               ; Test the Index (Chip Nb)
+		JZ VGM_PSG_FirstChip
+        MOV PSGPortOffset,2       ; Second Chip		
+VGM_PSG_FirstChip:
+        AND AH,01111111b          ; Clean the Index Bit
+		INC SI
+        MOV AL,ES:[SI]            ; PSG Data
+		INC SI
+		CALL Write_PSGStream      ; Write to the PSG
+        JMP @@VGM_Continue
+
 @@VGM_Continue:
 		
 ; Check if it is the End of the Music
