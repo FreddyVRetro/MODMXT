@@ -9,6 +9,7 @@
 ;            -----------------------------------------------------
 INCLUDE TDY.ASM
 INCLUDE CMS.ASM
+INCLUDE PSG.ASM
 
 ; * Define Variables used by the Stream Based Music replay *
 ; > Equ to reuse existing Mod Master Variables (To Save Size and Debug Display)

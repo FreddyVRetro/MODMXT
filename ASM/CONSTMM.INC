@@ -1,12 +1,12 @@
-;            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;            º     ÷÷÷÷÷÷÷÷÷÷÷÷÷÷ CONSTMM.INC ÷÷÷÷÷÷÷÷÷÷÷÷÷÷     º
-;            º                                                   º
-;            º          --==ğğ Mod Master v2.2á ğğ==--           º
-;            ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
-;            º   Auteurúúúúúúúúúúúúúúúúúúúúúúúú Freddy V‚tel‚    º
-;            º                                                   º
-;            º   DerniŠre modificationúúúúúúúúú 29/08/1995       º
-;            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;            ï¿½     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CONSTMM.INC ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½          --==ï¿½ï¿½ Mod Master v2.2ï¿½ ï¿½ï¿½==--           ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äº
+;            ï¿½   Auteurï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Freddy Vï¿½telï¿½    ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½   Derniï¿½re modificationï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 29/08/1995       ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 ;                ** Tableaux de constantes pour Mod Master **
 
 b Equ Byte Ptr
@@ -33,7 +33,7 @@ Sampl struc
       SDadj          DW ?
       SAdresse_GUS   DD ?
       SSegment       DW ?   ;\
-      SHandle_EMS    DW ?   ; |-- Bloc de M‚moire...
+      SHandle_EMS    DW ?   ; |-- Bloc de Mï¿½moire...
       SNb_Pages_EMS  DB ?   ;/
 Sampl ends
 
@@ -42,16 +42,16 @@ Adlb struc
 ;     ANom           DB 32 DUP (?)
       AVolume        DB ?
       ADadj          DW ?
-      AM1            DB ?    ; Modulateur (1 ø ParamŠtre)
-      AP1            DB ?    ; Porteuse   (1 ø ParamŠtre)
+      AM1            DB ?    ; Modulateur (1 ï¿½ Paramï¿½tre)
+      AP1            DB ?    ; Porteuse   (1 ï¿½ Paramï¿½tre)
       AM2            DB ?
       AP2            DB ?
       AM3            DB ?
       AP3            DB ?
       AM4            DB ?
       AP4            DB ?
-      AM5            DB ?    ; Modulateur (5 ø ParamŠtre)
-      AP5            DB ?    ; Porteuse   (5 ø ParamŠtre)
+      AM5            DB ?    ; Modulateur (5 ï¿½ Paramï¿½tre)
+      AP5            DB ?    ; Porteuse   (5 ï¿½ Paramï¿½tre)
       AFeedBack      DB ?
       AFill          DB 12 DUP (?)
 Adlb ends
@@ -112,18 +112,19 @@ d Equ DWord Ptr
 
 ;Erreurs Mod Master...
 
-Err_Output_NotFound      EQU 1 ; {La sortie indiquee n'existe pas (Ex:LPT2)}
-Err_SB                   EQU 2 ; {SB does not answer          (Disabled)   }
-Err_Invalid_Freq         EQU 3 ; {Not Correct Frequency                    }
-Err_Too_Slow             EQU 4 ; {The computer is too Slow to mix 1 channel}
-Err_MOD_NotLoaded        EQU 5 ; {Module Not Loaded                        }
-Err_Invalid_Channels     EQU 6 ; {Invalid Nb of channels                   }
-Err_Invalid_MOD          EQU 7 ; {Format error or not supported            }
-Err_OPL_NotFound         EQU 8 ;
-Err_OPL3_NotFound        EQU 9 ;
+Err_Output_NotFound      EQU 1  ; {La sortie indiquee n'existe pas (Ex:LPT2)}
+Err_SB                   EQU 2  ; {SB does not answer          (Disabled)   }
+Err_Invalid_Freq         EQU 3  ; {Not Correct Frequency                    }
+Err_Too_Slow             EQU 4  ; {The computer is too Slow to mix 1 channel}
+Err_MOD_NotLoaded        EQU 5  ; {Module Not Loaded                        }
+Err_Invalid_Channels     EQU 6  ; {Invalid Nb of channels                   }
+Err_Invalid_MOD          EQU 7  ; {Format error or not supported            }
+Err_OPL_NotFound         EQU 8  ;
+Err_OPL3_NotFound        EQU 9  ;
 Err_TDY_NotFound         Equ 10
-Err_CMD_NotSupported     EQU 11; { VGM Command not supported               }
-Err_CMS_NotFound         EQU 12;
+Err_CMD_NotSupported     EQU 11 ; { VGM Command not supported               }
+Err_CMS_NotFound         EQU 12 ;
+Err_PSG_NotFound         Equ 13 
 
 ;sorties sonores
 
@@ -145,6 +146,7 @@ M_SID     EQU 8;
 M_OPL2    EQU 16;
 M_OPL3    EQU 32;
 M_SAA1099 EQU 64;
+M_PSG     EQU 128;
 
 
 ;Type de module
@@ -212,7 +214,7 @@ T_bep DB 20h,1Fh,1Eh,1Dh,1Ch,1Bh,1Ah,19h,18h,17h,16h,15h,14h,13h,12h,11h
       DB 39h,38h,38h,38h,38h,38h,38h,38h,38h,37h,37h,37h,37h,37h,36h,36h
       DB 36h,36h,35h,35h,35h,35h,34h,34h,34h,33h,33h,32h,32h,31h,31h,30h
       DB 30h,2Fh,2Eh,2Dh,2Ch,2Bh,2Ah,29h,28h,27h,26h,25h,24h,23h,22h,21h
-; Table de conversion pour la carte Adlib (Synt‚ OPL 2)
+; Table de conversion pour la carte Adlib (Syntï¿½ OPL 2)
 
 T_Adlib DB 63,56,51,48,45,43,41,40,38,37,36,35,34,34,33,32
         DB 31,31,30,29,29,28,28,27,27,26,26,26,25,25,24,24

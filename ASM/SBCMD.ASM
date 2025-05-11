@@ -52,7 +52,6 @@ SB_DSP_Init PROC NEAR
 		
 SB_DSP_Init ENDP
 
-v
 Fixer_stereo PROC NEAR
 
         MOV AL,0Eh
