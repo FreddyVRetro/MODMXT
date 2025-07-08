@@ -3,10 +3,10 @@
 {                                                                        }
 {  XM Files Loader. (Fast Tracker 2)                                     }
 {                                                                        }
-{  AUTEUR: Freddy V‚tel‚.                                                }
+{  AUTEUR: Freddy Vetele.                                                }
 {                                                                        }
-{                               D‚but d'‚criture le --/10/19             }
-{                               DerniŠres modifications le --/10/19      }
+{                               Debut d'ecriture le --/10/19             }
+{                               Dernieres modifications le --/10/19      }
 {************************************************************************}
 
 {$UNDEF Groupe}
@@ -553,10 +553,10 @@ Begin
    Musique^.Ch_Number_Digit:=XM^.NbChannel;
    Musique^.Tempo_Start:=XM^.Tempo;         { Start Tempo                  }
    Musique^.BPM_Start:=XM^.BPM;             { Start BPM                    }
-   Musique^.Volume_General_depart:=$40;     { Volume g‚n‚ral Initial       }
+   Musique^.Volume_General_depart:=$40;     { Volume gï¿½nï¿½ral Initial       }
    Musique^.Nb_Instr:=XM^.NbInstr;
                                             { No Panning Table }
-   FillChar(Musique^.M_CH_Type,Musique^.Ch_Number,1); { Voies num‚riques... }
+   FillChar(Musique^.M_CH_Type,Musique^.Ch_Number,1); { Voies numï¿½riques... }
    Init_Panning;
 
    { ADD Flag Management (Linear Freq) }

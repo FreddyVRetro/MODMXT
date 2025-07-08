@@ -137,7 +137,7 @@ VGM_NoCMS:
 
 		TEST OtherMUS_Out,M_PSG
 		JZ VGM_NoPSG
-        CMP CMS_Type,0             ; PSG Present ?
+        CMP PSG_Type,0             ; PSG Present ?
 		JNZ VGM_PSG_Present
         MOV Erreur_Modm,Err_PSG_NotFound ; PSG Needed and not found
         JMP VGM_Start_End
@@ -858,6 +858,15 @@ Write_TDYStream_End:
         RET
 Write_TDYStream Endp
 
+Write_PSGStream Proc Near
+        PUSH CX
+
+        CALL PSG_Out
+
+        POP CX
+        RET
+Write_PSGStream Endp
+
 ; Init_StreamPtr : Update the Address of the current stream data (64K Segments)
 
 Init_StreamPtr Proc Near
@@ -1040,10 +1049,10 @@ VGM_CMS_FirstChip:
 VGM_PSG:
         MOV AH,ES:[SI]            ; Register Adress
 
-        MOV PSGPortOffset,0
+        MOV PSG_PortOffset,0
 		TEST AH,80h               ; Test the Index (Chip Nb)
 		JZ VGM_PSG_FirstChip
-        MOV PSGPortOffset,2       ; Second Chip		
+        MOV PSG_PortOffset,2       ; Second Chip		
 VGM_PSG_FirstChip:
         AND AH,01111111b          ; Clean the Index Bit
 		INC SI

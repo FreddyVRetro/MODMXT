@@ -339,21 +339,21 @@ Affichage_texte PROC NEAR
       DS_TP
       MOV AL,Center_Display
       DS_ASM
-	  CMP AL,CD_Debug
+	CMP AL,CD_Debug
       JE Aff_Debug
       CMP AL,CD_Part
       JE Aff_part   
       OR AL,AL	  
       JE Aff_marques
-	  CMP AL,CD_Bar
-	  JE Display_MultipleChannels    ; 4 -> Multi Channels Bar View
+	CMP AL,CD_Bar
+	JE Display_MultipleChannels    ; 4 -> Multi Channels Bar View
 	  
       JMP DisplayCenter_Help         ; 2 -> Help
 
 Aff_Part:
 
-	  CMP Type_Module,T_MON
-	  JE Fin_choix_centre
+	CMP Type_Module,T_MON
+	JE Fin_choix_centre
       JMP DisplayCenter_Partition4  ; 1 -> Partition View
 	 
 Aff_marques:
@@ -799,7 +799,7 @@ Pas_Effacer_Centre:
       MOV BH,C_Green_M_White
       CALL WriteXY_Dec16
 	  
-   	  MOV DI,2*(78-1)+160*(3+Ypart-1)
+   	MOV DI,2*(78-1)+160*(3+Ypart-1)
       MOV BL,C_Red                  ;chiffres rouge
       MOV AL,Max_Mixed3
       MOV BH,1                  ;affiche dizaines nulles
@@ -909,18 +909,18 @@ Boucle_Aff_Debug_Voies:
       ADD DI,4
 
       MOV AL,Ch_Part_Vol[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8
       POP BX
-	  POP DI
+	POP DI
 
       ADD DI,8
 
       MOV AL,Ch_Final_Vol[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8
       POP BX
@@ -929,8 +929,8 @@ Boucle_Aff_Debug_Voies:
       ADD DI,8
 
       MOV AX,CH_Per_part[BP]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex16          ;affiche
       POP BX
@@ -938,8 +938,8 @@ Boucle_Aff_Debug_Voies:
 
       ADD DI,6
 
-	  PUSH DI
-	  PUSH BX     
+	PUSH DI
+	PUSH BX     
       MOV AX,VC4Spd[BP]
       MOV BH,C_White
       CALL WriteXY_Dec16	 
@@ -949,18 +949,18 @@ Boucle_Aff_Debug_Voies:
       ADD DI,6
 
       MOV AL,Ch_Note[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
       POP DI	
 	  
-	  ADD DI,6
+	ADD DI,6
 	  
       MOV AX,CH_Per_part[BP]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex16          ;affiche
       POP BX
@@ -969,8 +969,8 @@ Boucle_Aff_Debug_Voies:
       ADD DI,12
 
       MOV AL,VPart_entiere[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -978,9 +978,9 @@ Boucle_Aff_Debug_Voies:
 
       ADD DI,4
 	  
-	  MOV AL,VPart_decimale[BX]
-	  PUSH DI
-	  PUSH BX
+	MOV AL,VPart_decimale[BX]
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -988,9 +988,9 @@ Boucle_Aff_Debug_Voies:
 
       ADD DI,4
 	  
-	  MOV AL,VPart_decimale2[BX]
-	  PUSH DI
-	  PUSH BX
+	MOV AL,VPart_decimale2[BX]
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -999,8 +999,8 @@ Boucle_Aff_Debug_Voies:
       ADD DI,10
 
       MOV AL,Vitesse_vib[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -1009,8 +1009,8 @@ Boucle_Aff_Debug_Voies:
       ADD DI,6
 	  
       MOV AL,Amplitude_vib[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -1019,18 +1019,18 @@ Boucle_Aff_Debug_Voies:
       ADD DI,6	  
 
       MOV AL,Vibr_Index[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
       POP DI
 	  
-	  ADD DI,8
+	ADD DI,8
 
       MOV AL,Retrig_V_Tr[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -1039,8 +1039,8 @@ Boucle_Aff_Debug_Voies:
       ADD DI,8
 	   
       MOV AL,Cmpt_Commande[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -1049,38 +1049,38 @@ Boucle_Aff_Debug_Voies:
       ADD DI,8
 	  
       MOV AL,CH_Panning[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
       POP DI	  
 	  
-	  ADD DI,8
+	ADD DI,8
 
       MOV AL,V_Rel_Note[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
       POP DI
 	 
-	  ADD DI,8
+	ADD DI,8
 	 
       MOV AL,Ch_Smp_Tick_Cnt[BX] 
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
       POP DI	  
 	  
-	  ADD DI,8
+	ADD DI,8
 	 
       MOV AL,Ch_Priority[BX] 
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -1092,22 +1092,22 @@ Boucle_Aff_Debug_Voies:
 
       MOV AX,C_yellow*256+07h
       TEST Ch_Control[BX],CM_FPause ; Forced Pause > Brown
-	  JNZ Dbg_DCLoop_ChOnOff
+	JNZ Dbg_DCLoop_ChOnOff
       MOV AH,C_green
       TEST Ch_Control[BX],CM_Stopped
-	  JZ Dbg_DCLoop_ChOnOff
+	JZ Dbg_DCLoop_ChOnOff
       MOV AH,C_Red
       TEST Ch_Control[BX],CM_FStop  ; Forced Stop > Red
-	  JNZ Dbg_DCLoop_ChOnOff
-	  MOV AL,' '
+	JNZ Dbg_DCLoop_ChOnOff
+	MOV AL,' '
 Dbg_DCLoop_ChOnOff:
       STOSW
 
-	  ADD DI,2
+	ADD DI,2
 	 
       MOV AL,Mix_Channel_List[BX]
-	  PUSH DI
-	  PUSH BX
+	PUSH DI
+	PUSH BX
       MOV BH,C_White
       CALL WriteXY_Hex8           ;affiche
       POP BX
@@ -1115,8 +1115,8 @@ Dbg_DCLoop_ChOnOff:
 	  
 	  
 ;      MOV AX,Per0_arp[BP]
-;	   PUSH DI
-;	   PUSH BX
+;	 PUSH DI
+;	 PUSH BX
 ;      MOV BH,15                 ;chiffres Blanc
 ;      CALL WriteXY_Hex16          ;affiche
 ;      POP BX
@@ -1144,13 +1144,13 @@ Dbg_DCLoop_ChOnOff:
        
       ADD DI,160-16-8-6-6-12-4-4-8-6-6-10-6-8-8-8-8-8-2-10
   
-	  POP CX
-	  INC BX
-	  INC BP
-	  INC BP
-	  DEC CX
-	  JZ Fin_Boucle_Aff_Debug_Voies
-	  JMP Boucle_Aff_Debug_Voies
+	POP CX
+	INC BX
+	INC BP
+	INC BP
+	DEC CX
+	JZ Fin_Boucle_Aff_Debug_Voies
+	JMP Boucle_Aff_Debug_Voies
 	  
 Fin_Boucle_Aff_Debug_Voies:
 	  
@@ -1195,7 +1195,7 @@ DisplayCenter_Partition4 PROC NEAR
       JNE Pas_aff_Part
       CALL Eff_centre_ecran
       CALL Affiche_tableau_Partition
-	  MOV DP_PrevPattern,0FFh
+	 MOV DP_PrevPattern,0FFh
       DS_TP
       MOV Change_aff_centre,0
       DS_ASM

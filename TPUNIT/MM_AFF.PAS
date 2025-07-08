@@ -44,7 +44,7 @@ IMPLEMENTATION
 
 
 USES Crt,Dos,VARUnit,Fichiers,Clavier,Util,UtilC,Texte,
-     Memoire,MMSS_CMD,MMSS_Var,MM_VAR,MM_DIV,SBUnit,TDYUnit,GUSUnit;
+     Memoire,MMSS_CMD,MMSS_Var,MM_VAR,MM_DIV,SBUnit,TDYUnit,GUSUnit,PSGUnit;
 
 CONST MonoStereo: Array[0..1] of String[6]
        =('Mono','Stereo');
@@ -842,8 +842,8 @@ Begin
                                 If OPL_LPT_Nb>LPT_Nb then OPL_LPT_Nb:=1;
                                End;
                        PSG: Begin
-	                            INC(OPL_PSG_Nb);
-                                If OPL_PSF_Nb>PSG_Nb then OPL_PSG_Nb:=1;
+	                            INC(PSG_PortNb);
+                                If PSG_PortNb>PSG_PortTotal then PSG_PortNb:=1;
                                End;                               
                        TDY : Case TDY_Type Of
                                 1 : Begin

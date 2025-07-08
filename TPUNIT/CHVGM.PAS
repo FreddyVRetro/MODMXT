@@ -177,10 +177,10 @@ Begin  {Charge_VGM}
              End;
           If VGMHeader^.AY8910Clk<>0 then
              Begin
-              Writeln('PSG',AY8910Clk);
+              Writeln('PSG',VGMHeader^.AY8910Clk);
               MMSS_CFG^.OtherMUS_Out:=MMSS_CFG^.OtherMUS_Out OR M_PSG;
               Musique^.Ch_Number :=6;
-              {Repeat until Readkey=#13;}
+              Repeat until Readkey=#13;
              End;             
           If (VGMHeader^.SAA1099Clk<>0) and (VGMHeader^.VerL>=$71) then		 
 		     Begin

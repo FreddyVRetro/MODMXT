@@ -287,9 +287,9 @@ Anglais  EQU 0
 Francais EQU 1
 
 
-;��������������������������������������������������������������ͻ
-;�                    Variables principales                     �
-;��������������������������������������������������������������ͼ
+;-----------------------------------------------------------------
+;�                       Main Variables                         �
+;-----------------------------------------------------------------
 
 ;Variables used for Mod Master Only (Display/Other)
 If Mod_Master eq yes
@@ -307,8 +307,8 @@ Max_Period  DW 0
 
 Real_Frequency DW 16000    ; 'Real' Mixing Frequency value
 Periode_timer  DW 0
-P_Amiga_h DW 0
-P_Amiga_l DW 0
+P_Amiga_h      DW 0
+P_Amiga_l      DW 0
 
 Volume_total DB 0
 Volume_Saved DB 0 ; Value saved before fading (Used ?)
@@ -421,9 +421,9 @@ INCLUDE SBCMD.ASM      ; Sound Blaster Code
 INCLUDE TDYDAC.ASM     ; Tandy DAC Code
 INCLUDE HARDWARE.ASM   ; EMS, DMA, IRQ
 
-;��������������������������������������������������������������ͻ
+;-----------------------------------------------------------------
 ;�         External / Public Variables and Procedures Def       �
-;��������������������������������������������������������������ͼ
+;-----------------------------------------------------------------
 
 ; Procedures visible by the Pascal Code 
 
@@ -465,7 +465,7 @@ EXTRN Boucler_MOD         :BYTE
 EXTRN TP_Fading           :BYTE   ; To use in Sound System
 EXTRN TP_Chrono_min       :BYTE   ; To use in Sound System
 EXTRN TP_Chrono_sec       :BYTE   ; To use in Sound System
-EXTRN Tick_50Hz     :BYTE   ; le 50�me de seconde pour l'affichage
+EXTRN Tick_50Hz           :BYTE   ; le 50�me de seconde pour l'affichage
 
 ; Structures defined in VAR_MUS.TPU
 ;*****  MMSS_CFG^ in the Turbo Pascal
@@ -5852,9 +5852,9 @@ Fin_volume_slide:
         RET
 Volume_slide ENDP
 
-;���������������������������������Ŀ
+;------------------------------------
 ;�  - Volume fine (Up et Down) -   �
-;�����������������������������������
+;------------------------------------
 
 Volume_fine PROC NEAR
         CMP Cmpt_Commande[BX],0
@@ -5865,9 +5865,9 @@ Pas_exec_VolFine:
         RET
 Volume_fine ENDP
 
-;������������������������Ŀ
+;---------------------------
 ;�  - Tone Portamento -   �
-;��������������������������
+;---------------------------
 
 Tone_portamento PROC NEAR
         MOV DX,Per_tone_prt[BP]
@@ -5910,9 +5910,9 @@ Fin_t_pr:
         RET
 Tone_portamento ENDP
 
-;������������������������Ŀ
+;---------------------------
 ;�      - Vibrato -       �
-;��������������������������
+;---------------------------
 
 Vibrato PROC NEAR                     ;Ne pas changer CH_Per_part !!!
          CMP Vibr_Index[BX],63
@@ -5946,9 +5946,9 @@ Fin_vib:
          RET
 Vibrato ENDP
 
-;������������������������Ŀ
+;---------------------------
 ;�      - Tremolo -       �
-;��������������������������
+;---------------------------
 
 Tremolo PROC NEAR
          CMP Trem_Index[BX],63

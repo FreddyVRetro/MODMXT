@@ -67,7 +67,7 @@ VAR  { Public variable }
 IMPLEMENTATION
 
 USES Crt,DOS,BiosEqu,VARUnit,Fichiers,Util,UtilC,Souris,
-     MODMUnit,MM_VAR,MM_Play,CHUtil,MMSS_Var,MMSS_CMD,SBUnit,TDYUnit,PSGUnit,
+     MODMUnit,MM_VAR,MM_Play,CHUtil,MMSS_Var,MMSS_CMD,SBUnit,TDYUnit,PSGUnit
 {$IFDEF MONOTONE}
      ,mt_glob,mt_play
 {$ENDIF}
@@ -446,10 +446,10 @@ Begin
        MMSS_CFG^.CMS_Type:=CMS_Type;
        MMSS_CFG^.CMS_LPT_Nb:=CMS_LPT_Nb;
        If CMS_Type<>0 then CMS_Port:=CMS_PortList[CMS_PortNb];
+       MMSS_CFG^.CMS_Port:=CMS_Port;
 
-       MMSS_PSG^.CMS_Port:=PSG_Port
-       MMSS_PSG^.CMS_Type:=PSG_Type;
-       If CMS_Type<>0 then PSG_Port:=PSG_PortList[PSG_PortNb];	   
+       MMSS_CFG^.PSG_Type:=PSG_Type;
+       If PSG_Type<>0 then PSG_Port:=PSG_PortList[PSG_PortNb];
        MMSS_CFG^.PSG_Port:=PSG_Port
     End;
    Ferme
@@ -518,7 +518,7 @@ Begin
    buffer[29]:=BYTE(MMSS_CFG^.CDAC_Port);
    buffer[30]:=BYTE(MMSS_CFG^.CDAC_Port SHR 8);
    buffer[31]:=PSG_Type;
-   buffer[32]:=PSG_PortNb;
+   buffer[32]:=PSG_Port;
 
    Ecrit(buffer,32);
    Ferme

@@ -1,14 +1,13 @@
-{����������������������������������������������������������������������ͻ}
-{�                      --==�� FICHIERS.PAS ��==--                      �}
-{�                                                                      �}
-{� Unit� pour g�rer les fichiers DOS                                    �}
-{�                                                                      �}
-{� AUTEUR: Fabrice Couteau                                              �}
-{����������������������������������������������������������������������Ķ}
-{� Compatibilit�: 8088          D�but d'�criture���������������??/12/93 �}
-{�                              Derni�res modifications��������03/09/95 �}
-{����������������������������������������������������������������������ͼ}
-
+{***********************************************************************}
+{*                  --==�� FICHIERS.PAS ��==--                      *}
+{*                                                                     *}
+{* Unit� pour gerer les fichiers DOS                                  *}
+{*                                                                     *}
+{* AUTEUR: Fabrice Couteau                                             *}
+{***********************************************************************}
+{* Compatibilite: 8088          Debut d'ecriture          ??/12/93   *}
+{*                              Dernieres modifications    03/09/95   *}
+{***********************************************************************}
 UNIT Fichiers;
 
 {$A+,G-,Q-,R-,S-}
@@ -17,7 +16,7 @@ INTERFACE
 
 {$I Types}
 
-CONST {modes d'acc�s}
+CONST {modes d'acces}
       lecture   = $00;
       ecriture  = $01;
       lectecrit = $02;

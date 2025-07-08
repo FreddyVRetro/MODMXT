@@ -344,6 +344,7 @@ CONST
 	  OPLLPT  = 1;
 	  TDY     = 2;
 	  CMS     = 3;
+      PSG     = 4;
 	  
       { Mask for the Synth Output used by the Music }
 	  M_Speaker = 1;
@@ -353,6 +354,7 @@ CONST
 	  M_OPL2    = 16;
 	  M_OPL3    = 32;
 	  M_SAA1099 = 64; { CMS }
+      M_PSG     = 128;
 	  
       {Commandes de la partition}
       Rien          =0;

@@ -92,10 +92,10 @@ Stop_stereo PROC NEAR
         RET
 Stop_stereo ENDP
 
-Attendre_SB PROC NEAR
+Attendre_SB PROC NEAR  
 
         MOV DX,SB_BasePort
-        ADD DX,0Ch          ;DSPWritePort
+        ADD DX,0Ch          ;DSPWritePort  (DSP Write Buffer Status)
         XOR CX,CX           ;Try 65536 Times
 bo_att_SB:
         IN AL,DX
