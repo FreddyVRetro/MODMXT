@@ -52,31 +52,31 @@ PUSH AX
 PUSH ES
 PUSH DI
       MOV AX,0B800h
-	  MOV ES,AX
-	  MOV DI,CS:ScreenPos
+	MOV ES,AX
+	MOV DI,CS:ScreenPos
       MOV AH,15
-	  MOV AL,x
+	MOV AL,x
       STOSW
-	  CMP DI,3999
-	  JB NotLoopScreen3
-	  XOR DI,DI
+	CMP DI,3999
+	JB NotLoopScreen3
+	XOR DI,DI
 NotLoopScreen3:	 
-	  MOV CS:ScreenPos,DI
+	MOV CS:ScreenPos,DI
 POP DI
 POP ES
 POP AX
 ENDM
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;?  WriteStrXY   Write a NULL Terminated String   ?
-;?    Entr┌e:                                                   ?
+;?    EntrО©╫e:                                                   ?
 ;?           SI=offset du message (ASCIIZ)                        ?
-;?           DI=adresse dans la m┌moire vid┌o (texte)         ?
+;?           DI=adresse dans la mО©╫moire vidО©╫o (texte)         ?
 ;?           AH=attribut couleur                              ?
 ;?    Sortie: Rien                                          ?
 ;?    Change                                                ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 WriteStrXY PROC NEAR
          LODSB
 wr_Boucle_aff:
@@ -88,22 +88,22 @@ wr_Boucle_aff:
 WriteStrXY ENDP
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
-;?WriteStrXY2     Affiche un message de 2 couleurs diff┌rentes ?
-;?    Entr┌e:                                               ?
-;?           SI=offset du message (ASCIIZ, s┌parateur='^')  ?
-;?           DI=adresse dans la m┌moire vid┌o (texte)       ?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
+;?WriteStrXY2     Affiche un message de 2 couleurs diffО©╫rentes ?
+;?    EntrО©╫e:                                               ?
+;?           SI=offset du message (ASCIIZ, sО©╫parateur='^')  ?
+;?           DI=adresse dans la mО©╫moire vidО©╫o (texte)       ?
 ;?           AH=attribut couleur principal                  ?
 ;?           BH=attribut couleur secondaire                 ?
 ;?    Sortie: Rien                                          ?
 ;?    Change                                                ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 WriteStrXY2 PROC NEAR
          LODSB
 boucle_aff_car:
-         CMP AL,'^'             ; caract┼re de contr⌠le?
+         CMP AL,'^'             ; caractО©╫re de contrО©╫le?
          JNE affiche_car        ; non
-         XCHG AH,BH             ; ┌change les 2 attributs
+         XCHG AH,BH             ; О©╫change les 2 attributs
          JMP SHORT saute_controle
  affiche_car:
          STOSW
@@ -115,13 +115,13 @@ boucle_aff_car:
 WriteStrXY2 ENDP
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;?    Affichedb   Affiche la valeur dans AX en HEXA         ?
-;?    Entr┌e      AX                                        ?
+;?    EntrО©╫e      AX                                        ?
 ;?    Sortie      Rien                                      ?
 ;?    Change      AX,ES,SI,DI                               ?
 ;?    Remarque    Utilise Afficheb                          ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 Affichedb PROC NEAR
       PUSH AX
       MOV AL,AH
@@ -132,44 +132,44 @@ Affichedb PROC NEAR
 Affichedb ENDP
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;?    Afficheb   Affiche la valeur dans AL en HEXA          ?
-;?    Entr┌e     AL                                         ?
+;?    EntrО©╫e     AL                                         ?
 ;?    Sortie     Rien                                       ?
 ;?    Change     AX,CX,ES,SI,DI                                ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 Afficheb PROC NEAR
       PUSH DS
-      PUSH AX             ;Valeur ┘ afficher
+      PUSH AX             ;Valeur О©╫ afficher
 	  MOV CL,4
       SHR AL,CL            ;Divise par 16
       ADD AL,90h          ;Remplace
       DAA                 ;AL
-      ADC AL,40h          ;par caract┼re
+      ADC AL,40h          ;par caractО©╫re
       DAA                 ;ASCII
-      MOV AH,0Eh          ;Sortie de caract┼re sous BIOS
+      MOV AH,0Eh          ;Sortie de caractО©╫re sous BIOS
       INT 10h
       POP AX
       AND AL,0Fh          ;Reste de la division par 2^4
       ADD AL,90h          ;Remplace
       DAA                 ;AL
-      ADC AL,40h          ;par caract┼re
+      ADC AL,40h          ;par caractО©╫re
       DAA                 ;ASCII
-      MOV AH,0Eh          ;Sortie de caract┼re sous BIOS
+      MOV AH,0Eh          ;Sortie de caractО©╫re sous BIOS
       INT 10h
       POP DS
       RET                 ;Redonne la main
 Afficheb ENDP
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;?    WriteXY_Hex16 Affiche la valeur dans AX en HEXA         ?
-;?    Entr┌e      AX                                        ?
+;?    EntrО©╫e      AX                                        ?
 ;?                DI:Position x,y  (2*x+160*y)              ?
 ;?    Sortie      Rien                                      ?
 ;?    Change      AX,BX,DX,ES                               ?
 ;?    Remarque    Utilise WriteXY_Hex8                        ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 WriteXY_Hex16 PROC NEAR
         PUSH AX
         MOV AL,AH
@@ -180,20 +180,20 @@ WriteXY_Hex16 PROC NEAR
 WriteXY_Hex16 ENDP
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;?    WriteXY_Hex8 Affiche la valeur dans AL en HEXA        ?
-;?    Entr┌e   AL:valeur,    BH:attribut couleur          ?
+;?    EntrО©╫e   AL:valeur,    BH:attribut couleur          ?
 ;?               DI:Position x,y  2*(x-1)+160*(y-1)         ?
 ;?    Sortie     Rien                                       ?
 ;?    Change     AX,CX                                         ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 WriteXY_Hex8 PROC NEAR
-      PUSH AX             ;Valeur ┘ afficher
+      PUSH AX             ;Valeur О©╫ afficher
 	  MOV CL,4
       SHR AL,CL            ;Divise par 16
       ADD AL,90h          ;Remplace
       DAA                 ;AL
-      ADC AL,40h          ;par caract┼re
+      ADC AL,40h          ;par caractО©╫re
       DAA                 ;ASCII
 
       MOV AH,BH
@@ -203,7 +203,7 @@ WriteXY_Hex8 PROC NEAR
       AND AL,0Fh          ;Reste de la division par 2^4
       ADD AL,90h          ;Remplace
       DAA                 ;AL
-      ADC AL,40h          ;par caract┼re
+      ADC AL,40h          ;par caractО©╫re
       DAA                 ;ASCII
 
       MOV AH,BH
@@ -212,20 +212,20 @@ WriteXY_Hex8 PROC NEAR
 WriteXY_Hex8 ENDP
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;? BIA8        AFFICHE UN NOMBRE 8 BITS EN DECIMAL          ?
-;? Entr┌es:  AL=nombre ┘ afficher                         ?
-;?             BH=0: affiche un ' ' ┘ la place du chiffre   ?
+;? EntrО©╫es:  AL=nombre О©╫ afficher                         ?
+;?             BH=0: affiche un ' ' О©╫ la place du chiffre   ?
 ;?                   des dizaines s'il est nul (et AL<100)  ?
 ;?             BH=1: affiche toujours les dizaines          ?
 ;?             BL=attribut couleur                          ?
-;?             DI=adresse dans la m┌moire vid┌o (texte)     ?
+;?             DI=adresse dans la mО©╫moire vidО©╫o (texte)     ?
 ;? Sortie:     Rien                                         ?
 ;? Change:     AX,BX,CX,DI,Flags                            ?
 ;?                                                          ?
 ;? Remarques:  - Si AL>=100, le chiffre des centaines est   ?
-;?                affich┌ en DI-1                           ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;?                affichО©╫ en DI-1                           ?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 Bia8      PROC NEAR
           CMP AL,100
           JB inf_cent            ;nombre<100
@@ -238,10 +238,10 @@ Bia8      PROC NEAR
           PUSH AX
           MOV AH,BL              ;AH=attribut
           DEC DI
-          DEC DI                 ;chiffre des centaines en retrait ┘ gauche
+          DEC DI                 ;chiffre des centaines en retrait О©╫ gauche
           STOSW                  ;affiche centaines
           POP AX
-          MOV AL,AH              ;AL=reste (dizaines?nit┌s)
+          MOV AL,AH              ;AL=reste (dizaines?nitО©╫s)
 
 inf_cent:
           XOR AH,AH
@@ -259,26 +259,26 @@ affiche_dizaines:
           MOV AH,BL              ;AH=attribut
           STOSW                  ;affiche dizaines (ou ' ')
           POP AX
-          MOV AL,AH              ;AL=unit┌s
+          MOV AL,AH              ;AL=unitО©╫s
           MOV AH,BL              ;AH=attribut
-          STOSW                  ;affiche unit┌s
+          STOSW                  ;affiche unitО©╫s
           RET
 Bia8      ENDP
 
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;? BIA16       AFFICHE UN NOMBRE 16 BITS (<999) EN DECIMAL  ?
-;? Entr┌es:    AX=nombre ┘ afficher (999 max)               ?
-;?             BH=0: affiche un ' ' ┘ la place du chiffre   ?
+;? EntrО©╫es:    AX=nombre О©╫ afficher (999 max)               ?
+;?             BH=0: affiche un ' ' О©╫ la place du chiffre   ?
 ;?                   des dizaines s'il est nul (et AX<100)  ?
 ;?             BH=1: affiche toujours les dizaines          ?
 ;?             BL=attribut couleur                          ?
-;?             DI=adresse dans la m┌moire vid┌o (texte)     ?
+;?             DI=adresse dans la mО©╫moire vidО©╫o (texte)     ?
 ;? Sortie:     Rien                                         ?
 ;? Change:     AX,BX,CX,DI,Flags                            ?
 ;?                                                          ?
 ;? Remarques: - Utilise BIA8                                ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 Bia16     PROC NEAR
           MOV CL,100
           DIV CL                 ;AX/100 (AL=quotient, AH=reste)
@@ -294,20 +294,20 @@ affiche_centaines:
           MOV AH,BL              ;AH=attribut
           STOSW                  ;affiche centaines (ou ' ')
           POP AX
-          MOV AL,AH              ;AL=reste (dizaines?nit┌s)
+          MOV AL,AH              ;AL=reste (dizaines?nitО©╫s)
           CALL BIA8
           RET
 Bia16     ENDP
 
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;? Decimal16   AFFICHE UN NOMBRE 16 BITS EN DECIMAL          ?
-;? Entr┌es:  AX=nombre ┘ afficher                       ?
+;? EntrО©╫es:  AX=nombre О©╫ afficher                       ?
 ;?             BH=attribut couleur                           ?
-;?             DI=adresse dans la m┌moire vid┌o (texte) ?
+;?             DI=adresse dans la mО©╫moire vidО©╫o (texte) ?
 ;? Sortie:     Rien                                          ?
 ;? Change:     AX,BX,CX,DX,DI,Flags                          ?
 ;?                                                           ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 WriteXY_Dec16 Proc NEAR
           PUSH DI
           PUSH AX
@@ -353,15 +353,15 @@ Aff_CH16End:
           RET
 WriteXY_Dec16 EndP		  
 		  
-;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 ;? Decimal16   AFFICHE UN NOMBRE 16 BITS EN DECIMAL          ?
-;? Entr┌es:  AX=nombre ┘ afficher                       ?
+;? EntrО©╫es:  AX=nombre О©╫ afficher                       ?
 ;?             BH=attribut couleur                           ?
-;?             DI=adresse dans la m┌moire vid┌o (texte) ?
+;?             DI=adresse dans la mО©╫moire vidО©╫o (texte) ?
 ;? Sortie:     Rien                                          ?
 ;? Change:     AX,BX,CX,DX,DI,Flags                          ?
 ;?                                                           ?
-;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд?
+;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫?
 Decimal16 PROC NEAR
           MOV AX,Seg_Video           ;ES => Segment video (Texte couleur...)
           MOV ES,AX

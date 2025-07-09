@@ -2145,21 +2145,21 @@ Update_BuffersDelta Proc Near
         CALL DMA8_ReadOffset
 
         ADD AX,MixDMA_OffsetDelta
-		MOV Buffer_Current_Out_Offs,AX  ; TDY : Save Current DMA Offset (For Display Only)
+	MOV Buffer_Current_Out_Offs,AX  ; TDY : Save Current DMA Offset (For Display Only)
 		
-		MOV BX,Buffer_Current_Mix_Offs  ; Offset of the Last mixed Byte
-		CMP BX,AX
-		JAE @@MixIsAbove
-		ADD BX,Buffers_Total_Size_Byte   ; Mix Buffer is before > Add the buffer Size
+	MOV BX,Buffer_Current_Mix_Offs  ; Offset of the Last mixed Byte
+	CMP BX,AX
+	JAE @@MixIsAbove
+	ADD BX,Buffers_Total_Size_Byte   ; Mix Buffer is before > Add the buffer Size
 @@MixIsAbove:
         SUB BX,AX
-		MOV CurrentMix_Delta,BX
+	MOV CurrentMix_Delta,BX
 			
         MOV Buffer_Ahead_Cnt,6    ; To avoid to cut the mixing.
-		CMP BX,MixDelta_Min
-		JA @@MixAboveMin
-		MOV AL,Buffers_Ahead_Min  ; Cut the mixing or don't mix the next buffer (Slow)
-		MOV Buffer_Ahead_Cnt,AL
+	CMP BX,MixDelta_Min
+	JA @@MixAboveMin
+	MOV AL,Buffers_Ahead_Min  ; Cut the mixing or don't mix the next buffer (Slow)
+	MOV Buffer_Ahead_Cnt,AL
 @@MixAboveMin:
         RET
 Update_BuffersDelta Endp
@@ -2169,8 +2169,8 @@ Update_BuffersDelta Endp
 ; Tandy DAC: IRQ for the end of the DMA buffer: Only Aknowledge the IRQ
 IRQ_TDY_DAC Proc Far
 
-		PUSH AX
-		PUSH DX
+	PUSH AX
+	PUSH DX
         PUSH DS
         DS_ASM
 
@@ -2180,7 +2180,7 @@ IRQ_TDY_DAC Proc Far
         STI
 
 ; TDY DAC IRQ Acknowledge
-	    MOV DX,CS:TDYDAC_Port
+	MOV DX,CS:TDYDAC_Port
         IN AL,DX
         AND AL,0F7h
         OUT DX,AL
@@ -2192,8 +2192,8 @@ IRQ_TDY_DAC Proc Far
 
 IRQ_TDY_NotDAC:
 
-		POP DS
-		POP DX
+	POP DS
+	POP DX
         POP AX
         IRET
 IRQ_TDY_DAC Endp
@@ -2203,9 +2203,9 @@ Pause_TDY_DAC:
         CALL Move_Buffer_Offset
 
         POP ES
-		POP DS
-		POP DX
-		POP BX
+	POP DS
+	POP DX
+	POP BX
         POP AX
         IRET
 
@@ -2222,7 +2222,7 @@ IRQ_Timer_TDY Proc Far
 ;CALL Affiche_DMA_Addr
 
         CMP Output_Stopped,1            ; Already stopped, Don't stop again
-		JE IRQ_TDY_Stop_End
+	JE IRQ_TDY_Stop_End
 
         CMP Stopper_IRQ_SB,1
         JE IRQ_TDY_Stop                 ; The End > Stop the DMA/IRQ
@@ -2244,18 +2244,18 @@ IRQ_Timer_TDY Proc Far
 
         MOV AX,CurrentMix_Delta
         CMP AX,MixDelta_Target          ; Current Delta >= Target, Skip
-		JAE IRQ_TDY_SkipPartition
+	JAE IRQ_TDY_SkipPartition
 
-		PUSH CX
-		PUSH SI
-		PUSH DI
-		PUSH BP
+	PUSH CX
+	PUSH SI
+	PUSH DI
+	PUSH BP
         CALL Gestion_Sonore   ; Read the partition and Mix the Buffers
         POP BP
-		POP DI
-		POP SI
-		POP CX
-		JMP IRQ_TDY_End
+	POP DI
+	POP SI
+	POP CX
+	JMP IRQ_TDY_End
 
 IRQ_TDY_SkipPartition:
 
@@ -2268,19 +2268,19 @@ IRQ_TDY_End:
 IRQ_TDY_NotStop:
  
         POP ES
-		POP DS
-		POP DX
-		POP BX
+	POP DS
+	POP DX
+	POP BX
         POP AX
         IRET
 
 IRQ_TDY_Stop:                 ; Pause or End...
 ;Writech 'S'
 
-		MOV AL,0
-		CALL TDYDAC_SetVol    ; Set Volume to 0 (Need Ramp Down) AX DX
+	MOV AL,0
+	CALL TDYDAC_SetVol    ; Set Volume to 0 (Need Ramp Down) AX DX
         CALL TDYDAC_Stop      ; AX DX
-		CALL EndIRQ_SB_TDY    ; Put back the IRQ
+	CALL EndIRQ_SB_TDY    ; Put back the IRQ
 
         CALL Stop_Timer_50
 
@@ -2291,9 +2291,9 @@ IRQ_TDY_Stop_End:
         OUT 20h,AL
 
         POP ES
-		POP DS
-		POP DX
-		POP BX
+	POP DS
+	POP DX
+	POP BX
         POP AX
         IRET
 IRQ_Timer_TDY Endp
@@ -2306,25 +2306,25 @@ Pause_SB_IRQ:
         CALL Move_Buffer_Offset
 		
         POP ES
-		POP DS
-		POP DX
-		POP BX
+	POP DS
+	POP DX
+	POP BX
         POP AX
         IRET
 
 IRQ_Sound_Blaster Proc Near
-		PUSH AX
-		PUSH BX
-		PUSH DX
+	PUSH AX
+	PUSH BX
+	PUSH DX
         PUSH DS
-		PUSH ES
+	PUSH ES
         DS_ASM
 		
 ; SB IRQ Acknowledge
         MOV BX,0Eh
 If UseMix16 Eq Yes	
-	    CMP Out_16Bit,0
-	    JE SBIRQ__8BitAck
+	CMP Out_16Bit,0
+	JE SBIRQ__8BitAck
         INC BX
 SBIRQ__8BitAck:
 EndIf
@@ -2355,37 +2355,37 @@ EndIf
 
 Exec_Partition:
 
-		DEC Buffer_Ahead_Cnt     ; ** One more buffer Played
+	DEC Buffer_Ahead_Cnt     ; ** One more buffer Played
 
         CMP Mix_Buffers_Completed,1     ; Mix Not Complete : Do not Mix
         JNE Pas_calc_part
 
-		PUSH CX
-		PUSH SI
-		PUSH DI
-		PUSH BP
+	PUSH CX
+	PUSH SI
+	PUSH DI
+	PUSH BP
         CALL Gestion_Sonore   ; Read the partition and Mix the Buffers
         POP BP
-		POP DI
-		POP SI
-		POP CX
-		JMP IRQ_SB_End
+	POP DI
+	POP SI
+	POP CX
+	JMP IRQ_SB_End
 
 Pas_calc_part:
 ; If the Buffers are not completed, update the debug Values
         MOV AL,Buffer_Ahead_Cnt
         MOV BL,Buffers_Ahead_Lim ; Buffers_Ahead_Min +3		
-		CMP AL,BL
+	CMP AL,BL
         JAE	IRQ_SB_End
-		INC Slow_Mix1_Cnt
-		DEC BL
+	INC Slow_Mix1_Cnt
+	DEC BL
         CMP AL,BL
-		JE IRQ_SB_End
-		INC Slow_Mix2_Cnt
-		DEC BL
+	JE IRQ_SB_End
+	INC Slow_Mix2_Cnt
+	DEC BL
         CMP AL,BL
-		JE IRQ_SB_End
-		INC Slow_Mix3_Cnt
+	JE IRQ_SB_End
+	INC Slow_Mix3_Cnt
 		
 IRQ_SB_End:
         INC IRQ_Cnt
@@ -2398,21 +2398,21 @@ Pas_Stopper_IRQ_SB:
 ;        JE  Fin_IRQ_SB
  
         POP ES
-		POP DS
-		POP DX
-		POP BX
+	POP DS
+	POP DX
+	POP BX
         POP AX
         IRET
 
 Fin_IRQ_SB:                   ; Pause ou fin de la sortie...
 
         CALL SB_DSP_Init          ; Change AX DX
-		CALL EndIRQ_SB_TDY        ; Put back the IRQ
+	CALL EndIRQ_SB_TDY        ; Put back the IRQ
 		
         POP ES
-		POP DS
-		POP DX
-		POP BX
+	POP DS
+	POP DX
+	POP BX
         POP AX
         IRET
 
@@ -2613,21 +2613,21 @@ IRQ_Timer_Out_DoMix:
         CMP Mix_Buffers_Completed,1         ; Calcul non termine => ne pas calculer
         JNE IRQ_Timer_Slow
 		
-   		PUSH BX
-		PUSH CX
-		PUSH DX
+   	PUSH BX
+	PUSH CX
+	PUSH DX
         PUSH ES
         PUSH SI
-		PUSH DI	
-	    PUSH BP
+	PUSH DI	
+	PUSH BP
         CALL Gestion_Sonore        ; Appel de la partition
         POP BP
-		POP DI
-		POP SI
+	POP DI
+	POP SI
         POP ES		
-		POP DX
-		POP CX
-		POP BX
+	POP DX
+	POP CX
+	POP BX
 
         JMP IRQ_Timer_Slow2
 
@@ -2635,17 +2635,17 @@ IRQ_Timer_Slow:
 
         MOV AL,Buffer_Ahead_Cnt
         MOV AH,Buffers_Ahead_Lim ; Buffers_Ahead_Min +3		
-		CMP AL,AH		
+	CMP AL,AH		
         JAE	IRQ_Timer_Slow2
-		INC Slow_Mix1_Cnt
+	INC Slow_Mix1_Cnt
         DEC AH
-		CMP AL,AH
-		JE IRQ_Timer_Slow2
-		INC Slow_Mix2_Cnt
+	CMP AL,AH
+	JE IRQ_Timer_Slow2
+	INC Slow_Mix2_Cnt
         DEC AH
-		CMP AL,AH
-		JE IRQ_Timer_Slow2
-		INC Slow_Mix3_Cnt
+	CMP AL,AH
+	JE IRQ_Timer_Slow2
+	INC Slow_Mix3_Cnt
 
 IRQ_Timer_Slow2:
         INC IRQ_Cnt
@@ -2688,7 +2688,7 @@ EndIf
        JE Do_DMA_Pause    ; Sortie DMA => Pause SB
 
        CALL Stop_Timer         ; Activer la pause avec le timer
-	   MOV Output_Stopped,0    ; Paused, not Stopped
+	MOV Output_Stopped,0    ; Paused, not Stopped
        RET
 	   
 Pause_Stop_Channels:           ; Activer la pause avec la GUS / Adlib
@@ -2700,7 +2700,7 @@ Do_DMA_Pause:
 
        MOV MMSS_Pause,1        ; Activer la pause avec SB
        CALL Clean_Buffers_DMA
-	   RET
+	RET
 MMSS_Start_Pause Endp
 
 
@@ -2773,17 +2773,17 @@ MMSS_Volume_UpdateAll Proc Near
         PUSH BX BP
 		
         XOR BX,BX
-		MOV BL,Ch_Number		
-		MOV BP,BX
-		SHL BP,1
+	MOV BL,Ch_Number		
+	MOV BP,BX
+	SHL BP,1
 
 Boucle_ajuste_volume:
         MOV AL,Ch_Volume[BX]
         CALL Set_Ch_Volume
-		DEC BP
-		DEC BP
-		DEC BX
-		JNZ Boucle_ajuste_volume
+	DEC BP
+	DEC BP
+	DEC BX
+	JNZ Boucle_ajuste_volume
 
         POP BP BX
         RET
@@ -2799,7 +2799,7 @@ Gestion_Sonore Proc Near
 
 Restart_Part_Mix:
 
-C_R
+;C_R
 	   
 If UseOPL2 eq Yes
        CMP Ch_Number_Adlib,0
@@ -2819,7 +2819,7 @@ If UseGUS eq Yes
 Pas_MAJ_GUS:
 EndIf  ; UseGUS
 
-C_G
+;C_G
 
        CMP Musique_Terminee,1
        JE  Seulement_Sortie_Sonore
@@ -2970,37 +2970,37 @@ Test_TD_3:
 	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 	   
 Test_TD_2:
-       INC Slow_Mix2_Cnt
-	   CMP BX,MixDelta_2
-	   JB Test_TD_1
+        INC Slow_Mix2_Cnt
+	CMP BX,MixDelta_2
+	JB Test_TD_1
 ; 4) -> Increase VolSkip to Vol_Limit2
-	   CMP AH,Vol_Limit2
-	   JAE VolSkipUpdateEnd
-	   ADD Volume_Skip,VolSkipIncr
-	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+	CMP AH,Vol_Limit2
+	JAE VolSkipUpdateEnd
+	ADD Volume_Skip,VolSkipIncr
+	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 
 Test_TD_1:
-       INC Slow_Mix3_Cnt
-	   CMP BX,MixDelta_Min
-	   JB TD_Use_Vol3
+        INC Slow_Mix3_Cnt
+	CMP BX,MixDelta_Min
+	JB TD_Use_Vol3
 ; 5) -> Increase VolSkip to Vol_Limit3	   
-	   CMP AH,Vol_Limit3
-	   JAE VolSkipUpdateEnd
-	   ADD Volume_Skip,VolSkipIncr
-	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+	CMP AH,Vol_Limit3
+	JAE VolSkipUpdateEnd
+	ADD Volume_Skip,VolSkipIncr
+	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 	   
 TD_Use_Vol3:
-       MOV AL,0
-	   CMP BX,MixDelta_Slow  ; bugged for the moment
-	   JBE StopAsTooSlow     ; 7) Below the Slow Limit > Stop music
+        MOV AL,0
+	CMP BX,MixDelta_Slow  ; bugged for the moment
+	JBE StopAsTooSlow     ; 7) Below the Slow Limit > Stop music
 
 ; 6) -> VolSkip = Vol_Limit3
-       INC Slow_Mix1_Cnt
-       INC Slow_Mix2_Cnt
-       INC Slow_Mix3_Cnt
-	   MOV AH,Vol_Limit3
-       MOV Volume_Skip,AH
-	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+        INC Slow_Mix1_Cnt
+        INC Slow_Mix2_Cnt
+        INC Slow_Mix3_Cnt
+	MOV AH,Vol_Limit3
+        MOV Volume_Skip,AH
+	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 
 	   
 ; The end of the procedure is above
@@ -3094,7 +3094,7 @@ Build_MixChLoop:
         JZ BMixLoop_Not_KeyOff
         AND AL,Not CM_KeyOff         ;Disable the KeyOff
         OR AL,CM_Stopped             ;Disable the Channel
-		MOV Ch_Control[BX],AL
+	MOV Ch_Control[BX],AL
         JMP Build_MixChLoop_Next
 BMixLoop_Not_KeyOff:
 
@@ -3102,26 +3102,26 @@ BMixLoop_Not_KeyOff:
         JNZ Build_MixChLoop_Next	   ;Don't add the channel to the list
 
         CMP Ch_Final_Vol[BX],0             ;Skip if Volume =0
-		JE Build_MixChLoop_Next
+	JE Build_MixChLoop_Next
 
         MOV AL,BL
-		STOSB                         ;Store the Channel number in the list
-		INC CL
+	STOSB                         ;Store the Channel number in the list
+	INC CL
 		
 Build_MixChLoop_Next:
         INC BL
-		CMP BL,Ch_Number            ;Mix all the channels one by one
-		JNE Build_MixChLoop
+	CMP BL,Ch_Number            ;Mix all the channels one by one
+	JNE Build_MixChLoop
 
         MOV Mix_Channels_Nb,CL
 ; Check if we need to reduce the Nb of channels to mix
 
         MOV AL,Mix_ChLimit_Nb
-		OR AL,AL
-		JE BML_AutoLimit            ; Zero : Autodetect the limit Nb of Channel
-		CMP AL,0FFh
-		JNE BML_ManualLimit         ; Not -1 -> Manuel Limitation
-		RET
+	OR AL,AL
+	JE BML_AutoLimit            ; Zero : Autodetect the limit Nb of Channel
+	CMP AL,0FFh
+	JNE BML_ManualLimit         ; Not -1 -> Manuel Limitation
+	RET
 
 BML_AutoLimit:
 ;Writech 'a'	
@@ -3130,118 +3130,118 @@ BML_AutoLimit:
         RET	
 BML_AutoStarted:
         MOV AL,Max_Mixed3
-		INC	AL
+	INC	AL
         CMP Slow_Mix3_Cnt,100
-		JB BML_ManualLimit
+	JB BML_ManualLimit
         DEC AL       ; Slow_Mix3_Cnt> Fix the Limit as if it was manual.
-		DEC AL
-		MOV Mix_ChLimit_Nb,AL
+	DEC AL
+	MOV Mix_ChLimit_Nb,AL
 		 
 BML_ManualLimit:
         CMP AL,2
-		JAE Mix_Channels_LimitOk
-		MOV AL,2                  ; Security: Limit >=2
+	JAE Mix_Channels_LimitOk
+	MOV AL,2                  ; Security: Limit >=2
 Mix_Channels_LimitOk:		
         MOV Mix_Channels_Limit,AL ; Save the Used Nb of Channels Limit
 
 ; AL <- Max Nb of Channels
 ; CL <- Nb of Channels to mix
 ;Writech '-'
-		CMP CL,AL
-		JA Remove_LP_Chan
-		RET              ; Channels to Mix <= Limit -> Do not remove channels
+	CMP CL,AL
+	JA Remove_LP_Chan
+	RET              ; Channels to Mix <= Limit -> Do not remove channels
 Remove_LP_Chan:
         SUB CL,AL
-		MOV DH,CL
+	MOV DH,CL
                          ; DH: number of channels to remove		
 ;PUSH DX
 ;        MOV AL,DH
 ;		Call WriteByteH  ; Write the Nb of channels to remove (1-9)
 ;POP DX	
 	
-		CLD              ; As we use LODSB
-		XOR BX,BX		 ;OPT Remove
-		MOV SI,Offset Mix_Channel_List
-		XOR CX,CX       
-		MOV CL,Mix_Channels_Nb
+	CLD              ; As we use LODSB
+	XOR BX,BX		 ;OPT Remove
+	MOV SI,Offset Mix_Channel_List
+	XOR CX,CX       
+	MOV CL,Mix_Channels_Nb
 
         MOV AH,3                 ; Value for comparison
 BML_Initial_Loop:
-		LODSB                    ; Load the channel number from the "To Mix" List
-		MOV BL,AL
+	LODSB                    ; Load the channel number from the "To Mix" List
+	MOV BL,AL
 		
 ;**********************************************************************
 ;1) Compute the Priority Value and Disable Priority 3 and Volume <VLim1
 
-		MOV AL,Ch_LoopType[BX]
-		MOV DL,Ch_Smp_Tick_Cnt[BX]    ; DL Tick count AL, LoopType, AH, Prio
-		CMP DL,AH         ; Samples played time <= 3 ?
-		JBE BMSetPrioEnd  ; Prio+0
-		INC AL            ; Prio+1
-		CMP DL,10         ; Samples played since few time has a medium priority
-		JBE BMSetPrioEnd
-		INC AL            ; Prio+2
+	MOV AL,Ch_LoopType[BX]
+	MOV DL,Ch_Smp_Tick_Cnt[BX]    ; DL Tick count AL, LoopType, AH, Prio
+	CMP DL,AH         ; Samples played time <= 3 ?
+	JBE BMSetPrioEnd  ; Prio+0
+	INC AL            ; Prio+1
+	CMP DL,10         ; Samples played since few time has a medium priority
+	JBE BMSetPrioEnd
+	INC AL            ; Prio+2
 BMSetPrioEnd:
         MOV Ch_Priority[BX],AL  ; Priority: Loope Type + Sample Play duration
 
-		CMP Ch_Final_Vol[BX],VLim1
+	CMP Ch_Final_Vol[BX],VLim1
         JA  BML_NotDisable_VLP3        ; Volume <VLim1 ?
         CMP AL,AH                      ; Priority <3 ?
-		JE BML_Stop_VLP3
+	JE BML_Stop_VLP3
 ;Pause the Channel: Priority <3 and Volume <VLim1
         OR Ch_Control[BX],CM_FPause
-		JMP BML_PauseCont_VLP3
+	JMP BML_PauseCont_VLP3
 BML_Stop_VLP3: 
 ;Stop the Channel: Priority 3 and Volume <VLim1
-		OR Ch_Control[BX],CM_Stopped+CM_FStop
+	OR Ch_Control[BX],CM_Stopped+CM_FStop
 BML_PauseCont_VLP3: 		
-		DEC SI
-		MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
-		INC SI
+	DEC SI
+	MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
+	INC SI
 ;Writech 'x'
-		DEC DH
-		JNZ BML_NotDisable_VLP3
-		JMP BML_ReduceList             ; No more channels to stop -> End
+	DEC DH
+	JNZ BML_NotDisable_VLP3
+	JMP BML_ReduceList             ; No more channels to stop -> End
 BML_NotDisable_VLP3:
 
-		LOOP BML_Initial_Loop
+	LOOP BML_Initial_Loop
 		
 ;***************************************************************************
 ;2) Disable ( Priority > x With Volume < ) and ( Priority > x With Volume < )
 
-		MOV SI,Offset Mix_Channel_List
-		XOR CX,CX
-		MOV CL,Mix_Channels_Nb
+	MOV SI,Offset Mix_Channel_List
+	XOR CX,CX
+	MOV CL,Mix_Channels_Nb
 		
 BML_Do_Loop2:
-		LODSB                    ; Load the channel number from the "To Mix" List
+	LODSB                    ; Load the channel number from the "To Mix" List
 		
-		CMP AL,0FFh
-		JNE BML_Loop2_Not_Disabled
-		LOOP BML_Do_Loop2
-		JMP BML_Do_Loop2_End
+	CMP AL,0FFh
+	JNE BML_Loop2_Not_Disabled
+	LOOP BML_Do_Loop2
+	JMP BML_Do_Loop2_End
 BML_Loop2_Not_Disabled:		
-		MOV BL,AL
+	MOV BL,AL
         MOV AL,Ch_Priority[BX]
         MOV AH,Ch_Final_Vol[BX]
 		
-		CMP AH,VLim2
-		JA BML_Not_Cut2
+	CMP AH,VLim2
+	JA BML_Not_Cut2
         CMP AL,2
-		JB BML_Not_Cut2
+	JB BML_Not_Cut2
 		
         ;Stop the Channel
-		OR Ch_Control[BX],CM_Stopped+CM_FStop
-		DEC SI
-		MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
-		INC SI
+	OR Ch_Control[BX],CM_Stopped+CM_FStop
+	DEC SI
+	MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
+	INC SI
 ;Writech 'y'		
-		DEC DH
-		JNZ BML_Not_Cut2
-		JMP BML_ReduceList             ; No more channels to stop -> End
+	DEC DH
+	JNZ BML_Not_Cut2
+	JMP BML_ReduceList             ; No more channels to stop -> End
 		
 BML_Not_Cut2:		
-		LOOP BML_Do_Loop2
+	LOOP BML_Do_Loop2
 BML_Do_Loop2_End:
 		
 ;****************************************************************************
