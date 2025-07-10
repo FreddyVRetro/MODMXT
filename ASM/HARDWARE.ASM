@@ -312,7 +312,7 @@ HW_Anc_21 DB 0
 HW_Anc_A1 DB 0
 
 ;-------------------------------------------------------------
-;| Activer l'Irq � l'aide des ports 21h et A1h               |
+;| Activer l'Irq a l'aide des ports 21h et A1h               |
 ;| Input : AL : IRQ Number                                   |
 ;-------------------------------------------------------------
 
@@ -320,7 +320,7 @@ Enable_IRQ PROC NEAR      ;Autoriser l'IRQ grace au contr�leur d'IRQ
         CLI
         MOV BL,AL
 		IN AL,21h     ;Activer l'IRQ
-        MOV CS:HW_anc_21,AL
+        MOV CS:HW_anc_21,AL ;Save the Original value
 
         CMP BL,7
         JA Enable_IRQ8
@@ -354,7 +354,7 @@ Enable_IRQ ENDP
 ;| Disable the IRQ using Ports 21h and A1h                   |
 ;-------------------------------------------------------------
 
-Disable_IRQ PROC NEAR   ;Rendre au contr�leur d'IRQ son �tat originel
+Disable_IRQ PROC NEAR   ;Put back the IRQ mask to its original value
         MOV BL,AL
         CLI
         PUSH AX
@@ -426,10 +426,10 @@ Change_IRQ ENDP
 ;-------------------------------------------------------------
 
 Restaurer_IRQ PROC NEAR
-        PUSH AX                 ;IRQ mat�rielle dans AL
+        PUSH DI                 ;Is not saved in the IRQ calling this
+        PUSH AX                 ;HArdware IRQ number is in AX
 
         CLI
-		
 		MOV AL,CS:HW_IRQ_Number
         XOR AH,AH
         SHL AX,1
@@ -445,8 +445,10 @@ Restaurer_IRQ PROC NEAR
         STI
 
         POP AX
+
         CALL Disable_IRQ
 
+        POP DI
         RET
 Restaurer_IRQ ENDP
 

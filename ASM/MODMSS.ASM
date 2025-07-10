@@ -1,14 +1,14 @@
-;            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;            º     ÷÷÷÷÷÷÷÷÷÷÷÷÷÷ MODMPAS.ASM ÷÷÷÷÷÷÷÷÷÷÷÷÷÷     º
-;            º                                                   º
-;            º         --==ğğ Mod Master v2.2 XT ğğ==--          º
-;            ºÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄº
-;            º   Auteurúúúúúúúúúúúúúúúúúúúúúúúú Freddy V‚tel‚    º
-;            º   Avec l'aide deúúúúúúúúúúúúúúúú Fabrice Couteau  º
-;            º                                                   º
-;            º   Code Start     03/05/1993                       º
-;            º   Last Update    --/04/2020                       º
-;            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;            ï¿½     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MODMPAS.ASM ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½     ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½         --==ï¿½ï¿½ Mod Master v2.2 XT ï¿½ï¿½==--          ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äº
+;            ï¿½   Auteurï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Freddy Vï¿½telï¿½    ï¿½
+;            ï¿½   Avec l'aide deï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Fabrice Couteau  ï¿½
+;            ï¿½                                                   ï¿½
+;            ï¿½   Code Start     03/05/1993                       ï¿½
+;            ï¿½   Last Update    --/04/2020                       ï¿½
+;            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
 
 ;model large,pascal
@@ -80,7 +80,7 @@ skip_wrln:
         pop ax
 ENDM	   
 						   
-DS_TP MACRO                 ;pour acc‚der to une variable EXTRN par DS
+DS_TP MACRO                 ;pour accï¿½der to une variable EXTRN par DS
       MOV DS,CS:DS_TurboPascal
 ENDM
 
@@ -119,7 +119,7 @@ if showborder
       PUSH DX
       mov DX,3C8h
       XOR AL,AL
-      out DX,AL           ;charge le nøcouleur
+      out DX,AL           ;charge le nï¿½couleur
       inc dx
       MOV AL,0FFh
       out DX,AL          ;fixe le rouge
@@ -136,7 +136,7 @@ if showborder
       PUSH DX
       mov DX,3C8h
       XOR AL,AL
-      out DX,AL           ;charge le nøcouleur
+      out DX,AL           ;charge le nï¿½couleur
       inc dx
       MOV AL,0FFh
       out DX,AL          ;fixe le rouge
@@ -154,7 +154,7 @@ if showborder
   PUSH DX
   mov DX,3C8h
   XOR AL,AL
-  out DX,AL           ;charge le nøcouleur
+  out DX,AL           ;charge le nï¿½couleur
   inc dx
   out DX,AL          ;fixe le rouge
   MOV AL,0FFh
@@ -172,7 +172,7 @@ if showborder
   PUSH DX
   mov DX,3C8h
   XOR AL,AL
-  out DX,AL           ;charge le nøcouleur
+  out DX,AL           ;charge le nï¿½couleur
   inc dx
   out DX,AL          ;fixe le rouge
   out DX,AL          ;fixe le vert
@@ -189,7 +189,7 @@ if showborder
   PUSH DX
   mov DX,3C8h
   XOR AL,AL
-  out DX,AL           ;charge le nøcouleur
+  out DX,AL           ;charge le nï¿½couleur
   inc dx
   out DX,AL          ;fixe le rouge
   out DX,AL          ;fixe le vert
@@ -221,9 +221,9 @@ Endif
 CODE SEGMENT
      ASSUME CS:CODE, DS:CODE
 
-;ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;º                    Constantes principales                    º
-;ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;ï¿½                    Constantes principales                    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
 Max_Channels EQU 32
 Max_Samples  EQU 99
@@ -244,9 +244,9 @@ Anglais  EQU 0
 Francais EQU 1
 
 
-;ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;º                    Variables principales                     º
-;ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;ï¿½                    Variables principales                     ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
 Align 2
 
@@ -372,7 +372,7 @@ MixDelta_Target DW 0  ; Buffer_Real_Size * (Buffers_Ahead_Target-1)
 
 If Mod_Master eq yes
  INCLUDE CONSTAFF.INC  ;Tableaux pour l'affichage
- INCLUDE AFFICHE.ASM   ;Inclut les routines d'affichage g‚n‚rales 
+ INCLUDE AFFICHE.ASM   ;Inclut les routines d'affichage gï¿½nï¿½rales 
 EndIf
 
 INCLUDE CONSTMM.INC    ;Les tableaux (Vibrato,Periodes,...)
@@ -383,14 +383,14 @@ EndIf
 INCLUDE SBCMD.ASM      ;Commandes pour la Sound Blaster
 INCLUDE HARDWARE.ASM   ; EMS, DMA, IRQ
 
-;ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-;º         Variables/Proc‚dures externes ou publiques           º
-;ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»
+;ï¿½         Variables/Procï¿½dures externes ou publiques           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
 
 ; Procedures visible by the Pascal Code 
 
 ;PUBLIC Test_vitesse
-;PUBLIC Ajuster_Out_Frequency  ;Ajuster les variables utilisant la fr‚quence
+;PUBLIC Ajuster_Out_Frequency  ;Ajuster les variables utilisant la frï¿½quence
 PUBLIC PInit_Tables
 PUBLIC PStart_Output     ;Lancer la sortie sonore
 PUBLIC PStart_Music      ;Lancer la musique
@@ -407,7 +407,7 @@ EXTRN Center_Display      :BYTE
 EXTRN Change_aff_centre   :BYTE
 EXTRN Shuffle             :BYTE  ;=1 si Shuffle=True
 EXTRN Programme           :BYTE  ;=1 si Programme=True
-EXTRN Numero_Module       :WORD  ;Num‚ro du module actuel dans le programme
+EXTRN Numero_Module       :WORD  ;Numï¿½ro du module actuel dans le programme
 EXTRN Longueur_prog       :WORD  ;Nombre de modules dans le programme
 EXTRN TP_Duree_min        :BYTE
 EXTRN TP_Duree_sec        :BYTE
@@ -423,7 +423,7 @@ EXTRN Boucler_MOD         :BYTE
 EXTRN TP_Fading           :BYTE   ; To use in Sound System
 EXTRN TP_Chrono_min       :BYTE   ; To use in Sound System
 EXTRN TP_Chrono_sec       :BYTE   ; To use in Sound System
-EXTRN Test_Periodique     :BYTE   ; le 50Šme de seconde pour l'affichage
+EXTRN Test_Periodique     :BYTE   ; le 50ï¿½me de seconde pour l'affichage
 
 ; Structures defined in VAR_MUS.TPU
 ;*****  MMSS_CFG^ in the Turbo Pascal
@@ -452,17 +452,17 @@ GUS_BasePort        DW 220h          ;Port de base de la GUS
 GUS_IRQ             DB 7             ;Gravis Ultrasound IRQ (Not Used)
 ; ** Sound Blaster
 SB_BasePort         DW 220h          ;Port de base de la Sound Blaster
-IRQ_SB              DB 7             ;Nø IRQ Sound Blaster
-DMA_SB8             DB 1             ;Nø DMA Sound Blaster
-DMA_SB16            DB 5             ;Nø DMA Sound Blaster 16  (Sortie 16 Bits)
+IRQ_SB              DB 7             ;Nï¿½ IRQ Sound Blaster
+DMA_SB8             DB 1             ;Nï¿½ DMA Sound Blaster
+DMA_SB16            DB 5             ;Nï¿½ DMA Sound Blaster 16  (Sortie 16 Bits)
 Type_SB             DB 1             ;Type de Sound Blaster
 PUse_DMA            DB 0             ;=1 si sortie SB avec le DMA
 PDMA_Continu        DB 0             ;Lecture DMA continue ???
-PUse_Stereo         DB 0             ;=1 si sortie SBPro St‚r‚o
+PUse_Stereo         DB 0             ;=1 si sortie SBPro Stï¿½rï¿½o
 Utilise_Filtre      DB 0
 ; ** Mixing Options
 PUtilise_Mixage     DB 0
-Utiliser_Interpol   DB 0             ;Utiliser l'interpolation lin‚aire 8 bits?
+Utiliser_Interpol   DB 0             ;Utiliser l'interpolation linï¿½aire 8 bits?
 ;If UseMix16 Eq Yes
 Mix_16Bit           DB 0             ;Mix in 16 Bit
 Out_16Bit           DB 0             ;Initialized in InitDevice 
@@ -501,7 +501,7 @@ OtherMUS_Out        DB 0              ; Mask with the Wave output used
 debug1              DW 0
 debug2              DW 0
 debug3              DW 0
-ContrVar            DB 73            ;Variable de Contr“le !!!
+ContrVar            DB 73            ;Variable de Contrï¿½le !!!
 
 ;***** fin structure MMSS_CFG^ TP
 
@@ -532,17 +532,17 @@ Volume_Sl_Rapide    DB 0
 Vitesse_ticks       DB 50   ; Nb de ticks par seconde
 Seg_Instr           DW 0    ; Instrument table Segment
 PtrInstrNameTable   DD 0    ; Pointer to the Instruments/Samples name table (24 Bytes table)
-M_CH_Type           DB Max_Channels DUP (0)   ; Type de la voie (Vide,Nø,Adlib)
+M_CH_Type           DB Max_Channels DUP (0)   ; Type de la voie (Vide,Nï¿½,Adlib)
 M_CH_Panning        DB Max_Channels DUP (0)   ; Default Channles Panning
 Voies_Adlib         DB 11 DUP (0)             ; 'Position' des voies adlib.  ;OPT Align !
 Table_sequence      DB Max_Pattern DUP (0)
 Table_Taille_Patt   DB Max_Pattern DUP (0)
 Table_Tempo         DB Max_Pattern DUP (0)     ; Table Tempo (669 ?)
-ContrMus            DB 73   ; Variable de Contr“le !!!
+ContrMus            DB 73   ; Variable de Contrï¿½le !!!
 
 ;***** fin structure Musique^ TP
 
-;***** d‚but structure MMSS_Table^ TP
+;***** dï¿½but structure MMSS_Table^ TP
 Align 2
 
 TPTable:
@@ -584,13 +584,13 @@ T_per0 DW 1AC0h*4,1940h*4,17D0h*4,1680h*4,1530h*4,1400h*4,12E0h*4,11D0h*4,10D0h*
        DW 0035h,0032h,002Fh,002Dh,002Ah,0028h,0025h,0023h,0021h,001Fh,001Eh,001Ch,0 ;9 *
 ;	   DW 001Ah,0019h,0017h,0016h,0015h,0014h,0012h,0011h,0010h,000Fh,000Fh,000Eh,0 ;8 *
 
-ContrTable DB 73   ; Variable de Contr“le !!!
+ContrTable DB 73   ; Variable de Contrï¿½le !!!
 
 ;***** fin structure MMSS_Table^ TP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Variables de gestion de la musique.                    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Variables de gestion de la musique.                    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ;*** Bloc d'informations pour le Turbo Pascal ***
 TPInfo:
@@ -623,7 +623,7 @@ CH_Per_part   DW Max_Channels DUP (0)   ; Periode de la voie (partition)
 CH_Smp_Pla    DB Max_Channels DUP (0)   ; Sample Playing
 Ch_Note       DB Max_Channels DUP (0)
 VVolume_Part  DB Max_Channels DUP (0)   ; Volume (dans la partition)
-VVolume_re    DB Max_Channels DUP (0)   ; Volume (jou‚ r‚ellement)
+VVolume_re    DB Max_Channels DUP (0)   ; Volume (jouï¿½ rï¿½ellement)
 VVolume       DB Max_Channels DUP (0)   ; Volume avec Volume_Global et Volume (+/-)
 Ch_Vol_Left   DB Max_Channels DUP (0)
 Ch_Vol_Right  DB Max_Channels DUP (0)
@@ -638,7 +638,7 @@ VPart_decimale  DB Max_Channels DUP (0)
 VPart_decimale2 DB Max_Channels DUP (0)
 VAccumulateur   DW Max_Channels DUP (0)
 
-VC4Spd                DW Max_Channels DUP (0) ; Ajustement de la p‚riode pour C4 (Def 8363)
+VC4Spd                DW Max_Channels DUP (0) ; Ajustement de la pï¿½riode pour C4 (Def 8363)
 Adresse_Table_periode DW Max_Channels DUP (0) ;          ''
 If UseFineTune Eq Yes
 VFineTune             DB Max_Channels DUP (0) ;          ''
@@ -661,27 +661,27 @@ EndIf
 
 
 
-;ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
-;Û                                                              Û
-;Û                     DEBUT DU PROGRAMME                       Û
-;Û                                                              Û
-;ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+;ï¿½                                                              ï¿½
+;ï¿½                     DEBUT DU PROGRAMME                       ï¿½
+;ï¿½                                                              ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Start_Output     Lancer la sortie sonore               ³
-;³                                                           ³
-;³     Entr‚e      Rien                                      ³
-;³     Sortie:     AX<>0 => Erreur !!!                       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Start_Output     Lancer la sortie sonore               ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½     Entrï¿½e      Rien                                      ï¿½
+;ï¿½     Sortie:     AX<>0 => Erreur !!!                       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 ;oldvect_clavier  DD 0
 ;Ancien_int       DB 0   ;Sound Blaster IRQ
 SB_DMA_Frequency DB 0   ;Valeur to envoyer to la Sound Blaster
 
-  ; Caract‚ristiques de la sortie sonore
-  ; (Pas accessible au Pascal pour eviter les problèmes)
+  ; Caractï¿½ristiques de la sortie sonore
+  ; (Pas accessible au Pascal pour eviter les problï¿½mes)
 
 Sortie_Sonore  DB 0
 Use_DMA    DB 0
@@ -852,7 +852,7 @@ Start_SB_Stereo:
         CALL Fixer_stereo           ;Enable the SBP stereo
 Start_SB_DMA:
 
-        MOV AL,IRQ_SB               ;AL <- Nø de L'IRQ SB
+        MOV AL,IRQ_SB               ;AL <- Nï¿½ de L'IRQ SB
         MOV DX,OFFSET IRQ_Sound_Blaster
         CALL Change_IRQ
 		
@@ -874,7 +874,7 @@ EndIf
         CALL SB_Start               ;Lancer la Commande SB de sortie DMA
 
 RET ; ERR MODM Test
-        CMP Erreur_Modm,Err_SB      ;Si Erreur Sound Blaster, Stopper Imm‚diatement
+        CMP Erreur_Modm,Err_SB      ;Si Erreur Sound Blaster, Stopper Immï¿½diatement
         JNE Fin_Lancer_DMA_SBPro_16
         CALL EndIRQ
 Fin_Lancer_DMA_SBPro_16:
@@ -1156,9 +1156,9 @@ InitDev_SB16Stereo_16bMix:
 EndIf		
 InitDevice ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³              Initialisation de la musique                 ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½              Initialisation de la musique                 ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 PStart_Music PROC FAR    ;Appel du Pascal (Fonction, renvoie l'Erreur )
         PUSH DS BP
@@ -1218,7 +1218,7 @@ Not_Copy_SmpNb:
 		MOV DI,OFFSET Ch_Control
         MOV AL,CM_Stopped
         MOV CL,DL
-        REP STOSB                 ; "Active" les Ch_Number premiŠres voies
+        REP STOSB                 ; "Active" les Ch_Number premiï¿½res voies
 
         MOV DI,OFFSET CH_Command
         MOV AX,OFFSET Do_Nothing
@@ -1408,16 +1408,16 @@ Not_Init_Monochrome:
 EndIf
 
         MOV AL,Tempo_Start
-        MOV Tempo,AL              ; Initialise la Tempo de d‚part.
+        MOV Tempo,AL              ; Initialise la Tempo de dï¿½part.
         MOV Cmpt_Tempo,1          ; Initialisation du Tempo : Tempo 1 to Start with a Command
 
         MOV AL,BPM_Start          ; Initialisation des BPM...
-        MOV BPM,AL                ; BPM de d‚part.
+        MOV BPM,AL                ; BPM de dï¿½part.
 		CALL Exec_SetBPM
 		MOV BPM_Cnt,0
 		
         MOV AL,Vol_Gene_Depart
-        MOV Volume_General,AL      ; Volume G‚n‚ral d‚part
+        MOV Volume_General,AL      ; Volume Gï¿½nï¿½ral dï¿½part
 		
 		XOR AX,AX
         MOV Cmpt_Boucles,AL
@@ -1431,7 +1431,7 @@ EndIf
         MOV PJumpPattern,AL
         MOV Debut_Boucle_Pattern,AL ; Pour JumpLoop
         MOV C_Patt_Length,1
-        MOV C_Row,AL             ; => Chercher le 1er pattern to la 1ø note
+        MOV C_Row,AL             ; => Chercher le 1er pattern to la 1ï¿½ note
         MOV C_Sequence,AL
         MOV DoPatternBreak,AL
 ;        MOV MMSS_Pause ,AL
@@ -1464,11 +1464,11 @@ Ajuster_Bouclage:
 Init_Var_MOD ENDP
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Init Direct DAC IRQ                                     ³
-;³   Configure the Direct DAC interrupts                     ³
-;³   (Code auto g‚n‚r‚)                                      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Init Direct DAC IRQ                                     ï¿½
+;ï¿½   Configure the Direct DAC interrupts                     ï¿½
+;ï¿½   (Code auto gï¿½nï¿½rï¿½)                                      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Init_Direct_DAC_IRQ PROC NEAR
        DS_ASM
@@ -1541,11 +1541,11 @@ C_Err_Sortie_Introuvable:
 	  
 Init_Direct_DAC_IRQ ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Clean_Buffers_DMA: Clean the DMA Buffers for the Pause       ³
-;³                                                               ³
-;³  Unsigned -> 80h signed or 16Bit -> 0h                        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Clean_Buffers_DMA: Clean the DMA Buffers for the Pause       ï¿½
+;ï¿½                                                               ï¿½
+;ï¿½  Unsigned -> 80h signed or 16Bit -> 0h                        ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Clean_Buffers_DMA Proc Near
         PUSH ES
@@ -1606,10 +1606,10 @@ DMA_PreprocessingLoop:
         RET
 DMA_Buffers_Preprocessing Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³           -= Set the next Buffer address =-
-;³ Register changed : AX                                     ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½           -= Set the next Buffer address =-
+;ï¿½ Register changed : AX                                     ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ; Add Buffer_Real_Size and Go back if the @ is above or equal to the DMA/Output Buffer end
 
 Move_Buffer_Offset Proc Near  ; Set the Next Mixing Buffer Offset
@@ -1629,11 +1629,11 @@ DMA_Buffer_End_NotReached:
         RET
 Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Init_Variables_Freq  Initialize all the Frequency        ³
-;³                       Based variables                     ³
-;³  SB_ComputeFrequency Must be started before                    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Init_Variables_Freq  Initialize all the Frequency        ï¿½
+;ï¿½                       Based variables                     ï¿½
+;ï¿½  SB_ComputeFrequency Must be started before                    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Init_Variables_Freq Proc Near
 
@@ -1843,11 +1843,11 @@ Stop_Timer PROC NEAR
         RET
 Stop_Timer ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³                                                               ³
-;³                  Nouvelles Interruptions                      ³
-;³                                                               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½                                                               ï¿½
+;ï¿½                  Nouvelles Interruptions                      ï¿½
+;ï¿½                                                               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ; Read the Tandy DAC Position from the DMA
 ; Then, calculate the Mixing Buffer position Vs DMA
@@ -2104,7 +2104,7 @@ IRQ_SB_End:
 		
         CMP Stop_Output,1  ; Stopper la sortie sonore ?
         JNE Pas_Stopper_IRQ_SB
-        MOV Stopper_IRQ_SB,1  ; Lancer l'arrˆt de l'IRQ au prochain appel
+        MOV Stopper_IRQ_SB,1  ; Lancer l'arrï¿½t de l'IRQ au prochain appel
 Pas_Stopper_IRQ_SB:
 ;        CMP Erreur_Modm,Err_SB ;Si Erreur Sound Blaster, Stopper Immediatement
 ;        JE  Fin_IRQ_SB
@@ -2156,9 +2156,9 @@ Commander_GUS:
         JE  Voie_Digit_GUS
         JMP Boucler_GUS             ;Si voie Adlib ou non active => Fin
 Voie_Digit_GUS:
-        MOV Voie_Reelle,BX          ;Init les voies r‚elles.
+        MOV Voie_Reelle,BX          ;Init les voies rï¿½elles.
 
-        INC Voie_GUS                ;Incr‚menter la voie Gravis.
+        INC Voie_GUS                ;Incrï¿½menter la voie Gravis.
         MOV AX,Voie_GUS
         CALL U_SetVoice             ;Positionner la voie.
 
@@ -2175,7 +2175,7 @@ GUS_Pas_KeyOff:
         MOV BX,Voie_Reelle
         TEST Ch_Control[BX],CM_Disabled
         JZ Pas_stop_voie_GUS
-        JMP Boucler_GUS             ;Si voie stopp‚e =>Fin
+        JMP Boucler_GUS             ;Si voie stoppï¿½e =>Fin
 Pas_stop_voie_GUS:
 
         TEST GUS_Controle[BX],M_ChSample     ;Changer le sample ?
@@ -2188,7 +2188,7 @@ Pas_stop_voie_GUS:
 Pas_Start_Sample_GUS:
 
         MOV BX,Voie_Reelle
-        TEST GUS_Controle[BX],M_ChPeriode    ;Changer la p‚riode ?
+        TEST GUS_Controle[BX],M_ChPeriode    ;Changer la pï¿½riode ?
         JZ Pas_Set_Period_GUS
         AND GUS_Controle[BX],Not M_ChPeriode ;Efface le Bit
 
@@ -2228,7 +2228,7 @@ Pas_Ajuster_Panning:              ; BX 0-> 15
 Pas_Changer_Panning_GUS:
 Boucler_GUS:
         POP BX
-        INC BX                     ; Incr‚menter l'index des voies "r‚elles"
+        INC BX                     ; Incrï¿½menter l'index des voies "rï¿½elles"
         POP CX                     ; Fin des commandes pour la voie
         LOOP Boucle_Commander_GUS  ; Boucler Ch_Number fois
         JMP Fin_Commander_GUS
@@ -2257,11 +2257,11 @@ Mute_GUS Endp
 
 EndIf
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  D‚sactive voies: Couper les samples                          ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Dï¿½sactive voies: Couper les samples                          ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-Stop_Channels Proc Near              ;D‚sactive les voies
+Stop_Channels Proc Near              ;Dï¿½sactive les voies
        PUSH BX CX
 
        MOV CL,Ch_Number
@@ -2290,9 +2290,9 @@ Pas_Desact_voies_GUS:
        RET
 Stop_Channels Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Changer_le_volume: Mise to jours du volume des voies          ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Changer_le_volume: Mise to jours du volume des voies          ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Changer_le_volume Proc Near
         PUSH BX BP
@@ -2315,11 +2315,11 @@ Boucle_ajuste_volume:
 Changer_le_volume Endp
 
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³              D‚finition des blocs du timer                ³
-;³                                                           ³
-;³   (HP Interne, DAC, Disney Sound Source, Sound Master)    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½              Dï¿½finition des blocs du timer                ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½   (HP Interne, DAC, Disney Sound Source, Sound Master)    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ;Offset_Buffer_Index DW 0
 OUT_Procedure DW 0
@@ -2490,8 +2490,8 @@ IRQ_Timer_NextBuffer:
 
         DS_ASM
 		
-        MOV AX,Buffer_Size               ;Incr‚mente le Chrono
-        MOV Compt_50,AX                  ;    (50ø ou 32ø de seconde)
+        MOV AX,Buffer_Size               ;Incrï¿½mente le Chrono
+        MOV Compt_50,AX                  ;    (50ï¿½ ou 32ï¿½ de seconde)
         ADD Buffer_Current_Out_Offs,AX   ; Currently playing Buffer @
 
 		CMP SI,DMA_Buffers_End_Offs
@@ -2505,7 +2505,7 @@ IRQ_Timer_Out_DoMix:
         
 		DEC Buffer_Ahead_Cnt     ; One more buffer Played
 		
-        CMP Mix_Buffers_Completed,1         ; Calcul non termin‚ => ne pas calculer
+        CMP Mix_Buffers_Completed,1         ; Calcul non terminï¿½ => ne pas calculer
         JNE IRQ_Timer_Slow
 		
         PUSH ES		
@@ -2553,9 +2553,9 @@ Fin_IRQ_Timer:
         POP DS
         IRET
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Lecture de la partition + Calcul du Tampon                   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ	
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Lecture de la partition + Calcul du Tampon                   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 	
 Gestion_Sonore Proc Near
        MOV Mix_Buffers_Completed,0     ; Calculation not completed (Fini)
@@ -2644,7 +2644,7 @@ EndIf
 Buffers_Mix_Completed:                 ; *** End of the Buffer Mixing ***
 
        MOV Volume_Skip,0               ; Reset Volume Skip	
-       MOV Mix_Buffers_Completed,1     ; Tampon calcul‚.
+       MOV Mix_Buffers_Completed,1     ; Tampon calculï¿½.
        RET ; *** The End ***
 
 Buffers_Mix_NotCompleted: 
@@ -2665,33 +2665,33 @@ Buffers_Mix_NotCompleted:
 	   
 VolSkip_Test2:
 ;  -> Increase VolSkip to Vol_Limit2
-       DEC BL
-	   CMP AL,BL
-	   JNE VolSkip_Test3
-	   CMP AH,Vol_Limit2
-	   JAE VolSkipUpdateEnd
-	   ADD Volume_Skip,VolSkipIncr
-	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+        DEC BL
+	CMP AL,BL
+	JNE VolSkip_Test3
+	CMP AH,Vol_Limit2
+	JAE VolSkipUpdateEnd
+	ADD Volume_Skip,VolSkipIncr
+	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 	   
 VolSkip_Test3:
 ;  -> Increase VolSkip to Vol_Limit3
-       DEC BL
-	   CMP AL,BL
-	   JNE Do4BuffersLate
-	   CMP AH,Vol_Limit3
-	   JAE VolSkipUpdateEnd
-	   ADD Volume_Skip,VolSkipIncr
+        DEC BL
+	CMP AL,BL
+	JNE Do4BuffersLate
+	CMP AH,Vol_Limit3
+	JAE VolSkipUpdateEnd
+	ADD Volume_Skip,VolSkipIncr
 
 VolSkipUpdateEnd:
-	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 
 Do4BuffersLate:
 ; 4 Buffers Late -> The Mixing code is Too Slow (Output Frequency too High)
 
-       MOV Erreur_Modm,Err_Too_Slow    ; Error code to define
-	   MOV Stop_Output,1               ; Stop the music
+        MOV Erreur_Modm,Err_Too_Slow    ; Error code to define
+	MOV Stop_Output,1               ; Stop the music
 
-	   JMP Buffers_Mix_Completed
+	JMP Buffers_Mix_Completed
 
 ; Check if we need to build another buffer for the Tandy DAC Output
 ; 7 Steps, much more complex due to the different possibilities.
@@ -2704,11 +2704,11 @@ GS_End_Tandy:
 ; 1) Current Delta >= Target, Mixing Complete
        JAE Buffers_Mix_Completed       
 
-	   CMP BX,MixDelta_4
-	   JB Test_TD_3
+	CMP BX,MixDelta_4
+	JB Test_TD_3
 ; 2) Current Delta >= MixDelta_4 Vol=0
-       MOV Volume_Skip,0               
-	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+        MOV Volume_Skip,0               
+	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 
 Test_TD_3:
        INC Slow_Mix1_Cnt
@@ -2850,7 +2850,7 @@ Build_MixChLoop:
 BMixLoop_Not_KeyOff:
 
         AND AL,CM_Stopped+CM_Disabled ;Voie active et pas stoppee ?
-        JNZ Build_MixChLoop_Next      ;Non => Sample pas chargé		
+        JNZ Build_MixChLoop_Next      ;Non => Sample pas chargï¿½		
 
         CMP VVolume[BX],0             ;Skip if Volume =0
 		JE Build_MixChLoop_Next
@@ -3094,9 +3094,9 @@ BML_End:
         RET
 Build_Mix_List Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³                 Lecture de la partition                   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½                 Lecture de la partition                   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ;partition_en_cours DB 0   ; 1 si lecture de la partition en cours
 Pattern_Vide  DB 0
@@ -3192,7 +3192,7 @@ EndIf
 	   
        INC BP
 	   INC BP                        ; BP=2*BX (Index Mots)
-	   INC BX                        ; Incr‚mente le compteur de voies       
+	   INC BX                        ; Incrï¿½mente le compteur de voies       
        CMP BL,Ch_Number
        JNE Do_Command_Loop
 
@@ -3213,14 +3213,14 @@ NoProcess:
        CMP Volume_total,2
        JBE Fin_player
        DEC Volume_total
-       CMP Touche_fin,Tfin_Esc  ; a-t-on appuy‚ sur Esc?
+       CMP Touche_fin,Tfin_Esc  ; a-t-on appuyï¿½ sur Esc?
        JNE Fading_IntroScan     ; non, alors c'est le Fading de l'IntroScan
        DEC Volume_total         ; Fading avec Esc deux fois plus rapide
 Fading_IntroScan:
        CALL Changer_le_volume   ; Modifier le volume pour le fading
 Pas_fin_mus:
        DS_TP
-       MOV Test_Periodique,1    ; Pour l'affichage (D‚tecte le 50ø ou 32ø )
+       MOV Test_Periodique,1    ; Pour l'affichage (Dï¿½tecte le 50ï¿½ ou 32ï¿½ )
        DS_ASM
        RET
 
@@ -3231,12 +3231,12 @@ Fin_Player:
        RET
 Partition Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      Partition_personnelle: Gestion de la partition       ³
-;³      ( Tempo, BMP, S‚quence ... )                         ³
-;³      Entr‚e: Rien                                         ³
-;³                                                           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      Partition_personnelle: Gestion de la partition       ï¿½
+;ï¿½      ( Tempo, BMP, Sï¿½quence ... )                         ï¿½
+;ï¿½      Entrï¿½e: Rien                                         ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ;Taille_note EQU 6
 
@@ -3284,13 +3284,13 @@ Pas_JPattern:
         CMP DoPatternBreak,1            ; ** Command Pattern Break ?
         JE  pattern_suivant             ; Oui => Pattern suivant
         MOV PattBreakRow,0
-        INC C_Row                       ; Incr‚menter la position de la note
+        INC C_Row                       ; Incrï¿½menter la position de la note
 
         CMP DoJumpLoop,1                ; ** Commande Jump Loop ?
         JNE Pas_Exec_Jump_Loop
         MOV DoJumpLoop,0
         MOV AL,Debut_Boucle_Pattern
-        MOV C_Row,AL                    ; Initialiser au d‚but de la boucle
+        MOV C_Row,AL                    ; Initialiser au dï¿½but de la boucle
 
         CALL Do_Change_Row
 		
@@ -3368,7 +3368,7 @@ Boucle_part_voies:
 		AND Retrig_V_Tr[BX],Not (M_Vib_VibVS_Cmd+M_Arpegio)
 		
 		MOV CX,CH_Per_part[BP]
-        CALL Set_Period      ;Fixer la p‚riode de la voie	
+        CALL Set_Period      ;Fixer la pï¿½riode de la voie	
 
 ; To add Tremolo Retrig
 		
@@ -3395,17 +3395,17 @@ ReadPart_NotIncIndex:
         RET
 Partition_personnelle Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Do_ReadChannelPart: Read the channel partition           ³
-;³                                                           ³
-;³  Input  : ES:SI Pointer to the Current channel Data       ³
-;³           BX:   Channel number                            ³
-;³  Output : C_Note, C_instrument ...                        ³
-;³                                                           ³
-;³           BL : 1 No Partition Info                        ³
-;³  Change :                                                 ³
-;³                                                           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Do_ReadChannelPart: Read the channel partition           ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½  Input  : ES:SI Pointer to the Current channel Data       ï¿½
+;ï¿½           BX:   Channel number                            ï¿½
+;ï¿½  Output : C_Note, C_instrument ...                        ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½           BL : 1 No Partition Info                        ï¿½
+;ï¿½  Change :                                                 ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ; Offset in the Not Compressed partition
 Po_Note        EQU B ES:[SI]  
@@ -3539,14 +3539,14 @@ DP_AllDataPresent:             ; ** Read Uncompressed values
        RET
 Do_ReadChannelPart Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Do_Change_Row: Search for the row Index in the Pattern   ³
-;³                                                           ³
-;³  Input  : C_Row Row Number                                ³
-;³  Output : SI, C_PartIndex <- Row Index                     ³
-;³  Change : AX,BX                                           ³
-;³                                                           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Do_Change_Row: Search for the row Index in the Pattern   ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½  Input  : C_Row Row Number                                ï¿½
+;ï¿½  Output : SI, C_PartIndex <- Row Index                     ï¿½
+;ï¿½  Change : AX,BX                                           ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Do_Change_Row  Proc Near
         MOV AL,C_Row
@@ -3589,16 +3589,16 @@ Do_Search_RowOffset:
 
 Do_Change_Row  Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      Do_NextPattern: Placer la musique au pattern AL     ³
-;³                       de la sequence                      ³
-;³                                                           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      Do_NextPattern: Placer la musique au pattern AL     ï¿½
+;ï¿½                       de la sequence                      ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Do_NextPattern Proc Near
         MOV C_Sequence,AL
         INC C_Sequence
-        XOR AH,AH                       ; AX, Position dans la s‚quence
+        XOR AH,AH                       ; AX, Position dans la sï¿½quence
         MOV BX,AX
 
         MOV AL,Table_Tempo[BX]          ; Read the Pattern Tempo
@@ -3607,7 +3607,7 @@ Do_NextPattern Proc Near
         MOV Tempo,AL                    ; Oui, Modifier le Tempo
         MOV Cmpt_Tempo,AL
 Pas_Modif_Tempo_Pattern:
-        MOV AL,Table_Sequence[BX]       ; AL <- Nø de pattern
+        MOV AL,Table_Sequence[BX]       ; AL <- Nï¿½ de pattern
         CMP AL,128
 		JBE PatternNumberOk
 		MOV Pattern_Vide,1              ; Pattern >128, Skip it
@@ -3639,14 +3639,14 @@ Pattern_Non_Vide:
         RET
 Do_NextPattern Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      Proc_Channel:  Traiter une note                         ³
-;³                                                           ³
-;³      entr‚e: BX Num‚ro de la voie                         ³
-;³              BP=BX*2   (Index pour les mots)              ³
-;³              Periode_Partition, Instrument_Partition...   ³
-;³                                                           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      Proc_Channel:  Traiter une note                         ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½      entrï¿½e: BX Numï¿½ro de la voie                         ï¿½
+;ï¿½              BP=BX*2   (Index pour les mots)              ï¿½
+;ï¿½              Periode_Partition, Instrument_Partition...   ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ;Current Partition Data  !! Don't change the Order, must match the partition order !!
 Align 4
@@ -3669,7 +3669,7 @@ Start_Volume    DB 0
 Start_Periode   DB 0
 Save_Periode    DB 0
 
-; L‚gende: O, Oui
+; Lï¿½gende: O, Oui
 ;          N, Non
 ;          I, Impossible
 ;          x, Pas de commande
@@ -3682,38 +3682,38 @@ TonePort     EQU 4   ;O   ;Tone portamento.
 CVibrato     EQU 5   ;O   ;Vibrato.
 T_VSlide     EQU 6   ;O   ;Tone portamento+Volume slide.
 Vib_VSlide   EQU 7   ;O   ;Vibrato+Volume slide.
-CTremolo     EQU 8   ;O   ;Tr‚molo. (Vibrato pour le volume)
-CPanning     EQU 9   ;O   ;Panning. (Normalement, Commande 8 non utilis‚e)
-SampleOffs   EQU 10  ;O   ;Fixer l'offset de l'‚chantillon.
+CTremolo     EQU 8   ;O   ;Trï¿½molo. (Vibrato pour le volume)
+CPanning     EQU 9   ;O   ;Panning. (Normalement, Commande 8 non utilisï¿½e)
+SampleOffs   EQU 10  ;O   ;Fixer l'offset de l'ï¿½chantillon.
 VolSlide     EQU 11  ;O   ;Volume slide.
 JumpPattern  EQU 12  ;O   ;Sauter vers la position xx.
-CSetVolume   EQU 13  ;O   ;D‚finir le volume.
+CSetVolume   EQU 13  ;O   ;Dï¿½finir le volume.
 EndPattern   EQU 14  ;O   ;Fin du pattern.
-Extended     EQU 15  ;x   ;Commandes ‚tendues. (17...)
-SetTempo     EQU 16  ;O   ;D‚finir le tempo.
+Extended     EQU 15  ;x   ;Commandes ï¿½tendues. (17...)
+SetTempo     EQU 16  ;O   ;Dï¿½finir le tempo.
 
 CSetFilter   EQU 17  ;I   ;Activer le filtre. (Amiga)
 CFinePortaUp EQU 18  ;O   ;Portamento Up Lent.
 CFinePortaDn EQU 19  ;O   ;Portamento Down lent.
-CGlissCtrl   EQU 20  ;N   ;Contr“le du glissando.  (pour le Tone portamento)
-CVibCtrl     EQU 21  ;O   ;D‚finir la table du vibrato.
-CFineTune    EQU 22  ;O   ;Modifier la p‚riode d'un son.
+CGlissCtrl   EQU 20  ;N   ;Contrï¿½le du glissando.  (pour le Tone portamento)
+CVibCtrl     EQU 21  ;O   ;Dï¿½finir la table du vibrato.
+CFineTune    EQU 22  ;O   ;Modifier la pï¿½riode d'un son.
 CJumpLoop    EQU 23  ;O   ;Bouclage de pattern.
-CTremCtrl    EQU 24  ;O   ;D‚finir la table du tremolo.
+CTremCtrl    EQU 24  ;O   ;Dï¿½finir la table du tremolo.
 CRien2       EQU 25  ;x
-CRetrigNote  EQU 26  ;O   ;R‚attaque aprŠs x 50ø de secondes.
+CRetrigNote  EQU 26  ;O   ;Rï¿½attaque aprï¿½s x 50ï¿½ de secondes.
 CVolFineUp   EQU 27  ;O   ;Augmente le volume lentement.
 CVolFineDown EQU 28  ;O   ;Diminue le volume lentement.
-CNoteCut     EQU 29  ;O   ;Couper la note aprŠs xx 50ø de secondes.
-CNoteDelay   EQU 30  ;O   ;Lancer la note aprŠs xx 50ø de secondes.
-CPattDelay   EQU 31  ;O   ;Retarde le d‚but du pattern suivant.
+CNoteCut     EQU 29  ;O   ;Couper la note aprï¿½s xx 50ï¿½ de secondes.
+CNoteDelay   EQU 30  ;O   ;Lancer la note aprï¿½s xx 50ï¿½ de secondes.
+CPattDelay   EQU 31  ;O   ;Retarde le dï¿½but du pattern suivant.
 CFunkIt      EQU 32  ;N,I ;Jouer la note to l'envers.
 
 CSetBPM      EQU 33  ;O   ;Fixer les BPM.
 CSetGVolume  EQU 34  ;O   ;Fixer le volume general. (S3M)
 CTremor      EQU 35  ;    ;Tremor (Note ON/OFF Alternativement)
-CFreqAdj     EQU 36  ;O   ;Ajustement de la fr‚quence. (669)
-CULTSpecial  EQU 37  ;N   ;Commande sp‚ciale ULT. (Stop Loop,...)
+CFreqAdj     EQU 36  ;O   ;Ajustement de la frï¿½quence. (669)
+CULTSpecial  EQU 37  ;N   ;Commande spï¿½ciale ULT. (Stop Loop,...)
 CVibSweep    EQU 38  ;N   ;Profondeur du vibrato.
 CRelease     EQU 39  ;N   ;Key Off (SAT) !!!!! A programmer !!!!! 
 CEFPortamento EQU 40 ;O   ;Extra Fine Portamento (XM,IT)													
@@ -3736,7 +3736,7 @@ Lire_Part:
                                    ;In Note_xxxx Variables
 
         MOV CX,CH_Per_part[BP]
-;        CALL Ajuster_Periode_Inv  ;Lecture de part => P‚riode MOD
+;        CALL Ajuster_Periode_Inv  ;Lecture de part => Pï¿½riode MOD
         MOV Note_Periode,CX        ;Note_Period <- Current Period (Not modified by Vibrato and Arpeggio)
 
 		MOV AL,Ch_Note[BX]
@@ -3875,7 +3875,7 @@ EndIf
         SUB DX,Min_Period
         CMP DX,Moyen_Notes
         JA Periode_incorrecte       ; Periode incorrecte=>Periode_Partition=0
-        MOV Periode_Partition,CX    ; Initialise la p‚riode
+        MOV Periode_Partition,CX    ; Initialise la pï¿½riode
 
 Periode_incorrecte:
 
@@ -4153,7 +4153,7 @@ Pas_Start_Sample:
 		JNE Pas_Start_Periode
         MOV CX,Note_Periode
         MOV CH_Per_part[BP],CX     ;Save the Period to play
-        CALL Set_Period            ;Fixer la p‚riode de la voie
+        CALL Set_Period            ;Fixer la pï¿½riode de la voie
 		MOV CL,Note_Note
 		MOV Ch_Note[BX],CL		
 Pas_Start_Periode:
@@ -4293,18 +4293,18 @@ Not_VE_ToneP:
 		RET
 Do_VolCol_Commands Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   DoStart_Sample:  Change le sample pour une voie         ³
-;³                                                           ³
-;³   Input : Note_Sample, Le Nø de sample.                  ³
-;³            BX,BP Channel number                           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   DoStart_Sample:  Change le sample pour une voie         ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½   Input : Note_Sample, Le Nï¿½ de sample.                  ï¿½
+;ï¿½            BX,BP Channel number                           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 DoStart_Sample Proc Near
 
         MOV AL,Note_Sample
         CMP AL,Nb_Total_Samples
-        JAE Pas_de_sample             ;Nø du sample trop grand !!!
+        JAE Pas_de_sample             ;Nï¿½ du sample trop grand !!!
 
         XOR AH,AH
 		Pointer_Sample AX
@@ -4353,12 +4353,12 @@ Pas_de_sample:
 		RET
 DoStart_Sample Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Set_Ch_Volume:  Change the volume for a channel        ³
-;³                                                           ³
-;³   Input : BX=Channel number;BP=2*BX                       ³
-;³           AL=Le volume                                    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Set_Ch_Volume:  Change the volume for a channel        ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½   Input : BX=Channel number;BP=2*BX                       ï¿½
+;ï¿½           AL=Le volume                                    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Set_Ch_Volume Proc near
 
@@ -4412,13 +4412,13 @@ EndIf
         RET
 Set_Ch_Volume EndP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Ajuster_Volumes_Panning : Calcul du volume gauche et    ³
-;³                             du volume droit               ³
-;³                                                           ³
-;³   Input : BX=Nø de voie;BP=2*CX                          ³
-;³            AL=Le volume                                   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Ajuster_Volumes_Panning : Calcul du volume gauche et    ï¿½
+;ï¿½                             du volume droit               ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½   Input : BX=Nï¿½ de voie;BP=2*CX                          ï¿½
+;ï¿½            AL=Le volume                                   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ;If ModeXT eq No
 Ajuster_Volumes_Panning Proc near
@@ -4464,7 +4464,7 @@ Get_Period Proc Near
         CMP BX,100               ; Marge de 100 (qui digitalise to 100 Hz ?)
         JB Not_Adjust_Period
 
-                                 ; - Ajuster la p‚riode - ( Fr‚q pour C-4 )
+                                 ; - Ajuster la pï¿½riode - ( Frï¿½q pour C-4 )
         PUSH AX
         PUSH DX
         MOV AX,8363
@@ -4480,14 +4480,14 @@ Not_Adjust_Period:
 		RET
 Get_Period EndP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Set_Period: Change la p‚riode pour une voie        ³
-;³                    avec v‚rification de la valeur         ³
-;³                                                           ³
-;³   Input : BX=Nø de voie                                  ³
-;³            BP=2*BX                                        ³
-;³            CX=La p‚riode                                  ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Set_Period: Change la pï¿½riode pour une voie        ï¿½
+;ï¿½                    avec vï¿½rification de la valeur         ï¿½
+;ï¿½                                                           ï¿½
+;ï¿½   Input : BX=Nï¿½ de voie                                  ï¿½
+;ï¿½            BP=2*BX                                        ï¿½
+;ï¿½            CX=La pï¿½riode                                  ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Set_Period PROC NEAR
 
@@ -4510,7 +4510,7 @@ If UseGUS eq yes
 EndIf
 
         PUSH CX
-        MOV DX,P_Amiga_h        ;Calcul des incr‚ments pour le mixage.
+        MOV DX,P_Amiga_h        ;Calcul des incrï¿½ments pour le mixage.
         MOV AX,P_Amiga_l
         DIV CX  ; Avoid DIV by 0
 
@@ -4553,10 +4553,10 @@ Pas_Div5:
 
 Set_Period ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Set_Period_Fine : Modifier la p‚riode suivant la   ³
-;³                          valeur du FineTune               ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Set_Period_Fine : Modifier la pï¿½riode suivant la   ï¿½
+;ï¿½                          valeur du FineTune               ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 If UseFineTune Eq Yes
 Set_Period_Fine Proc Near
@@ -4569,9 +4569,9 @@ Set_Period_Fine Proc Near
         CMP Use_FineTune_CMD,1
         JNE Fin_Fine
         MOV DX,Periode_Partition
-                                  ;Cherche l'indice de la p‚riode
+                                  ;Cherche l'indice de la pï¿½riode
         XOR CX,CX                 ;Actuelle dans la table
-        MOV SI,Offs_Table_tune    ;PremiŠre table
+        MOV SI,Offs_Table_tune    ;Premiï¿½re table
 Fine_Boucle_cherche_per:
         LODSW
         CMP AX,DX
@@ -4579,7 +4579,7 @@ Fine_Boucle_cherche_per:
         INC CX
         CMP CX,Total_FineTune
         JNE Fine_Boucle_cherche_per
-        JMP Fin_Fine              ;Note non trouv‚e => Pas de FineTune
+        JMP Fin_Fine              ;Note non trouvï¿½e => Pas de FineTune
 Fine_Periode_trouvee:
 
         MOV AL,VFineTune[BX]
@@ -4602,15 +4602,15 @@ Set_Period_Fine Endp
 EndIf
 
 
-;ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
-;³ DoXMEnv:                                                                ³
-;³                                                                         ³
-;³ Input: ES:DI Pointer to the Vol Env Data                            ³
-;³        ESI Pointer to the envelope data structure (EnvPos, EnvSegPos)   ³
-;³                                                                         ³
-;³ Output: EAX Envelope value                                              ³
-;³                                                                         ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¸
+;ï¿½ DoXMEnv:                                                                ï¿½
+;ï¿½                                                                         ï¿½
+;ï¿½ Input: ES:DI Pointer to the Vol Env Data                            ï¿½
+;ï¿½        ESI Pointer to the envelope data structure (EnvPos, EnvSegPos)   ï¿½
+;ï¿½                                                                         ï¿½
+;ï¿½ Output: EAX Envelope value                                              ï¿½
+;ï¿½                                                                         ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 If UseVolEnv eq Yes
 
@@ -4699,13 +4699,13 @@ XMEnvEnd:
 DoXMEnv Endp
 endif   ;UseVolEnv
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³              Installation des commandes                   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½              Installation des commandes                   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Set General Volume   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Set General Volume   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_SetGVolume PROC NEAR
         CMP AL,40h
@@ -4717,9 +4717,9 @@ Pas_Ajuster_GVol:
         RET
 Exec_SetGVolume Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³       Set Tempo        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½       Set Tempo        ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_set_tempo PROC NEAR
 
@@ -4732,9 +4732,9 @@ Fin_Exec_set_tempo:
 
 Exec_set_tempo ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Pattern Break      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Pattern Break      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_EndPattern Proc Near
         MOV AH,AL
@@ -4757,9 +4757,9 @@ Fin_EndPattern:
         RET
 Exec_EndPattern Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      Jump Pattern      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      Jump Pattern      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_JumpPattern Proc Near
         MOV AH,AL
@@ -4782,9 +4782,9 @@ Fin_JumpPattern:
         RET
 Exec_JumpPattern Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³       PattDelay        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½       PattDelay        ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_PattDelay Proc Near
         OR AL,AL
@@ -4792,20 +4792,20 @@ Exec_PattDelay Proc Near
         MOV CL,Tempo
         XOR AH,AH
         MUL CL
-        MOV Cmpt_Tempo,AL   ;Attendre Tempo*Parametre 50ø de secondes...
+        MOV Cmpt_Tempo,AL   ;Attendre Tempo*Parametre 50ï¿½ de secondes...
 Fin_PattDelay:
         RET
 Exec_PattDelay EndP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³       Arpeggio         ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½       Arpeggio         ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_Arpeggio PROC NEAR
 
         MOV DX,Note_Periode
         OR DX,DX
-        JZ Fin_Exec_Arpeggio      ;P‚riode nulle => Fin
+        JZ Fin_Exec_Arpeggio      ;Pï¿½riode nulle => Fin
 
         XOR CX,CX
 		MOV CL,Note_Note          ;CX=Current note index
@@ -4858,9 +4858,9 @@ Fin_Exec_Arpeggio:
         RET
 Exec_Arpeggio ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Portamento Down     ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Portamento Down     ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_port_DN PROC NEAR
 
@@ -4872,9 +4872,9 @@ Pas_modif_Port_Dn:
         RET
 Exec_port_DN ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Portamento Up       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Portamento Up       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_Port_up PROC NEAR
 
@@ -4886,9 +4886,9 @@ Pas_modif_Port_Up:
         RET
 Exec_Port_up ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Fine Portamento Up    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Fine Portamento Up    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_FinePortaUp PROC NEAR
         TEST AL,AL
@@ -4900,9 +4900,9 @@ Pas_modif_PortFineUp:
         RET
 Exec_FinePortaUp ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Fine Portamento Down  ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Fine Portamento Down  ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_FinePortaDown PROC NEAR
         TEST AL,AL
@@ -4918,7 +4918,7 @@ Exec_FinePortaDown ENDP
 ;--------------------------
 ;  Extra Fine Protamento
 ;  Parma : 1x EFPort Down
-;          éx EFPort Up
+;          ï¿½x EFPort Up
 ;--------------------------
 
 Exec_EFPort PROC NEAR	
@@ -4957,9 +4957,9 @@ EF_PortDn_ParamOk:
         RET
 Exec_EFPort ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Volume slide       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Volume slide       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_Vol_slide PROC NEAR
 
@@ -4976,15 +4976,15 @@ Pas_Volume_Sl_Rapide:
 
 Exec_Vol_slide ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Volume Fine Up      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Volume Fine Up      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_VolFineUp PROC NEAR
 
         TEST AL,AL
         JZ Garde_vfUp
-If ModeXT eq Yes         ;ParamŠtre to gauche pour +
+If ModeXT eq Yes         ;Paramï¿½tre to gauche pour +
 		SHL AL,1
 		SHL AL,1
         SHL AL,1	  	 
@@ -5000,9 +5000,9 @@ Garde_VFUp:
 
 Exec_VolFineUp ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Volume Fine Down    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Volume Fine Down    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_VolFineDown PROC NEAR
 
@@ -5016,9 +5016,9 @@ Garde_VFDown:
 
 Exec_VolFineDown ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Tone portamento     ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Tone portamento     ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_Tone_prt PROC NEAR
 
@@ -5039,7 +5039,7 @@ Cont_exec_3:
         MOV dir_tone_prt[BX],1     ; Portamento
 Exec_ancien_3:
         OR AL,AL
-        JZ utilise_anc_param       ; Utilise l'ancien paramŠtre si=0
+        JZ utilise_anc_param       ; Utilise l'ancien paramï¿½tre si=0
         MOV param_tone_prt[BX],AL
 utilise_anc_param:
         MOV Command_ProcOffs,OFFSET Tone_portamento
@@ -5048,16 +5048,16 @@ Fin_Exec_Tone_prt:
 
 Exec_Tone_prt ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³        Vibrato         ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½        Vibrato         ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Execute_vibrato PROC NEAR
 
         MOV AH,AL
         OR AH,AH
-        JZ Keep_Vib_Speed      ;ParamŠtre=0 =>on conserve les valeurs
-                               ;Pr‚c‚dentes
+        JZ Keep_Vib_Speed      ;Paramï¿½tre=0 =>on conserve les valeurs
+                               ;Prï¿½cï¿½dentes
         AND AL,0Fh
 		OR AL,AL
 		JZ Keep_Vib_Amp
@@ -5082,15 +5082,15 @@ Keep_Vib_Speed:
 
 Execute_vibrato ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³        Tremolo         ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½        Tremolo         ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_Tremolo PROC NEAR
         MOV AH,AL
         TEST AH,AH
-        JZ Garde_val_tre        ;ParamŠtre=0 =>on conserve les valeurs
-                                ;Pr‚c‚dentes
+        JZ Garde_val_tre        ;Paramï¿½tre=0 =>on conserve les valeurs
+                                ;Prï¿½cï¿½dentes
         AND AL,0Fh
         MOV Amplitude_trem[BX],AL
 If ModeXT Eq Yes
@@ -5113,9 +5113,9 @@ Pas_modif_vol_tremolo:
 
 Exec_Tremolo ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      Tremor      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      Tremor      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_Tremor PROC NEAR
         OR AL,AL
@@ -5128,9 +5128,9 @@ Garde_Val_Tremor:
         RET
 Exec_Tremor ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Vibrato Controle    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Vibrato Controle    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_VibCtrl Proc near
         OR Retrig_V_Tr[BX],M_Retrig_Vib
@@ -5159,9 +5159,9 @@ Fin_Exec_VibCtrl:
         RET
 Exec_VibCtrl Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Tremolo Controle    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Tremolo Controle    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_TremCtrl PROC NEAR
         OR Retrig_V_Tr[BX],M_Retrig_Trem
@@ -5190,9 +5190,9 @@ Fin_Exec_TremCtrl:
         RET
 Exec_TremCtrl Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Vibrato+Vol Slide   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Vibrato+Vol Slide   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_vib_vs PROC NEAR
         MOV Param_vs[BX],AL  ; Test to not memorize Vol Slide Param if 0
@@ -5201,9 +5201,9 @@ Exec_vib_vs PROC NEAR
         RET
 Exec_vib_vs ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  Tone port+Vol Slide   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  Tone port+Vol Slide   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_tone_vs PROC NEAR
         MOV Param_vs[BX],AL  ; Test to not memorize Vol Slide Param if 0
@@ -5215,9 +5215,9 @@ Exec_tone_vs PROC NEAR
 
 Exec_tone_vs ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Note Cut     ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Note Cut     ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_NoteCut PROC NEAR
         INC AL
@@ -5227,9 +5227,9 @@ Exec_NoteCut PROC NEAR
         RET
 Exec_NoteCut ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   Note Delay     ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   Note Delay     ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_NoteDelay PROC NEAR
         INC AL
@@ -5241,19 +5241,19 @@ Exec_NoteDelay PROC NEAR
         MOV AL,Note_Sample
         MOV CH_Smp_Pla[BX],AL
 NDPas_Start_Sample:
-        CMP Save_Periode,1        ;Modifier la p‚riode ?
+        CMP Save_Periode,1        ;Modifier la pï¿½riode ?
         JNE NDPas_Save_Periode
         MOV CX,Note_Periode
-;        CALL Ajuster_Periode      ;Ajuster la p‚riode !!!!!            OPT : La periode n est pas correct si le sample n est pas demarre
-        MOV CH_Per_part[BP],CX  ;Sauver la valeur de la p‚riode
+;        CALL Ajuster_Periode      ;Ajuster la pï¿½riode !!!!!            OPT : La periode n est pas correct si le sample n est pas demarre
+        MOV CH_Per_part[BP],CX  ;Sauver la valeur de la pï¿½riode
 NDPas_Save_Periode:
         CALL NoteDelay            ;Si Delay=0, lancer tout de suite !!!
         RET
 Exec_NoteDelay ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Retrig Note    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Retrig Note    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_RetrigNote PROC NEAR
         MOV AH,AL
@@ -5284,16 +5284,16 @@ Pas_Retrig:
         RET
 Exec_RetrigNote ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    Sample Offset   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    Sample Offset   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 TSmp_Offs DB Max_Channels DUP (0)
 
 Exec_SampleOffs PROC NEAR
         OR AL,AL
         JNZ Pas_Smp_Offs0
-        MOV AL,TSmp_Offs[BX]      ; Si ParamŠtre=0, valeur pr‚c‚dente.
+        MOV AL,TSmp_Offs[BX]      ; Si Paramï¿½tre=0, valeur prï¿½cï¿½dente.
 Pas_Smp_Offs0:
         MOV TSmp_Offs[BX],AL
         CMP Start_Sample,1
@@ -5305,9 +5305,9 @@ Suite_Smp_Offs:
 
 Exec_SampleOffs Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      Set BPM       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      Set BPM       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_SetBPM Proc Near
 		MOV BPM_Val,520           ; Value for 125BPM : 65000/125 (If BPM<20)
@@ -5326,9 +5326,9 @@ Skip_BPM:
         RET
 Exec_SetBPM Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     Jump Loop      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     Jump Loop      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Debut_Boucle_Pattern DB 0
 Cmpt_Boucles         DB 0
@@ -5338,14 +5338,14 @@ Test_Jump_Loop       DB 0
 
 Exec_JumpLoop PROC NEAR
         CMP Test_Jump_Loop,1
-        JE Fin_Exec_JumpLoop         ;D‚jto utilis‚ sur la mˆme ligne ?
+        JE Fin_Exec_JumpLoop         ;Dï¿½jto utilisï¿½ sur la mï¿½me ligne ?
 
         MOV Test_Jump_Loop,1
         MOV AH,AL
         OR AH,AH
         JNZ Pas_debut_Bouclage
         MOV AL,C_Row
-        MOV Debut_Boucle_Pattern,AL  ;Fixer le d‚but du bouclage
+        MOV Debut_Boucle_Pattern,AL  ;Fixer le dï¿½but du bouclage
         JMP Fin_Exec_JumpLoop
 Pas_debut_Bouclage:
         CMP Bouclage_en_cours,1      ;Bouclage en cours ?
@@ -5365,9 +5365,9 @@ Fin_Exec_JumpLoop:
         RET
 Exec_JumpLoop Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     FineTune       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     FineTune       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_FineTune PROC Near
 ;        MOV AL,Note_Sample         ;du sample
@@ -5383,9 +5383,9 @@ Exec_FineTune PROC Near
         RET
 Exec_FineTune Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      Panning       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      Panning       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Exec_Panning Proc Near  ; Panning 0 to 80h
         CMP Utiliser_Panning,1
@@ -5402,9 +5402,9 @@ EP_Pas_Modif_Panning:
         RET
 Exec_Panning Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³                      COMMANDES                            ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½                      COMMANDES                            ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Cmpt_Commande DB Max_Channels DUP (0)  ;Compteur pour VolFine, FinePorta
                                     ;Retrig, NoteCut, NoteDelay...
@@ -5453,9 +5453,9 @@ Do_Nothing Proc Near
         RET
 Do_Nothing Endp		
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     - Arpeggio -       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     - Arpeggio -       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Do_Arpeggio PROC NEAR
 
@@ -5474,14 +5474,14 @@ arp3:
         MOV CX,Per2_arp[BP]
         MOV compt_arp[BX],0
 Fin_arp:
-;        CALL Ajuster_Periode  ; Periodes Arpeggio pas r‚elles => Ajuster
+;        CALL Ajuster_Periode  ; Periodes Arpeggio pas rï¿½elles => Ajuster
         CALL Set_Period
         RET
 Do_Arpeggio Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  - Portamento Down -   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  - Portamento Down -   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                  
 Port_down Proc Near
         MOV CX,CH_Per_part[BP]
@@ -5492,7 +5492,7 @@ Port_down Proc Near
         ADD CX,AX
 ;        CMP CX,Max_Period ;_Act
 ;        JB Port_dn_inf
-;        MOV CX,Max_Period ;_Act                ;P‚riode au maximum
+;        MOV CX,Max_Period ;_Act                ;Pï¿½riode au maximum
 ;Port_dn_inf:
 
         MOV CH_Per_part[BP],CX
@@ -5500,9 +5500,9 @@ Port_down Proc Near
         RET
 Port_down Endp
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   - Portamento Up -    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   - Portamento Up -    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Port_up Proc Near
         MOV CX,CH_Per_part[BP]
@@ -5528,9 +5528,9 @@ Pru_Periode_correcte:
         RET
 Port_up ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³ - Fine Portamento Up - ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½ - Fine Portamento Up - ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Fine_Portamento_Up PROC NEAR
         CMP Cmpt_Commande[BX],0
@@ -5541,9 +5541,9 @@ Pas_exec_Port_Up:
         RET
 Fine_Portamento_Up ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³ - Fine Portamento Down - ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½ - Fine Portamento Down - ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Fine_Portamento_Down PROC NEAR
         CMP Cmpt_Commande[BX],0
@@ -5554,9 +5554,9 @@ Pas_exec_Port_Down:
         RET
 Fine_Portamento_Down ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    - Volume Slide -    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    - Volume Slide -    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Volume_slide PROC NEAR
         MOV AL,Param_VS[BX]
@@ -5564,7 +5564,7 @@ VolSlide_Direct:
         OR AL,AL                  ; AL=0?
         JE Fin_volume_slide
         MOV DL,AL
-        AND DL,0Fh                ; DL <- 2ø partie
+        AND DL,0Fh                ; DL <- 2ï¿½ partie
         OR DL,DL                  ; Volume Slide Down ???
         JZ Vol_sl_add
         MOV CL,VVolume_Part[BX]   ; Volume Slide Down ...
@@ -5596,9 +5596,9 @@ Fin_volume_slide:
         RET
 Volume_slide ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  - Volume fine (Up et Down) -   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  - Volume fine (Up et Down) -   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Volume_fine PROC NEAR
         CMP Cmpt_Commande[BX],0
@@ -5609,16 +5609,16 @@ Pas_exec_VolFine:
         RET
 Volume_fine ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³  - Tone Portamento -   ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½  - Tone Portamento -   ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Tone_portamento PROC NEAR
         MOV DX,Per_tone_prt[BP]
 ;        CALL Ajuster_Periode
-;        MOV DX,CX                      ;DX=P‚riode de fin.
+;        MOV DX,CX                      ;DX=Pï¿½riode de fin.
 
-        MOV CX,CH_Per_part[BP]       ;CX=P‚riode actuelle
+        MOV CX,CH_Per_part[BP]       ;CX=Pï¿½riode actuelle
 
         XOR AH,AH
         MOV AL,Param_tone_prt[BX]
@@ -5654,9 +5654,9 @@ Fin_t_pr:
         RET
 Tone_portamento ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      - Vibrato -       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      - Vibrato -       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Vibrato PROC NEAR                     ;Ne pas changer CH_Per_part !!!
          CMP Vibr_Index[BX],63
@@ -5690,16 +5690,16 @@ Fin_vib:
          RET
 Vibrato ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      - Tremolo -       ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      - Tremolo -       ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Tremolo PROC NEAR
          CMP Trem_Index[BX],63
          JB Pas_per_Trem
          SUB Trem_Index[BX],64
 Pas_per_Trem:
-         MOV SI,Table_Tremolo[BP]         ;Table du tremolo (sinus,rampe,carr‚)
+         MOV SI,Table_Tremolo[BP]         ;Table du tremolo (sinus,rampe,carrï¿½)
          MOV CL,Trem_Index[BX]
          XOR CH,CH
          ADD SI,CX
@@ -5733,9 +5733,9 @@ Fin_Trem:
          RET
 Tremolo ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³      - Tremor -        ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½      - Tremor -        ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Tremor PROC NEAR
 
@@ -5770,27 +5770,27 @@ Fin_Tremor:
          RET
 Tremor ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³ - Vibrato+Vol Slide -  ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½ - Vibrato+Vol Slide -  ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Vibrato_vs PROC NEAR
         CALL Vibrato
         JMP Volume_slide
 Vibrato_vs ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³- Tone port+Vol Slide - ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½- Tone port+Vol Slide - ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 Tone_vs PROC NEAR
         CALL Tone_portamento
         JMP Volume_slide
 Tone_vs ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³     - Note Cut -     ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½     - Note Cut -     ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 NoteCut:
         DEC Cmpt_Commande[BX]
@@ -5804,9 +5804,9 @@ NoteCut:
 Fin_NC:
         RET
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³    - Note Delay -    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½    - Note Delay -    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 NoteDelay PROC NEAR
 		
@@ -5817,7 +5817,7 @@ NoteDelay PROC NEAR
         MOV AL,VVolume_Part[BX]
         CALL Set_Ch_Volume       ;Changer le volume
         MOV CX,CH_Per_part[BP]
-        CALL Set_Period      ;Changer la p‚riode de la voie
+        CALL Set_Period      ;Changer la pï¿½riode de la voie
         MOV AL,CH_Smp_Pla[BX]
         MOV Note_Sample,AL
         MOV VSmp_Offset[BX],0
@@ -5829,9 +5829,9 @@ Fin_ND:
         RET
 NoteDelay ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   - Retrig Note -    ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   - Retrig Note -    ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ;FTRetrigNote PROC NEAR
 ;
@@ -5937,10 +5937,10 @@ Fin_Ret:
         RET
 RetrigNote ENDP
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³   PInit_Tables  Fournir les pointeurs au Pascal          ³
-;³   Change:      ES,DI                                      ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½   PInit_Tables  Fournir les pointeurs au Pascal          ï¿½
+;ï¿½   Change:      ES,DI                                      ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 PInit_Tables PROC FAR
       PUSH BP
@@ -5984,9 +5984,9 @@ INCLUDE ADLIB.ASM           ;Commandes Adlib
 INCLUDE IMFDROP.ASM 
 EndIf
 
-;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-;³                      AFFICHAGES                           ³
-;ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
+;ï¿½                      AFFICHAGES                           ï¿½
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 If Mod_Master eq yes
  INCLUDE MODMUTIL.ASM        ;Calcul duree...

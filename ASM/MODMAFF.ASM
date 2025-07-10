@@ -153,12 +153,12 @@ aff_repeat_end:
 Affiche_Fonctions ENDP
 
 
-;�����������������������������������������������������������Ŀ
-;�   MM_ASM_UpdateInterface   Display the Volume / Pitch Lines       �
-;�     Entr�e                                                �
-;�     Sortie                                                �
-;�     Change                                                �
-;�������������������������������������������������������������
+;-----------------------------------------------------------------
+;-   MM_ASM_UpdateInterface   Display the Volume / Pitch Lines  -
+;-     Entree                                                  -
+;-     Sortie                                                   -
+;-     Change                                                   -
+;-----------------------------------------------------------------
 
 ancien_aff_centre DB 0
 

@@ -817,8 +817,6 @@ Begin
 	  MMSS_Start_Output;  { Start the Module }
 	 End;
 
-  {MMSS_CFG^.Output_Stopped:=True;}
-
   {$IFDEF DEBUG}
   Writeln('MMSS_Error: ',MMSS_CFG^.MMSS_Error);
   Writeln('MM_Playing_Interface');
@@ -827,6 +825,9 @@ Begin
   {$ENDIF}
 
   If MMSS_CFG^.MMSS_Error=Ok Then MM_Playing_Interface;
+ 
+ { Writeln('Output Stopped, Press Return');
+  Repeat until Readkey=#13;}
 
   MMSS_Stop_Output;
   MMSS_Stop_Musique

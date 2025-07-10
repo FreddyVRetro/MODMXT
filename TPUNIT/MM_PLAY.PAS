@@ -67,7 +67,8 @@ Begin
    End;
   If Changer_Affichage Then
    Begin
-    MM_Init_PlayingScreen_Text;
+    MM_Init_PlayingScreen_Text;    
+{    EffacePage(0,11); } { DEBUG !!}
     Changer_Affichage:=False;
    End;
   MM_ASM_UpdateInterface;   { Read Keys and Update the Display, in the Assembly code }
@@ -91,9 +92,13 @@ Begin
 {scanLeft   EQU 75       ;retour rapide }
      End;
 {$ENDIF}
-  { Attente du 50� de seconde       }
+  { Attente du 50e de seconde       }
   Repeat Until (Tick_50Hz=1) OR MMSS_CFG^.Output_Stopped OR KeyPressed;
 
+{  if (TP_Fading) then Writeln('F');
+   if (MMSS_CFG^.Stop_Output) then Writeln('S'); }
+
+  { Affichage des infos de la musique }
   Tick_50Hz:=0;
  Until MMSS_CFG^.Output_Stopped; { Attente de la fin de la musique }
 

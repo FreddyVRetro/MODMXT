@@ -206,8 +206,9 @@ PROCEDURE MMSS_Stop_Output;
 Begin
  If Not MMSS_CFG^.Output_Stopped Then { Si musique termin�e, ne pas l'arr�ter }
   Begin
+   InitTexte;
    MMSS_CFG^.Stop_Output:=True;
-   Repeat Until MMSS_CFG^.Output_Stopped;
+   Repeat Until MMSS_CFG^.Output_Stopped;  { Can Crash }
   End;
 SoundEnd;
 MMSS_CFG^.Stop_Output:=False;

@@ -523,7 +523,7 @@ VAR {PeriodArray: TPeriodArray ABSOLUTE PeriodSet;}
 
     Boucler_MOD : Boolean;
 
-    Tick_50Hz :Byte;   {le 50�me de seconde pour l'affichage}
+    Tick_50Hz :Byte;   {le 50eme de seconde pour l'affichage}
     TP_Fading:Boolean;
 
 

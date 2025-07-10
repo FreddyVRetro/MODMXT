@@ -71,19 +71,19 @@ EndIf
 
 writechar MACRO x              ;Macro ecriture
      PUSH AX
-	 PUSH BX
-	 PUSH CX
+     PUSH BX
+     PUSH CX
      PUSH BP
-	 PUSH SI
-	 MOV AL,x 
-	 MOV BH,0    ; Page 0
-	 MOV BL,0Fh  ; White
+     PUSH SI
+     MOV AL,x 
+     MOV BH,0    ; Page 0
+     MOV BL,0Fh  ; White
      MOV AH,0Eh
      INT 10h
-	 POP SI
-	 POP BP
+     POP SI
+     POP BP
      POP CX
-	 POP BX
+     POP BX
      POP AX
 ENDM
 
@@ -1264,28 +1264,28 @@ InitDevice PROC NEAR
         MOV Max_Mixed3,AL
         MOV IRQ_Cnt,AX
         MOV Slow_Mix1_Cnt,AX	
-		MOV Slow_Mix2_Cnt,AX
-		MOV Slow_Mix3_Cnt,AX
-		MOV Volume_Skip,AL
+	MOV Slow_Mix2_Cnt,AX
+	MOV Slow_Mix3_Cnt,AX
+	MOV Volume_Skip,AL
 
 ; Channels limit variables init
-		MOV Mix_Channels_Nb_MAX,AL ; Value to use if >0
-		MOV Mix_Channels_Limit,AL  ; Value used and Displayed
+	MOV Mix_Channels_Nb_MAX,AL ; Value to use if >0
+	MOV Mix_Channels_Limit,AL  ; Value used and Displayed
         
-		MOV AL,PMix_ChLimit_Type    ; 0 Off, 1: Auto 2: Manual
-		MOV AH,0FFh
-		TEST AL,AL
-		JE MLT_End
-		XOR AH,AH
-		DEC AL
-		JZ MLT_End
-		MOV AH,PMix_ChLimit_Nb
+	MOV AL,PMix_ChLimit_Type    ; 0 Off, 1: Auto 2: Manual
+	MOV AH,0FFh
+	TEST AL,AL
+	JE MLT_End
+	XOR AH,AH
+	DEC AL
+	JZ MLT_End
+	MOV AH,PMix_ChLimit_Nb
 MLT_End:
         MOV Mix_ChLimit_Nb,AH
 
 ; Output device and mixing Vars Init
 		
-		MOV AL,PSortie_Sonore
+	MOV AL,PSortie_Sonore
         MOV Sortie_Sonore,AL
         MOV AL,PUse_DMA
         MOV Use_DMA,AL
@@ -1298,50 +1298,50 @@ MLT_End:
         MOV Mix_Buffers_Completed,1
 
         XOR AX,AX
-		MOV Stopper_IRQ_SB,AL
+	MOV Stopper_IRQ_SB,AL
         MOV Stop_Output,AL
-		MOV Output_Stopped,AL
+	MOV Output_Stopped,AL
 If UseMix16 Eq Yes	
-		MOV Out_16Bit,AL
+	MOV Out_16Bit,AL
 EndIf		
-		MOV Out_Signed,AL
-		MOV Mix_Mono_Use_Left,AL
+	MOV Out_Signed,AL
+	MOV Mix_Mono_Use_Left,AL
         MOV Out_16Bit,AL
         MOV Buffer_Convert_Code,Offset Do_Nothing ; For Signed 8 and 16 Bit Mono
 		
 ; Adjust the parameters for each sound Output
 
         CMP Sortie_Sonore,SB
-		JE  InitDev_SBTDMono_8b
-		CMP Sortie_Sonore,SBPro
-		JNE InitDev_NoSB
-		JMP  InitDev_SBPro
+	JE  InitDev_SBTDMono_8b
+	CMP Sortie_Sonore,SBPro
+	JNE InitDev_NoSB
+	JMP  InitDev_SBPro
 InitDev_NoSB:
 ; * No Sound Blaster
         CMP Sortie_Sonore,T_DAC
-		JE InitDev_SBTDMono_8b
+	JE InitDev_SBTDMono_8b
 ; * No Tandy DAC		
         MOV Use_DMA,0
-		CMP Sortie_Sonore,Gus
-		JE InitDev_GUS		
+	CMP Sortie_Sonore,Gus
+	JE InitDev_GUS		
 ; * No GUS and SB
         CMP Sortie_Sonore,HPint
-		JNE InitDev_No_PCSpeaker
+	JNE InitDev_No_PCSpeaker
 ; * PC Speaker
         MOV Buffer_Convert_Code,Offset Convert_PCSpeaker
 If UseMix16 Eq Yes		
-		MOV Mix_16Bit,0                  ; !!! Change the 16Bit settings value.
+	MOV Mix_16Bit,0                  ; !!! Change the 16Bit settings value.
 EndIf		
-		RET
+	RET
 
 ; * 8 Bit Not signed devices (DAC)
 InitDev_No_PCSpeaker:		
-		MOV Utilise_Stereo,0
+	MOV Utilise_Stereo,0
 If UseMix16 Eq Yes
         CMP Mix_16Bit,1
         JE InitDev_NoPC_16bMix
 EndIf		
-		MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
+	MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
         RET
 
 ; * 8 Bit Not signed devices (DAC) 16Bit Mix
@@ -1358,18 +1358,18 @@ InitDev_GUS:
 		
 ; * SB Mono; BlasterBoard or Tandy DAC 8b
 InitDev_SBTDMono_8b:
-		MOV Utilise_Stereo,0
+	MOV Utilise_Stereo,0
 
         CMP Type_SB,T_BB2
         JNE InitDEV_NoBB2 ; BlasterBoard 2.5+, like SB16 8Bit
 ; BlasterBoard 2.5+ 8Bit Output, Signed
         MOV Out_Signed,1  ; Signed
-		CMP Mix_16Bit,0
-		JE InitDEV_BB2End
+	CMP Mix_16Bit,0
+	JE InitDEV_BB2End
         MOV Buffer_Convert_Code,Offset Convert_S_16_8Mono ; Convert 16Bit to 8Bit signed
         MOV Mix_Mono_Use_Left,1                           ; Use Left Buffer for mixing
 InitDEV_BB2End:
-		RET
+	RET
 InitDEV_NoBB2:
 
 If UseMix16 Eq Yes
@@ -1377,7 +1377,7 @@ If UseMix16 Eq Yes
         JE InitDev_SBMono_16bMix
 EndIf		
 ; * 8b Not signed (SB, Tandy DAC)
-		MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
+	MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
         RET	
 		
 ; ; * 16b to 8b Not signed (SB, Tandy DAC)
@@ -1386,12 +1386,12 @@ InitDev_SBMono_16bMix:
         MOV Buffer_Convert_Code,Offset Convert_NS_16_8Mono
         MOV Mix_Mono_Use_Left,1
 ;WriteChar 'b'		
-		RET
+	RET
 EndIf
 		
 InitDev_SBPro:  ; SB Pro or 16
         CMP Utilise_Stereo,1
-		JE InitDev_SBStereo ; Go to SB Stereo 8b
+	JE InitDev_SBStereo ; Go to SB Stereo 8b
 ;		XOR AX,AX
         CMP Type_SB,T_SB16 
         JE InitDev_SB16Mono ; Go to SB16 Mono 16b
@@ -1401,12 +1401,12 @@ InitDev_SBPro:  ; SB Pro or 16
 ; * SB16 Mono *
 InitDev_SB16Mono:
 If UseMix16 Eq Yes
-		CMP Mix_16Bit,0          ; Mix in 16 Bit ?
-		JE InitDev_SB16Mono_8b
+	CMP Mix_16Bit,0          ; Mix in 16 Bit ?
+	JE InitDev_SB16Mono_8b
 ; * SB16 Mono, Mix 16Bit
-		MOV Out_16Bit,1          ; 16 Bit Output
+	MOV Out_16Bit,1          ; 16 Bit Output
         MOV Out_Signed,1         ; Signed, No Buffer convertion
-		RET
+	RET
 ; * SB16 Mono, Mix 8Bit
 EndIf
 InitDev_SB16Mono_8b:
@@ -1428,7 +1428,7 @@ If UseMix16 Eq Yes
 InitDev_SBProStereo_16bMix:
 ; * SBPro Stereo 16Bit Mix
         MOV Buffer_Convert_Code,Offset Convert_NS_16_8Stereo
-		RET
+	RET
 EndIf		
 
 ; * SB16 Stereo      ; Mix 16Bit not supported.
@@ -1438,7 +1438,7 @@ If UseMix16 Eq Yes
         JE InitDev_SB16Stereo_16bMix
 EndIf		
         MOV Buffer_Convert_Code,Offset Convert_NS_8Stereo		
-		RET
+	RET
 ;		Writechar '6'
 If UseMix16 Eq Yes
 InitDev_SB16Stereo_16bMix:
@@ -2338,6 +2338,8 @@ EndIf
         OUT 0A0h,AL
         STI
 
+;        writechar 'x'          ; Debug
+
 ; Check if Pause or End
 		
         CMP MMSS_Pause ,1
@@ -2392,6 +2394,7 @@ IRQ_SB_End:
 		
         CMP Stop_Output,1     ; Stopper la sortie sonore ?
         JNE Pas_Stopper_IRQ_SB
+;        writechar 'S'          ; Debug
         MOV Stopper_IRQ_SB,1  ; Lancer l'arr�t de l'IRQ au prochain appel
 Pas_Stopper_IRQ_SB:
 ;        CMP Erreur_Modm,Err_SB ;Si Erreur Sound Blaster, Stopper Immediatement
@@ -2406,9 +2409,12 @@ Pas_Stopper_IRQ_SB:
 
 Fin_IRQ_SB:                   ; Pause ou fin de la sortie...
 
+;        writechar 'I'          ; Debug
         CALL SB_DSP_Init          ; Change AX DX
+;        writechar 'E'          ; Debug
 	CALL EndIRQ_SB_TDY        ; Put back the IRQ
-		
+;        writechar '!'         ; Debug
+
         POP ES
 	POP DS
 	POP DX
@@ -2424,11 +2430,11 @@ EndIRQ_SB_TDY Proc Near
         RET
 EndIRQ_SB_TDY Endp
 
-;�����������������������������������������������������������Ŀ
-;�              Definition des blocs du timer                �
-;�                                                           �
-;�   (HP Interne, DAC, Disney Sound Source, Sound Master)    �
-;�������������������������������������������������������������
+;--------------------------------------------------------------
+;-              Definition des blocs du timer                -
+;-                                                           -
+;-   (HP Interne, DAC, Disney Sound Source, Sound Master)    -
+;--------------------------------------------------------------
 
 ;Offset_Buffer_Index DW 0
 OUT_Procedure DW 0
@@ -2470,7 +2476,7 @@ OUT_SB EndP
 ;        POP AX
 ;        MOV AL,SSOn
 ;        OUT DX,AL
-;		RET
+;	 RET
 ;OUT_Disney1 EndP
 
 ;OUT_Disney2 Proc Near            ;Disney Sound Source sur LPT2
@@ -2483,7 +2489,7 @@ OUT_SB EndP
 ;        POP AX
 ;        MOV AL,SSOn
 ;        OUT DX,AL
-;		RET
+;	 RET
 ;OUT_Disney2 EndP
 
 ;OUT_Adlib Proc Near               ;Adlib
@@ -2509,7 +2515,7 @@ OUT_SB EndP
 ;OUT_S_Master Proc Near            ;Sound master
 ;        MOV DX,0388h
 ;        OUT DX,AL
-;		RET
+;	 RET
 ;OUT_S_Master EndP
 
 ; ***************  PC Speaker "DAC" IRQ using Timer   *************
