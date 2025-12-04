@@ -379,7 +379,7 @@ Begin
 
   Lit(ident[0],8);
 {  Writeln('Taille : ',Taille);}
-  If Taille=38 Then { Read the config file if the size is correct }
+  If Taille=40 Then { Read the config file if the size is correct }
     Begin
      LitPos(8,buffer,32);
      With MMSS_CFG^ do
