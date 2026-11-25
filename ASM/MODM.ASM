@@ -5754,8 +5754,8 @@ affichebxy ENDP
 
 ;----------------- Variables
 
-Debut_msg db 'Mod Master V1.02',10,13
-          db '(c) 1993-2019 Freddy V�tel�',10,10,13,'$'
+Debut_msg db 'Mod Master V1.0.3',10,13
+          db '(c) 1993-2026 Freddy Vetele',10,10,13,'$'
 
 init:    MOV ah,4Ah
          MOV bx,offset Pfin

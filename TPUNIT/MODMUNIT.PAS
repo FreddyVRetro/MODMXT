@@ -3,13 +3,14 @@
 {                                                                        }
 {  Interface entre le pascal et les routines sonores de Mod Master.      }
 {                                                                        }
-{  AUTEUR: Freddy V�tel�.                                                }
+{  AUTEUR: Freddy Vetele.                                                }
 {                                                                        }
 {                                                                        }
 {                               Dernieres modifications le 28/01/2020    }
 {************************************************************************}
 
 {$DEFINE MODM}     { Define for the Full Mod Master }
+{$UNDEF  DEBUG }
 
 {$IFDEF MODM}
 UNIT MODMUNIT; {Unit for MODM.PAS}
@@ -20,7 +21,6 @@ UNIT MODM_SS; {Unit for Standalone Sound System}
 {$A+,G-,Q-,R-,S-}
 {$I MODMCFG.INI}
 
-{$UNDEF  DEBUG }
 INTERFACE
 
 TYPE String80=String[80];
@@ -52,7 +52,7 @@ FUNCTION  MMSS_TestIRQ:Byte;
 IMPLEMENTATION
 
 USES Fichiers,Util,BIOSEQU,MMSS_Var,MMSS_CMD,VarUnit,Memoire,CHUtil,Texte,Clavier,
-     SBUnit,TDYUnit,PSGUnit,
+     SBUnit,TDYUnit,
 {$IFNDEF NoGUS}
      GusUnit,
 {$ENDIF}
@@ -206,9 +206,8 @@ PROCEDURE MMSS_Stop_Output;
 Begin
  If Not MMSS_CFG^.Output_Stopped Then { Si musique termin�e, ne pas l'arr�ter }
   Begin
-   InitTexte;
    MMSS_CFG^.Stop_Output:=True;
-   Repeat Until MMSS_CFG^.Output_Stopped;  { Can Crash }
+   Repeat Until MMSS_CFG^.Output_Stopped;
   End;
 SoundEnd;
 MMSS_CFG^.Stop_Output:=False;

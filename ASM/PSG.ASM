@@ -31,10 +31,10 @@ PSG_Mute_Channel Proc Near
         jae PSG_Mute_Channel_end
         mov cs:PSG_PortOffset,0
         cmp bl,3
-        jbe PSG_Mute_2ndChip 
+        jb PSG_Mute_Channel_Register
         mov cs:PSG_PortOffset,2
         sub bl,3
-PSG_Mute_2ndChip:
+PSG_Mute_Channel_Register:
 
         add bl,8        ; Volume are Regs 8 to 10
         mov ah,bl
@@ -54,7 +54,7 @@ PSG_Out Proc Near
         
         xchg ah,al
         out dx,al       ; Write to Register index port
-        xchg ah,ah
+        mov al,ah       ; Restore the register value
         inc dx          ; Move to Data port
         out dx,al       ; Write the Data
 

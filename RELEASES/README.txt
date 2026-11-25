@@ -1,4 +1,4 @@
-Mod Master XT Revision history
+Mod Master 2.2 XT Beta Release 27
 
 BLOG : https://freddyv.over-blog.com/
 
@@ -334,6 +334,9 @@ Warning : Delete MODMXT.CFG as its format changed.
  - Corrected the BlasterBoard detection code
  - Mix speed increased a little
 
- 09/2024 v1.02
+ v1.02
  - Added Port display for CMS/DAC.
  - Corrected the Tandy DAC Port change code
+
+14/04/26 v1.0.3
+ - Corrected the config save for CMS, Tandy ...

@@ -3,7 +3,7 @@
 {                                                                        }
 {  Tandy SN76496 and DAC Code, Detection and Init                        }
 {                                                                        }
-{  AUTEURS: Freddy Vï¿½telï¿½                                                }
+{  AUTEURS: Freddy Vételé                                                }
 {                                                                        }
 {                               Code Start 6/06/20                       }
 {************************************************************************}

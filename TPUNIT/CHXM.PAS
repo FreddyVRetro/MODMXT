@@ -3,10 +3,10 @@
 {                                                                        }
 {  XM Files Loader. (Fast Tracker 2)                                     }
 {                                                                        }
-{  AUTEUR: Freddy Vetele.                                                }
+{  AUTEUR: Freddy V�tel�.                                                }
 {                                                                        }
-{                               Debut d'ecriture le --/10/19             }
-{                               Dernieres modifications le --/10/19      }
+{                               D�but d'�criture le --/10/19             }
+{                               Derni�res modifications le --/10/19      }
 {************************************************************************}
 
 {$UNDEF Groupe}
@@ -37,7 +37,7 @@ TYPE
 
 CONST
 
-     Max_Samples_XL=99;
+     XM_Identifier:String[17]='Extended Module: ';
 
      XMFineTune:Array[0..127] of Word=
        (8363,8370,8378,8385,8393,8400,8408,8416,
@@ -58,7 +58,8 @@ CONST
         8302,8310,8317,8325,8332,8340,8347,8355);
 
 TYPE
-     T_En_tete_XM=Record
+     { XM records must match their byte layout exactly. }
+     T_En_tete_XM=Packed Record
                     Ident     : Array[1..17] of Char;
                     Name      : Array[1..20] of Char;
                     ID1A      : Byte;                {1A}
@@ -76,7 +77,7 @@ TYPE
                     PattSequ  : Array[1..256] of Byte;
                    End;
 
-    T_XM_Instrument=Record
+    T_XM_Instrument=Packed Record
                     Size      : LongInt;
                     Name      : Array[1..22] of Char;
                     IType     : Byte;       {always 0}
@@ -105,7 +106,7 @@ TYPE
 
      Ptr_En_tete_XM=^T_En_tete_XM;
 
-	 T_XM_Sample=Record
+	 T_XM_Sample=Packed Record
                Length  : LongInt;
                Loop    : LongInt;
                LoopLen : LongInt;
@@ -121,10 +122,10 @@ TYPE
                Name   : Array[1..22] of Char;
 	           End;
 
-	 T_XM_PattHeader=Record
+	 T_XM_PattHeader=Packed Record
                      HeaderSize:LongInt;
                      PType:Byte;  {Always 0}
-                     Rows:Word;   {1..256 ! 255 max supported by Mod Master as 0 means not loaded }
+                     Rows:Word;   {1..255 supported; 256-row patterns are rejected}
                      PatternSize:Word;
                      End;
 
@@ -133,6 +134,34 @@ TYPE
 
 VAR
      XMFilePtr : Longint;
+     XMFileSize : Longint;
+
+FUNCTION XM_RangeValid(Position,Count,FileSize:Longint):Boolean;
+Begin
+ XM_RangeValid:=(Position>=0) and (Count>=0) and (Position<=FileSize) and
+                (Count<=FileSize-Position);
+End;
+
+FUNCTION XM_NoteToPeriod(Note:Byte):Byte;
+Begin
+ If Note=0 then XM_NoteToPeriod:=0
+ Else If Note=97 then XM_NoteToPeriod:=127
+ Else If Note<=96 then XM_NoteToPeriod:=Note-1
+ Else XM_NoteToPeriod:=0;
+End;
+
+FUNCTION XM_ReadPatternByte(Pattern:Ptr_Patt_XM; Var Index:Longint;
+                            PatternSize:Word; Var Value:Byte):Boolean;
+Begin
+ XM_ReadPatternByte:=(Index<Longint(PatternSize));
+ If XM_ReadPatternByte then
+  Begin
+   Value:=Pattern^[Index+1];
+   Inc(Index);
+  End
+ Else
+  Erreur_de_chargement:=Err_Format;
+End;
 
 {---------------------------------------------------------}
 
@@ -204,128 +233,161 @@ End;
 
 PROCEDURE XM_LoadPatterns( Nb_Patt: Word);
 Var Pattern_XM : Ptr_Patt_XM;
-    Pattern    : Ptr_Patt;
     PattHeader : T_XM_PattHeader;
     NbRows     : Byte;
     FirstByte: Byte;
-    p,r,c,ixm: Word;
+    Value: Byte;
+    p,r,c: Word;
+    ixm: Longint;
 
 Begin
- {Writeln('----- Read Pattern ------ / Nb Patt: ',Nb_Patt);
- Repeat until Readkey=#13;}
  Erreur_de_chargement:=Err_memoire;    { If EXIT, Memory Error }
 
  For p:=1 to Nb_Patt do
   Begin
-  { Writeln('Pattern :',n); }
-
-   {Write('Pattern:',P,' Offs: ',XMFilePtr);}
-   f_module.LitPos(XMFilePtr,PattHeader,Sizeof(PattHeader));
-   XMFilePtr:=XMFilePtr+Sizeof(PattHeader);
-   If f_erreur=f_ok Then
-      Begin
-	{  Writeln(' Rows: ',PattHeader.Rows,' Size: ',PattHeader.PatternSize);}
-      If PattHeader.Rows>255 then NbRows:=255 else NbRows:=PattHeader.Rows;
-      Musique^.Taille_Pattern[p]:=NbRows;
-
-      If PattHeader.PatternSize<MaxAvail-1024
-	     Then GetMem(Pattern_XM,PattHeader.PatternSize)
-		 Else
-		 Begin
-{		 Writeln('Out of memory for pattern Load');
-		 Repeat until Readkey=#13;}
-		 Exit;
-		 end;
-      f_module.LitPos(XMFilePtr,Pattern_XM^,PattHeader.PatternSize);                {Lire le pattern}
-      XMFilePtr:=XMFilePtr+PattHeader.PatternSize;
-
-	  { Add exit if too many patterns }
-
-      If Not CP_NewPattern((5*NbRows*Musique^.Ch_Number_Patt DIV 16)+1) Then
-        Begin
-	 {    Writeln('Last Pattern Loaded:',i,'/',n);}
-         {Repeat until Readkey=#13;        }
-         EXIT;
-        End;
-      MMSS_Table^.Seg_Pattern[p]:=SEG(CP_Pattern^);
-
-    ixm:=1;
-    for r:=1 to NbRows do { Row Loop }
-      Begin
-	  {Write('Row ',r,' ');}
-        for c:=0 to Musique^.Ch_Number_Patt-1 do { Channels Loop }	  
-		  Begin
-		  {Write('Col ',c,' ');}
-           FirstByte:=Pattern_XM^[ixm];
-           if FirstByte<128 then
-            Begin
-             C_Note.Periode:=FirstByte-1;
-             C_Note.Instrument:=Pattern_XM^[ixm+1];
-             C_Note.Volume:=Pattern_XM^[ixm+2];
-             C_Note.Commande:=Pattern_XM^[ixm+3]+1;
-             C_Note.Parametre:=Pattern_XM^[ixm+4];
-             ixm:=ixm+5;
-             AdjustVol_Commands; { Adjust Volume and Commands values }
-            End
-	       else
-            Begin
-             INC(iXM);
-             if FirstByte<>$80 then  { If Empty, skip directly }
-                Begin
-                if (FirstByte AND $01)<>0 then  { 1 Note follow ? }
-                  Begin
-                   C_Note.Periode:=Pattern_XM^[ixm]-1;
-                   If C_Note.Periode>95 Then C_Note.Periode:=127; { Note Cut if >95 }
-                   INC(iXM);
-                  End
-                  else C_Note.Periode:=0;  { 0 : No Note, $FF : Key Off }
-                if (FirstByte AND $02)<>0 then   { 2 Instrument follow ? }
-                  Begin
-                   C_Note.Instrument:=Pattern_XM^[ixm];
-                   INC(iXM);
-                  End
-                   else C_Note.Instrument:=0;
-                if (FirstByte AND $04)<>0 then   { 3 Volume follow ? }
-  	              Begin
-                   C_Note.Volume:=Pattern_XM^[ixm];
-                   INC(iXM);
-                  End
-                   else C_Note.Volume:=0;        { 0 for FT2 Before Conversion }
-                if (FirstByte AND $08)<>0 then   { 4 Command follow ? }
-  	              Begin
-                   C_Note.Commande:=Pattern_XM^[ixm]+1;
-                   INC(iXM);
-                  End
-                   else C_Note.Commande:=Rien;
-                if (FirstByte AND $10)<>0 then  { 5 Parameter follow ? }
-  	              Begin
-                   C_Note.Parametre:=Pattern_XM^[ixm];
-                   INC(iXM);
-                  End
-                   else C_Note.Parametre:=0;
-				AdjustVol_Commands;  { Adjust Volume and Commands values }
-                End
-              Else
-               Begin
-                C_Note.Commande:=Rien;
-                C_Note.Parametre:=0; C_Note.Instrument:=0;
-                C_Note.Periode:=0; C_Note.Volume:=$FF;
-               End;
-           End;
-
-        CP_AddVal;
-		{Pattern^[i]:=C_Note;}
-      end;{ Channels Loop }
-      CP_NextRow 
-  	 end; { Rows Loop }
-      CP_End;
-      FreeMem(Pattern_XM,PattHeader.PatternSize);	  
-    End
-     else
-    Begin { Fail to Load the Pattern from file }
-      Erreur_de_chargement:=Err_lecture;;
-      EXIT;
+   If not XM_RangeValid(XMFilePtr,Sizeof(PattHeader),XMFileSize) Then
+    Begin
+     Erreur_de_chargement:=Err_lecture;
+     Exit;
     End;
+   f_module.LitPos(XMFilePtr,PattHeader,Sizeof(PattHeader));
+   If f_erreur<>f_ok Then
+    Begin
+     Erreur_de_chargement:=Err_lecture;
+     Exit;
+    End;
+   If (PattHeader.HeaderSize<Sizeof(PattHeader)) or
+      (PattHeader.Rows=0) or (PattHeader.Rows>255) or
+      (PattHeader.PType<>0) or
+      not XM_RangeValid(XMFilePtr,PattHeader.HeaderSize,XMFileSize) Then
+    Begin
+     Erreur_de_chargement:=Err_Format;
+     Exit;
+    End;
+   XMFilePtr:=XMFilePtr+PattHeader.HeaderSize;
+   If not XM_RangeValid(XMFilePtr,PattHeader.PatternSize,XMFileSize) Then
+    Begin
+     Erreur_de_chargement:=Err_lecture;
+     Exit;
+    End;
+   NbRows:=PattHeader.Rows;
+   Musique^.Taille_Pattern[p]:=NbRows;
+
+   Pattern_XM:=Nil;
+   If PattHeader.PatternSize>0 Then
+    Begin
+     If PattHeader.PatternSize>=MaxAvail-1024 Then Exit;
+     GetMem(Pattern_XM,PattHeader.PatternSize);
+     f_module.LitPos(XMFilePtr,Pattern_XM^,PattHeader.PatternSize);
+     If f_erreur<>f_ok Then
+      Begin
+       FreeMem(Pattern_XM,PattHeader.PatternSize);
+       Erreur_de_chargement:=Err_lecture;
+       Exit;
+      End;
+    End;
+   XMFilePtr:=XMFilePtr+PattHeader.PatternSize;
+
+   If Not CP_NewPattern((5*NbRows*Musique^.Ch_Number_Patt DIV 16)+1) Then
+    Begin
+     If Pattern_XM<>Nil Then FreeMem(Pattern_XM,PattHeader.PatternSize);
+     Erreur_de_chargement:=Err_memoire;
+     Exit;
+    End;
+   MMSS_Table^.Seg_Pattern[p]:=SEG(CP_Pattern^);
+
+   ixm:=0;
+   for r:=1 to NbRows do
+    Begin
+     for c:=0 to Musique^.Ch_Number_Patt-1 do
+      Begin
+       C_Note.Periode:=0;
+       C_Note.Instrument:=0;
+       C_Note.Volume:=$FF;
+       C_Note.Commande:=Rien;
+       C_Note.Parametre:=0;
+       If PattHeader.PatternSize>0 Then
+        Begin
+         If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,FirstByte) Then
+          Begin
+           FreeMem(Pattern_XM,PattHeader.PatternSize);
+           Exit;
+          End;
+         If FirstByte<128 Then
+          Begin
+           C_Note.Periode:=XM_NoteToPeriod(FirstByte);
+           If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,C_Note.Instrument) Then
+            Begin
+             FreeMem(Pattern_XM,PattHeader.PatternSize);
+             Exit;
+            End;
+           If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,C_Note.Volume) Then
+            Begin
+             FreeMem(Pattern_XM,PattHeader.PatternSize);
+             Exit;
+            End;
+           If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,Value) Then
+            Begin
+             FreeMem(Pattern_XM,PattHeader.PatternSize);
+             Exit;
+            End;
+           C_Note.Commande:=Value+1;
+           If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,C_Note.Parametre) Then
+            Begin
+             FreeMem(Pattern_XM,PattHeader.PatternSize);
+             Exit;
+            End;
+          End
+         Else If FirstByte<>$80 Then
+          Begin
+           If (FirstByte AND $01)<>0 Then
+            Begin
+             If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,Value) Then
+              Begin
+               FreeMem(Pattern_XM,PattHeader.PatternSize);
+               Exit;
+              End;
+             C_Note.Periode:=XM_NoteToPeriod(Value);
+            End;
+           If (FirstByte AND $02)<>0 Then
+            If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,C_Note.Instrument) Then
+             Begin
+              FreeMem(Pattern_XM,PattHeader.PatternSize);
+              Exit;
+             End;
+           If (FirstByte AND $04)<>0 Then
+            Begin
+             If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,C_Note.Volume) Then
+              Begin
+               FreeMem(Pattern_XM,PattHeader.PatternSize);
+               Exit;
+              End;
+            End
+           Else C_Note.Volume:=0;
+           If (FirstByte AND $08)<>0 Then
+            Begin
+             If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,Value) Then
+              Begin
+               FreeMem(Pattern_XM,PattHeader.PatternSize);
+               Exit;
+              End;
+             C_Note.Commande:=Value+1;
+            End;
+           If (FirstByte AND $10)<>0 Then
+            If not XM_ReadPatternByte(Pattern_XM,ixm,PattHeader.PatternSize,C_Note.Parametre) Then
+             Begin
+              FreeMem(Pattern_XM,PattHeader.PatternSize);
+              Exit;
+             End;
+          End;
+         AdjustVol_Commands;
+        End;
+       CP_AddVal;
+      End;
+     CP_NextRow;
+    End;
+   CP_End;
+   If Pattern_XM<>Nil Then FreeMem(Pattern_XM,PattHeader.PatternSize);
   End; {Pattern Loop}
  Erreur_de_chargement:=Ok;
 End; {Charge_pattern}
@@ -339,9 +401,9 @@ Var XMInstr: T_XM_Instrument;
     InstrDataPtr : ^T_InstrData;
 	InstrDataSize: Word;
 	Ptr_Temp : Pointer;
-    NextInstrOffset: LongInt;
     ISampleOffset : LongInt; { Current Sample Data Offset inside the instrument }
     ISampleSize   : LongInt;
+    InstrumentOffset: LongInt;
     Inst : Integer;
     Fine : Byte;
     ISmpCnt,ISmpLoaded : Byte;
@@ -350,8 +412,13 @@ Var XMInstr: T_XM_Instrument;
     i:Byte;
 Begin
  {Writeln('----- Read Samples ------ / Nb :',NbInstr);}
- If NbInstr>(Max_Samples-Nb_Smp_Sup_XM) Then NbInstr:=Max_Samples-Nb_Smp_Sup_XM;
+ If NbInstr>(Max_Samples-Nb_Smp_Sup_XM) Then
+  Begin
+   Erreur_de_chargement:=Err_Format;
+   Exit;
+  End;
 
+ Erreur_de_chargement:=Err_memoire;
  Init_Charge_Sample;
  { Allocate Memory in DOS For samples and Instruments tables }
  If not Allocate_Instruments(NbInstr) Then EXIT;
@@ -361,12 +428,56 @@ Begin
  CHU_NSmp:=1; { Used by the CHUTIL Unit }
  For Inst:=1 to NbInstr do  { ** Instruments Load Loop ** }
   Begin
-   f_module.LitPos(XMFilePtr,XMInstr,Sizeof(XMInstr)); { Load the XM Instrument Header }
+   InstrumentOffset:=XMFilePtr;
+   If not XM_RangeValid(XMFilePtr,29,XMFileSize) Then
+    Begin
+     Erreur_de_chargement:=Err_lecture;
+     Exit;
+    End;
+   f_module.LitPos(XMFilePtr,XMInstr,29);
+   If f_erreur<>f_ok Then
+    Begin
+     Erreur_de_chargement:=Err_lecture;
+     Exit;
+    End;
+   If (XMInstr.Size<29) or
+      not XM_RangeValid(XMFilePtr,XMInstr.Size,XMFileSize) or
+      (XMInstr.NbSamples>16) Then
+    Begin
+     Erreur_de_chargement:=Err_Format;
+     Exit;
+    End;
+   If XMInstr.NbSamples>0 Then
+    Begin
+     If XMInstr.Size<Sizeof(XMInstr) Then
+      Begin
+       Erreur_de_chargement:=Err_Format;
+       Exit;
+      End;
+     f_module.LitPos(XMFilePtr+29,XMInstr.SHSize,Sizeof(XMInstr)-29);
+     If f_erreur<>f_ok Then
+      Begin
+       Erreur_de_chargement:=Err_lecture;
+       Exit;
+      End;
+     If (XMInstr.SHSize<>Sizeof(XMSample)) or
+        (XMInstr.VolPtNb>12) or (XMInstr.PanPtNb>12) or
+        (XMInstr.VolType>7) or (XMInstr.PanType>7) Then
+      Begin
+       Erreur_de_chargement:=Err_Format;
+       Exit;
+      End;
+     For i:=1 to 96 do
+      If XMInstr.Smp_NbTable[i]>=XMInstr.NbSamples Then
+       Begin
+        Erreur_de_chargement:=Err_Format;
+        Exit;
+       End;
+    End;
    {Writeln('*** Instr: ',Inst,'Nb Smp: ',XMInstr.NbSamples,' Name: ',XMInstr.Name,' Offset: ',XMFilePtr);}
- 
-   XMFilePtr:=XMFilePtr+XMInstr.Size;
+   XMFilePtr:=InstrumentOffset+XMInstr.Size;
    Move(XMInstr.Name,Musique^.PtrInstrNameTable^[Inst,1],22);
-   PtrInstrument^[NbInstr].Sample_Nb:=CHU_NSmp; { Store the first sample number in the instrument }
+   PtrInstrument^[Inst].Sample_Nb:=CHU_NSmp;
 
 {   If XMInstr.NbSamples>1 then Writeln('Nb Smp: ',XMInstr.NbSamples,' Name: ',XMInstr.Name);}
    If XMInstr.NbSamples>0 then FillChar(T_SmpLoaded,SizeOf(T_SmpLoaded),0);
@@ -374,10 +485,14 @@ Begin
 
    If (XMInstr.NbSamples>0) then
     Begin
+    If not XM_RangeValid(XMFilePtr,XMInstr.NbSamples*Sizeof(XMSample),XMFileSize) Then
+     Begin
+      Erreur_de_chargement:=Err_lecture;
+      Exit;
+     End;
     ISampleOffset:=XMFilePtr+XMInstr.NbSamples*Sizeof(XMSample);
     ISampleSize:=0;
     PtrInstrument^[Inst].Sample_Nb:=CHU_NSmp-1;
-    PtrInstrument^[Inst].RelNote:=XMSample.RelNote;
 	
 {	Writeln(' First Sample: ',PrtInstrument^[Inst].Sample_Nb);}
 	
@@ -385,16 +500,34 @@ Begin
       Begin  { The Sample headers are stored first, then samples Data }
 
       f_module.LitPos(XMFilePtr,XMSample,Sizeof(XMSample)); { Load the XM Sample Header }
+      If f_erreur<>f_ok Then
+       Begin
+        Erreur_de_chargement:=Err_lecture;
+        Exit;
+       End;
 {      Writeln ('* Instr: ',Inst,' Sub Sample: ',ISmpCnt,' Name: ',XMSample.Name,'Length: ',
                        XMSample.Length,' Offset: ',XMFilePtr);}
       XMFilePtr:=XMFilePtr+Sizeof(XMSample);
       
 	  If CHU_NSmp=Nb_Samples_Allocated then
          Begin
-          Writeln('Too many Samples');
-          {Repeat until Readkey=#13;}
-		  EXIT;
+          Erreur_de_chargement:=Err_Format;
+          Exit;
          End;
+      If (XMSample.Length<0) or
+         not XM_RangeValid(ISampleOffset,XMSample.Length,XMFileSize) or
+         ((XMSample.SType AND $03)>2) or
+         (((XMSample.SType AND $10)<>0) and ((XMSample.Length AND 1)<>0)) or
+         (XMSample.Volume>64) or
+         (XMSample.Loop<0) or (XMSample.LoopLen<0) or
+         (XMSample.Loop>XMSample.Length) or
+         (XMSample.LoopLen>XMSample.Length-XMSample.Loop) or
+         (((XMSample.SType AND $10)<>0) and
+          (((XMSample.Loop AND 1)<>0) or ((XMSample.LoopLen AND 1)<>0))) Then
+       Begin
+        Erreur_de_chargement:=Err_Format;
+        Exit;
+       End;
 	  If XMSample.Length<>0 then 
 	    Begin
         New_Sample;
@@ -510,6 +643,7 @@ Begin
   End; { Instr Loop }
 
   Fin_Charge_Sample;
+  Erreur_de_chargement:=Ok;
 End; {Charge_Sampl}
 
 {---------------------------------------------------------}
@@ -517,8 +651,7 @@ End; {Charge_Sampl}
 PROCEDURE Charge_XM(chemin: String80; Var erreur: Word);
 
 Var XM: Ptr_En_tete_XM;
-    Pan_Present:Boolean;
-	Nb_pattern:Byte;
+    HeaderOK:Boolean;
     i:Integer;
 Begin
  erreur:=Ok;
@@ -533,12 +666,34 @@ Begin
 
   New(XM);
   
-  Pan_Present:=True;
-  f_module.LitPos(0,XM^,Sizeof(XM^));
-  XMFilePtr:=Sizeof(XM^);
+  XMFileSize:=f_module.Taille;
   Erreur_de_chargement:=Ok;
-  
-  If XM^.Version<=$0104 Then
+  If not XM_RangeValid(0,Sizeof(XM^),XMFileSize) Then
+   Erreur_de_chargement:=Err_lecture
+  Else
+   Begin
+    f_module.LitPos(0,XM^,Sizeof(XM^));
+    If f_erreur<>f_ok Then
+     Erreur_de_chargement:=Err_lecture
+    Else
+     Begin
+      HeaderOK:=True;
+      For i:=1 to 17 do
+       If XM^.Ident[i]<>XM_Identifier[i] then HeaderOK:=False;
+      If (XM^.ID1A<>$1A) or (XM^.Version<$0102) or (XM^.Version>$0104) or
+         (XM^.HeadSize<276) or
+         not XM_RangeValid(60,XM^.HeadSize,XMFileSize) or
+         (XM^.SeqLen=0) or (XM^.SeqLen>256) or
+         (XM^.NbChannel=0) or (XM^.NbChannel>32) or
+         (XM^.NbPattern=0) or (XM^.NbPattern>256) Then HeaderOK:=False;
+      If not HeaderOK Then
+       Erreur_de_chargement:=Err_Format
+      Else
+       XMFilePtr:=60+XM^.HeadSize;
+     End;
+   End;
+
+  If Erreur_de_chargement=Ok Then
    Begin
 
    Move(XM^.Name,Musique^.Titre,20);                 {Read Title }
@@ -563,21 +718,16 @@ Begin
    Musique^.Octave_Min:=0;
    Musique^.Octave_Max:=8;
 
-   Nb_pattern:=Check_Used_Pattern; 
-
-{   Writeln('XM^.NbPattern',XM^.NbPattern,' Nb_pattern: ',Nb_pattern,' Nb Instr : ',XM^.NbInstr);}
-   
    If (XM^.NbPattern>128) Then Erreur_de_chargement:=Err_TooManyPat
       Else XM_LoadPatterns(XM^.NbPattern);             { Charger la partition }
+
+   If Erreur_de_chargement=Ok then
+    For i:=1 to Musique^.Sequence_Len do
+     If Musique^.Sequence[i]>=XM^.NbPattern then Erreur_de_chargement:=Err_Format;
 
    If Erreur_de_chargement=Ok Then XM_LoadInstruments(XM^.NbInstr);    { Charger les samples  }
 
   End
-  Else { XM Version >104 Not Supported }
-   Begin
-	Writeln('Erreur Version');
-	Erreur_de_chargement:=Err_Format;
-   End;
   
    Dispose(XM);
    f_module.Ferme;

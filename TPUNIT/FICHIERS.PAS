@@ -1,13 +1,14 @@
-{***********************************************************************}
-{*                  --==ï¿½ï¿½ FICHIERS.PAS ï¿½ï¿½==--                      *}
-{*                                                                     *}
-{* Unitï¿½ pour gerer les fichiers DOS                                  *}
-{*                                                                     *}
-{* AUTEUR: Fabrice Couteau                                             *}
-{***********************************************************************}
-{* Compatibilite: 8088          Debut d'ecriture          ??/12/93   *}
-{*                              Dernieres modifications    03/09/95   *}
-{***********************************************************************}
+{ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»}
+{º                      --==ðð FICHIERS.PAS ðð==--                      º}
+{º                                                                      º}
+{º Unit‚ pour g‚rer les fichiers DOS                                    º}
+{º                                                                      º}
+{º AUTEUR: Fabrice Couteau                                              º}
+{ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¶}
+{º Compatibilit‚: 8088          D‚but d'‚critureúúúúúúúúúúúúúúú??/12/93 º}
+{º                              DerniŠres modificationsúúúúúúúú03/09/95 º}
+{ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼}
+
 UNIT Fichiers;
 
 {$A+,G-,Q-,R-,S-}
@@ -16,12 +17,12 @@ INTERFACE
 
 {$I Types}
 
-CONST {modes d'acces}
+CONST {modes d'accŠs}
       lecture   = $00;
       ecriture  = $01;
       lectecrit = $02;
 
-      {mode de crï¿½ation}
+      {mode de cr‚ation}
       teste_existe = True;
 
       {codes d'erreur}
@@ -60,8 +61,8 @@ TYPE  Fichier=Object
               End;
 
 
-CONST f_erreur: Word=f_ok; {variable ï¿½ tester aprï¿½s chaque opï¿½ration fichier
-                            sauf: Ferme, (Dï¿½)PlacePointeur, Taille}
+CONST f_erreur: Word=f_ok; {variable … tester aprŠs chaque op‚ration fichier
+                            sauf: Ferme, (D‚)PlacePointeur, Taille}
 
 {==========================================================}
 
@@ -76,8 +77,8 @@ IMPLEMENTATION
 {==========================================================}
 
 PROCEDURE Fichier.Ouvre(mode_acces: Byte; chemin: String80);
-{ouvre un fichier existant en lecture, ï¿½criture ou les deux
- Remarque: le pointeur de fichier est placï¿½ sur le premier octet}
+{ouvre un fichier existant en lecture, ‚criture ou les deux
+ Remarque: le pointeur de fichier est plac‚ sur le premier octet}
 Var handle_: Word;
     ptr_chemin: Pointer;
 Begin
@@ -89,7 +90,7 @@ Begin
   XOR AH,AH
   LODSB                  {AX=longueur chemin}
   MOV DX,SI              {DS:DX -> chemin[1]}
-  ADD SI,AX              {DS:SI -> caractï¿½re suivant le dernier}
+  ADD SI,AX              {DS:SI -> caractŠre suivant le dernier}
   MOV BYTE PTR DS:[SI],0 {convertit chemin en ASCIIZ}
   MOV AH,3Dh
   MOV AL,mode_acces
@@ -108,10 +109,10 @@ End; {Fichier.Ouvre}
 {----------------------------------------------------------}
 
 PROCEDURE Fichier.Cree(teste_existe_: Boolean; chemin: String80);
-{cree un nouveau fichier
- si teste_existe_=TRUE: provoque une erreur 80 si le fichier existe deja
-                        sinon ecrase l'ancien fichier
- Remarque: le pointeur de fichier est place sur le premier octet}
+{cr‚e un nouveau fichier
+ si teste_existe_=TRUE: provoque une erreur 80 si le fichier existe d‚j…
+                        sinon ‚crase l'ancien fichier
+ Remarque: le pointeur de fichier est plac‚ sur le premier octet}
 Var handle_: Word;
     ptr_chemin: Pointer;
 Begin
@@ -123,7 +124,7 @@ Begin
   XOR AH,AH
   LODSB                  {AX=longueur chemin}
   MOV DX,SI              {DS:DX -> chemin[1]}
-  ADD SI,AX              {DS:SI -> caractere suivant le dernier}
+  ADD SI,AX              {DS:SI -> caractŠre suivant le dernier}
   MOV BYTE PTR DS:[SI],0 {convertit chemin en ASCIIZ}
   MOV AH,5Bh
   CMP teste_existe_,True
@@ -131,7 +132,7 @@ Begin
   MOV AH,3Ch
  @suite:
   XOR CX,CX
-  INT 21h                {cree le fichier}
+  INT 21h                {cr‚e le fichier}
   POP DS
   MOV f_erreur,f_ok
   JNC @fin               {pas d'erreur}
@@ -146,7 +147,7 @@ End; {Fichier.Cree}
 {----------------------------------------------------------}
 
 PROCEDURE Fichier.Ferme;
-{ferme un fichier prealablement ouvert}
+{ferme un fichier pr‚alablement ouvert}
 Var handle_: Word;
 Begin
  handle_:=handle;
@@ -160,13 +161,13 @@ End; {Fichier.Ferme}
 {----------------------------------------------------------}
 
 PROCEDURE Fichier.PlacePointeur(position: Longint);
-{positionne le pointeur de fichier ï¿½ l'offset voulu (0 -> premier octet)
- (position ï¿½ 0)}
+{positionne le pointeur de fichier … l'offset voulu (0 -> premier octet)
+ (position ò 0)}
 Var handle_: Word;
 Begin
  handle_:=handle;
  ASM
-  MOV AX,4200h           {position par rapport au dï¿½but du fichier}
+  MOV AX,4200h           {position par rapport au d‚but du fichier}
   MOV BX,handle_
   LES DX,position        {DX=mot faible}
   MOV CX,ES              {CX=mot fort}
@@ -177,12 +178,12 @@ End; {Fichier.PlacePointeur}
 {----------------------------------------------------------}
 
 PROCEDURE Fichier.DeplacePointeur(distance: Longint);
-{dï¿½place le pointeur de fichier (en amont ou en aval)}
+{d‚place le pointeur de fichier (en amont ou en aval)}
 Var handle_: Word;
 Begin
  handle_:=handle;
  ASM
-  MOV AX,4201h           {distance par rapport a la position courante}
+  MOV AX,4201h           {distance par rapport … la position courante}
   MOV BX,handle_
   LES DX,distance        {DX=mot faible}
   MOV CX,ES              {CX=mot fort}
@@ -194,7 +195,7 @@ End; {Fichier.DeplacePointeur}
 
 PROCEDURE Fichier.Lit(var buffer; nombre: Word);
 {lit 'nombre' octets depuis la position courante du pointeur de fichier,
- et les place ï¿½ l'adresse de 'buffer'}
+ et les place … l'adresse de 'buffer'}
 Var handle_: Word;
 Begin
  handle_:=handle;
@@ -216,7 +217,7 @@ End; {Fichier.Lit}
 {----------------------------------------------------------}
 
 PROCEDURE Fichier.Ecrit(var buffer; nombre: Word);
-{ecrit 'nombre' octets de 'buffer' ï¿½ la position courante du pointeur de fichier}
+{ecrit 'nombre' octets de 'buffer' … la position courante du pointeur de fichier}
 Var handle_: Word;
 Begin
  handle_:=handle;
@@ -238,14 +239,14 @@ End; {Fichier.Ecrit}
 {----------------------------------------------------------}
 
 PROCEDURE Fichier.LitPos(position: Longint; var buffer; nombre: Word);
-{lit 'nombre' octets depuis 'position' , et les place a l'adresse de 'buffer'}
+{lit 'nombre' octets depuis 'position' , et les place … l'adresse de 'buffer'}
 Begin
  Fichier.PlacePointeur(position); Fichier.Lit(buffer,nombre)
 End; {Fichier.LitPos}
 
 { Buffer Segment must be 0 }
 PROCEDURE Fichier.LitPosL  (position: Longint; buffer: Pointer; nombre: Longint);
-{lit 'nombre' octets depuis 'position' , et les place a l'adresse de 'buffer'}
+{lit 'nombre' octets depuis 'position' , et les place … l'adresse de 'buffer'}
 Var
     LoopNb,i: Byte;
     Remain,Size  : Word;
@@ -265,7 +266,7 @@ End; {Fichier.LitPos}
 {----------------------------------------------------------}
 
 PROCEDURE Fichier.EcritPos(position: Longint; var buffer; nombre: Word);
-{ecrit 'nombre' octets de 'buffer' a la position indiquee du pointeur de fichier}
+{ecrit 'nombre' octets de 'buffer' … la position indiqu‚e du pointeur de fichier}
 Begin
  Fichier.PlacePointeur(position); Fichier.Ecrit(buffer,nombre)
 End; {Fichier.EcritPos}
@@ -274,12 +275,12 @@ End; {Fichier.EcritPos}
 
 FUNCTION Fichier.Taille: Longint;
 {renvoie la taille du fichier en octets
- IMPORTANT: dï¿½place le pointeur de fichier sur le dernier octet!}
+ IMPORTANT: d‚place le pointeur de fichier sur le dernier octet!}
 Var handle_,th,tb: Word;
 Begin
  handle_:=handle;
  ASM
-  MOV AX,4202h   {distance par rapport ï¿½ la fin du fichier}
+  MOV AX,4202h   {distance par rapport … la fin du fichier}
   MOV BX,handle_
   XOR CX,CX
   XOR DX,DX
@@ -301,7 +302,7 @@ End; {Fichier.GetHandle}
 {----------------------------------------------------------}
 
 PROCEDURE EffaceFichier(chemin: String80); Assembler;
-{efface un fichier sur disque - rï¿½cupï¿½rable avec Undelete}
+{efface un fichier sur disque - r‚cup‚rable avec Undelete}
 ASM
  PUSH DS
  CLD
@@ -309,7 +310,7 @@ ASM
  XOR AH,AH
  LODSB                  {AX=longueur chemin}
  MOV DX,SI              {DS:DX -> chemin[1]}
- ADD SI,AX              {DS:SI -> caractï¿½re suivant le dernier}
+ ADD SI,AX              {DS:SI -> caractŠre suivant le dernier}
  MOV BYTE PTR DS:[SI],0 {convertit chemin en ASCIIZ}
  MOV AH,41h
  INT 21h                {supprime le fichier}
@@ -330,7 +331,7 @@ Begin
   Begin
    Cree(Not(teste_existe),chemin);
    If f_erreur<>f_ok Then Exit;
-   Ferme;                 {crï¿½e un fichier vide portant le mï¿½me nom}
+   Ferme;                 {cr‚e un fichier vide portant le mˆme nom}
    EffaceFichier(chemin)
   End
 End; {EcraseFichier}
@@ -339,7 +340,7 @@ End; {EcraseFichier}
 
 FUNCTION FichierExiste(chemin: String80): Boolean;
 {renvoie TRUE si le fichier existe sur le disque
- Remarque: ne teste pas les erreurs d'accï¿½s}
+ Remarque: ne teste pas les erreurs d'accŠs}
 Var f: Fichier;
 Begin
  With f do Begin Ouvre(lecture,chemin); Ferme End;

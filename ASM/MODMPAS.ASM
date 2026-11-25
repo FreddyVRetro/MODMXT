@@ -1,14 +1,14 @@
-;            О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╩
-;            О©╫     О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ MODMPAS.ASM О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫     О©╫
-;            О©╫                                                   О©╫
-;            О©╫         --==О©╫О©╫ Mod Master v2.2 XT О©╫О©╫==--          О©╫
-;            О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╨
-;            О©╫   AuteurО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ Freddy VО©╫telО©╫    О©╫
-;            О©╫   Avec l'aide deО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ Fabrice Couteau  О©╫
-;            О©╫                                                   О©╫
-;            О©╫   Code Start     03/05/1993                       О©╫
-;            О©╫   Last Update    --/04/2020                       О©╫
-;            О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╪
+;            иммммммммммммммммммммммммммммммммммммммммммммммммммм╩
+;            ╨     ВВВВВВВВВВВВВВ MODMPAS.ASM ВВВВВВВВВВВВВВ     ╨
+;            ╨                                                   ╨
+;            ╨         --==ПП Mod Master v2.2 XT ПП==--          ╨
+;            ╨ддддддддддддддддддддддддддддддддддддддддддддддддддд╨
+;            ╨   AuteurЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗ Freddy V┌tel┌    ╨
+;            ╨   Avec l'aide deЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗЗ Fabrice Couteau  ╨
+;            ╨                                                   ╨
+;            ╨   Code Start     03/05/1993                       ╨
+;            ╨   Last Update    --/04/2020                       ╨
+;            хммммммммммммммммммммммммммммммммммммммммммммммммммм╪
 
 ;model large,pascal
 
@@ -71,19 +71,19 @@ EndIf
 
 writechar MACRO x              ;Macro ecriture
      PUSH AX
-     PUSH BX
-     PUSH CX
+	 PUSH BX
+	 PUSH CX
      PUSH BP
-     PUSH SI
-     MOV AL,x 
-     MOV BH,0    ; Page 0
-     MOV BL,0Fh  ; White
+	 PUSH SI
+	 MOV AL,x 
+	 MOV BH,0    ; Page 0
+	 MOV BL,0Fh  ; White
      MOV AH,0Eh
      INT 10h
-     POP SI
-     POP BP
+	 POP SI
+	 POP BP
      POP CX
-     POP BX
+	 POP BX
      POP AX
 ENDM
 
@@ -114,7 +114,7 @@ skip_wrln:
         pop ax
 ENDM	   
 						   
-DS_TP MACRO                 ;pour accО©╫der to une variable EXTRN par DS
+DS_TP MACRO                 ;pour acc┌der to une variable EXTRN par DS
       MOV DS,CS:DS_TurboPascal
 ENDM
 
@@ -153,7 +153,7 @@ if showborder
       PUSH DX
       mov DX,3C8h
       XOR AL,AL
-      out DX,AL           ;Charge le nО©╫couleur
+      out DX,AL           ;Charge le nЬcouleur
       inc dx
       MOV AL,0FFh
       out DX,AL          ;Fixe le rouge
@@ -170,7 +170,7 @@ if showborder
       PUSH DX
       mov DX,3C8h
       XOR AL,AL
-      out DX,AL           ;charge le nО©╫couleur
+      out DX,AL           ;charge le nЬcouleur
       inc dx
       MOV AL,0FFh
       out DX,AL          ;fixe le rouge
@@ -188,7 +188,7 @@ if showborder
   PUSH DX
   mov DX,3C8h
   XOR AL,AL
-  out DX,AL           ;charge le nО©╫couleur
+  out DX,AL           ;charge le nЬcouleur
   inc dx
   out DX,AL          ;fixe le rouge
   MOV AL,0FFh
@@ -206,7 +206,7 @@ if showborder
   PUSH DX
   mov DX,3C8h
   XOR AL,AL
-  out DX,AL          ;Charge le nО©╫couleur
+  out DX,AL          ;Charge le nЬcouleur
   inc dx
   out DX,AL          ;Fixe le rouge
   out DX,AL          ;Fixe le vert
@@ -223,7 +223,7 @@ if showborder
   PUSH DX
   mov DX,3C8h
   XOR AL,AL
-  out DX,AL          ;Charge le nО©╫couleur
+  out DX,AL          ;Charge le nЬcouleur
   inc dx
   out DX,AL          ;Fixe le rouge
   out DX,AL          ;Fixe le vert
@@ -264,9 +264,9 @@ Endif
 CODE SEGMENT
      ASSUME CS:CODE, DS:CODE
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╩
-;О©╫                    Constantes principales                    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╪
+;имммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╩
+;╨                    Constantes principales                    ╨
+;хмммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╪
 
 Max_Channels EQU 32
 Max_Samples  EQU 99
@@ -287,9 +287,9 @@ Anglais  EQU 0
 Francais EQU 1
 
 
-;-----------------------------------------------------------------
-;О©╫                       Main Variables                         О©╫
-;-----------------------------------------------------------------
+;имммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╩
+;╨                    Variables principales                     ╨
+;хмммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╪
 
 ;Variables used for Mod Master Only (Display/Other)
 If Mod_Master eq yes
@@ -307,8 +307,8 @@ Max_Period  DW 0
 
 Real_Frequency DW 16000    ; 'Real' Mixing Frequency value
 Periode_timer  DW 0
-P_Amiga_h      DW 0
-P_Amiga_l      DW 0
+P_Amiga_h DW 0
+P_Amiga_l DW 0
 
 Volume_total DB 0
 Volume_Saved DB 0 ; Value saved before fading (Used ?)
@@ -421,14 +421,14 @@ INCLUDE SBCMD.ASM      ; Sound Blaster Code
 INCLUDE TDYDAC.ASM     ; Tandy DAC Code
 INCLUDE HARDWARE.ASM   ; EMS, DMA, IRQ
 
-;-----------------------------------------------------------------
-;О©╫         External / Public Variables and Procedures Def       О©╫
-;-----------------------------------------------------------------
+;имммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╩
+;╨         External / Public Variables and Procedures Def       ╨
+;хмммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╪
 
 ; Procedures visible by the Pascal Code 
 
 ;PUBLIC Test_vitesse
-;PUBLIC Ajuster_Out_Frequency  ;Ajuster les variables utilisant la frО©╫quence
+;PUBLIC Ajuster_Out_Frequency  ;Ajuster les variables utilisant la fr┌quence
 PUBLIC PInit_Tables
 PUBLIC PStart_Output     ;Start the Music (Sound Output)
 PUBLIC PStart_Music      ;Init the Music variables
@@ -449,7 +449,7 @@ EXTRN Center_Display      :BYTE
 EXTRN Change_aff_centre   :BYTE
 EXTRN Shuffle             :BYTE  ;=1 si Shuffle=True
 EXTRN Programme           :BYTE  ;=1 si Programme=True
-EXTRN Numero_Module       :WORD  ;NumО©╫ro du module actuel dans le programme
+EXTRN Numero_Module       :WORD  ;Num┌ro du module actuel dans le programme
 EXTRN Longueur_prog       :WORD  ;Nombre de modules dans le programme
 EXTRN TP_Duree_min        :BYTE
 EXTRN TP_Duree_sec        :BYTE
@@ -465,7 +465,7 @@ EXTRN Boucler_MOD         :BYTE
 EXTRN TP_Fading           :BYTE   ; To use in Sound System
 EXTRN TP_Chrono_min       :BYTE   ; To use in Sound System
 EXTRN TP_Chrono_sec       :BYTE   ; To use in Sound System
-EXTRN Tick_50Hz           :BYTE   ; le 50О©╫me de seconde pour l'affichage
+EXTRN Tick_50Hz     :BYTE   ; le 50┼me de seconde pour l'affichage
 
 ; Structures defined in VAR_MUS.TPU
 ;*****  MMSS_CFG^ in the Turbo Pascal
@@ -490,9 +490,6 @@ CMS_Type            DB 0
 CMS_LPT_Nb          DB 0
 CMS_Port            DW 0             ;Base Port for the CMS
 
-PSG_Type            DB 0
-PSG_Port            DW 0
-
 LPT1_Port           DW 0
 LPT2_Port           DW 0
 
@@ -507,18 +504,18 @@ GUS_IRQ             DB 7             ;Gravis Ultrasound IRQ (Not Used)
 
 ; ** Sound Blaster
 SB_BasePort         DW 220h          ;Port de base de la Sound Blaster
-IRQ_SB              DB 7             ;NО©╫ IRQ Sound Blaster
-DMA_SB8             DB 1             ;NО©╫ DMA Sound Blaster
-DMA_SB16            DB 5             ;NО©╫ DMA Sound Blaster 16  (Sortie 16 Bits)
+IRQ_SB              DB 7             ;NЬ IRQ Sound Blaster
+DMA_SB8             DB 1             ;NЬ DMA Sound Blaster
+DMA_SB16            DB 5             ;NЬ DMA Sound Blaster 16  (Sortie 16 Bits)
 Type_SB             DB 1             ;Type de Sound Blaster
 PUse_DMA            DB 0             ;=1 si sortie SB avec le DMA
 PDMA_Continu        DB 0             ;Lecture DMA continue ???
-PUse_Stereo         DB 0             ;=1 si sortie SBPro StО©╫rО©╫o
+PUse_Stereo         DB 0             ;=1 si sortie SBPro St┌r┌o
 Utilise_Filtre      DB 0
 
 ; ** Mixing Options
 PUtilise_Mixage     DB 0
-Utiliser_Interpol   DB 0             ;Utiliser l'interpolation linО©╫aire 8 bits?
+Utiliser_Interpol   DB 0             ;Utiliser l'interpolation lin┌aire 8 bits?
 ;If UseMix16 Eq Yes
 Mix_16Bit           DB 0             ;Mix in 16 Bit
 Out_16Bit           DB 0             ;Initialized in InitDevice 
@@ -587,13 +584,13 @@ Volume_Sl_Rapide    DB 0
 Vitesse_ticks       DB 50   ; Nb de ticks par seconde
 Seg_Instr           DW 0    ; Instrument table Segment
 PtrInstrNameTable   DD 0    ; Pointer to the Instruments/Samples name table (24 Bytes table)
-M_CH_Type           DB Max_Channels DUP (0)   ; Type de la voie (Vide,NО©╫,Adlib)
+M_CH_Type           DB Max_Channels DUP (0)   ; Type de la voie (Vide,NЬ,Adlib)
 M_CH_Panning        DB Max_Channels DUP (0)   ; Default Channles Panning
 Voies_Adlib         DB 11 DUP (0)             ; 'Position' des voies adlib.  ;OPT Align !
 Table_sequence      DB Max_Pattern DUP (0)
 Table_Taille_Patt   DB Max_Pattern DUP (0)
 Table_Tempo         DB Max_Pattern DUP (0)     ; Table Tempo (669 ?)
-ContrMus            DB 73   ; Variable de ContrО©╫le !!!
+ContrMus            DB 73   ; Variable de Contr⌠le !!!
 
 ;***** fin structure Musique^ TP
 
@@ -643,9 +640,9 @@ ContrTable DB 73   ; Variable de Controle !!!
 
 ;***** fin structure MMSS_Table^ TP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Variables de gestion de la musique.                    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё    Variables de gestion de la musique.                    Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ;*** Bloc d'informations pour le Turbo Pascal ***
 ALIGN 2 ; Word align all the DW
@@ -695,7 +692,7 @@ VPart_decimale  DB Max_Channels DUP (0)
 VPart_decimale2 DB Max_Channels DUP (0)
 VAccumulateur   DW Max_Channels DUP (0)
 
-VC4Spd          DW Max_Channels DUP (0) ; Ajustement de la pО©╫riode pour C4 (Def 8363)
+VC4Spd          DW Max_Channels DUP (0) ; Ajustement de la p┌riode pour C4 (Def 8363)
 Adresse_Table_periode DW Max_Channels DUP (0) ;          ''
 If UseFineTune Eq Yes
 VFineTune       DB Max_Channels DUP (0) ;          ''
@@ -719,11 +716,11 @@ EndIf
 
 
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
-;О©╫                                                              О©╫
-;О©╫                     DEBUT DU PROGRAMME                       О©╫
-;О©╫                                                              О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;ээээээээээээээээээээээээээээээээээээээээээээээээээээээээээээээээ
+;ш                                                              ш
+;ш                     DEBUT DU PROGRAMME                       ш
+;ш                                                              ш
+;ъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъъ
 
 If Mod_Master Eq No
 
@@ -918,20 +915,20 @@ Test_IRQCall Endp
 
 EndIf
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Start_Output     Lancer la sortie sonore               О©╫
-;О©╫                                                           О©╫
-;О©╫     EntrО©╫e      Rien                                      О©╫
-;О©╫     Sortie:     AX<>0 => Erreur !!!                       О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   Start_Output     Lancer la sortie sonore               Ё
+;Ё                                                           Ё
+;Ё     Entr┌e      Rien                                      Ё
+;Ё     Sortie:     AX<>0 => Erreur !!!                       Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 
 ;oldvect_clavier  DD 0
 ;Ancien_int       DB 0   ;Sound Blaster IRQ
 SB_DMA_Frequency DB 0   ;Valeur to envoyer to la Sound Blaster
 
-  ; CaractО©╫ristiques de la sortie sonore
-  ; (Pas accessible au Pascal pour eviter les problО©╫mes)
+  ; Caract┌ristiques de la sortie sonore
+  ; (Pas accessible au Pascal pour eviter les problХmes)
 
 Sortie_Sonore  DB 0
 Use_DMA    DB 0
@@ -1129,7 +1126,7 @@ Start_SB_Stereo:
         CALL Fixer_stereo           ;Enable the SBP stereo
 Start_SB_DMA:
 
-        MOV AL,IRQ_SB               ;AL <- NО©╫ de L'IRQ SB
+        MOV AL,IRQ_SB               ;AL <- NЬ de L'IRQ SB
         MOV DX,OFFSET IRQ_Sound_Blaster
         CALL Change_IRQ
 		
@@ -1264,28 +1261,28 @@ InitDevice PROC NEAR
         MOV Max_Mixed3,AL
         MOV IRQ_Cnt,AX
         MOV Slow_Mix1_Cnt,AX	
-	MOV Slow_Mix2_Cnt,AX
-	MOV Slow_Mix3_Cnt,AX
-	MOV Volume_Skip,AL
+		MOV Slow_Mix2_Cnt,AX
+		MOV Slow_Mix3_Cnt,AX
+		MOV Volume_Skip,AL
 
 ; Channels limit variables init
-	MOV Mix_Channels_Nb_MAX,AL ; Value to use if >0
-	MOV Mix_Channels_Limit,AL  ; Value used and Displayed
+		MOV Mix_Channels_Nb_MAX,AL ; Value to use if >0
+		MOV Mix_Channels_Limit,AL  ; Value used and Displayed
         
-	MOV AL,PMix_ChLimit_Type    ; 0 Off, 1: Auto 2: Manual
-	MOV AH,0FFh
-	TEST AL,AL
-	JE MLT_End
-	XOR AH,AH
-	DEC AL
-	JZ MLT_End
-	MOV AH,PMix_ChLimit_Nb
+		MOV AL,PMix_ChLimit_Type    ; 0 Off, 1: Auto 2: Manual
+		MOV AH,0FFh
+		TEST AL,AL
+		JE MLT_End
+		XOR AH,AH
+		DEC AL
+		JZ MLT_End
+		MOV AH,PMix_ChLimit_Nb
 MLT_End:
         MOV Mix_ChLimit_Nb,AH
 
 ; Output device and mixing Vars Init
 		
-	MOV AL,PSortie_Sonore
+		MOV AL,PSortie_Sonore
         MOV Sortie_Sonore,AL
         MOV AL,PUse_DMA
         MOV Use_DMA,AL
@@ -1298,50 +1295,50 @@ MLT_End:
         MOV Mix_Buffers_Completed,1
 
         XOR AX,AX
-	MOV Stopper_IRQ_SB,AL
+		MOV Stopper_IRQ_SB,AL
         MOV Stop_Output,AL
-	MOV Output_Stopped,AL
+		MOV Output_Stopped,AL
 If UseMix16 Eq Yes	
-	MOV Out_16Bit,AL
+		MOV Out_16Bit,AL
 EndIf		
-	MOV Out_Signed,AL
-	MOV Mix_Mono_Use_Left,AL
+		MOV Out_Signed,AL
+		MOV Mix_Mono_Use_Left,AL
         MOV Out_16Bit,AL
         MOV Buffer_Convert_Code,Offset Do_Nothing ; For Signed 8 and 16 Bit Mono
 		
 ; Adjust the parameters for each sound Output
 
         CMP Sortie_Sonore,SB
-	JE  InitDev_SBTDMono_8b
-	CMP Sortie_Sonore,SBPro
-	JNE InitDev_NoSB
-	JMP  InitDev_SBPro
+		JE  InitDev_SBTDMono_8b
+		CMP Sortie_Sonore,SBPro
+		JNE InitDev_NoSB
+		JMP  InitDev_SBPro
 InitDev_NoSB:
 ; * No Sound Blaster
         CMP Sortie_Sonore,T_DAC
-	JE InitDev_SBTDMono_8b
+		JE InitDev_SBTDMono_8b
 ; * No Tandy DAC		
         MOV Use_DMA,0
-	CMP Sortie_Sonore,Gus
-	JE InitDev_GUS		
+		CMP Sortie_Sonore,Gus
+		JE InitDev_GUS		
 ; * No GUS and SB
         CMP Sortie_Sonore,HPint
-	JNE InitDev_No_PCSpeaker
+		JNE InitDev_No_PCSpeaker
 ; * PC Speaker
         MOV Buffer_Convert_Code,Offset Convert_PCSpeaker
 If UseMix16 Eq Yes		
-	MOV Mix_16Bit,0                  ; !!! Change the 16Bit settings value.
+		MOV Mix_16Bit,0                  ; !!! Change the 16Bit settings value.
 EndIf		
-	RET
+		RET
 
 ; * 8 Bit Not signed devices (DAC)
 InitDev_No_PCSpeaker:		
-	MOV Utilise_Stereo,0
+		MOV Utilise_Stereo,0
 If UseMix16 Eq Yes
         CMP Mix_16Bit,1
         JE InitDev_NoPC_16bMix
 EndIf		
-	MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
+		MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
         RET
 
 ; * 8 Bit Not signed devices (DAC) 16Bit Mix
@@ -1358,18 +1355,18 @@ InitDev_GUS:
 		
 ; * SB Mono; BlasterBoard or Tandy DAC 8b
 InitDev_SBTDMono_8b:
-	MOV Utilise_Stereo,0
+		MOV Utilise_Stereo,0
 
         CMP Type_SB,T_BB2
         JNE InitDEV_NoBB2 ; BlasterBoard 2.5+, like SB16 8Bit
 ; BlasterBoard 2.5+ 8Bit Output, Signed
         MOV Out_Signed,1  ; Signed
-	CMP Mix_16Bit,0
-	JE InitDEV_BB2End
+		CMP Mix_16Bit,0
+		JE InitDEV_BB2End
         MOV Buffer_Convert_Code,Offset Convert_S_16_8Mono ; Convert 16Bit to 8Bit signed
         MOV Mix_Mono_Use_Left,1                           ; Use Left Buffer for mixing
 InitDEV_BB2End:
-	RET
+		RET
 InitDEV_NoBB2:
 
 If UseMix16 Eq Yes
@@ -1377,7 +1374,7 @@ If UseMix16 Eq Yes
         JE InitDev_SBMono_16bMix
 EndIf		
 ; * 8b Not signed (SB, Tandy DAC)
-	MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
+		MOV Buffer_Convert_Code,Offset Convert_NS_8Mono
         RET	
 		
 ; ; * 16b to 8b Not signed (SB, Tandy DAC)
@@ -1386,12 +1383,12 @@ InitDev_SBMono_16bMix:
         MOV Buffer_Convert_Code,Offset Convert_NS_16_8Mono
         MOV Mix_Mono_Use_Left,1
 ;WriteChar 'b'		
-	RET
+		RET
 EndIf
 		
 InitDev_SBPro:  ; SB Pro or 16
         CMP Utilise_Stereo,1
-	JE InitDev_SBStereo ; Go to SB Stereo 8b
+		JE InitDev_SBStereo ; Go to SB Stereo 8b
 ;		XOR AX,AX
         CMP Type_SB,T_SB16 
         JE InitDev_SB16Mono ; Go to SB16 Mono 16b
@@ -1401,12 +1398,12 @@ InitDev_SBPro:  ; SB Pro or 16
 ; * SB16 Mono *
 InitDev_SB16Mono:
 If UseMix16 Eq Yes
-	CMP Mix_16Bit,0          ; Mix in 16 Bit ?
-	JE InitDev_SB16Mono_8b
+		CMP Mix_16Bit,0          ; Mix in 16 Bit ?
+		JE InitDev_SB16Mono_8b
 ; * SB16 Mono, Mix 16Bit
-	MOV Out_16Bit,1          ; 16 Bit Output
+		MOV Out_16Bit,1          ; 16 Bit Output
         MOV Out_Signed,1         ; Signed, No Buffer convertion
-	RET
+		RET
 ; * SB16 Mono, Mix 8Bit
 EndIf
 InitDev_SB16Mono_8b:
@@ -1428,7 +1425,7 @@ If UseMix16 Eq Yes
 InitDev_SBProStereo_16bMix:
 ; * SBPro Stereo 16Bit Mix
         MOV Buffer_Convert_Code,Offset Convert_NS_16_8Stereo
-	RET
+		RET
 EndIf		
 
 ; * SB16 Stereo      ; Mix 16Bit not supported.
@@ -1438,7 +1435,7 @@ If UseMix16 Eq Yes
         JE InitDev_SB16Stereo_16bMix
 EndIf		
         MOV Buffer_Convert_Code,Offset Convert_NS_8Stereo		
-	RET
+		RET
 ;		Writechar '6'
 If UseMix16 Eq Yes
 InitDev_SB16Stereo_16bMix:
@@ -1447,9 +1444,9 @@ InitDev_SB16Stereo_16bMix:
 EndIf		
 InitDevice ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫              Initialisation de la musique                 О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё              Initialisation de la musique                 Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 PStart_Music PROC FAR    ;Appel du Pascal (Fonction, renvoie l'Erreur )
         PUSH DS BP
@@ -1509,7 +1506,7 @@ Init_Var_MOD PROC NEAR
 		MOV DI,OFFSET Ch_Control
         MOV AL,CM_Stopped
         MOV CL,DL
-        REP STOSB                 ; "Active" les Ch_Number premiО©╫res voies
+        REP STOSB                 ; "Active" les Ch_Number premi┼res voies
 
         MOV DI,OFFSET CH_Command
         MOV AX,OFFSET Do_Nothing
@@ -1701,16 +1698,16 @@ Not_Init_Monochrome:
 EndIf
 
         MOV AL,Tempo_Start
-        MOV Tempo,AL              ; Initialise la Tempo de dО©╫part.
+        MOV Tempo,AL              ; Initialise la Tempo de d┌part.
         MOV Cmpt_Tempo,1          ; Initialisation du Tempo : Tempo 1 to Start with a Command
 
         MOV AL,BPM_Start          ; Initialisation des BPM...
-        MOV BPM,AL                ; BPM de dО©╫part.
+        MOV BPM,AL                ; BPM de d┌part.
 		CALL Exec_SetBPM
 		MOV BPM_Cnt,0
 		
         MOV AL,Vol_Gene_Depart
-        MOV Volume_General,AL      ; Volume GО©╫nО©╫ral dО©╫part
+        MOV Volume_General,AL      ; Volume G┌n┌ral d┌part
 		
 		XOR AX,AX
         MOV Cmpt_Boucles,AL
@@ -1724,7 +1721,7 @@ EndIf
         MOV PJumpPattern,AL
         MOV Debut_Boucle_Pattern,AL ; Pour JumpLoop
         MOV C_Patt_Length,1
-        MOV C_Row,AL             ; => Chercher le 1er pattern to la 1О©╫ note
+        MOV C_Row,AL             ; => Chercher le 1er pattern to la 1Ь note
         MOV C_Sequence,AL
         MOV DoPatternBreak,AL
 ;        MOV MMSS_Pause ,AL
@@ -1757,11 +1754,11 @@ Ajuster_Bouclage:
 Init_Var_MOD ENDP
 
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Init Direct DAC IRQ                                     О©╫
-;О©╫   Configure the Direct DAC interrupts                     О©╫
-;О©╫   (Code auto gО©╫nО©╫rО©╫)                                      О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   Init Direct DAC IRQ                                     Ё
+;Ё   Configure the Direct DAC interrupts                     Ё
+;Ё   (Code auto g┌n┌r┌)                                      Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Init_Direct_DAC_IRQ PROC NEAR
        DS_ASM
@@ -1834,11 +1831,11 @@ C_Err_Sortie_Introuvable:
 	  
 Init_Direct_DAC_IRQ ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  Clean_Buffers_DMA: Clean the DMA Buffers for the Pause       О©╫
-;О©╫                                                               О©╫
-;О©╫  Unsigned -> 80h signed or 16Bit -> 0h                        О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё  Clean_Buffers_DMA: Clean the DMA Buffers for the Pause       Ё
+;Ё                                                               Ё
+;Ё  Unsigned -> 80h signed or 16Bit -> 0h                        Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Clean_Buffers_DMA Proc Near
         PUSH ES
@@ -1899,10 +1896,10 @@ DMA_PreprocessingLoop:
         RET
 DMA_Buffers_Preprocessing Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫           -= Set the next Buffer address =-
-;О©╫ Register changed : AX                                     О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё           -= Set the next Buffer address =-
+;Ё Register changed : AX                                     Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 ; Add Buffer_Byte_Size and Go back if the @ is above or equal to the DMA/Output Buffer end
 
 Move_Buffer_Offset Proc Near  ; Set the Next Mixing Buffer Offset
@@ -1922,11 +1919,11 @@ DMA_Buffer_End_NotReached:
         RET
 Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  Init_Variables_Freq  Initialize all the Frequency        О©╫
-;О©╫                       Based variables                     О©╫
-;О©╫  SB_ComputeFrequency Must be started before                    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё  Init_Variables_Freq  Initialize all the Frequency        Ё
+;Ё                       Based variables                     Ё
+;Ё  SB_ComputeFrequency Must be started before                    Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Init_Variables_Freq Proc Near
 
@@ -2130,11 +2127,11 @@ Stop_Timer PROC NEAR
         RET
 Stop_Timer ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫                                                               О©╫
-;О©╫                  Nouvelles Interruptions                      О©╫
-;О©╫                                                               О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё                                                               Ё
+;Ё                  Nouvelles Interruptions                      Ё
+;Ё                                                               Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ; Read the Tandy DAC Position from the DMA
 ; Then, calculate the Mixing Buffer position Vs DMA
@@ -2145,21 +2142,21 @@ Update_BuffersDelta Proc Near
         CALL DMA8_ReadOffset
 
         ADD AX,MixDMA_OffsetDelta
-	MOV Buffer_Current_Out_Offs,AX  ; TDY : Save Current DMA Offset (For Display Only)
+		MOV Buffer_Current_Out_Offs,AX  ; TDY : Save Current DMA Offset (For Display Only)
 		
-	MOV BX,Buffer_Current_Mix_Offs  ; Offset of the Last mixed Byte
-	CMP BX,AX
-	JAE @@MixIsAbove
-	ADD BX,Buffers_Total_Size_Byte   ; Mix Buffer is before > Add the buffer Size
+		MOV BX,Buffer_Current_Mix_Offs  ; Offset of the Last mixed Byte
+		CMP BX,AX
+		JAE @@MixIsAbove
+		ADD BX,Buffers_Total_Size_Byte   ; Mix Buffer is before > Add the buffer Size
 @@MixIsAbove:
         SUB BX,AX
-	MOV CurrentMix_Delta,BX
+		MOV CurrentMix_Delta,BX
 			
         MOV Buffer_Ahead_Cnt,6    ; To avoid to cut the mixing.
-	CMP BX,MixDelta_Min
-	JA @@MixAboveMin
-	MOV AL,Buffers_Ahead_Min  ; Cut the mixing or don't mix the next buffer (Slow)
-	MOV Buffer_Ahead_Cnt,AL
+		CMP BX,MixDelta_Min
+		JA @@MixAboveMin
+		MOV AL,Buffers_Ahead_Min  ; Cut the mixing or don't mix the next buffer (Slow)
+		MOV Buffer_Ahead_Cnt,AL
 @@MixAboveMin:
         RET
 Update_BuffersDelta Endp
@@ -2169,8 +2166,8 @@ Update_BuffersDelta Endp
 ; Tandy DAC: IRQ for the end of the DMA buffer: Only Aknowledge the IRQ
 IRQ_TDY_DAC Proc Far
 
-	PUSH AX
-	PUSH DX
+		PUSH AX
+		PUSH DX
         PUSH DS
         DS_ASM
 
@@ -2180,7 +2177,7 @@ IRQ_TDY_DAC Proc Far
         STI
 
 ; TDY DAC IRQ Acknowledge
-	MOV DX,CS:TDYDAC_Port
+	    MOV DX,CS:TDYDAC_Port
         IN AL,DX
         AND AL,0F7h
         OUT DX,AL
@@ -2192,8 +2189,8 @@ IRQ_TDY_DAC Proc Far
 
 IRQ_TDY_NotDAC:
 
-	POP DS
-	POP DX
+		POP DS
+		POP DX
         POP AX
         IRET
 IRQ_TDY_DAC Endp
@@ -2203,9 +2200,9 @@ Pause_TDY_DAC:
         CALL Move_Buffer_Offset
 
         POP ES
-	POP DS
-	POP DX
-	POP BX
+		POP DS
+		POP DX
+		POP BX
         POP AX
         IRET
 
@@ -2222,7 +2219,7 @@ IRQ_Timer_TDY Proc Far
 ;CALL Affiche_DMA_Addr
 
         CMP Output_Stopped,1            ; Already stopped, Don't stop again
-	JE IRQ_TDY_Stop_End
+		JE IRQ_TDY_Stop_End
 
         CMP Stopper_IRQ_SB,1
         JE IRQ_TDY_Stop                 ; The End > Stop the DMA/IRQ
@@ -2244,18 +2241,18 @@ IRQ_Timer_TDY Proc Far
 
         MOV AX,CurrentMix_Delta
         CMP AX,MixDelta_Target          ; Current Delta >= Target, Skip
-	JAE IRQ_TDY_SkipPartition
+		JAE IRQ_TDY_SkipPartition
 
-	PUSH CX
-	PUSH SI
-	PUSH DI
-	PUSH BP
+		PUSH CX
+		PUSH SI
+		PUSH DI
+		PUSH BP
         CALL Gestion_Sonore   ; Read the partition and Mix the Buffers
         POP BP
-	POP DI
-	POP SI
-	POP CX
-	JMP IRQ_TDY_End
+		POP DI
+		POP SI
+		POP CX
+		JMP IRQ_TDY_End
 
 IRQ_TDY_SkipPartition:
 
@@ -2268,19 +2265,19 @@ IRQ_TDY_End:
 IRQ_TDY_NotStop:
  
         POP ES
-	POP DS
-	POP DX
-	POP BX
+		POP DS
+		POP DX
+		POP BX
         POP AX
         IRET
 
 IRQ_TDY_Stop:                 ; Pause or End...
 ;Writech 'S'
 
-	MOV AL,0
-	CALL TDYDAC_SetVol    ; Set Volume to 0 (Need Ramp Down) AX DX
+		MOV AL,0
+		CALL TDYDAC_SetVol    ; Set Volume to 0 (Need Ramp Down) AX DX
         CALL TDYDAC_Stop      ; AX DX
-	CALL EndIRQ_SB_TDY    ; Put back the IRQ
+		CALL EndIRQ_SB_TDY    ; Put back the IRQ
 
         CALL Stop_Timer_50
 
@@ -2291,9 +2288,9 @@ IRQ_TDY_Stop_End:
         OUT 20h,AL
 
         POP ES
-	POP DS
-	POP DX
-	POP BX
+		POP DS
+		POP DX
+		POP BX
         POP AX
         IRET
 IRQ_Timer_TDY Endp
@@ -2306,25 +2303,25 @@ Pause_SB_IRQ:
         CALL Move_Buffer_Offset
 		
         POP ES
-	POP DS
-	POP DX
-	POP BX
+		POP DS
+		POP DX
+		POP BX
         POP AX
         IRET
 
 IRQ_Sound_Blaster Proc Near
-	PUSH AX
-	PUSH BX
-	PUSH DX
+		PUSH AX
+		PUSH BX
+		PUSH DX
         PUSH DS
-	PUSH ES
+		PUSH ES
         DS_ASM
 		
 ; SB IRQ Acknowledge
         MOV BX,0Eh
 If UseMix16 Eq Yes	
-	CMP Out_16Bit,0
-	JE SBIRQ__8BitAck
+	    CMP Out_16Bit,0
+	    JE SBIRQ__8BitAck
         INC BX
 SBIRQ__8BitAck:
 EndIf
@@ -2337,8 +2334,6 @@ EndIf
         OUT 20h,AL
         OUT 0A0h,AL
         STI
-
-;        writechar 'x'          ; Debug
 
 ; Check if Pause or End
 		
@@ -2357,68 +2352,64 @@ EndIf
 
 Exec_Partition:
 
-	DEC Buffer_Ahead_Cnt     ; ** One more buffer Played
+		DEC Buffer_Ahead_Cnt     ; ** One more buffer Played
 
         CMP Mix_Buffers_Completed,1     ; Mix Not Complete : Do not Mix
         JNE Pas_calc_part
 
-	PUSH CX
-	PUSH SI
-	PUSH DI
-	PUSH BP
+		PUSH CX
+		PUSH SI
+		PUSH DI
+		PUSH BP
         CALL Gestion_Sonore   ; Read the partition and Mix the Buffers
         POP BP
-	POP DI
-	POP SI
-	POP CX
-	JMP IRQ_SB_End
+		POP DI
+		POP SI
+		POP CX
+		JMP IRQ_SB_End
 
 Pas_calc_part:
 ; If the Buffers are not completed, update the debug Values
         MOV AL,Buffer_Ahead_Cnt
         MOV BL,Buffers_Ahead_Lim ; Buffers_Ahead_Min +3		
-	CMP AL,BL
+		CMP AL,BL
         JAE	IRQ_SB_End
-	INC Slow_Mix1_Cnt
-	DEC BL
+		INC Slow_Mix1_Cnt
+		DEC BL
         CMP AL,BL
-	JE IRQ_SB_End
-	INC Slow_Mix2_Cnt
-	DEC BL
+		JE IRQ_SB_End
+		INC Slow_Mix2_Cnt
+		DEC BL
         CMP AL,BL
-	JE IRQ_SB_End
-	INC Slow_Mix3_Cnt
+		JE IRQ_SB_End
+		INC Slow_Mix3_Cnt
 		
 IRQ_SB_End:
         INC IRQ_Cnt
 		
         CMP Stop_Output,1     ; Stopper la sortie sonore ?
         JNE Pas_Stopper_IRQ_SB
-;        writechar 'S'          ; Debug
-        MOV Stopper_IRQ_SB,1  ; Lancer l'arrО©╫t de l'IRQ au prochain appel
+        MOV Stopper_IRQ_SB,1  ; Lancer l'arr┬t de l'IRQ au prochain appel
 Pas_Stopper_IRQ_SB:
 ;        CMP Erreur_Modm,Err_SB ;Si Erreur Sound Blaster, Stopper Immediatement
 ;        JE  Fin_IRQ_SB
  
         POP ES
-	POP DS
-	POP DX
-	POP BX
+		POP DS
+		POP DX
+		POP BX
         POP AX
         IRET
 
 Fin_IRQ_SB:                   ; Pause ou fin de la sortie...
 
-;        writechar 'I'          ; Debug
         CALL SB_DSP_Init          ; Change AX DX
-;        writechar 'E'          ; Debug
-	CALL EndIRQ_SB_TDY        ; Put back the IRQ
-;        writechar '!'         ; Debug
-
+		CALL EndIRQ_SB_TDY        ; Put back the IRQ
+		
         POP ES
-	POP DS
-	POP DX
-	POP BX
+		POP DS
+		POP DX
+		POP BX
         POP AX
         IRET
 
@@ -2430,11 +2421,11 @@ EndIRQ_SB_TDY Proc Near
         RET
 EndIRQ_SB_TDY Endp
 
-;--------------------------------------------------------------
-;-              Definition des blocs du timer                -
-;-                                                           -
-;-   (HP Interne, DAC, Disney Sound Source, Sound Master)    -
-;--------------------------------------------------------------
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё              Definition des blocs du timer                Ё
+;Ё                                                           Ё
+;Ё   (HP Interne, DAC, Disney Sound Source, Sound Master)    Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ;Offset_Buffer_Index DW 0
 OUT_Procedure DW 0
@@ -2476,7 +2467,7 @@ OUT_SB EndP
 ;        POP AX
 ;        MOV AL,SSOn
 ;        OUT DX,AL
-;	 RET
+;		RET
 ;OUT_Disney1 EndP
 
 ;OUT_Disney2 Proc Near            ;Disney Sound Source sur LPT2
@@ -2489,7 +2480,7 @@ OUT_SB EndP
 ;        POP AX
 ;        MOV AL,SSOn
 ;        OUT DX,AL
-;	 RET
+;		RET
 ;OUT_Disney2 EndP
 
 ;OUT_Adlib Proc Near               ;Adlib
@@ -2515,7 +2506,7 @@ OUT_SB EndP
 ;OUT_S_Master Proc Near            ;Sound master
 ;        MOV DX,0388h
 ;        OUT DX,AL
-;	 RET
+;		RET
 ;OUT_S_Master EndP
 
 ; ***************  PC Speaker "DAC" IRQ using Timer   *************
@@ -2600,8 +2591,8 @@ IRQ_Timer_DAC_NextBuffer:
 
         DS_ASM
 		
-        MOV AX,Buffer_Samples_Nb               ;IncrО©╫mente le Chrono
-        MOV Buffer_Cnt_50,AX                  ;    (50О©╫ ou 32О©╫ de seconde)
+        MOV AX,Buffer_Samples_Nb               ;Incr┌mente le Chrono
+        MOV Buffer_Cnt_50,AX                  ;    (50Ь ou 32Ь de seconde)
         ADD Buffer_Current_Out_Offs,AX   ; Currently playing Buffer @ (For Display Only)
 
 		MOV AX,W CS:[Offset IRQ_DAC_Index-2]
@@ -2619,21 +2610,21 @@ IRQ_Timer_Out_DoMix:
         CMP Mix_Buffers_Completed,1         ; Calcul non termine => ne pas calculer
         JNE IRQ_Timer_Slow
 		
-   	PUSH BX
-	PUSH CX
-	PUSH DX
+   		PUSH BX
+		PUSH CX
+		PUSH DX
         PUSH ES
         PUSH SI
-	PUSH DI	
-	PUSH BP
+		PUSH DI	
+	    PUSH BP
         CALL Gestion_Sonore        ; Appel de la partition
         POP BP
-	POP DI
-	POP SI
+		POP DI
+		POP SI
         POP ES		
-	POP DX
-	POP CX
-	POP BX
+		POP DX
+		POP CX
+		POP BX
 
         JMP IRQ_Timer_Slow2
 
@@ -2641,17 +2632,17 @@ IRQ_Timer_Slow:
 
         MOV AL,Buffer_Ahead_Cnt
         MOV AH,Buffers_Ahead_Lim ; Buffers_Ahead_Min +3		
-	CMP AL,AH		
+		CMP AL,AH		
         JAE	IRQ_Timer_Slow2
-	INC Slow_Mix1_Cnt
+		INC Slow_Mix1_Cnt
         DEC AH
-	CMP AL,AH
-	JE IRQ_Timer_Slow2
-	INC Slow_Mix2_Cnt
+		CMP AL,AH
+		JE IRQ_Timer_Slow2
+		INC Slow_Mix2_Cnt
         DEC AH
-	CMP AL,AH
-	JE IRQ_Timer_Slow2
-	INC Slow_Mix3_Cnt
+		CMP AL,AH
+		JE IRQ_Timer_Slow2
+		INC Slow_Mix3_Cnt
 
 IRQ_Timer_Slow2:
         INC IRQ_Cnt
@@ -2694,7 +2685,7 @@ EndIf
        JE Do_DMA_Pause    ; Sortie DMA => Pause SB
 
        CALL Stop_Timer         ; Activer la pause avec le timer
-	MOV Output_Stopped,0    ; Paused, not Stopped
+	   MOV Output_Stopped,0    ; Paused, not Stopped
        RET
 	   
 Pause_Stop_Channels:           ; Activer la pause avec la GUS / Adlib
@@ -2706,7 +2697,7 @@ Do_DMA_Pause:
 
        MOV MMSS_Pause,1        ; Activer la pause avec SB
        CALL Clean_Buffers_DMA
-	RET
+	   RET
 MMSS_Start_Pause Endp
 
 
@@ -2779,25 +2770,25 @@ MMSS_Volume_UpdateAll Proc Near
         PUSH BX BP
 		
         XOR BX,BX
-	MOV BL,Ch_Number		
-	MOV BP,BX
-	SHL BP,1
+		MOV BL,Ch_Number		
+		MOV BP,BX
+		SHL BP,1
 
 Boucle_ajuste_volume:
         MOV AL,Ch_Volume[BX]
         CALL Set_Ch_Volume
-	DEC BP
-	DEC BP
-	DEC BX
-	JNZ Boucle_ajuste_volume
+		DEC BP
+		DEC BP
+		DEC BX
+		JNZ Boucle_ajuste_volume
 
         POP BP BX
         RET
 MMSS_Volume_UpdateAll Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Lecture de la partition + Calcul du Tampon                   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫	
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё    Lecture de la partition + Calcul du Tampon                   Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды	
 	
 Gestion_Sonore Proc Near
        MOV Mix_Buffers_Completed,0     ; Calculation not completed (Fini)
@@ -2805,7 +2796,7 @@ Gestion_Sonore Proc Near
 
 Restart_Part_Mix:
 
-;C_R
+C_R
 	   
 If UseOPL2 eq Yes
        CMP Ch_Number_Adlib,0
@@ -2825,7 +2816,7 @@ If UseGUS eq Yes
 Pas_MAJ_GUS:
 EndIf  ; UseGUS
 
-;C_G
+C_G
 
        CMP Musique_Terminee,1
        JE  Seulement_Sortie_Sonore
@@ -2976,37 +2967,37 @@ Test_TD_3:
 	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 	   
 Test_TD_2:
-        INC Slow_Mix2_Cnt
-	CMP BX,MixDelta_2
-	JB Test_TD_1
+       INC Slow_Mix2_Cnt
+	   CMP BX,MixDelta_2
+	   JB Test_TD_1
 ; 4) -> Increase VolSkip to Vol_Limit2
-	CMP AH,Vol_Limit2
-	JAE VolSkipUpdateEnd
-	ADD Volume_Skip,VolSkipIncr
-	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+	   CMP AH,Vol_Limit2
+	   JAE VolSkipUpdateEnd
+	   ADD Volume_Skip,VolSkipIncr
+	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 
 Test_TD_1:
-        INC Slow_Mix3_Cnt
-	CMP BX,MixDelta_Min
-	JB TD_Use_Vol3
+       INC Slow_Mix3_Cnt
+	   CMP BX,MixDelta_Min
+	   JB TD_Use_Vol3
 ; 5) -> Increase VolSkip to Vol_Limit3	   
-	CMP AH,Vol_Limit3
-	JAE VolSkipUpdateEnd
-	ADD Volume_Skip,VolSkipIncr
-	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+	   CMP AH,Vol_Limit3
+	   JAE VolSkipUpdateEnd
+	   ADD Volume_Skip,VolSkipIncr
+	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 	   
 TD_Use_Vol3:
-        MOV AL,0
-	CMP BX,MixDelta_Slow  ; bugged for the moment
-	JBE StopAsTooSlow     ; 7) Below the Slow Limit > Stop music
+       MOV AL,0
+	   CMP BX,MixDelta_Slow  ; bugged for the moment
+	   JBE StopAsTooSlow     ; 7) Below the Slow Limit > Stop music
 
 ; 6) -> VolSkip = Vol_Limit3
-        INC Slow_Mix1_Cnt
-        INC Slow_Mix2_Cnt
-        INC Slow_Mix3_Cnt
-	MOV AH,Vol_Limit3
-        MOV Volume_Skip,AH
-	JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
+       INC Slow_Mix1_Cnt
+       INC Slow_Mix2_Cnt
+       INC Slow_Mix3_Cnt
+	   MOV AH,Vol_Limit3
+       MOV Volume_Skip,AH
+	   JMP Restart_Part_Mix  ; Do the Partition and Mixing again, as the IRQ Came before mixing End
 
 	   
 ; The end of the procedure is above
@@ -3100,7 +3091,7 @@ Build_MixChLoop:
         JZ BMixLoop_Not_KeyOff
         AND AL,Not CM_KeyOff         ;Disable the KeyOff
         OR AL,CM_Stopped             ;Disable the Channel
-	MOV Ch_Control[BX],AL
+		MOV Ch_Control[BX],AL
         JMP Build_MixChLoop_Next
 BMixLoop_Not_KeyOff:
 
@@ -3108,26 +3099,26 @@ BMixLoop_Not_KeyOff:
         JNZ Build_MixChLoop_Next	   ;Don't add the channel to the list
 
         CMP Ch_Final_Vol[BX],0             ;Skip if Volume =0
-	JE Build_MixChLoop_Next
+		JE Build_MixChLoop_Next
 
         MOV AL,BL
-	STOSB                         ;Store the Channel number in the list
-	INC CL
+		STOSB                         ;Store the Channel number in the list
+		INC CL
 		
 Build_MixChLoop_Next:
         INC BL
-	CMP BL,Ch_Number            ;Mix all the channels one by one
-	JNE Build_MixChLoop
+		CMP BL,Ch_Number            ;Mix all the channels one by one
+		JNE Build_MixChLoop
 
         MOV Mix_Channels_Nb,CL
 ; Check if we need to reduce the Nb of channels to mix
 
         MOV AL,Mix_ChLimit_Nb
-	OR AL,AL
-	JE BML_AutoLimit            ; Zero : Autodetect the limit Nb of Channel
-	CMP AL,0FFh
-	JNE BML_ManualLimit         ; Not -1 -> Manuel Limitation
-	RET
+		OR AL,AL
+		JE BML_AutoLimit            ; Zero : Autodetect the limit Nb of Channel
+		CMP AL,0FFh
+		JNE BML_ManualLimit         ; Not -1 -> Manuel Limitation
+		RET
 
 BML_AutoLimit:
 ;Writech 'a'	
@@ -3136,118 +3127,118 @@ BML_AutoLimit:
         RET	
 BML_AutoStarted:
         MOV AL,Max_Mixed3
-	INC	AL
+		INC	AL
         CMP Slow_Mix3_Cnt,100
-	JB BML_ManualLimit
+		JB BML_ManualLimit
         DEC AL       ; Slow_Mix3_Cnt> Fix the Limit as if it was manual.
-	DEC AL
-	MOV Mix_ChLimit_Nb,AL
+		DEC AL
+		MOV Mix_ChLimit_Nb,AL
 		 
 BML_ManualLimit:
         CMP AL,2
-	JAE Mix_Channels_LimitOk
-	MOV AL,2                  ; Security: Limit >=2
+		JAE Mix_Channels_LimitOk
+		MOV AL,2                  ; Security: Limit >=2
 Mix_Channels_LimitOk:		
         MOV Mix_Channels_Limit,AL ; Save the Used Nb of Channels Limit
 
 ; AL <- Max Nb of Channels
 ; CL <- Nb of Channels to mix
 ;Writech '-'
-	CMP CL,AL
-	JA Remove_LP_Chan
-	RET              ; Channels to Mix <= Limit -> Do not remove channels
+		CMP CL,AL
+		JA Remove_LP_Chan
+		RET              ; Channels to Mix <= Limit -> Do not remove channels
 Remove_LP_Chan:
         SUB CL,AL
-	MOV DH,CL
+		MOV DH,CL
                          ; DH: number of channels to remove		
 ;PUSH DX
 ;        MOV AL,DH
 ;		Call WriteByteH  ; Write the Nb of channels to remove (1-9)
 ;POP DX	
 	
-	CLD              ; As we use LODSB
-	XOR BX,BX		 ;OPT Remove
-	MOV SI,Offset Mix_Channel_List
-	XOR CX,CX       
-	MOV CL,Mix_Channels_Nb
+		CLD              ; As we use LODSB
+		XOR BX,BX		 ;OPT Remove
+		MOV SI,Offset Mix_Channel_List
+		XOR CX,CX       
+		MOV CL,Mix_Channels_Nb
 
         MOV AH,3                 ; Value for comparison
 BML_Initial_Loop:
-	LODSB                    ; Load the channel number from the "To Mix" List
-	MOV BL,AL
+		LODSB                    ; Load the channel number from the "To Mix" List
+		MOV BL,AL
 		
 ;**********************************************************************
 ;1) Compute the Priority Value and Disable Priority 3 and Volume <VLim1
 
-	MOV AL,Ch_LoopType[BX]
-	MOV DL,Ch_Smp_Tick_Cnt[BX]    ; DL Tick count AL, LoopType, AH, Prio
-	CMP DL,AH         ; Samples played time <= 3 ?
-	JBE BMSetPrioEnd  ; Prio+0
-	INC AL            ; Prio+1
-	CMP DL,10         ; Samples played since few time has a medium priority
-	JBE BMSetPrioEnd
-	INC AL            ; Prio+2
+		MOV AL,Ch_LoopType[BX]
+		MOV DL,Ch_Smp_Tick_Cnt[BX]    ; DL Tick count AL, LoopType, AH, Prio
+		CMP DL,AH         ; Samples played time <= 3 ?
+		JBE BMSetPrioEnd  ; Prio+0
+		INC AL            ; Prio+1
+		CMP DL,10         ; Samples played since few time has a medium priority
+		JBE BMSetPrioEnd
+		INC AL            ; Prio+2
 BMSetPrioEnd:
         MOV Ch_Priority[BX],AL  ; Priority: Loope Type + Sample Play duration
 
-	CMP Ch_Final_Vol[BX],VLim1
+		CMP Ch_Final_Vol[BX],VLim1
         JA  BML_NotDisable_VLP3        ; Volume <VLim1 ?
         CMP AL,AH                      ; Priority <3 ?
-	JE BML_Stop_VLP3
+		JE BML_Stop_VLP3
 ;Pause the Channel: Priority <3 and Volume <VLim1
         OR Ch_Control[BX],CM_FPause
-	JMP BML_PauseCont_VLP3
+		JMP BML_PauseCont_VLP3
 BML_Stop_VLP3: 
 ;Stop the Channel: Priority 3 and Volume <VLim1
-	OR Ch_Control[BX],CM_Stopped+CM_FStop
+		OR Ch_Control[BX],CM_Stopped+CM_FStop
 BML_PauseCont_VLP3: 		
-	DEC SI
-	MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
-	INC SI
+		DEC SI
+		MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
+		INC SI
 ;Writech 'x'
-	DEC DH
-	JNZ BML_NotDisable_VLP3
-	JMP BML_ReduceList             ; No more channels to stop -> End
+		DEC DH
+		JNZ BML_NotDisable_VLP3
+		JMP BML_ReduceList             ; No more channels to stop -> End
 BML_NotDisable_VLP3:
 
-	LOOP BML_Initial_Loop
+		LOOP BML_Initial_Loop
 		
 ;***************************************************************************
 ;2) Disable ( Priority > x With Volume < ) and ( Priority > x With Volume < )
 
-	MOV SI,Offset Mix_Channel_List
-	XOR CX,CX
-	MOV CL,Mix_Channels_Nb
+		MOV SI,Offset Mix_Channel_List
+		XOR CX,CX
+		MOV CL,Mix_Channels_Nb
 		
 BML_Do_Loop2:
-	LODSB                    ; Load the channel number from the "To Mix" List
+		LODSB                    ; Load the channel number from the "To Mix" List
 		
-	CMP AL,0FFh
-	JNE BML_Loop2_Not_Disabled
-	LOOP BML_Do_Loop2
-	JMP BML_Do_Loop2_End
+		CMP AL,0FFh
+		JNE BML_Loop2_Not_Disabled
+		LOOP BML_Do_Loop2
+		JMP BML_Do_Loop2_End
 BML_Loop2_Not_Disabled:		
-	MOV BL,AL
+		MOV BL,AL
         MOV AL,Ch_Priority[BX]
         MOV AH,Ch_Final_Vol[BX]
 		
-	CMP AH,VLim2
-	JA BML_Not_Cut2
+		CMP AH,VLim2
+		JA BML_Not_Cut2
         CMP AL,2
-	JB BML_Not_Cut2
+		JB BML_Not_Cut2
 		
         ;Stop the Channel
-	OR Ch_Control[BX],CM_Stopped+CM_FStop
-	DEC SI
-	MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
-	INC SI
+		OR Ch_Control[BX],CM_Stopped+CM_FStop
+		DEC SI
+		MOV Byte Ptr [SI],0FFh         ; Replace the Channel number by -1
+		INC SI
 ;Writech 'y'		
-	DEC DH
-	JNZ BML_Not_Cut2
-	JMP BML_ReduceList             ; No more channels to stop -> End
+		DEC DH
+		JNZ BML_Not_Cut2
+		JMP BML_ReduceList             ; No more channels to stop -> End
 		
 BML_Not_Cut2:		
-	LOOP BML_Do_Loop2
+		LOOP BML_Do_Loop2
 BML_Do_Loop2_End:
 		
 ;****************************************************************************
@@ -3349,9 +3340,9 @@ BML_End:
         RET
 Build_Mix_List Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫                 Lecture de la partition                   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё                 Lecture de la partition                   Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ;partition_en_cours DB 0   ; 1 si lecture de la partition en cours
 Pattern_Vide  DB 0
@@ -3444,7 +3435,7 @@ EndIf
 	   
        INC BP
 	   INC BP                        ; BP=2*BX (Index Mots)
-	   INC BX                        ; IncrО©╫mente le compteur de voies       
+	   INC BX                        ; Incr┌mente le compteur de voies       
        CMP BL,Ch_Number
        JNE Do_Command_Loop
 
@@ -3465,14 +3456,14 @@ NoProcess:
        CMP Volume_total,2
        JBE Fin_player
        DEC Volume_total
-       CMP Touche_fin,Tfin_Esc  ; a-t-on appuyО©╫ sur Esc?
+       CMP Touche_fin,Tfin_Esc  ; a-t-on appuy┌ sur Esc?
        JNE Fading_IntroScan     ; non, alors c'est le Fading de l'IntroScan
        DEC Volume_total         ; Fading avec Esc deux fois plus rapide
 Fading_IntroScan:
        CALL MMSS_Volume_UpdateAll   ; Modifier le volume pour le fading
 Pas_fin_mus:
        DS_TP
-       MOV Tick_50Hz,1    ; Pour l'affichage (DО©╫tecte le 50О©╫ ou 32О©╫ )
+       MOV Tick_50Hz,1    ; Pour l'affichage (D┌tecte le 50Ь ou 32Ь )
        DS_ASM
        RET
 
@@ -3487,12 +3478,12 @@ EndIf
        RET
 Partition Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      Partition_personnelle: Gestion de la partition       О©╫
-;О©╫      ( Tempo, BMP, SО©╫quence ... )                         О©╫
-;О©╫      EntrО©╫e: Rien                                         О©╫
-;О©╫                                                           О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё      Partition_personnelle: Gestion de la partition       Ё
+;Ё      ( Tempo, BMP, S┌quence ... )                         Ё
+;Ё      Entr┌e: Rien                                         Ё
+;Ё                                                           Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ;Taille_note EQU 6
 
@@ -3540,13 +3531,13 @@ Pas_JPattern:
         CMP DoPatternBreak,1            ; ** Command Pattern Break ?
         JE  pattern_suivant             ; Oui => Pattern suivant
         MOV PattBreakRow,0
-        INC C_Row                       ; IncrО©╫menter la position de la note
+        INC C_Row                       ; Incr┌menter la position de la note
 
         CMP DoJumpLoop,1                ; ** Commande Jump Loop ?
         JNE Pas_Exec_Jump_Loop
         MOV DoJumpLoop,0
         MOV AL,Debut_Boucle_Pattern
-        MOV C_Row,AL                    ; Initialiser au dО©╫but de la boucle
+        MOV C_Row,AL                    ; Initialiser au d┌but de la boucle
 
         CALL Do_Change_Row
 		
@@ -3653,17 +3644,17 @@ ReadPart_NotIncIndex:
         RET
 Partition_personnelle Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  Do_ReadChannelPart: Read the channel partition           О©╫
-;О©╫                                                           О©╫
-;О©╫  Input  : ES:SI Pointer to the Current channel Data       О©╫
-;О©╫           BX:   Channel number                            О©╫
-;О©╫  Output : C_Note, C_instrument ...                        О©╫
-;О©╫                                                           О©╫
-;О©╫           BL : 1 No Partition Info                        О©╫
-;О©╫  Change :                                                 О©╫
-;О©╫                                                           О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё  Do_ReadChannelPart: Read the channel partition           Ё
+;Ё                                                           Ё
+;Ё  Input  : ES:SI Pointer to the Current channel Data       Ё
+;Ё           BX:   Channel number                            Ё
+;Ё  Output : C_Note, C_instrument ...                        Ё
+;Ё                                                           Ё
+;Ё           BL : 1 No Partition Info                        Ё
+;Ё  Change :                                                 Ё
+;Ё                                                           Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ; Offset in the Not Compressed partition
 Po_Note        EQU B ES:[SI]  
@@ -3797,14 +3788,14 @@ DP_AllDataPresent:             ; ** Read Uncompressed values
        RET
 Do_ReadChannelPart Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  Do_Change_Row: Search for the row Index in the Pattern   О©╫
-;О©╫                                                           О©╫
-;О©╫  Input  : C_Row Row Number                                О©╫
-;О©╫  Output : SI, C_PartIndex <- Row Index                     О©╫
-;О©╫  Change : AX,BX                                           О©╫
-;О©╫                                                           О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё  Do_Change_Row: Search for the row Index in the Pattern   Ё
+;Ё                                                           Ё
+;Ё  Input  : C_Row Row Number                                Ё
+;Ё  Output : SI, C_PartIndex <- Row Index                     Ё
+;Ё  Change : AX,BX                                           Ё
+;Ё                                                           Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Do_Change_Row  Proc Near
         MOV AL,C_Row
@@ -3847,16 +3838,16 @@ Do_Search_RowOffset:
 
 Do_Change_Row  Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      Do_NextPattern: Placer la musique au pattern AL     О©╫
-;О©╫                       de la sequence                      О©╫
-;О©╫                                                           О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё      Do_NextPattern: Placer la musique au pattern AL     Ё
+;Ё                       de la sequence                      Ё
+;Ё                                                           Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Do_NextPattern Proc Near
         MOV C_Sequence,AL
         INC C_Sequence
-        XOR AH,AH                       ; AX, Position dans la sО©╫quence
+        XOR AH,AH                       ; AX, Position dans la s┌quence
         MOV BX,AX
 
         MOV AL,Table_Tempo[BX]          ; Read the Pattern Tempo
@@ -3865,7 +3856,7 @@ Do_NextPattern Proc Near
         MOV Tempo,AL                    ; Oui, Modifier le Tempo
         MOV Cmpt_Tempo,AL
 Pas_Modif_Tempo_Pattern:
-        MOV AL,Table_Sequence[BX]       ; AL <- NО©╫ de pattern
+        MOV AL,Table_Sequence[BX]       ; AL <- NЬ de pattern
         CMP AL,128
 		JBE PatternNumberOk
 		MOV Pattern_Vide,1              ; Pattern >128, Skip it
@@ -3897,14 +3888,14 @@ Pattern_Non_Vide:
         RET
 Do_NextPattern Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      Proc_Channel:  Traiter une note                         О©╫
-;О©╫                                                           О©╫
-;О©╫      entrО©╫e: BX NumО©╫ro de la voie                         О©╫
-;О©╫              BP=BX*2   (Index pour les mots)              О©╫
-;О©╫              Periode_Partition, Instrument_Partition...   О©╫
-;О©╫                                                           О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё      Proc_Channel:  Traiter une note                         Ё
+;Ё                                                           Ё
+;Ё      entr┌e: BX Num┌ro de la voie                         Ё
+;Ё              BP=BX*2   (Index pour les mots)              Ё
+;Ё              Periode_Partition, Instrument_Partition...   Ё
+;Ё                                                           Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ;Current Partition Data  !! Don't change the Order, must match the partition order !!
 Align 4
@@ -3927,7 +3918,7 @@ Start_Volume    DB 0
 Start_Periode   DB 0
 Save_Periode    DB 0
 
-; LО©╫gende: O, Oui
+; L┌gende: O, Oui
 ;          N, Non
 ;          I, Impossible
 ;          x, Pas de commande
@@ -3940,38 +3931,38 @@ TonePort     EQU 4   ;O   ;Tone portamento.
 CVibrato     EQU 5   ;O   ;Vibrato.
 T_VSlide     EQU 6   ;O   ;Tone portamento+Volume slide.
 Vib_VSlide   EQU 7   ;O   ;Vibrato+Volume slide.
-CTremolo     EQU 8   ;O   ;TrО©╫molo. (Vibrato pour le volume)
-CPanning     EQU 9   ;O   ;Panning. (Normalement, Commande 8 non utilisО©╫e)
-SampleOffs   EQU 10  ;O   ;Fixer l'offset de l'О©╫chantillon.
+CTremolo     EQU 8   ;O   ;Tr┌molo. (Vibrato pour le volume)
+CPanning     EQU 9   ;O   ;Panning. (Normalement, Commande 8 non utilis┌e)
+SampleOffs   EQU 10  ;O   ;Fixer l'offset de l'┌chantillon.
 VolSlide     EQU 11  ;O   ;Volume slide.
 JumpPattern  EQU 12  ;O   ;Sauter vers la position xx.
-CSetVolume   EQU 13  ;O   ;DО©╫finir le volume.
+CSetVolume   EQU 13  ;O   ;D┌finir le volume.
 EndPattern   EQU 14  ;O   ;Fin du pattern.
-Extended     EQU 15  ;x   ;Commandes О©╫tendues. (17...)
-SetTempo     EQU 16  ;O   ;DО©╫finir le tempo.
+Extended     EQU 15  ;x   ;Commandes ┌tendues. (17...)
+SetTempo     EQU 16  ;O   ;D┌finir le tempo.
 
 CSetFilter   EQU 17  ;I   ;Activer le filtre. (Amiga)
 CFinePortaUp EQU 18  ;O   ;Portamento Up Lent.
 CFinePortaDn EQU 19  ;O   ;Portamento Down lent.
-CGlissCtrl   EQU 20  ;N   ;ContrО©╫le du glissando.  (pour le Tone portamento)
-CVibCtrl     EQU 21  ;O   ;DО©╫finir la table du vibrato.
-CFineTune    EQU 22  ;O   ;Modifier la pО©╫riode d'un son.
+CGlissCtrl   EQU 20  ;N   ;Contr⌠le du glissando.  (pour le Tone portamento)
+CVibCtrl     EQU 21  ;O   ;D┌finir la table du vibrato.
+CFineTune    EQU 22  ;O   ;Modifier la p┌riode d'un son.
 CJumpLoop    EQU 23  ;O   ;Bouclage de pattern.
-CTremCtrl    EQU 24  ;O   ;DО©╫finir la table du tremolo.
+CTremCtrl    EQU 24  ;O   ;D┌finir la table du tremolo.
 CRien2       EQU 25  ;x
-CRetrigNote  EQU 26  ;O   ;RО©╫attaque aprО©╫s x 50О©╫ de secondes.
+CRetrigNote  EQU 26  ;O   ;R┌attaque apr┼s x 50Ь de secondes.
 CVolFineUp   EQU 27  ;O   ;Augmente le volume lentement.
 CVolFineDown EQU 28  ;O   ;Diminue le volume lentement.
-CNoteCut     EQU 29  ;O   ;Couper la note aprО©╫s xx 50О©╫ de secondes.
-CNoteDelay   EQU 30  ;O   ;Lancer la note aprО©╫s xx 50О©╫ de secondes.
-CPattDelay   EQU 31  ;O   ;Retarde le dО©╫but du pattern suivant.
+CNoteCut     EQU 29  ;O   ;Couper la note apr┼s xx 50Ь de secondes.
+CNoteDelay   EQU 30  ;O   ;Lancer la note apr┼s xx 50Ь de secondes.
+CPattDelay   EQU 31  ;O   ;Retarde le d┌but du pattern suivant.
 CFunkIt      EQU 32  ;N,I ;Jouer la note to l'envers.
 
 CSetBPM      EQU 33  ;O   ;Fixer les BPM.
 CSetGVolume  EQU 34  ;O   ;Fixer le volume general. (S3M)
 CTremor      EQU 35  ;    ;Tremor (Note ON/OFF Alternativement)
-CFreqAdj     EQU 36  ;O   ;Ajustement de la frО©╫quence. (669)
-CULTSpecial  EQU 37  ;N   ;Commande spО©╫ciale ULT. (Stop Loop,...)
+CFreqAdj     EQU 36  ;O   ;Ajustement de la fr┌quence. (669)
+CULTSpecial  EQU 37  ;N   ;Commande sp┌ciale ULT. (Stop Loop,...)
 CVibSweep    EQU 38  ;N   ;Profondeur du vibrato.
 CRelease     EQU 39  ;N   ;Key Off (SAT) !!!!! A programmer !!!!! 
 CEFPortamento EQU 40 ;O   ;Extra Fine Portamento (XM,IT)													
@@ -4132,7 +4123,7 @@ EndIf
         SUB DX,Min_Period
         CMP DX,Moyen_Notes
         JA Periode_incorrecte       ; Periode incorrecte=>Periode_Partition=0
-        MOV Periode_Partition,CX    ; Initialise la pО©╫riode
+        MOV Periode_Partition,CX    ; Initialise la p┌riode
 
 Periode_incorrecte:
 
@@ -4553,18 +4544,18 @@ Not_VE_ToneP:
 		RET
 Do_VolCol_Commands Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   DoStart_Sample:  Change le sample pour une voie         О©╫
-;О©╫                                                           О©╫
-;О©╫   Input : Note_Sample, Le NО©╫ de sample.                  О©╫
-;О©╫            BX,BP Channel number                           О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   DoStart_Sample:  Change le sample pour une voie         Ё
+;Ё                                                           Ё
+;Ё   Input : Note_Sample, Le NЬ de sample.                  Ё
+;Ё            BX,BP Channel number                           Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 DoStart_Sample Proc Near
 
         MOV AL,Note_Sample
         CMP AL,Nb_Total_Samples
-        JAE Pas_de_sample             ;NО©╫ du sample trop grand !!!
+        JAE Pas_de_sample             ;NЬ du sample trop grand !!!
 
         XOR AH,AH
 		Get_SMPPtr_ESDI AX
@@ -4613,12 +4604,12 @@ Pas_de_sample:
 		RET
 DoStart_Sample Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Set_Ch_Volume:  Change the volume for a channel        О©╫
-;О©╫                                                           О©╫
-;О©╫   Input : BX=Channel number;BP=2*BX                       О©╫
-;О©╫           AL=Le volume                                    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   Set_Ch_Volume:  Change the volume for a channel        Ё
+;Ё                                                           Ё
+;Ё   Input : BX=Channel number;BP=2*BX                       Ё
+;Ё           AL=Le volume                                    Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Set_Ch_Volume Proc near
 
@@ -4672,13 +4663,13 @@ EndIf
         RET
 Set_Ch_Volume EndP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Ajuster_Volumes_Panning : Calcul du volume gauche et    О©╫
-;О©╫                             du volume droit               О©╫
-;О©╫                                                           О©╫
-;О©╫   Input : BX=NО©╫ de voie;BP=2*CX                          О©╫
-;О©╫            AL=Le volume                                   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   Ajuster_Volumes_Panning : Calcul du volume gauche et    Ё
+;Ё                             du volume droit               Ё
+;Ё                                                           Ё
+;Ё   Input : BX=NЬ de voie;BP=2*CX                          Ё
+;Ё            AL=Le volume                                   Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 ;If ModeXT eq No
 Ajuster_Volumes_Panning Proc near
@@ -4724,7 +4715,7 @@ Get_Period Proc Near
         CMP BX,100               ; Marge de 100 (qui digitalise to 100 Hz ?)
         JB Not_Adjust_Period
 
-                                 ; - Ajuster la pО©╫riode - ( FrО©╫q pour C-4 )
+                                 ; - Ajuster la p┌riode - ( Fr┌q pour C-4 )
         PUSH AX
         PUSH DX
         MOV AX,8363
@@ -4740,14 +4731,14 @@ Not_Adjust_Period:
 		RET
 Get_Period EndP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Set_Period: Change la periode pour une voie        О©╫
-;О©╫                    avec verification de la valeur         О©╫
-;О©╫                                                           О©╫
-;О©╫   Input : BX=NО©╫ de voie                                  О©╫
-;О©╫            BP=2*BX                                        О©╫
-;О©╫            CX=La periode                                  О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   Set_Period: Change la periode pour une voie        Ё
+;Ё                    avec verification de la valeur         Ё
+;Ё                                                           Ё
+;Ё   Input : BX=NЬ de voie                                  Ё
+;Ё            BP=2*BX                                        Ё
+;Ё            CX=La periode                                  Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Set_Period PROC NEAR
 
@@ -4815,10 +4806,10 @@ Pas_Div5:
 
 Set_Period ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Set_Period_Fine : Modifier la pО©╫riode suivant la   О©╫
-;О©╫                          valeur du FineTune               О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   Set_Period_Fine : Modifier la p┌riode suivant la   Ё
+;Ё                          valeur du FineTune               Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 If UseFineTune Eq Yes
 Set_Period_Fine Proc Near
@@ -4831,9 +4822,9 @@ Set_Period_Fine Proc Near
         CMP Use_FineTune_CMD,1
         JNE Fin_Fine
         MOV DX,Periode_Partition
-                                  ;Cherche l'indice de la pО©╫riode
+                                  ;Cherche l'indice de la p┌riode
         XOR CX,CX                 ;Actuelle dans la table
-        MOV SI,Offs_Table_tune    ;PremiО©╫re table
+        MOV SI,Offs_Table_tune    ;Premi┼re table
 Fine_Boucle_cherche_per:
         LODSW
         CMP AX,DX
@@ -4841,7 +4832,7 @@ Fine_Boucle_cherche_per:
         INC CX
         CMP CX,Total_FineTune
         JNE Fine_Boucle_cherche_per
-        JMP Fin_Fine              ;Note non trouvО©╫e => Pas de FineTune
+        JMP Fin_Fine              ;Note non trouv┌e => Pas de FineTune
 Fine_Periode_trouvee:
 
         MOV AL,VFineTune[BX]
@@ -4864,15 +4855,15 @@ Set_Period_Fine Endp
 EndIf
 
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╦
-;О©╫ DoXMEnv:                                                                О©╫
-;О©╫                                                                         О©╫
-;О©╫ Input: ES:DI Pointer to the Vol Env Data                            О©╫
-;О©╫        ESI Pointer to the envelope data structure (EnvPos, EnvSegPos)   О©╫
-;О©╫                                                                         О©╫
-;О©╫ Output: EAX Envelope value                                              О©╫
-;О©╫                                                                         О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;уммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммм╦
+;Ё DoXMEnv:                                                                Ё
+;Ё                                                                         Ё
+;Ё Input: ES:DI Pointer to the Vol Env Data                            Ё
+;Ё        ESI Pointer to the envelope data structure (EnvPos, EnvSegPos)   Ё
+;Ё                                                                         Ё
+;Ё Output: EAX Envelope value                                              Ё
+;Ё                                                                         Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 If UseVolEnv eq Yes
 
@@ -4961,13 +4952,13 @@ XMEnvEnd:
 DoXMEnv Endp
 endif   ;UseVolEnv
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫              Installation des commandes                   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё              Installation des commandes                   Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Set General Volume   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё   Set General Volume   Ё
+;юдддддддддддддддддддддддды
 
 Exec_SetGVolume PROC NEAR
         CMP AL,40h
@@ -4979,9 +4970,9 @@ Pas_Ajuster_GVol:
         RET
 Exec_SetGVolume Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫       Set Tempo        О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё       Set Tempo        Ё
+;юдддддддддддддддддддддддды
 
 Exec_set_tempo PROC NEAR
 
@@ -4994,9 +4985,9 @@ Fin_Exec_set_tempo:
 
 Exec_set_tempo ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫     Pattern Break      О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё     Pattern Break      Ё
+;юдддддддддддддддддддддддды
 
 Exec_EndPattern Proc Near
         MOV AH,AL
@@ -5019,9 +5010,9 @@ Fin_EndPattern:
         RET
 Exec_EndPattern Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      Jump Pattern      О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё      Jump Pattern      Ё
+;юдддддддддддддддддддддддды
 
 Exec_JumpPattern Proc Near
         MOV AH,AL
@@ -5044,9 +5035,9 @@ Fin_JumpPattern:
         RET
 Exec_JumpPattern Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫       PattDelay        О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё       PattDelay        Ё
+;юдддддддддддддддддддддддды
 
 Exec_PattDelay Proc Near
         OR AL,AL
@@ -5054,20 +5045,20 @@ Exec_PattDelay Proc Near
         MOV CL,Tempo
         XOR AH,AH
         MUL CL
-        MOV Cmpt_Tempo,AL   ;Attendre Tempo*Parametre 50О©╫ de secondes...
+        MOV Cmpt_Tempo,AL   ;Attendre Tempo*Parametre 50Ь de secondes...
 Fin_PattDelay:
         RET
 Exec_PattDelay EndP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫       Arpeggio         О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё       Arpeggio         Ё
+;юдддддддддддддддддддддддды
 
 Exec_Arpeggio PROC NEAR
 
         MOV DX,Note_Periode
         OR DX,DX
-        JZ Fin_Exec_Arpeggio      ;PО©╫riode nulle => Fin
+        JZ Fin_Exec_Arpeggio      ;P┌riode nulle => Fin
 
         XOR CX,CX
 		MOV CL,Note_Note          ;CX=Current note index
@@ -5120,9 +5111,9 @@ Fin_Exec_Arpeggio:
         RET
 Exec_Arpeggio ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Portamento Down     О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Portamento Down     Ё
+;юдддддддддддддддддддддддды
 
 Exec_port_DN PROC NEAR
 
@@ -5134,9 +5125,9 @@ Pas_modif_Port_Dn:
         RET
 Exec_port_DN ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Portamento Up       О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Portamento Up       Ё
+;юдддддддддддддддддддддддды
 
 Exec_Port_up PROC NEAR
 
@@ -5148,9 +5139,9 @@ Pas_modif_Port_Up:
         RET
 Exec_Port_up ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  Fine Portamento Up    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё  Fine Portamento Up    Ё
+;юдддддддддддддддддддддддды
 
 Exec_FinePortaUp PROC NEAR
         TEST AL,AL
@@ -5162,9 +5153,9 @@ Pas_modif_PortFineUp:
         RET
 Exec_FinePortaUp ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  Fine Portamento Down  О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё  Fine Portamento Down  Ё
+;юдддддддддддддддддддддддды
 
 Exec_FinePortaDown PROC NEAR
         TEST AL,AL
@@ -5180,7 +5171,7 @@ Exec_FinePortaDown ENDP
 ;--------------------------
 ;  Extra Fine Protamento
 ;  Parma : 1x EFPort Down
-;          О©╫x EFPort Up
+;          Иx EFPort Up
 ;--------------------------
 
 Exec_EFPort PROC NEAR	
@@ -5219,9 +5210,9 @@ EF_PortDn_ParamOk:
         RET
 Exec_EFPort ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫     Volume slide       О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё     Volume slide       Ё
+;юдддддддддддддддддддддддды
 
 Exec_Vol_slide PROC NEAR
 
@@ -5238,15 +5229,15 @@ Pas_Volume_Sl_Rapide:
 
 Exec_Vol_slide ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Volume Fine Up      О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Volume Fine Up      Ё
+;юдддддддддддддддддддддддды
 
 Exec_VolFineUp PROC NEAR
 
         TEST AL,AL
         JZ Garde_vfUp
-If ModeXT eq Yes         ;ParamО©╫tre to gauche pour +
+If ModeXT eq Yes         ;Param┼tre to gauche pour +
 		SHL AL,1
 		SHL AL,1
         SHL AL,1	  	 
@@ -5262,9 +5253,9 @@ Garde_VFUp:
 
 Exec_VolFineUp ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Volume Fine Down    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Volume Fine Down    Ё
+;юдддддддддддддддддддддддды
 
 Exec_VolFineDown PROC NEAR
 
@@ -5278,9 +5269,9 @@ Garde_VFDown:
 
 Exec_VolFineDown ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Tone portamento     О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Tone portamento     Ё
+;юдддддддддддддддддддддддды
 
 Exec_Tone_prt PROC NEAR
 
@@ -5301,7 +5292,7 @@ Cont_exec_3:
         MOV dir_tone_prt[BX],1     ; Portamento
 Exec_ancien_3:
         OR AL,AL
-        JZ utilise_anc_param       ; Utilise l'ancien paramО©╫tre si=0
+        JZ utilise_anc_param       ; Utilise l'ancien param┼tre si=0
         MOV param_tone_prt[BX],AL
 utilise_anc_param:
         MOV Command_ProcOffs,OFFSET Tone_portamento
@@ -5310,16 +5301,16 @@ Fin_Exec_Tone_prt:
 
 Exec_Tone_prt ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫        Vibrato         О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё        Vibrato         Ё
+;юдддддддддддддддддддддддды
 
 Execute_vibrato PROC NEAR
 
         MOV AH,AL
         OR AH,AH
-        JZ Keep_Vib_Speed      ;ParamО©╫tre=0 =>on conserve les valeurs
-                               ;PrО©╫cО©╫dentes
+        JZ Keep_Vib_Speed      ;Param┼tre=0 =>on conserve les valeurs
+                               ;Pr┌c┌dentes
         AND AL,0Fh
 		OR AL,AL
 		JZ Keep_Vib_Amp
@@ -5344,15 +5335,15 @@ Keep_Vib_Speed:
 
 Execute_vibrato ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫        Tremolo         О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё        Tremolo         Ё
+;юдддддддддддддддддддддддды
 
 Exec_Tremolo PROC NEAR
         MOV AH,AL
         TEST AH,AH
-        JZ Garde_val_tre        ;ParamО©╫tre=0 =>on conserve les valeurs
-                                ;PrО©╫cО©╫dentes
+        JZ Garde_val_tre        ;Param┼tre=0 =>on conserve les valeurs
+                                ;Pr┌c┌dentes
         AND AL,0Fh
         MOV Amplitude_trem[BX],AL
 If ModeXT Eq Yes
@@ -5375,9 +5366,9 @@ Pas_modif_vol_tremolo:
 
 Exec_Tremolo ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      Tremor      О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддд©
+;Ё      Tremor      Ё
+;юдддддддддддддддддды
 
 Exec_Tremor PROC NEAR
         OR AL,AL
@@ -5390,9 +5381,9 @@ Garde_Val_Tremor:
         RET
 Exec_Tremor ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Vibrato Controle    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Vibrato Controle    Ё
+;юдддддддддддддддддддддддды
 
 Exec_VibCtrl Proc near
         OR Retrig_V_Tr[BX],M_Retrig_Vib
@@ -5421,9 +5412,9 @@ Fin_Exec_VibCtrl:
         RET
 Exec_VibCtrl Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Tremolo Controle    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Tremolo Controle    Ё
+;юдддддддддддддддддддддддды
 
 Exec_TremCtrl PROC NEAR
         OR Retrig_V_Tr[BX],M_Retrig_Trem
@@ -5452,9 +5443,9 @@ Fin_Exec_TremCtrl:
         RET
 Exec_TremCtrl Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Vibrato+Vol Slide   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    Vibrato+Vol Slide   Ё
+;юдддддддддддддддддддддддды
 
 Exec_vib_vs PROC NEAR
 ;        MOV Param_vs[BX],AL  ; Test to not memorize Vol Slide Param if 0
@@ -5463,9 +5454,9 @@ Exec_vib_vs PROC NEAR
         RET
 Exec_vib_vs ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  Tone port+Vol Slide   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё  Tone port+Vol Slide   Ё
+;юдддддддддддддддддддддддды
 
 Exec_tone_vs PROC NEAR
 ;        MOV Param_vs[BX],AL  ; Test to not memorize Vol Slide Param if 0
@@ -5477,9 +5468,9 @@ Exec_tone_vs PROC NEAR
 
 Exec_tone_vs ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫     Note Cut     О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддд©
+;Ё     Note Cut     Ё
+;юдддддддддддддддддды
 
 Exec_NoteCut PROC NEAR
         INC AL
@@ -5489,9 +5480,9 @@ Exec_NoteCut PROC NEAR
         RET
 Exec_NoteCut ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   Note Delay     О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддд©
+;Ё   Note Delay     Ё
+;юдддддддддддддддддды
 
 Exec_NoteDelay PROC NEAR
         INC AL
@@ -5513,9 +5504,9 @@ NDPas_Save_Periode:
         RET
 Exec_NoteDelay ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Retrig Note    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддд©
+;Ё    Retrig Note    Ё
+;юддддддддддддддддддды
 
 Exec_RetrigNote PROC NEAR
         MOV AH,AL
@@ -5546,16 +5537,16 @@ Pas_Retrig:
         RET
 Exec_RetrigNote ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    Sample Offset   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддд©
+;Ё    Sample Offset   Ё
+;юдддддддддддддддддддды
 
 TSmp_Offs DB Max_Channels DUP (0)
 
 Exec_SampleOffs PROC NEAR
         OR AL,AL
         JNZ Pas_Smp_Offs0
-        MOV AL,TSmp_Offs[BX]      ; Si ParamО©╫tre=0, valeur prО©╫cО©╫dente.
+        MOV AL,TSmp_Offs[BX]      ; Si Param┼tre=0, valeur pr┌c┌dente.
 Pas_Smp_Offs0:
         MOV TSmp_Offs[BX],AL
         CMP Start_Sample,1
@@ -5567,9 +5558,9 @@ Suite_Smp_Offs:
 
 Exec_SampleOffs Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      Set BPM       О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддд©
+;Ё      Set BPM       Ё
+;юдддддддддддддддддддды
 
 Exec_SetBPM Proc Near
 		MOV BPM_Val,520           ; Value for 125BPM : 65000/125 (If BPM<20)
@@ -5588,9 +5579,9 @@ Skip_BPM:
         RET
 Exec_SetBPM Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫     Jump Loop      О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддд©
+;Ё     Jump Loop      Ё
+;юдддддддддддддддддддды
 
 Debut_Boucle_Pattern DB 0
 Cmpt_Boucles         DB 0
@@ -5600,14 +5591,14 @@ Test_Jump_Loop       DB 0
 
 Exec_JumpLoop PROC NEAR
         CMP Test_Jump_Loop,1
-        JE Fin_Exec_JumpLoop         ;DО©╫jto utilisО©╫ sur la mО©╫me ligne ?
+        JE Fin_Exec_JumpLoop         ;D┌jto utilis┌ sur la m┬me ligne ?
 
         MOV Test_Jump_Loop,1
         MOV AH,AL
         OR AH,AH
         JNZ Pas_debut_Bouclage
         MOV AL,C_Row
-        MOV Debut_Boucle_Pattern,AL  ;Fixer le dО©╫but du bouclage
+        MOV Debut_Boucle_Pattern,AL  ;Fixer le d┌but du bouclage
         JMP Fin_Exec_JumpLoop
 Pas_debut_Bouclage:
         CMP Bouclage_en_cours,1      ;Bouclage en cours ?
@@ -5627,9 +5618,9 @@ Fin_Exec_JumpLoop:
         RET
 Exec_JumpLoop Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫     FineTune       О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддд©
+;Ё     FineTune       Ё
+;юдддддддддддддддддддды
 
 Exec_FineTune PROC Near
 ;        MOV AL,Note_Sample         ;du sample
@@ -5645,9 +5636,9 @@ Exec_FineTune PROC Near
         RET
 Exec_FineTune Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      Panning       О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддд©
+;Ё      Panning       Ё
+;юдддддддддддддддддддды
 
 Exec_Panning Proc Near  ; Panning 0 to 80h
         CMP Utiliser_Panning,1
@@ -5664,9 +5655,9 @@ EP_Pas_Modif_Panning:
         RET
 Exec_Panning Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫                      COMMANDES                            О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё                      COMMANDES                            Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 Cmpt_Commande DB Max_Channels DUP (0)  ;Compteur pour VolFine, FinePorta
                                     ;Retrig, NoteCut, NoteDelay...
@@ -5715,9 +5706,9 @@ Do_Nothing Proc Near
         RET
 Do_Nothing Endp		
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫     - Arpeggio -       О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё     - Arpeggio -       Ё
+;юдддддддддддддддддддддддды
 
 Do_Arpeggio PROC NEAR
 
@@ -5736,14 +5727,14 @@ arp3:
         MOV CX,Per2_arp[BP]
         MOV compt_arp[BX],0
 Fin_arp:
-;        CALL Ajuster_Periode  ; Periodes Arpeggio pas rО©╫elles => Ajuster
+;        CALL Ajuster_Periode  ; Periodes Arpeggio pas r┌elles => Ajuster
         CALL Set_Period
         RET
 Do_Arpeggio Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫  - Portamento Down -   О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё  - Portamento Down -   Ё
+;юдддддддддддддддддддддддды
                  
 Port_down Proc Near
         MOV CX,CH_Per_part[BP]
@@ -5754,7 +5745,7 @@ Port_down Proc Near
         ADD CX,AX
 ;        CMP CX,Max_Period ;_Act
 ;        JB Port_dn_inf
-;        MOV CX,Max_Period ;_Act                ;PО©╫riode au maximum
+;        MOV CX,Max_Period ;_Act                ;P┌riode au maximum
 ;Port_dn_inf:
 
         MOV CH_Per_part[BP],CX
@@ -5762,9 +5753,9 @@ Port_down Proc Near
         RET
 Port_down Endp
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   - Portamento Up -    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё   - Portamento Up -    Ё
+;юдддддддддддддддддддддддды
 
 Port_up Proc Near
         MOV CX,CH_Per_part[BP]
@@ -5790,9 +5781,9 @@ Pru_Periode_correcte:
         RET
 Port_up ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫ - Fine Portamento Up - О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё - Fine Portamento Up - Ё
+;юдддддддддддддддддддддддды
 
 Fine_Portamento_Up PROC NEAR
         CMP Cmpt_Commande[BX],0
@@ -5803,9 +5794,9 @@ Pas_exec_Port_Up:
         RET
 Fine_Portamento_Up ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫ - Fine Portamento Down - О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддддд©
+;Ё - Fine Portamento Down - Ё
+;юдддддддддддддддддддддддддды
 
 Fine_Portamento_Down PROC NEAR
         CMP Cmpt_Commande[BX],0
@@ -5816,9 +5807,9 @@ Pas_exec_Port_Down:
         RET
 Fine_Portamento_Down ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    - Volume Slide -    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё    - Volume Slide -    Ё
+;юдддддддддддддддддддддддды
 
 Volume_slide PROC NEAR
         MOV AL,Param_VS[BX]
@@ -5826,7 +5817,7 @@ VolSlide_Direct:
         OR AL,AL                  ; AL=0?
         JE Fin_volume_slide
         MOV DL,AL
-        AND DL,0Fh                ; DL <- 2О©╫ partie
+        AND DL,0Fh                ; DL <- 2Ь partie
         OR DL,DL                  ; Volume Slide Down ???
         JZ Vol_sl_add
         MOV CL,Ch_Part_Vol[BX]   ; Volume Slide Down ...
@@ -5858,9 +5849,9 @@ Fin_volume_slide:
         RET
 Volume_slide ENDP
 
-;------------------------------------
-;О©╫  - Volume fine (Up et Down) -   О©╫
-;------------------------------------
+;зддддддддддддддддддддддддддддддддд©
+;Ё  - Volume fine (Up et Down) -   Ё
+;юддддддддддддддддддддддддддддддддды
 
 Volume_fine PROC NEAR
         CMP Cmpt_Commande[BX],0
@@ -5871,16 +5862,16 @@ Pas_exec_VolFine:
         RET
 Volume_fine ENDP
 
-;---------------------------
-;О©╫  - Tone Portamento -   О©╫
-;---------------------------
+;здддддддддддддддддддддддд©
+;Ё  - Tone Portamento -   Ё
+;юдддддддддддддддддддддддды
 
 Tone_portamento PROC NEAR
         MOV DX,Per_tone_prt[BP]
 ;        CALL Ajuster_Periode
-;        MOV DX,CX                      ;DX=PО©╫riode de fin.
+;        MOV DX,CX                      ;DX=P┌riode de fin.
 
-        MOV CX,CH_Per_part[BP]       ;CX=PО©╫riode actuelle
+        MOV CX,CH_Per_part[BP]       ;CX=P┌riode actuelle
 
         XOR AH,AH
         MOV AL,Param_tone_prt[BX]
@@ -5916,9 +5907,9 @@ Fin_t_pr:
         RET
 Tone_portamento ENDP
 
-;---------------------------
-;О©╫      - Vibrato -       О©╫
-;---------------------------
+;здддддддддддддддддддддддд©
+;Ё      - Vibrato -       Ё
+;юдддддддддддддддддддддддды
 
 Vibrato PROC NEAR                     ;Ne pas changer CH_Per_part !!!
          CMP Vibr_Index[BX],63
@@ -5952,16 +5943,16 @@ Fin_vib:
          RET
 Vibrato ENDP
 
-;---------------------------
-;О©╫      - Tremolo -       О©╫
-;---------------------------
+;здддддддддддддддддддддддд©
+;Ё      - Tremolo -       Ё
+;юдддддддддддддддддддддддды
 
 Tremolo PROC NEAR
          CMP Trem_Index[BX],63
          JB Pas_per_Trem
          SUB Trem_Index[BX],64
 Pas_per_Trem:
-         MOV SI,Table_Tremolo[BP]         ;Table du tremolo (sinus,rampe,carrО©╫)
+         MOV SI,Table_Tremolo[BP]         ;Table du tremolo (sinus,rampe,carr┌)
          MOV CL,Trem_Index[BX]
          XOR CH,CH
          ADD SI,CX
@@ -5995,9 +5986,9 @@ Fin_Trem:
          RET
 Tremolo ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫      - Tremor -        О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё      - Tremor -        Ё
+;юдддддддддддддддддддддддды
 
 Tremor PROC NEAR
 
@@ -6032,27 +6023,27 @@ Fin_Tremor:
          RET
 Tremor ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫ - Vibrato+Vol Slide -  О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё - Vibrato+Vol Slide -  Ё
+;юдддддддддддддддддддддддды
 
 Vibrato_vs PROC NEAR
         CALL Vibrato
         JMP Volume_slide
 Vibrato_vs ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫- Tone port+Vol Slide - О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддддд©
+;Ё- Tone port+Vol Slide - Ё
+;юдддддддддддддддддддддддды
 
 Tone_vs PROC NEAR
         CALL Tone_portamento
         JMP Volume_slide
 Tone_vs ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫     - Note Cut -     О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддд©
+;Ё     - Note Cut -     Ё
+;юдддддддддддддддддддддды
 
 NoteCut:
         DEC Cmpt_Commande[BX]
@@ -6066,9 +6057,9 @@ NoteCut:
 Fin_NC:
         RET
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫    - Note Delay -    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддд©
+;Ё    - Note Delay -    Ё
+;юдддддддддддддддддддддды
 
 NoteDelay PROC NEAR
 		
@@ -6079,7 +6070,7 @@ NoteDelay PROC NEAR
         MOV AL,Ch_Part_Vol[BX]
         CALL Set_Ch_Volume       ;Changer le volume
         MOV CX,CH_Per_part[BP]
-        CALL Set_Period      ;Changer la pО©╫riode de la voie
+        CALL Set_Period      ;Changer la p┌riode de la voie
         MOV AL,CH_Smp_Pla[BX]
         MOV Note_Sample,AL
         MOV Ch_Smp_Offs[BX],0
@@ -6091,9 +6082,9 @@ Fin_ND:
         RET
 NoteDelay ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   - Retrig Note -    О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;здддддддддддддддддддддд©
+;Ё   - Retrig Note -    Ё
+;юдддддддддддддддддддддды
 
 ;FTRetrigNote PROC NEAR
 ;
@@ -6199,10 +6190,10 @@ Fin_Ret:
         RET
 RetrigNote ENDP
 
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©
-;О©╫   PInit_Tables  Fournir les pointeurs au Pascal          О©╫
-;О©╫   Change:      ES,DI                                      О©╫
-;О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+;зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+;Ё   PInit_Tables  Fournir les pointeurs au Pascal          Ё
+;Ё   Change:      ES,DI                                      Ё
+;юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
 
 PInit_Tables PROC FAR
       PUSH BP

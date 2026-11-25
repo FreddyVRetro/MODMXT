@@ -3,10 +3,10 @@
 {                                                                        }
 {  Initialisation de Mod Master                                          }
 {                                                                        }
-{  AUTEURS: Freddy V‚tel‚ et Fabrice Couteau.                            }
+{  AUTEURS: Freddy Vï¿½telï¿½ et Fabrice Couteau.                            }
 {                                                                        }
-{                               D‚but d'‚criture le 27/03/95             }
-{                               DerniŠres modifications le 01/11/95      }
+{                               Dï¿½but d'ï¿½criture le 27/03/95             }
+{                               Derniï¿½res modifications le 01/11/95      }
 {************************************************************************}
 
 UNIT MM_Init;

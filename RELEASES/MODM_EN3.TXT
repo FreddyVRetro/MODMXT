@@ -1,8 +1,8 @@
       |                                                                |
       |                      -   MOD MASTER -                          |
-      |                      - VERSION XT 1.02 -                       |
+      |                      - VERSION XT 1.0.3 -                      |
       |                                                                |
-      |        (c) 1993, 2024 Freddy VETELE & Fabrice COUTEAU          |
+      |        (c) 1993, 2026 Freddy VETELE & Fabrice COUTEAU          |
 
                            ___  __   _   ____ ___  _   ____  ___
                           /    /  ) /| /  /  /__  /| /  /   (_
@@ -618,7 +618,11 @@ Extension  Type  Voices  Tracker                      Remarks
 
      Q> My .XM file is not playing correctly
 
-     A> Mod Master XT Does not support some .XM effect and Volume/Panning envelopes
+     A> XM support is partial: global-volume slides, envelope-position,
+        panning-slide, and tremor effects are not handled; volume-envelope
+        handling is limited, and panning envelopes and linear-frequency mode
+        are not implemented. Patterns with 256 rows and modules exceeding the
+        player's pattern limit are rejected.
 
      ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

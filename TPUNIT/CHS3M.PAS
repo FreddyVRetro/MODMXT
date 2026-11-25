@@ -44,6 +44,7 @@ CONST
      S3MIdent1=$101A;   {Version + Fichier Song}
      S3MSample:Char4='SCRS';
      S3MAdlib:Char4='SCRI';
+     S3MSignature:Char4='SCRM';
 
 TYPE
      T_En_tete_S3M=Record
@@ -115,17 +116,18 @@ VAR VersionS3M:Byte;
 
 {---------------------------------------------------------}
 
-PROCEDURE Charge_pattern(Var Pattofs: Toffsets; Nb_Patt: Word);
+PROCEDURE Charge_pattern(Var Pattofs: Toffsets; Nb_Patt: Word; File_Size:LongInt);
 Var 
 	Pattern_S3M : Ptr_Patt_S3M;
 	Taille: Word;
     c,ch,NewCh,Row : Byte;
     i   : Word;
     n   : Word;
-    Position_Pattern : Word;
+    Position_Pattern : LongInt;
     Dernier_Param_EF  : Array[0..31] of Byte;
     Dernier_Param_VS : Array[0..31] of Byte;
     Param1 : Byte;
+    Needed : Byte;
     Note   : Byte;
 Label pattern_ok;
 
@@ -155,11 +157,34 @@ Begin
    MMSS_Table^.Seg_Pattern[n]:=SEG(CP_Pattern^);   
    Musique^.Taille_Pattern[n]:=64;
 
-   FillChar(Dernier_Param_EF,16,0);
-   FillChar(Dernier_Param_Vs,16,0);
+   FillChar(Dernier_Param_EF,SizeOf(Dernier_Param_EF),0);
+   FillChar(Dernier_Param_Vs,SizeOf(Dernier_Param_Vs),0);
 
-   f_module.LitPos(16*LongInt(Pattofs[n]),Taille,2); {Lire la taille du pattern}
-   
+   If Pattofs[n]=0 Then
+      Begin
+       For Row:=1 to 64 do
+        Begin
+         If Ch_Number>0 Then CP_AddEmptyCh(Ch_Number-1);
+         CP_NextRow;
+        End;
+       CP_End;
+       Continue;
+      End;
+
+   Position_Pattern:=16*LongInt(Pattofs[n]);
+   If Position_Pattern>File_Size-2 Then
+      Begin
+       Erreur_de_chargement:=Err_Format;
+       EXIT;
+      End;
+   f_module.LitPos(Position_Pattern,Taille,2); {Lire la taille du pattern}
+   If (f_erreur<>f_ok) Or (LongInt(Taille)>File_Size-Position_Pattern-2) Or
+      (Taille=0) Then
+      Begin
+       Erreur_de_chargement:=Err_Format;
+       EXIT;
+      End;
+
    If Taille<MaxAvail-1024 Then GetMem(Pattern_S3M,Taille)
       Else Exit;
    f_module.Lit(Pattern_S3M^,Taille);                {Lire le pattern}
@@ -188,6 +213,16 @@ Begin
                  Else CP_AddEmptyCh(Ch_Number-Ch-1);
 
            Ch:=NewCh;
+           Needed:=0;
+           If (c AND $20)<>0 Then Inc(Needed,2);
+           If (c AND $40)<>0 Then Inc(Needed);
+           If (c AND $80)<>0 Then Inc(Needed,2);
+           If LongInt(i)+Needed-1>LongInt(Taille) Then
+              Begin
+               Erreur_de_chargement:=Err_Format;
+               FreeMem(Pattern_S3M,Taille);
+               EXIT;
+              End;
            C_Note.Commande:=Rien;
            C_Note.Parametre:=0; C_Note.Instrument:=0;
            C_Note.Periode:=0; C_Note.Volume:=$FF;
@@ -209,6 +244,7 @@ Begin
                               End;
                           End;
                        C_Note.Instrument:=Pattern_S3M^[i+1];
+                       If C_Note.Instrument>Max_Samples Then C_Note.Instrument:=0;
 
                        If C_Note.Instrument <>0 Then SamplFlags[C_Note.Instrument]:=True;
                        Inc(i,2)
@@ -325,6 +361,16 @@ Begin
                            C_Note.Parametre:=(C_Note.Parametre AND $F0)+Param1;
                            End;
                         22:C_Note.Commande:=SetGVolume; { Set Global volume (0-40) }
+                        24:Begin { Xxx: Set panning }
+                           If C_Note.Parametre=$A4 Then
+                              C_Note.Commande:=Rien  { Surround is unsupported }
+                           Else
+                              Begin
+                               C_Note.Commande:=CPanning;
+                               C_Note.Parametre:=(Word(C_Note.Parametre)*$80) DIV $FF;
+                               MMSS_CFG^.Calculer_Panning:=True;
+                              End;
+                           End;
                         Else Begin
                               C_Note.Commande:=Rien;
                               C_Note.Parametre:=0
@@ -349,6 +395,12 @@ Begin
 
           End; { Read Note }
       End;  {While Row}
+      If Row<64 Then
+         Begin
+          Erreur_de_chargement:=Err_Format;
+          FreeMem(Pattern_S3M,Taille);
+          EXIT;
+         End;
 	  CP_End;
       FreeMem(Pattern_S3M,Taille);
 	
@@ -450,6 +502,8 @@ Var S3M: Ptr_En_tete_S3M;
     Nom_fich: String12;
     Pan_Present:Boolean;
     Table_Pan:Array[1..32] of Byte;
+    File_Size,Table_End:LongInt;
+    Order_Count:Word;
     i:Integer;
 Begin
  erreur:=Ok;
@@ -465,21 +519,49 @@ Begin
   New(S3M);
   Pan_Present:=False;
 
-  f_module.LitPos(0,S3M^,Sizeof(S3M^));
   Erreur_de_chargement:=Ok;
+  File_Size:=f_module.Taille;
+  If File_Size<SizeOf(S3M^) Then
+     Erreur_de_chargement:=Err_Format
+  Else
+     Begin
+      f_module.LitPos(0,S3M^,Sizeof(S3M^));
+      If (f_erreur<>f_ok) Or (S3M^.Ident1<>S3MIdent1) Or
+         (S3M^.Ident2<>S3MSignature) Then
+         Erreur_de_chargement:=Err_Format;
+     End;
+  If Erreur_de_chargement<>Ok Then Goto FinChS3M;
+  If (S3M^.LongSeq>SizeOf(Musique^.Sequence)) Or
+     (File_Size<LongInt(SizeOf(S3M^))+S3M^.LongSeq) Then
+     Begin
+      Erreur_de_chargement:=Err_Format;
+      Goto FinChS3M;
+     End;
 
+  Order_Count:=S3M^.LongSeq;
   Move(S3M^.Nom,Musique^.Titre,28);       { Titre du module }
   f_module.Lit(Musique^.Sequence,S3M^.LongSeq);
+  If f_erreur<>f_ok Then
+     Begin
+      Erreur_de_chargement:=Err_lecture;
+      Goto FinChS3M;
+     End;
 
     { D‚tecter le premier $FF pour la fin de la s‚quence... }
-  for i:=1 to 255 do
+  for i:=1 to Order_Count do
       If Musique^.Sequence[i]=$FF Then
          Begin
          S3M^.LongSeq:=i-1;
          Break
          End;
+  Ch_Number:=0;
   For i:=1 to 32 do if S3M^.ChannMaps[i]<32 Then Ch_Number:=i;
   If Ch_Number>Max_Channels Then Ch_Number:=Max_Channels;
+  If Ch_Number=0 Then
+     Begin
+      Erreur_de_chargement:=Err_Format;
+      Goto FinChS3M;
+     End;
   Musique^.Sequence_Len:=S3M^.LongSeq;
   Musique^.Pos_de_restart:=1;                 { Position de bouclage         }
   Musique^.Ch_Number_Patt:=Ch_Number;         { Nb de voies dans un pattern  }
@@ -515,12 +597,24 @@ Begin
   If (S3M^.NbSampl>99) Or (S3M^.NbPatt>100) Then Erreur_de_chargement:=Err_Format
      Else
      Begin
-     f_module.Lit(Instrofs,S3M^.NbSampl*2);
-     f_module.Lit(Pattofs,S3M^.NbPatt*2);
-     If Pan_Present Then f_module.Lit(Table_Pan,32);
-
-     Charge_pattern(Pattofs,S3M^.NbPatt);     { Charger la partition }
-     Musique^.Ch_Number:=Nb_reel_voies;       { Nombre reel de voies }
+     Table_End:=SizeOf(S3M^)+LongInt(Order_Count)+
+                LongInt(S3M^.NbSampl)*2+LongInt(S3M^.NbPatt)*2;
+     If Pan_Present Then Inc(Table_End,32);
+     If File_Size<Table_End Then
+        Erreur_de_chargement:=Err_Format
+     Else
+        Begin
+         f_module.Lit(Instrofs,S3M^.NbSampl*2);
+         f_module.Lit(Pattofs,S3M^.NbPatt*2);
+         If Pan_Present Then f_module.Lit(Table_Pan,32);
+         If f_erreur<>f_ok Then
+            Erreur_de_chargement:=Err_lecture
+         Else
+            Begin
+             Charge_pattern(Pattofs,S3M^.NbPatt,File_Size); { Charger la partition }
+             Musique^.Ch_Number:=Nb_reel_voies;       { Nombre reel de voies }
+            End;
+        End;
      End;
 
   If Erreur_de_chargement=Ok Then
